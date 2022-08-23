@@ -1,7 +1,9 @@
 program calculo_de_carga;
 
 {Este programa realiza um cálculo de carga simplificado para um alto forno, 
-feito com base nos exercícios feitos em sala de aula e, também, com base nos conhecimentos do grupo, tanto na montagem da linha de pensamento como na montagem do programa usando a linguagem Pascal.
+feito com base nos exercícios feitos em sala de aula e, também, com base nos
+conhecimentos do grupo, tanto na montagem da linha de pensamento como na
+montagem do programa usando a linguagem Pascal.
 
 O programa considera o carregamento de até 3 tipos de minérios 
 (estes podem ser os minérios, pelotas e sínteres).
@@ -13,18 +15,21 @@ A carga de coque é feita de forma similar: estipula-se a proporção dos
 diferentes tipos de coque( no máximo 3) e calcula-se a massa de cada um deles 
 para atender ao processo.
 
-Pode-se calcular a quantidade de PCI máxima a se injetar, e a partir dela, estipular um valor a ser usado.
+Pode-se calcular a quantidade de PCI máxima a se injetar, e a partir dela,
+estipular um valor a ser usado.
 
 O sopro pode ser calculado, considerando-se a necessidade de oxigênio e 
 o seu teor no sopro.
 
 Os cálculos são feitos com base nas considerações de que todo o ferro 
 carregado é reduzido e se incorpora ao gusa líquido e a reação de redução da
-wustita a ferro se processam integralmente a 900 °C, de forma que a reação de redução seja:
+wustita a ferro se processam integralmente a 900 °C, de forma que a
+reação de redução seja:
 
 FeO +3,12CO = Fe + 2,12 CO + CO2.
 
-Após o uso do programa, pode-se armazenar os dados em um arquivo texto(Calculo_de_carga.doc);
+Após o uso do programa, pode-se armazenar os dados em um arquivo texto
+(Calculo_de_carga.doc);
 
 }
 
