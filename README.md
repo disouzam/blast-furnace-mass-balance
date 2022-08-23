@@ -43,3 +43,11 @@ Single line comments can also be made with the // delimiter:
 The excerpts above were extracted from the documentation of Free Pascal, link below
 https://www.freepascal.org/docs-html/ref/refse2.html
 
+
+# Pascal compiler
+
+https://www.freepascal.org/
+
+https://sourceforge.net/projects/freepascal/files/Win32/3.2.2/fpc-3.2.2.i386-win32.cross.x86_64-win64.exe/download
+
+https://www.lazarus-ide.org/

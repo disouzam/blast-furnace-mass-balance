@@ -14,9 +14,12 @@ e se incorpora ao gusa líquido e a reação de redução da wustita a ferro se 
 que a reação de redução seja:
 FeO +3,12CO = Fe + 2,12 CO + CO2.
 Após o uso do programa, pode-se armazenar os dados em um arquivo texto(Calculo_de_carga.doc);}
-uses crt;{Definição da biblioteca a ser utilizada}
 
-var  xt,xk,g,h,MT,po2,NCcarr,feg,PCcarr,CRmax,CRmin,Pcoq,PCqu,PCI,                   {Definição das variáveis utilizadas}
+{Definição da biblioteca a ser utilizada}
+uses crt;
+
+{Definição das variáveis utilizadas}
+var  xt,xk,g,h,MT,po2,NCcarr,feg,PCcarr,CRmax,CRmin,Pcoq,PCqu,PCI,                   
      TeorCM,CF,PCIesc,PCIrat,PCIratmx,FR,Vo2,Vsopro,Vazao,TeorMM,MTC,CRate:real;
        t,cont,y,z:integer;
        s,resp,c,i,opcao:char;
