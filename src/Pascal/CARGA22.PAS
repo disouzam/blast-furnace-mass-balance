@@ -1,22 +1,22 @@
 program calculo_de_carga;
-{Este programa realiza um cálculo de carga simplificado para um alto forno, feito com base nos exercícios feitos 
-em sala de aula e, também, com base nos conhecimentos do grupo, tanto na montagem da linha de pensamento com na 
+{Este programa realiza um cÃ¡lculo de carga simplificado para um alto forno, feito com base nos exercÃ­cios feitos 
+em sala de aula e, tambÃ©m, com base nos conhecimentos do grupo, tanto na montagem da linha de pensamento com na 
 montagem do porgrama usando a linguagem Pascal.
-O programa considera o carregamento de até 3 tipos de minérios (estes podem ser os minérios, pelotas e sínteres).
-A partir de uma proporção em peso fixa, a carga de minérios é calculada. Calcula-se também o teor médio de ferro
+O programa considera o carregamento de atÃ© 3 tipos de minÃ©rios (estes podem ser os minÃ©rios, pelotas e sÃ­nteres).
+A partir de uma proporÃ§Ã£o em peso fixa, a carga de minÃ©rios Ã© calculada. Calcula-se tambÃ©m o teor mÃ©dio de ferro
 contido nela.
-A carga de coque é feita de forma similar: estipula-se a proporção dos diferentes tipos de coque( no máximo 3)
+A carga de coque Ã© feita de forma similar: estipula-se a proporÃ§Ã£o dos diferentes tipos de coque( no mÃ¡ximo 3)
 e calcula-se a massa de cada um deles para atender ao processo.
-Pode-se calcular a quantidade de PCI máxima a se injetar, e a partir dela, estipular um valor a ser usado.
-O sopro pode ser calculado, considerando-se a necessidade de oxigênio e o seu teor no sopro.
-Os cálculos são feitos com base nas considerações de que todo o ferro carregado é reduzido 
-e se incorpora ao gusa líquido e a reação de redução da wustita a ferro se processam integralmente a 900ºC, de forma 
-que a reação de redução seja:
+Pode-se calcular a quantidade de PCI mÃ¡xima a se injetar, e a partir dela, estipular um valor a ser usado.
+O sopro pode ser calculado, considerando-se a necessidade de oxigÃªnio e o seu teor no sopro.
+Os cÃ¡lculos sÃ£o feitos com base nas consideraÃ§Ãµes de que todo o ferro carregado Ã© reduzido 
+e se incorpora ao gusa lÃ­quido e a reaÃ§Ã£o de reduÃ§Ã£o da wustita a ferro se processam integralmente a 900 Â°C, de forma 
+que a reaÃ§Ã£o de reduÃ§Ã£o seja:
 FeO +3,12CO = Fe + 2,12 CO + CO2.
-Após o uso do programa, pode-se armazenar os dados em um arquivo texto(Cálculo_de_carga.doc);}
-uses crt;{Definição da biblioteca a ser utilizada}
+ApÃ³s o uso do programa, pode-se armazenar os dados em um arquivo texto(Calculo_de_carga.doc);}
+uses crt;{DefiniÃ§Ã£o da biblioteca a ser utilizada}
 
-var  xt,xk,g,h,MT,po2,NCcarr,feg,PCcarr,CRmax,CRmin,Pcoq,PCqu,PCI,                   {Definição das variáveis utilizadas}
+var  xt,xk,g,h,MT,po2,NCcarr,feg,PCcarr,CRmax,CRmin,Pcoq,PCqu,PCI,                   {DefiniÃ§Ã£o das variÃ¡veis utilizadas}
      TeorCM,CF,PCIesc,PCIrat,PCIratmx,FR,Vo2,Vsopro,Vazao,TeorMM,MTC,CRate:real;
        t,cont,y,z:integer;
        s,resp,c,i,opcao:char;
@@ -30,7 +30,7 @@ var  xt,xk,g,h,MT,po2,NCcarr,feg,PCcarr,CRmax,CRmin,Pcoq,PCqu,PCI,              
 
 begin{1}
  clrscr;
- textmode( 1 ); {Modo de apresentação}
+ textmode( 1 ); {Modo de apresentaÃ§Ã£o}
  TextColor( 15 ); {Cor do texto}
  gotoxy(13,10);
  writeln('CALCULO DE CARGA');
@@ -38,7 +38,7 @@ begin{1}
  write('Pressione qualquer tecla para continuar.');
  readkey;
  cont:=1;
- while cont <=40 do {Loop para funções gráficas de apresentação do programa}
+ while cont <=40 do {Loop para funÃ§Ãµes grÃ¡ficas de apresentaÃ§Ã£o do programa}
   begin
    write(#220);
    cont:=cont+1;
@@ -47,41 +47,41 @@ begin{1}
   Textmode(3);
   TextColor(15);
   resp:= 's';
-  while resp ='s' do {Loop principal do programa. Através dele pode-se executar o programa diversas vezes}
+  while resp ='s' do {Loop principal do programa. AtravÃ©s dele pode-se executar o programa diversas vezes}
    begin
-    {Inicialização das variáveis, evitando-se erros nas equações}
+    {InicializaÃ§Ã£o das variÃ¡veis, evitando-se erros nas equaÃ§Ãµes}
     xt:=0; {Massa de gusa (em toneladas)} 
     xk:=0; {Massa de gusa (em kilogramas)} 
     g:=0; {Teor de ferro no gusa(%)}
     h:=0; {Teor de carbono no gusa(%)}
-    MT:=0; {Massa total de minérios carregados} 
-    po2:=0; {Percentual de oxigênio no ar soprado}
-    NCcarr:=0; {Número de kmols de carbono necessário para ser carregado}
+    MT:=0; {Massa total de minÃ©rios carregados} 
+    po2:=0; {Percentual de oxigÃªnio no ar soprado}
+    NCcarr:=0; {NÃºmero de kmols de carbono necessÃ¡rio para ser carregado}
     PCcarr:=0; {Massa de carbono a ser carregado}
-    CRmax:=0; {Coke rate máximo(em kg/ton de gusa)}
-    CRmin:=0; {Coke rate mínimo(em kg/ton de gusa)}
-    Pcoq:=0; {Massa de coque (sem o uso de PCI)-para o cálculo do Coke rate máximo}
+    CRmax:=0; {Coke rate mÃ¡ximo(em kg/ton de gusa)}
+    CRmin:=0; {Coke rate mÃ­nimo(em kg/ton de gusa)}
+    Pcoq:=0; {Massa de coque (sem o uso de PCI)-para o cÃ¡lculo do Coke rate mÃ¡ximo}
     PCqu:=0; {Massa de carbono queimado}
-    PCI:=0; {Massa máxima de PCI que pode ser adicionada}
-    TeorCM:=0; {Teor médio de carbono fixo na carga de coques}
+    PCI:=0; {Massa mÃ¡xima de PCI que pode ser adicionada}
+    TeorCM:=0; {Teor mÃ©dio de carbono fixo na carga de coques}
     CF:=0; {Teor de carbono no PCI}
-    PCIesc:=0; {Massa de PCI, inferior à máxima massa permitida}
+    PCIesc:=0; {Massa de PCI, inferior Ã  mÃ¡xima massa permitida}
     PCIrat:=0; {PCI rate (em kg/ton de gusa)}
-    PCIratmx:=0; {PCI rate máximo (em kg/ton de gusa}
+    PCIratmx:=0; {PCI rate mÃ¡ximo (em kg/ton de gusa}
     FR:=0; {Fuel rate (em kg/ton de gusa)} 
-    Vo2:=0; {Volume de oxigênio consumido(em Nm3/dia)}
+    Vo2:=0; {Volume de oxigÃªnio consumido(em Nm3/dia)}
     Vsopro:=0; {Volume de sopro {em Nm3/dia}
-    Vazao:=0; {Vazão do sopro(em Nm3/min)}
-    TeorMM:=0; {Teor médio de ferro na carga dos minérios}
+    Vazao:=0; {VazÃ£o do sopro(em Nm3/min)}
+    TeorMM:=0; {Teor mÃ©dio de ferro na carga dos minÃ©rios}
     MTC:=0; {Massa total de coque carregado}
     CRate:=0; {Coque rate (em kg/ton de gusa)}
     cont:=1;
-    while cont <=3 do { Loop´para inicialização dos vetores criados}
+    while cont <=3 do { Loop para inicializaÃ§Ã£o dos vetores criados}
      begin
-      PropM[cont]:=0;{Proporção do minério (1,2 ou 3) na carga de minérios}
-      TeorM[cont]:=0; {Teor de ferro no minério (1,2 ou 3)}
-      MasM[cont]:=0; {Massa do minério (1,2 ou 3) carregado}
-      PropC[cont]:=0; {Proporção do coque (1,2 ou 3)} 
+      PropM[cont]:=0;{ProporÃ§Ã£o do minÃ©rio (1,2 ou 3) na carga de minÃ©rios}
+      TeorM[cont]:=0; {Teor de ferro no minÃ©rio (1,2 ou 3)}
+      MasM[cont]:=0; {Massa do minÃ©rio (1,2 ou 3) carregado}
+      PropC[cont]:=0; {ProporÃ§Ã£o do coque (1,2 ou 3)} 
       TeorC[cont]:=0; {Teor de carbono fixo no coque (1,2 ou 3)}
       MasC[cont]:=0; {Massa do coque (1,2 ou 3) carregado} 
       cont:=cont+1;
@@ -89,14 +89,14 @@ begin{1}
     clrscr;
     writeln;
     textcolor(12);
-    writeln('                   QUANTIDADE E COMPOSI€AO DO GUSA'); {Início da entrada de dados}
+    writeln('                   QUANTIDADE E COMPOSIÃ‡AO DO GUSA'); {InÃ­cio da entrada de dados}
     textcolor(15);
     writeln;
     writeln;
     Write('Informe a quantidade de gusa que deve ser produzido (em toneladas):');
     readln(xt);{ Leitura da massa de gusa em toneladas}
     writeln;
-    repeat {Loop de detecção de erros na execução}
+    repeat {Loop de detecÃ§Ã£o de erros na execuÃ§Ã£o}
      writeln('Informe o teor de ferro e carbono no gusa que ser',#160,' produzido.');
      write('Teor de ferro:');
      readln(g); {Leitura do teor de ferro no gusa} 
@@ -106,7 +106,7 @@ begin{1}
      If g+h>100 then 
       begin
        textcolor(11);
-       writeln('Dados incorretos!'); {Aviso de erro na digitação dos teores de ferro e carbono}
+       writeln('Dados incorretos!'); {Aviso de erro na digitaÃ§Ã£o dos teores de ferro e carbono}
        textcolor(15);
       end;
     until g+h<=100;
@@ -117,13 +117,13 @@ begin{1}
     writeln;
     writeln;
     repeat
-     Writeln('Quantos tipos de min‚rios serao utilizados(m',#160,'ximo de 3)?');
-     readln(t); {Leitura do número de minérios (ou similares) a serem utilizados}
+     Writeln('Quantos tipos de minÃ©rios serao utilizados(m',#160,'ximo de 3)?');
+     readln(t); {Leitura do nÃºmero de minÃ©rios (ou similares) a serem utilizados}
      writeln;
      if t > 3 then  
       begin
        textcolor(11);
-       writeln('Dado incorreto!'); {Aviso de erro na digitação do número de minérios}
+       writeln('Dado incorreto!'); {Aviso de erro na digitaÃ§Ã£o do nÃºmero de minÃ©rios}
        textcolor(15);
       end;
     until t<=3;
@@ -131,27 +131,27 @@ begin{1}
     writeln;
     textcolor(12);
     writeln;
-    writeln('                 PROPOR€AO DE MINERIO E TEOR DE FERRO');
+    writeln('                 PROPORÃ‡ÃƒO DE MINERIO E TEOR DE FERRO');
     textcolor(15);
     writeln;
     writeln;
-    repeat   {Loop de leitura da proporção do minério na carga e do teor de ferro nele}
+    repeat   {Loop de leitura da proporÃ§Ã£o do minÃ©rio na carga e do teor de ferro nele}
      if t=1 then
       begin
        writeln('Informe o teor de ferro no minerio.');
-       readln(TeorM[1]);{Leitura do teor de ferro, no caso de um só minério}
+       readln(TeorM[1]);{Leitura do teor de ferro, no caso de um sÃ³ minÃ©rio}
        PropM[1]:=100;
       end
      else
       begin
        cont:=1;
-       while cont<=t do {Leitura da proporção e do teor de ferro para cada minério, para o caso de mais de um minério}
+       while cont<=t do {Leitura da proporÃ§Ã£o e do teor de ferro para cada minÃ©rio, para o caso de mais de um minÃ©rio}
         begin
          writeln('Informe a proporcao do minerio ',cont,' e o teor de ferro nele.');
          write('Proporcao:');
-         readln(PropM[cont]); {Leitura da proporção para cada minério}
+         readln(PropM[cont]); {Leitura da proporÃ§Ã£o para cada minÃ©rio}
          write('Teor de ferro:');
-         readln(TeorM[cont]); {Leitura do teor de ferro para cada minério}
+         readln(TeorM[cont]); {Leitura do teor de ferro para cada minÃ©rio}
          cont:=cont+1;
          writeln;
         end;
@@ -159,7 +159,7 @@ begin{1}
      if PropM[1]+PropM[2]+PropM[3] <> 100 then 
       begin
        textcolor(11);
-       writeln('Dados incorretos!'); {Aviso de erro na digitação das proporções}
+       writeln('Dados incorretos!'); {Aviso de erro na digitaÃ§Ã£o das proporÃ§Ãµes}
        textcolor(15);
       end;
     until PropM[1]+PropM[2]+PropM[3]=100;
@@ -172,36 +172,36 @@ begin{1}
     writeln;
     repeat
      writeln('Quantos tipos de coque serao utilizados(m',#160,'ximo de 3)?');
-     readln(y); {Leitura do número de coques a serem utilizados}
+     readln(y); {Leitura do nÃºmero de coques a serem utilizados}
      writeln;
      if y > 3 then
       begin
        textcolor(11);
-       writeln('Dado incorreto!'); {Aviso de erro na digitação do número de coques}
+       writeln('Dado incorreto!'); {Aviso de erro na digitaÃ§Ã£o do nÃºmero de coques}
        textcolor(15);
       end;
     until y<=3;
     writeln;
     writeln;
     textcolor(12);
-    writeln('                          PROPOR€AO E TEOR DE CARBONO');
+    writeln('                          PROPORÃ‡ÃƒO E TEOR DE CARBONO');
     textcolor(15);
     writeln;
     repeat
      if y=1 then
       begin
        writeln('Informe o teor de carbono no coque.');
-       readln(TeorC[1]); {Leitura do teor de  carbono fixo, no caso de um só coque}
+       readln(TeorC[1]); {Leitura do teor de  carbono fixo, no caso de um sÃ³ coque}
        PropC[1]:=100;
       end
      else
       begin
        cont:=1;
-       while cont <=y do {Leitura da proporção e do teor de carbono para cada coque, para o caso de mais de um coque}
+       while cont <=y do {Leitura da proporÃ§Ã£o e do teor de carbono para cada coque, para o caso de mais de um coque}
         begin
          writeln('Informe a propor',#135,'ao do coque ',cont,' na mistura e teor de carbono fixo nele.');
          write('Propor',#135,'ao:');
-         readln(PropC[cont]); {Leitura da proporção para cada coque}
+         readln(PropC[cont]); {Leitura da proporÃ§Ã£o para cada coque}
          write('Teor de carbono:');
          readln(TeorC[cont]); {Leitura do teor de carbono para cada coque}
          cont:=cont+1;
@@ -211,31 +211,31 @@ begin{1}
     if PropC[1]+PropC[2]+PropC[3] <> 100 then
      begin
       textcolor(11);
-      writeln('Dados incorretos!');  {Aviso de erro na digitação das proporções}
+      writeln('Dados incorretos!');  {Aviso de erro na digitaÃ§Ã£o das proporÃ§Ãµes}
       textcolor(15);
      end;
     until PropC[1]+PropC[2]+PropC[3]=100;
     clrscr;
-    xk:= xt*1000;{Conversão de unidades para a massa de gusa: de toneladas para kilogramas}
-    feg:= (xk*g)/(100);{Cálculo da massa de ferro no gusa (feg),em kilogramas) }
-    MT:= (feg*10000)/(TeorM[1]*PropM[1]+TeorM[2]*PropM[2]+TeorM[3]*PropM[3]); {Cálculo da massa total
-     de minérios carregados (em kilogramas)}
+    xk:= xt*1000;{ConversÃ£o de unidades para a massa de gusa: de toneladas para kilogramas}
+    feg:= (xk*g)/(100);{CÃ¡lculo da massa de ferro no gusa (feg),em kilogramas) }
+    MT:= (feg*10000)/(TeorM[1]*PropM[1]+TeorM[2]*PropM[2]+TeorM[3]*PropM[3]); {CÃ¡lculo da massa total
+     de minÃ©rios carregados (em kilogramas)}
     cont:=1;
     while cont<= 3 do
      begin
-      MasM[cont]:= (PropM[cont]*MT/100);{Cálculo da massa individual de cada minério ( em kilogramas)}
-      MasM[cont]:=MasM[cont]/1000;{Conversão da massa individual de cada minério de kilogramas para toneladas} 
+      MasM[cont]:= (PropM[cont]*MT/100);{CÃ¡lculo da massa individual de cada minÃ©rio ( em kilogramas)}
+      MasM[cont]:=MasM[cont]/1000;{ConversÃ£o da massa individual de cada minÃ©rio de kilogramas para toneladas} 
       cont:= cont+1;
      end;
     cont:=1;
-    NCcarr:=(2.12*feg)/(56)+(xk*h)/(1200); {Cálculo do número de kmols de carbono a serem carregados}
-    PCcarr:=NCcarr*12; {Cálculo da massa de carbono a ser carregada (em kilogramas)}
-    TeorCM:=(TeorC[1]*PropC[1]+TeorC[2]*PropC[2]+TeorC[3]*PropC[3])/100; {Cálculo do teor
-    médio de carbono fixo na mistura de coques}
+    NCcarr:=(2.12*feg)/(56)+(xk*h)/(1200); {CÃ¡lculo do nÃºmero de kmols de carbono a serem carregados}
+    PCcarr:=NCcarr*12; {CÃ¡lculo da massa de carbono a ser carregada (em kilogramas)}
+    TeorCM:=(TeorC[1]*PropC[1]+TeorC[2]*PropC[2]+TeorC[3]*PropC[3])/100; {CÃ¡lculo do teor
+    mÃ©dio de carbono fixo na mistura de coques}
     Pcoq:= PCcarr/(TeorCM/100);{peso de coque sem uso de PCI }
     cont:=1;
-    CRmax:=Pcoq/xt; {Cálculo do coke rate máximo (em kilogramas/ ton de gusa)}
-    PCqu:=(0.02*feg)*(12); {Cálculo da massa de carbono queimado (em kilogramas)}
+    CRmax:=Pcoq/xt; {CÃ¡lculo do coke rate mÃ¡ximo (em kilogramas/ ton de gusa)}
+    PCqu:=(0.02*feg)*(12); {CÃ¡lculo da massa de carbono queimado (em kilogramas)}
     writeln;
     textcolor(12);
     Writeln('                             QUANTIDADE DE PCI');
@@ -244,35 +244,35 @@ begin{1}
     writeln;
     writeln('Informe o teor de carbono no PCI:');
     readln(CF); {Leitura do teor de carbono fixo no PCI}
-    PCI:=(PCqu)/(CF/100); {Cáculo da massa máxima de PCI permitida (em kilogramas)}
-    PCIratmx:= PCI/xt; {Cáculo do PCI rate máximo (em kilogramas/ton de gusa)}
-    PCI:=PCI/1000; {Conversão da massa máxima de PCI de kilogramas para toneladas}
+    PCI:=(PCqu)/(CF/100); {CÃ¡lculo da massa mÃ¡xima de PCI permitida (em kilogramas)}
+    PCIratmx:= PCI/xt; {CÃ¡lculo do PCI rate mÃ¡ximo (em kilogramas/ton de gusa)}
+    PCI:=PCI/1000; {ConversÃ£o da massa mÃ¡xima de PCI de kilogramas para toneladas}
     writeln;
     repeat
-     writeln('Vocˆ poder  usar no m ximo ',PCI:10:3,' toneladas de PCI.');
+     writeln('VocÃª poderÃ¡ usar no mÃ¡ximo ',PCI:10:3,' toneladas de PCI.');
      write('Informe um valor em toneladas:');
      readln(PCIesc); {Leitura da massa de PCI adicionada}
      writeln;
      if PCIesc > PCI then
      begin
       textcolor(11);
-      writeln('Dado incorreto!'); {Aviso de digitação de valor incorreto}
+      writeln('Dado incorreto!'); {Aviso de digitaÃ§Ã£o de valor incorreto}
       textcolor(15);
      end;
     until PCIesc <= PCI;
-    PCIesc:=PCIesc*1000; {Conversão da massa de PCI adicionada de toneladas para kilogramas}
+    PCIesc:=PCIesc*1000; {ConversÃ£o da massa de PCI adicionada de toneladas para kilogramas}
     MTC:=(24*feg-PCIesc*CF+feg*150/7+xk*h)/(TeorCM); {Massa total da mistura de coque a ser carregada (em kilogramas)}
     CRate:=MTC/xt; {Coke rate (em kilogramas/ton de gusa)}
-    CRmin:=(((feg/56+(xk*h)/1200)*12)*100)/(xt*TeorCM); {Cálculo do coke rate mínimo (em kilogrmas/ton de gusa)}
+    CRmin:=(((feg/56+(xk*h)/1200)*12)*100)/(xt*TeorCM); {CÃ¡lculo do coke rate mÃ­nimo (em kilogrmas/ton de gusa)}
     cont:=1;
     while cont<= 3 do
      begin
-      MasC[cont]:= (PropC[cont]*(MTC/1000))/(100); {Cálculo da massa ndividual de cada coque carregado (em toneladas)}
+      MasC[cont]:= (PropC[cont]*(MTC/1000))/(100); {CÃ¡lculo da massa ndividual de cada coque carregado (em toneladas)}
       cont:= cont+1;
      end;
-    PCIrat:=PCIesc/xt; {Cálculo do PCI rate (em kilogramas/ton de gusa)}
-    FR:= PCIrat + CRate; {Cálculo do Fuel rate (em kilogramas/ton de gusa)}
-    PCIesc:=PCIesc/1000; {Conversão da massa de PCI adicionada de kilogramas para toneladas}
+    PCIrat:=PCIesc/xt; {CÃ¡lculo do PCI rate (em kilogramas/ton de gusa)}
+    FR:= PCIrat + CRate; {CÃ¡lculo do Fuel rate (em kilogramas/ton de gusa)}
+    PCIesc:=PCIesc/1000; {ConversÃ£o da massa de PCI adicionada de kilogramas para toneladas}
     clrscr;
     textcolor(12);
     writeln('                            TEOR DE OXIGENIO NO SOPRO');
@@ -281,29 +281,29 @@ begin{1}
     writeln;
     writeln('Informe o teor de oxigenio no sopro.');
     write('Teor de oxigenio:'); 
-    readln(po2); {Leitura do teor de oxigênio no sopro}
-    Vo2:= 0.224*feg; {Cálculo do volume}{?????????????????????????????????????????????????????
+    readln(po2); {Leitura do teor de oxigÃªnio no sopro}
+    Vo2:= 0.224*feg; {CÃ¡lculo do volume}{?????????????????????????????????????????????????????
     ?????????????????????????????????????????????????????????}
-    Vsopro:= Vo2/(po2/100); {Cálculo do volume de ar a ser soprado (em Nm3)}
-    Vazao:= Vsopro/1440; {Cálculo da vazão de sopro (em Nm3/min)}
+    Vsopro:= Vo2/(po2/100); {CÃ¡lculo do volume de ar a ser soprado (em Nm3)}
+    Vazao:= Vsopro/1440; {CÃ¡lculo da vazÃ£o de sopro (em Nm3/min)}
     clrscr;
-    {Apresentação dos dados de entrada e dos resultados}
-      {Apresentação dos dados de entrada}
+    {ApresentaÃ§Ã£o dos dados de entrada e dos resultados}
+      {ApresentaÃ§Ã£o dos dados de entrada}
     cont:=1;
-    while cont<=80 do {Loop para funções gráficas de apresentação dos dados de entrada}
+    while cont<=80 do {Loop para funÃ§Ãµes grÃ¡ficas de apresentaÃ§Ã£o dos dados de entrada}
      begin
       write(#205);
       cont:=cont+1;
      end;
     cont:=1;
-    while cont<=80 do {Loop para funções gráficas de apresentação dos dados de entrada}
+    while cont<=80 do {Loop para funÃ§Ãµes grÃ¡ficas de apresentaÃ§Ã£o dos dados de entrada}
      begin
       gotoxy(cont,3);
       write(#205);
       cont:=cont+1;
      end;
     cont:=1;
-    while cont<=79 do {Loop para funções gráficas de apresentação dos dados de entrada}
+    while cont<=79 do {Loop para funÃ§Ãµes grÃ¡ficas de apresentaÃ§Ã£o dos dados de entrada}
     begin
      gotoxy(cont,25);
      write(#205);
@@ -315,7 +315,7 @@ begin{1}
     gotoxy(1,4);
     write('------------------------------------GUSA:---------------------------------------');
     textcolor(15);
-    writeln('Gusa:',xt:7:2,' ton (',g:5:2,' % de Fe,',h:5:2,' % de C.).'); {Apresentação da massa de gusa produzida 
+    writeln('Gusa:',xt:7:2,' ton (',g:5:2,' % de Fe,',h:5:2,' % de C.).'); {ApresentaÃ§Ã£o da massa de gusa produzida 
     e dos teores presentes de ferro e carbono} 
     textcolor(12);
     writeln;
@@ -325,11 +325,11 @@ begin{1}
     cont:=1;
     while cont <=t do
      begin
-      writeln('Minerio ',cont,'         ',PropM[cont]:7:2,'              ',TeorM[cont]:7:2);  {Apresentação da proporção de
-      cada minério na carga e do respectivo teor de ferro}
+      writeln('Minerio ',cont,'         ',PropM[cont]:7:2,'              ',TeorM[cont]:7:2);  {ApresentaÃ§Ã£o da proporÃ§Ã£o de
+      cada minÃ©rio na carga e do respectivo teor de ferro}
       cont:=cont+1;
     end;
-    writeln('                     TEOR MEDIO DE FERRO: ',TeorMM:3:2,'%.'); {Apresentação do teor médio de ferro na carga}
+    writeln('                     TEOR MEDIO DE FERRO: ',TeorMM:3:2,'%.'); {ApresentaÃ§Ã£o do teor mÃ©dio de ferro na carga}
     textcolor(12);
     writeln;
     writeln('-----------------------------------COQUE:--------------------------------------');
@@ -338,35 +338,35 @@ begin{1}
     cont:=1;
     while cont <=y do
      begin
-      writeln('Coque ',cont,'           ',PropC[cont]:7:2,'              ',TeorC[cont]:7:2); {Apresentação da proporção de
+      writeln('Coque ',cont,'           ',PropC[cont]:7:2,'              ',TeorC[cont]:7:2); {ApresentaÃ§Ã£o da proporÃ§Ã£o de
        cada coque na carga e do respectivo teor de carbono fixo}
       cont:=cont+1;
      end;
-    writeln('                   TEOR MEDIO DE CARBONO: ',TeorCM:3:2,'%.'); {Apresentação do
-    teor médio de carbono fixo na carga}
+    writeln('                   TEOR MEDIO DE CARBONO: ',TeorCM:3:2,'%.'); {ApresentaÃ§Ã£o do
+    teor mÃ©dio de carbono fixo na carga}
     writeln;
-    writeln('TEOR DE CARBONO NO PCI: ',CF:3:2,'%.'); {Apresentação do teor de carbono fixo do PCI}
-    writeln('TEOR DE OXIGENIO NO SOPRO: ',po2:3:2,'%.'); {Apresentação do teor de oxigênio no sopro}
-    writeln('QUANTIDADE DE PCI ADICIONADA: ',PCIesc:7:2,' ton.'); {Apresentação da quantidade de PCI adicionada}
+    writeln('TEOR DE CARBONO NO PCI: ',CF:3:2,'%.'); {ApresentaÃ§Ã£o do teor de carbono fixo do PCI}
+    writeln('TEOR DE OXIGENIO NO SOPRO: ',po2:3:2,'%.'); {ApresentaÃ§Ã£o do teor de oxigÃªnio no sopro}
+    writeln('QUANTIDADE DE PCI ADICIONADA: ',PCIesc:7:2,' ton.'); {ApresentaÃ§Ã£o da quantidade de PCI adicionada}
     gotoxy(80,25);
     readkey;
     clrscr;
-     {Apresentação dos resultados}
+     {ApresentaÃ§Ã£o dos resultados}
     cont:=1;
-    while cont<=80 do {Loop para funções gráficas de apresentação dos resultados}
+    while cont<=80 do {Loop para funÃ§Ãµes grÃ¡ficas de apresentaÃ§Ã£o dos resultados}
      begin
       write(#205);
       cont:=cont+1;
      end;
     cont:=1;
-    while cont<=80 do {Loop para funções gráficas de apresentação dos resultados}
+    while cont<=80 do {Loop para funÃ§Ãµes grÃ¡ficas de apresentaÃ§Ã£o dos resultados}
      begin
       gotoxy(cont,3);
       write(#205);
       cont:=cont+1;
      end;
     cont:=1;
-    while cont<=80 do {Loop para funções gráficas de apresentação dos resultados}
+    while cont<=80 do {Loop para funÃ§Ãµes grÃ¡ficas de apresentaÃ§Ã£o dos resultados}
      begin
       gotoxy(cont,24);
       write(#205);
@@ -380,17 +380,17 @@ begin{1}
     cont:=1;
     while cont<= t do
      begin
-        writeln('Massa de minerio ',cont,': ',MasM[cont]:7:2,' ton.'); {Apresentação da massa de cada minério carregado}
+        writeln('Massa de minerio ',cont,': ',MasM[cont]:7:2,' ton.'); {ApresentaÃ§Ã£o da massa de cada minÃ©rio carregado}
         cont:=cont+1;
      end;
-    MT:=MT/1000; {Conversão da massa total de minério carregado de kilogramas para toneladas}
+    MT:=MT/1000; {ConversÃ£o da massa total de minÃ©rio carregado de kilogramas para toneladas}
     textcolor(12);
-    writeln('TOTAL CARREGADO: ',MT:7:2,' toneladas por dia.'); {Massa total de minério carregado diariamente}
+    writeln('TOTAL CARREGADO: ',MT:7:2,' toneladas por dia.'); {Massa total de minÃ©rio carregado diariamente}
     textcolor(15);
     cont:=1;
     while cont<= y do
      begin
-       writeln('Massa do coque ',cont,': ',MasC[cont]:7:2,' ton.'); {Apresentação da massa de cada coque carregado}
+       writeln('Massa do coque ',cont,': ',MasC[cont]:7:2,' ton.'); {ApresentaÃ§Ã£o da massa de cada coque carregado}
        cont:=cont+1;
      end;
 {      end;}{??????????????????????????????????????????????????????????????
@@ -401,29 +401,29 @@ begin{1}
     textcolor(15);
     textcolor(12);
     textcolor(12);
-    writeln('Coke Rate: ', CRate:7:2,' kg/ton de gusa'); {Apresentação do Coke rate obtido}
+    writeln('Coke Rate: ', CRate:7:2,' kg/ton de gusa'); {ApresentaÃ§Ã£o do Coke rate obtido}
     textcolor(15);
-    writeln('Coke Rate maximo: ',CRmax:7:2,' kg/ton de gusa'); {Apresentação do Coke rate máximo (em uma operação ALL COKE)}
-    writeln('Coke Rate minimo: ',CRmin:7:2,' kg/ton de gusa'); {Apresentação do Coke rate teórico mínimo 
-    (através da utilização da quantidade máxima de PCI)}
+    writeln('Coke Rate maximo: ',CRmax:7:2,' kg/ton de gusa'); {ApresentaÃ§Ã£o do Coke rate mÃ¡ximo (em uma operaÃ§Ã£o ALL COKE)}
+    writeln('Coke Rate minimo: ',CRmin:7:2,' kg/ton de gusa'); {ApresentaÃ§Ã£o do Coke rate teÃ³rico mÃ­nimo 
+    (atravÃ©s da utilizaÃ§Ã£o da quantidade mÃ¡xima de PCI)}
     writeln;
     textcolor(12);
-    writeln('Massa do PCI: ',PCIesc:5:2,' ton'); {Apresentação da massa de PCI adicionada}
-    writeln('PCI Rate: ',PCIrat :7:2,' kg/ton de gusa'); {Apresentação do PCI rate obtido}
+    writeln('Massa do PCI: ',PCIesc:5:2,' ton'); {ApresentaÃ§Ã£o da massa de PCI adicionada}
+    writeln('PCI Rate: ',PCIrat :7:2,' kg/ton de gusa'); {ApresentaÃ§Ã£o do PCI rate obtido}
     textcolor(15);
-    writeln('PCI Rate maximo: ',PCIratmx:5:2,' Kg/ton de gusa'); {Apresentação do PCI rate máximo permitido}
+    writeln('PCI Rate maximo: ',PCIratmx:5:2,' Kg/ton de gusa'); {ApresentaÃ§Ã£o do PCI rate mÃ¡ximo permitido}
     textcolor(12);
     writeln;
-    writeln('Fuel Rate: ',FR:7:2,' kg/ton de gusa'); {Apresentação do Fuel rate obtido}
+    writeln('Fuel Rate: ',FR:7:2,' kg/ton de gusa'); {ApresentaÃ§Ã£o do Fuel rate obtido}
     writeln;
     textcolor(15);
-    writeln('Volume de oxigenio consumido: ',Vo2:5:2,'Nm3/dia.'); {Apresentação do volume de oxigênio consumido}
+    writeln('Volume de oxigenio consumido: ',Vo2:5:2,'Nm3/dia.'); {ApresentaÃ§Ã£o do volume de oxigÃªnio consumido}
     textcolor(12);
-    writeln('Volume de sopro: ',Vazao:5:2,'Nm3/min'); {Apresentação do vazão de sopro}
+    writeln('Volume de sopro: ',Vazao:5:2,'Nm3/min'); {ApresentaÃ§Ã£o do vazÃ£o de sopro}
     textcolor(15);
     gotoxy(1,25);
-    write('Pressione [Enter] para ir a tela de gravacao de resultados.'); {Finalização da
-    apresentação dos dados de entrada e dos resultados}
+    write('Pressione [Enter] para ir a tela de gravacao de resultados.'); {FinalizaÃ§Ã£o da
+    apresentaÃ§Ã£o dos dados de entrada e dos resultados}
     readln;
     clrscr;
 
@@ -443,13 +443,13 @@ begin{1}
       writeln('Sera criado um arquivo chamado: Calculo.doc.');
       writeln;
       textcolor(12);
-      writeln('ATENCAO! Se esse arquivo j  havia sido criado anteriormente e voce escolher a');
-      Writeln('opcao (c)criar,na proxima pergunta, ele ser  sobrescrito e TODOS os dados serao');
+      writeln('ATENCAO! Se esse arquivo jÃ¡ havia sido criado anteriormente e voce escolher a');
+      Writeln('opcao (c)criar,na proxima pergunta, ele serÃ¡ sobrescrito e TODOS os dados serao');
       writeln('perdidos.');
       writeln;
       textcolor(15);
       writeln('Deseja criar um arquivo ou continuar inserindo dados no arquivo atual?');
-      writeln('Op‡oes:(c)criar (i)inserir):');
+      writeln('OpÃ§oes:(c)criar (i)inserir):');
       readln(opcao);
       if opcao = 'c' then
        begin
@@ -459,7 +459,7 @@ begin{1}
        begin
         append(Texto);
        end;
-       {Formatação da apresentação dos dados de entrada e dos resultados no arquivo texto}
+       {FormataÃ§Ã£o da apresentaÃ§Ã£o dos dados de entrada e dos resultados no arquivo texto}
       writeln(Texto,'                                DADOS DE ENTRADA');
       writeln(Texto);
       write(Texto,'------------------------------------GUSA:---------------------------------------');
@@ -556,11 +556,11 @@ begin{1}
     writeln;
     writeln;
     writeln('Deseja executar o programa novamente?');
-    write('Op‡oes: (s)sim (n)nao?');
+    write('Opï¿½oes: (s)sim (n)nao?');
     readln(resp);
    end;{end do while inicial}
    clrscr;
-   writeln('    Este programa foi elaborado por alunos do quarto per¡odo, do curso ');
+   writeln('    Este programa foi elaborado por alunos do quarto perÃ­odo, do curso ');
    writeln('    de Tecnologia em Metalurgia e Materiais - CEFET/ES, Abril de 2006.');
    gotoxy(1,5);
    textcolor(11);
