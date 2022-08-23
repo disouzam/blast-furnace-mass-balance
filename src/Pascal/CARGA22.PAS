@@ -73,7 +73,7 @@ begin{1}
     PCIratmx:=0; {PCI rate máximo (em kg/ton de gusa}
     FR:=0; {Fuel rate (em kg/ton de gusa)} 
     Vo2:=0; {Volume de oxigênio consumido(em Nm3/dia)}
-    Vsopro:=0; {Volume de sopro {em Nm3/dia}
+    Vsopro:=0; {Volume de sopro {em Nm3/dia}}
     Vazao:=0; {Vazão do sopro(em Nm3/min)}
     TeorMM:=0; {Teor médio de ferro na carga dos minérios}
     MTC:=0; {Massa total de coque carregado}
