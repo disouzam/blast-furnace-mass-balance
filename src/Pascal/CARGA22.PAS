@@ -369,9 +369,15 @@ begin
       cont:= cont+1;
     end;
 
-    PCIrat:=PCIesc/xt; {Cálculo do PCI rate (em kilogramas/ton de gusa)}
-    FR:= PCIrat + CRate; {Cálculo do Fuel rate (em kilogramas/ton de gusa)}
-    PCIesc:=PCIesc/1000; {Conversão da massa de PCI adicionada de kilogramas para toneladas}
+    {Cálculo do PCI rate (em kilogramas/ton de gusa)}
+    PCIrat:=PCIesc/xt; 
+
+    {Cálculo do Fuel rate (em kilogramas/ton de gusa)}
+    FR:= PCIrat + CRate; 
+
+    {Conversão da massa de PCI adicionada de kilogramas para toneladas}
+    PCIesc:=PCIesc/1000; 
+
     clrscr;
     textcolor(12);
     writeln('                            TEOR DE OXIGENIO NO SOPRO');
@@ -381,33 +387,49 @@ begin
     writeln('Informe o teor de oxigenio no sopro.');
     write('Teor de oxigenio:'); 
     readln(po2); {Leitura do teor de oxigênio no sopro}
-    Vo2:= 0.224*feg; {Cálculo do volume}{?????????????????????????????????????????????????????
-    ?????????????????????????????????????????????????????????}
-    Vsopro:= Vo2/(po2/100); {Cálculo do volume de ar a ser soprado (em Nm3)}
-    Vazao:= Vsopro/1440; {Cálculo da vazão de sopro (em Nm3/min)}
+    
+    {Cálculo do volume}
+    Vo2:= 0.224*feg; 
+
+    {Cálculo do volume de ar a ser soprado (em Nm3)}
+    Vsopro:= Vo2/(po2/100); 
+
+    {Cálculo da vazão de sopro (em Nm3/min)}
+    Vazao:= Vsopro/1440; 
+
     clrscr;
+    
     {Apresentação dos dados de entrada e dos resultados}
       {Apresentação dos dados de entrada}
     cont:=1;
-    while cont<=80 do {Loop para funções gráficas de apresentação dos dados de entrada}
-     begin
+
+    {Loop para funções gráficas de apresentação dos dados de entrada}
+    while cont<=80 do
+    begin
       write(#205);
       cont:=cont+1;
-     end;
+    end;
+
     cont:=1;
-    while cont<=80 do {Loop para funções gráficas de apresentação dos dados de entrada}
-     begin
+    
+    {Loop para funções gráficas de apresentação dos dados de entrada}
+    while cont<=80 do 
+    begin
       gotoxy(cont,3);
       write(#205);
       cont:=cont+1;
-     end;
-    cont:=1;
-    while cont<=79 do {Loop para funções gráficas de apresentação dos dados de entrada}
-    begin
-     gotoxy(cont,25);
-     write(#205);
-     cont:=cont+1;
     end;
+
+    cont:=1;
+    
+    {Loop para funções gráficas de apresentação dos dados de entrada}
+    while cont<=79 do 
+    begin
+      gotoxy(cont,25);
+      write(#205);
+      cont:=cont+1;
+    end;
+
     gotoxy(35,2);
     textcolor(12);
     writeln('DADOS DE ENTRADA');
@@ -418,29 +440,36 @@ begin
     e dos teores presentes de ferro e carbono} 
     textcolor(12);
     writeln;
+
     writeln('----------------------------------MINERIOS:------------------------------------');
     textcolor(15);
     writeln('Minerio           Proporcao(%)           Teor(%)');
     cont:=1;
+    
     while cont <=t do
-     begin
+    begin
       writeln('Minerio ',cont,'         ',PropM[cont]:7:2,'              ',TeorM[cont]:7:2);  {Apresentação da proporção de
       cada minério na carga e do respectivo teor de ferro}
       cont:=cont+1;
     end;
+
     writeln('                     TEOR MEDIO DE FERRO: ',TeorMM:3:2,'%.'); {Apresentação do teor médio de ferro na carga}
     textcolor(12);
+    
     writeln;
     writeln('-----------------------------------COQUE:--------------------------------------');
     textcolor(15);
     writeln('Coque             Proporcao(%)           Teor(%)');
+    
     cont:=1;
+    
     while cont <=y do
-     begin
+    begin
       writeln('Coque ',cont,'           ',PropC[cont]:7:2,'              ',TeorC[cont]:7:2); {Apresentação da proporção de
-       cada coque na carga e do respectivo teor de carbono fixo}
+      cada coque na carga e do respectivo teor de carbono fixo}
       cont:=cont+1;
-     end;
+    end;
+    
     writeln('                   TEOR MEDIO DE CARBONO: ',TeorCM:3:2,'%.'); {Apresentação do
     teor médio de carbono fixo na carga}
     writeln;
@@ -450,52 +479,69 @@ begin
     gotoxy(80,25);
     readkey;
     clrscr;
-     {Apresentação dos resultados}
+    
+    {Apresentação dos resultados}
     cont:=1;
-    while cont<=80 do {Loop para funções gráficas de apresentação dos resultados}
-     begin
+    
+    {Loop para funções gráficas de apresentação dos resultados}
+    while cont<=80 do
+    begin
       write(#205);
       cont:=cont+1;
-     end;
+    end;
+
     cont:=1;
-    while cont<=80 do {Loop para funções gráficas de apresentação dos resultados}
-     begin
+    
+    {Loop para funções gráficas de apresentação dos resultados}
+    while cont<=80 do
+    begin
       gotoxy(cont,3);
       write(#205);
       cont:=cont+1;
-     end;
+    end;
+
     cont:=1;
-    while cont<=80 do {Loop para funções gráficas de apresentação dos resultados}
-     begin
+
+    {Loop para funções gráficas de apresentação dos resultados}
+    while cont<=80 do 
+    begin
       gotoxy(cont,24);
       write(#205);
       cont:=cont+1;
-     end;
+    end;
+
     gotoxy(35,2);
     textcolor(12);
     write('RESULTADOS');
     textcolor(15);
     gotoxy(1,4);
+    
     cont:=1;
+    
     while cont<= t do
-     begin
-        writeln('Massa de minerio ',cont,': ',MasM[cont]:7:2,' ton.'); {Apresentação da massa de cada minério carregado}
-        cont:=cont+1;
-     end;
-    MT:=MT/1000; {Conversão da massa total de minério carregado de kilogramas para toneladas}
+    begin
+      writeln('Massa de minerio ',cont,': ',MasM[cont]:7:2,' ton.'); {Apresentação da massa de cada minério carregado}
+      cont:=cont+1;
+    end;
+    
+    {Conversão da massa total de minério carregado de kilogramas para toneladas}
+    MT:=MT/1000;
+
     textcolor(12);
     writeln('TOTAL CARREGADO: ',MT:7:2,' toneladas por dia.'); {Massa total de minério carregado diariamente}
     textcolor(15);
     cont:=1;
+    
     while cont<= y do
-     begin
-       writeln('Massa do coque ',cont,': ',MasC[cont]:7:2,' ton.'); {Apresentação da massa de cada coque carregado}
-       cont:=cont+1;
-     end;
-{      end;}{??????????????????????????????????????????????????????????????
-????????????????????????????????????????????????????}
-     MTC:=MTC/1000;
-     textcolor(12);
+    begin
+      writeln('Massa do coque ',cont,': ',MasC[cont]:7:2,' ton.'); {Apresentação da massa de cada coque carregado}
+      cont:=cont+1;
+    end;
+
+{      end;}{??}
+
+    MTC:=MTC/1000;
+    textcolor(12);
     writeln('TOTAL CARREGADO: ',MTC:7:2,' toneladas por dia.'); {Massa total de coque carregado diariamente}
     textcolor(15);
     textcolor(12);
@@ -535,8 +581,9 @@ begin
     readln(resp);
     writeln;
     writeln;
+    
     if resp = 's' then
-     begin                                                               
+    begin
       assign(Texto,'Calculo.doc');
       opcao:='i';
       writeln('Sera criado um arquivo chamado: Calculo.doc.');
@@ -550,15 +597,17 @@ begin
       writeln('Deseja criar um arquivo ou continuar inserindo dados no arquivo atual?');
       writeln('Opçoes:(c)criar (i)inserir):');
       readln(opcao);
+
       if opcao = 'c' then
-       begin
+      begin
         rewrite(Texto);
-       end
+      end
       else
-       begin
+      begin
         append(Texto);
-       end;
-       {Formatação da apresentação dos dados de entrada e dos resultados no arquivo texto}
+      end;
+
+      {Formatação da apresentação dos dados de entrada e dos resultados no arquivo texto}
       writeln(Texto,'                                DADOS DE ENTRADA');
       writeln(Texto);
       write(Texto,'------------------------------------GUSA:---------------------------------------');
@@ -568,22 +617,26 @@ begin
       writeln(Texto);
       writeln(Texto,'               Minerio           Proporcao(%)           Teor(%)');
       cont:=1;
+
       while cont <=t do
-       begin
+      begin
         writeln(Texto,'               Minerio ',cont,'         ',PropM[cont]:7:2,'               ',TeorM[cont]:7:2);
         cont:=cont+1;
-       end;
+      end;
+
       writeln(Texto,'                                    TEOR MEDIO DE FERRO: ',TeorMM:3:2,'%.');
       writeln(Texto);
       writeln(Texto,'-----------------------------------COQUE:---------------------------------------');
       writeln(Texto);
       writeln(Texto,'               Coque             Proporcao(%)           Teor(%)');
+      
       cont:=1;
       while cont <=y do
-       begin
+      begin
         writeln(Texto,'               Coque ',cont,'           ',PropC[cont]:7:2,'                ',TeorC[cont]:7:2);
         cont:=cont+1;
-       end;
+      end;
+
       writeln(Texto,'                                  TEOR MEDIO DE CARBONO: ',TeorCM:3:2,'%.');
       writeln(Texto);
       writeln(Texto,'                           TEOR DE CARBONO NO PCI: ',CF:3:2,'%.');
@@ -597,22 +650,27 @@ begin
       writeln(Texto,'                               RESULTADOS');
       writeln(Texto);
       writeln(Texto,'--------------------------------MINERIOS----------------------------------------');
+      
       cont:=1;
       while cont<= t do
-       begin
+      begin
         writeln(Texto,'                        Massa de minerio ',cont,': ',MasM[cont]:7:2,' ton.');
         cont:=cont+1;
-       end;
+      end;
+
       writeln(Texto,'                        TOTAL CARREGADO: ',MT:7:2,' toneladas por dia.');
       writeln(Texto);
       writeln(Texto,'---------------------------------COQUE------------------------------------------');
+      
       cont:=1;
       while cont<= y do
-       begin
+      begin
         writeln(Texto,'                        Massa do coque ',cont,': ',MasC[cont]:7:2,' ton.');
         cont:=cont+1;
-       end;
+      end;
+
      {      end;}
+
       writeln(Texto,'                        TOTAL CARREGADO: ',MTC:7:2,' toneladas por dia.');
       writeln(Texto);
       writeln(Texto,'----------------------------------PCI-------------------------------------------');
@@ -635,55 +693,62 @@ begin
       writeln(Texto);
       writeln(Texto);
       writeln(Texto);
+
       cont:=2*t+2*y;
+
       while cont<12 do
-       begin
+      begin
         writeln(Texto);
         cont:=cont+1;
-       end;
+      end;
 
       if opcao='c'then
-       begin
+      begin
         writeln('O arquivo foi criado com sucesso!');
-       end
+      end
       else
-       begin
+      begin
         writeln('A insercao de dados foi feita com sucesso!');
-       end;
+      end;
+
       close(Texto);
-     end;
+    end;
+
     writeln;
     writeln;
     writeln('Deseja executar o programa novamente?');
-    write('Op�oes: (s)sim (n)nao?');
+    write('Opçoes: (s)sim (n)nao?');
     readln(resp);
-   end;{end do while inicial}
-   clrscr;
-   writeln('    Este programa foi elaborado por alunos do quarto período, do curso ');
-   writeln('    de Tecnologia em Metalurgia e Materiais - CEFET/ES, Abril de 2006.');
-   gotoxy(1,5);
-   textcolor(11);
-   writeln('                               ALUNOS:');
-   writeln;
-   writeln('                   Daniel Figueiredo Leao Oliveira');
-   writeln;
-   writeln('                        Dickson Alves de Souza');
-   writeln;
-   writeln('                           Eduardo Junca');
-   writeln;
-   writeln('                           Erasmo Schultz');
-   writeln;
-   writeln('                        Gustavo Coqui Barbosa');
-   writeln;
-   writeln('              Maria Maria Cordeiro Moreira Cunillo Zacchei');
-   writeln;
-   writeln('                         Victor Bridi Telles');
-   writeln;
-   writeln;
-   writeln('PROFESSOR: Marcelo Lucas Pereira Machado');
-   gotoxy(1,25);
-   textcolor(7);
-   textbackground(4);
-   write('Pressione qualquer tecla para sair do programa.');
-   readkey;
+  end;{end do while inicial}
+
+  clrscr;
+  writeln('    Este programa foi elaborado por alunos do quarto período, do curso ');
+  writeln('    de Tecnologia em Metalurgia e Materiais - CEFET/ES, Abril de 2006.');
+  gotoxy(1,5);
+  textcolor(11);
+  writeln('                               ALUNOS:');
+  writeln;
+  writeln('                   Daniel Figueiredo Leao Oliveira');
+  writeln;
+  writeln('                        Dickson Alves de Souza');
+  writeln;
+  writeln('                           Eduardo Junca');
+  writeln;
+  writeln('                           Erasmo Schultz');
+  writeln;
+  writeln('                        Gustavo Coqui Barbosa');
+  writeln;
+  writeln('              Maria Maria Cordeiro Moreira Cunillo Zacchei');
+  writeln;
+  writeln('                         Victor Bridi Telles');
+  writeln;
+  writeln;
+  writeln('PROFESSOR: Marcelo Lucas Pereira Machado');
+  gotoxy(1,25);
+  textcolor(7);
+  textbackground(4);
+
+  write('Pressione qualquer tecla para sair do programa.');
+  
+  readkey;
 end.
