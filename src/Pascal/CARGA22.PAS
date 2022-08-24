@@ -82,80 +82,80 @@ begin
 
     {Inicialização das variáveis, evitando-se erros nas equações}
     
-    xt:=0; 
     {Massa de gusa (em toneladas)} 
+    xt:=0; 
     
-    xk:=0;
     {Massa de gusa (em kilogramas)} 
+    xk:=0;
     
-    g:=0;
     {Teor de ferro no gusa(%)}
+    g:=0;
     
-    h:=0;
     {Teor de carbono no gusa(%)}
+    h:=0;
     
-    MT:=0;
     {Massa total de minérios carregados} 
+    MT:=0;
     
-    po2:=0;
     {Percentual de oxigênio no ar soprado}
+    po2:=0;
     
-    NCcarr:=0;
     {Número de kmols de carbono necessário para ser carregado}
+    NCcarr:=0;
     
-    PCcarr:=0;
     {Massa de carbono a ser carregado}
+    PCcarr:=0;
     
-    CRmax:=0;
     {Coke rate máximo(em kg/ton de gusa)}
+    CRmax:=0;
     
-    CRmin:=0;
     {Coke rate mínimo(em kg/ton de gusa)}
+    CRmin:=0;
     
-    Pcoq:=0;
     {Massa de coque (sem o uso de PCI)-para o cálculo do Coke rate máximo}
+    Pcoq:=0;
     
-    PCqu:=0;
     {Massa de carbono queimado}
+    PCqu:=0;
     
-    PCI:=0;
     {Massa máxima de PCI que pode ser adicionada}
+    PCI:=0;
     
-    TeorCM:=0;
     {Teor médio de carbono fixo na carga de coques}
+    TeorCM:=0;
     
-    CF:=0;
     {Teor de carbono no PCI}
+    CF:=0;
     
-    PCIesc:=0;
     {Massa de PCI, inferior à máxima massa permitida}
+    PCIesc:=0;
     
-    PCIrat:=0;
     {PCI rate (em kg/ton de gusa)}
+    PCIrat:=0;
     
-    PCIratmx:=0;
     {PCI rate máximo (em kg/ton de gusa}
+    PCIratmx:=0;
     
-    FR:=0;
     {Fuel rate (em kg/ton de gusa)} 
+    FR:=0;
     
-    Vo2:=0;
     {Volume de oxigênio consumido(em Nm3/dia)}
+    Vo2:=0;
     
-    Vsopro:=0;
     {Volume de sopro (em Nm3/dia)}
+    Vsopro:=0;
     
-    Vazao:=0;
     {Vazão do sopro(em Nm3/min)}
+    Vazao:=0;
     
-    TeorMM:=0;
     {Teor médio de ferro na carga dos minérios}
+    TeorMM:=0;
     
-    MTC:=0;
     {Massa total de coque carregado}
+    MTC:=0;
     
-    CRate:=0;
     {Coque rate (em kg/ton de gusa)}
+    CRate:=0;
 
     cont:=1;
 
