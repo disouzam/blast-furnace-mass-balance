@@ -66,11 +66,11 @@ begin
 
   {Loop para funções gráficas de apresentação do programa}
   while cont <=40 do 
-    begin
-      write(#220);
-      cont:=cont+1;
-      delay(40);
-    end;
+  begin
+    write(#220);
+    cont:=cont+1;
+    delay(40);
+  end;
 
   Textmode(3);
   TextColor(15);
@@ -107,16 +107,17 @@ begin
     MTC:=0; {Massa total de coque carregado}
     CRate:=0; {Coque rate (em kg/ton de gusa)}
     cont:=1;
+
     while cont <=3 do { Loop para inicialização dos vetores criados}
-      begin
-        PropM[cont]:=0;{Proporção do minério (1,2 ou 3) na carga de minérios}
-        TeorM[cont]:=0; {Teor de ferro no minério (1,2 ou 3)}
-        MasM[cont]:=0; {Massa do minério (1,2 ou 3) carregado}
-        PropC[cont]:=0; {Proporção do coque (1,2 ou 3)} 
-        TeorC[cont]:=0; {Teor de carbono fixo no coque (1,2 ou 3)}
-        MasC[cont]:=0; {Massa do coque (1,2 ou 3) carregado} 
-        cont:=cont+1;
-      end;
+    begin
+      PropM[cont]:=0;{Proporção do minério (1,2 ou 3) na carga de minérios}
+      TeorM[cont]:=0; {Teor de ferro no minério (1,2 ou 3)}
+      MasM[cont]:=0; {Massa do minério (1,2 ou 3) carregado}
+      PropC[cont]:=0; {Proporção do coque (1,2 ou 3)} 
+      TeorC[cont]:=0; {Teor de carbono fixo no coque (1,2 ou 3)}
+      MasC[cont]:=0; {Massa do coque (1,2 ou 3) carregado} 
+      cont:=cont+1;
+    end;
 
     clrscr;
     writeln;
@@ -145,12 +146,12 @@ begin
       readln(h);
       writeln;
       If g+h>100 then 
-        begin
-          textcolor(11);
-          {Aviso de erro na digitação dos teores de ferro e carbono}
-          writeln('Dados incorretos!'); 
-          textcolor(15);
-        end;
+      begin
+        textcolor(11);
+        {Aviso de erro na digitação dos teores de ferro e carbono}
+        writeln('Dados incorretos!'); 
+        textcolor(15);
+      end;
     until g+h<=100;
     
     clrscr;
@@ -166,12 +167,13 @@ begin
       writeln;
 
       if t > 3 then  
-        begin
-          textcolor(11);
-           {Aviso de erro na digitação do número de minérios}
-          writeln('Dado incorreto!');
-          textcolor(15);
-        end;
+      begin
+        textcolor(11);
+
+        {Aviso de erro na digitação do número de minérios}
+        writeln('Dado incorreto!');
+        textcolor(15);
+      end;
     until t<=3;
     writeln;
     writeln;
@@ -185,12 +187,12 @@ begin
     {Loop de leitura da proporção do minério na carga e do teor de ferro nele}
     repeat   
       if t=1 then
-        begin
-          writeln('Informe o teor de ferro no minerio.');
-          {Leitura do teor de ferro, no caso de um só minério}
-          readln(TeorM[1]);
-          PropM[1]:=100;
-        end
+      begin
+        writeln('Informe o teor de ferro no minerio.');
+        {Leitura do teor de ferro, no caso de um só minério}
+        readln(TeorM[1]);
+        PropM[1]:=100;
+      end
       else
       begin
         cont:=1;
@@ -228,12 +230,14 @@ begin
       writeln('Quantos tipos de coque serao utilizados(m',#160,'ximo de 3)?');
       readln(y); {Leitura do número de coques a serem utilizados}
       writeln;
+
       if y > 3 then
       begin
         textcolor(11);
         writeln('Dado incorreto!'); {Aviso de erro na digitação do número de coques}
         textcolor(15);
       end;
+
     until y<=3;
     writeln;
     writeln;
@@ -243,28 +247,28 @@ begin
     writeln;
     repeat
       if y=1 then
-        begin
-          writeln('Informe o teor de carbono no coque.');
-          readln(TeorC[1]); {Leitura do teor de  carbono fixo, no caso de um só coque}
-          PropC[1]:=100;
-        end
+      begin
+        writeln('Informe o teor de carbono no coque.');
+        readln(TeorC[1]); {Leitura do teor de  carbono fixo, no caso de um só coque}
+        PropC[1]:=100;
+      end
       else
-        begin
+      begin
         cont:=1;
 
         {Leitura da proporção e do teor de carbono para cada coque, para o caso de mais de um coque}
         while cont <=y do 
-          begin
-            writeln('Informe a propor',#135,'ao do coque ',cont,' na mistura e teor de carbono fixo nele.');
-            write('Propor',#135,'ao:');
-            readln(PropC[cont]); {Leitura da proporção para cada coque}
-            write('Teor de carbono:');
-            readln(TeorC[cont]); {Leitura do teor de carbono para cada coque}
-            cont:=cont+1;
-            writeln;
-          end;
+        begin
+          writeln('Informe a propor',#135,'ao do coque ',cont,' na mistura e teor de carbono fixo nele.');
+          write('Propor',#135,'ao:');
+          readln(PropC[cont]); {Leitura da proporção para cada coque}
+          write('Teor de carbono:');
+          readln(TeorC[cont]); {Leitura do teor de carbono para cada coque}
+          cont:=cont+1;
+          writeln;
         end;
-    if PropC[1]+PropC[2]+PropC[3] <> 100 then
+      end;
+      if PropC[1]+PropC[2]+PropC[3] <> 100 then
       begin
         textcolor(11);
         writeln('Dados incorretos!');  {Aviso de erro na digitação das proporções}
@@ -285,11 +289,11 @@ begin
     cont:=1;
 
     while cont<= 3 do
-      begin
-        MasM[cont]:= (PropM[cont]*MT/100);{Cálculo da massa individual de cada minério ( em kilogramas)}
-        MasM[cont]:=MasM[cont]/1000;{Conversão da massa individual de cada minério de kilogramas para toneladas} 
-        cont:= cont+1;
-      end;
+    begin
+      MasM[cont]:= (PropM[cont]*MT/100);{Cálculo da massa individual de cada minério ( em kilogramas)}
+      MasM[cont]:=MasM[cont]/1000;{Conversão da massa individual de cada minério de kilogramas para toneladas} 
+      cont:= cont+1;
+    end;
     cont:=1;
 
     {Cálculo do número de kmols de carbono a serem carregados}
@@ -300,10 +304,18 @@ begin
 
     {Cálculo do teor médio de carbono fixo na mistura de coques}
     TeorCM:=(TeorC[1]*PropC[1]+TeorC[2]*PropC[2]+TeorC[3]*PropC[3])/100; 
-    Pcoq:= PCcarr/(TeorCM/100);{peso de coque sem uso de PCI }
+
+    {peso de coque sem uso de PCI }
+    Pcoq:= PCcarr/(TeorCM/100);
+
     cont:=1;
-    CRmax:=Pcoq/xt; {Cálculo do coke rate máximo (em kilogramas/ ton de gusa)}
-    PCqu:=(0.02*feg)*(12); {Cálculo da massa de carbono queimado (em kilogramas)}
+    
+    {Cálculo do coke rate máximo (em kilogramas/ ton de gusa)}
+    CRmax:=Pcoq/xt; 
+    
+    {Cálculo da massa de carbono queimado (em kilogramas)}
+    PCqu:=(0.02*feg)*(12); 
+
     writeln;
     textcolor(12);
     Writeln('                             QUANTIDADE DE PCI');
@@ -312,32 +324,51 @@ begin
     writeln;
     writeln('Informe o teor de carbono no PCI:');
     readln(CF); {Leitura do teor de carbono fixo no PCI}
-    PCI:=(PCqu)/(CF/100); {Cálculo da massa máxima de PCI permitida (em kilogramas)}
-    PCIratmx:= PCI/xt; {Cálculo do PCI rate máximo (em kilogramas/ton de gusa)}
-    PCI:=PCI/1000; {Conversão da massa máxima de PCI de kilogramas para toneladas}
+    
+    {Cálculo da massa máxima de PCI permitida (em kilogramas)}
+    PCI:=(PCqu)/(CF/100); 
+    
+    {Cálculo do PCI rate máximo (em kilogramas/ton de gusa)}
+    PCIratmx:= PCI/xt; 
+    
+    {Conversão da massa máxima de PCI de kilogramas para toneladas}
+    PCI:=PCI/1000; 
     writeln;
     repeat
-     writeln('Você poderá usar no máximo ',PCI:10:3,' toneladas de PCI.');
-     write('Informe um valor em toneladas:');
-     readln(PCIesc); {Leitura da massa de PCI adicionada}
-     writeln;
-     if PCIesc > PCI then
-     begin
-      textcolor(11);
-      writeln('Dado incorreto!'); {Aviso de digitação de valor incorreto}
-      textcolor(15);
-     end;
+      writeln('Você poderá usar no máximo ',PCI:10:3,' toneladas de PCI.');
+      write('Informe um valor em toneladas:');
+      readln(PCIesc); {Leitura da massa de PCI adicionada}
+      writeln;
+
+      if PCIesc > PCI then
+      begin
+        textcolor(11);
+        writeln('Dado incorreto!'); {Aviso de digitação de valor incorreto}
+        textcolor(15);
+      end;
+
     until PCIesc <= PCI;
-    PCIesc:=PCIesc*1000; {Conversão da massa de PCI adicionada de toneladas para kilogramas}
-    MTC:=(24*feg-PCIesc*CF+feg*150/7+xk*h)/(TeorCM); {Massa total da mistura de coque a ser carregada (em kilogramas)}
-    CRate:=MTC/xt; {Coke rate (em kilogramas/ton de gusa)}
-    CRmin:=(((feg/56+(xk*h)/1200)*12)*100)/(xt*TeorCM); {Cálculo do coke rate mínimo (em kilogrmas/ton de gusa)}
+
+    {Conversão da massa de PCI adicionada de toneladas para kilogramas}
+    PCIesc:=PCIesc*1000; 
+
+    {Massa total da mistura de coque a ser carregada (em kilogramas)}
+    MTC:=(24*feg-PCIesc*CF+feg*150/7+xk*h)/(TeorCM); 
+    
+    {Coke rate (em kilogramas/ton de gusa)}
+    CRate:=MTC/xt; 
+    
+    {Cálculo do coke rate mínimo (em kilogrmas/ton de gusa)}
+    CRmin:=(((feg/56+(xk*h)/1200)*12)*100)/(xt*TeorCM); 
     cont:=1;
+
     while cont<= 3 do
-     begin
-      MasC[cont]:= (PropC[cont]*(MTC/1000))/(100); {Cálculo da massa ndividual de cada coque carregado (em toneladas)}
+    begin
+      {Cálculo da massa ndividual de cada coque carregado (em toneladas)}
+      MasC[cont]:= (PropC[cont]*(MTC/1000))/(100); 
       cont:= cont+1;
-     end;
+    end;
+
     PCIrat:=PCIesc/xt; {Cálculo do PCI rate (em kilogramas/ton de gusa)}
     FR:= PCIrat + CRate; {Cálculo do Fuel rate (em kilogramas/ton de gusa)}
     PCIesc:=PCIesc/1000; {Conversão da massa de PCI adicionada de kilogramas para toneladas}
