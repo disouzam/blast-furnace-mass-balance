@@ -159,14 +159,21 @@ begin
 
     cont:=1;
 
-    while cont <=3 do { Loop para inicialização dos vetores criados}
+    { Loop para inicialização dos vetores criados}
+    while cont <=3 do
     begin
-      PropM[cont]:=0;{Proporção do minério (1,2 ou 3) na carga de minérios}
+      PropM[cont]:=0; {Proporção do minério (1,2 ou 3) na carga de minérios}
+      
       TeorM[cont]:=0; {Teor de ferro no minério (1,2 ou 3)}
+      
       MasM[cont]:=0; {Massa do minério (1,2 ou 3) carregado}
+      
       PropC[cont]:=0; {Proporção do coque (1,2 ou 3)} 
+      
       TeorC[cont]:=0; {Teor de carbono fixo no coque (1,2 ou 3)}
+      
       MasC[cont]:=0; {Massa do coque (1,2 ou 3) carregado} 
+      
       cont:=cont+1;
     end;
 
