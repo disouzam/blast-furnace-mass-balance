@@ -225,9 +225,10 @@ begin
     writeln;
     writeln;
     repeat
-      Writeln('Quantos tipos de minérios serao utilizados(m',#160,'ximo de 3)?');
       {Leitura do número de minérios (ou similares) a serem utilizados}
+      Writeln('Quantos tipos de minérios serao utilizados(m',#160,'ximo de 3)?');
       readln(t); 
+
       writeln;
 
       if t > 3 then  
@@ -252,8 +253,9 @@ begin
     repeat   
       if t=1 then
       begin
-        writeln('Informe o teor de ferro no minerio.');
+        
         {Leitura do teor de ferro, no caso de um só minério}
+        writeln('Informe o teor de ferro no minerio.');
         readln(TeorM[1]);
         PropM[1]:=100;
       end
@@ -266,11 +268,13 @@ begin
         begin
           writeln('Informe a proporcao do minerio ',cont,' e o teor de ferro nele.');
           
+          {Leitura da proporção para cada minério}
           write('Proporcao:');
-          readln(PropM[cont]); {Leitura da proporção para cada minério}
+          readln(PropM[cont]); 
           
+          {Leitura do teor de ferro para cada minério}
           write('Teor de ferro:');
-          readln(TeorM[cont]); {Leitura do teor de ferro para cada minério}
+          readln(TeorM[cont]); 
           cont:=cont+1;
           writeln;
         end;
@@ -279,7 +283,10 @@ begin
       if PropM[1]+PropM[2]+PropM[3] <> 100 then 
       begin
         textcolor(11);
-        writeln('Dados incorretos!'); {Aviso de erro na digitação das proporções}
+        
+        {Aviso de erro na digitação das proporções}
+        writeln('Dados incorretos!'); 
+
         textcolor(15);
       end;
     until PropM[1]+PropM[2]+PropM[3]=100;
@@ -293,16 +300,18 @@ begin
     writeln;
 
     repeat
+      {Leitura do número de coques a serem utilizados}
       writeln('Quantos tipos de coque serao utilizados(m',#160,'ximo de 3)?');
       readln(y); 
-      {Leitura do número de coques a serem utilizados}
       writeln;
 
       if y > 3 then
       begin
         textcolor(11);
-        writeln('Dado incorreto!'); 
+        
         {Aviso de erro na digitação do número de coques}
+        writeln('Dado incorreto!'); 
+
         textcolor(15);
       end;
 
@@ -316,9 +325,10 @@ begin
     repeat
       if y=1 then
       begin
+        {Leitura do teor de  carbono fixo, no caso de um só coque}
         writeln('Informe o teor de carbono no coque.');
         readln(TeorC[1]); 
-        {Leitura do teor de  carbono fixo, no caso de um só coque}
+
         PropC[1]:=100;
       end
       else
@@ -330,11 +340,13 @@ begin
         begin
           writeln('Informe a propor',#135,'ao do coque ',cont,' na mistura e teor de carbono fixo nele.');
           
+          {Leitura da proporção para cada coque}
           write('Propor',#135,'ao:');
-          readln(PropC[cont]); {Leitura da proporção para cada coque}
+          readln(PropC[cont]); 
           
+          {Leitura do teor de carbono para cada coque}
           write('Teor de carbono:');
-          readln(TeorC[cont]); {Leitura do teor de carbono para cada coque}
+          readln(TeorC[cont]); 
           
           cont:=cont+1;
           writeln;
@@ -343,8 +355,10 @@ begin
       if PropC[1]+PropC[2]+PropC[3] <> 100 then
       begin
         textcolor(11);
-        writeln('Dados incorretos!');  
+        
         {Aviso de erro na digitação das proporções}
+        writeln('Dados incorretos!');  
+
         textcolor(15);
       end;
     until PropC[1]+PropC[2]+PropC[3]=100;
@@ -363,8 +377,11 @@ begin
 
     while cont<= 3 do
     begin
-      MasM[cont]:= (PropM[cont]*MT/100); {Cálculo da massa individual de cada minério ( em kilogramas)}
-      MasM[cont]:=MasM[cont]/1000; {Conversão da massa individual de cada minério de kilogramas para toneladas} 
+      {Cálculo da massa individual de cada minério ( em kilogramas)}
+      MasM[cont]:= (PropM[cont]*MT/100); 
+
+      {Conversão da massa individual de cada minério de kilogramas para toneladas} 
+      MasM[cont]:=MasM[cont]/1000; 
       cont:= cont+1;
     end;
     cont:=1;
@@ -395,9 +412,9 @@ begin
     textcolor(15);
     writeln;
     writeln;
+    {Leitura do teor de carbono fixo no PCI}
     writeln('Informe o teor de carbono no PCI:');
     readln(CF); 
-    {Leitura do teor de carbono fixo no PCI}
     
     {Cálculo da massa máxima de PCI permitida (em kilogramas)}
     PCI:=(PCqu)/(CF/100); 
@@ -410,16 +427,20 @@ begin
     writeln;
     repeat
       writeln('Você poderá usar no máximo ',PCI:10:3,' toneladas de PCI.');
+      
+      {Leitura da massa de PCI adicionada}
       write('Informe um valor em toneladas:');
       readln(PCIesc); 
-      {Leitura da massa de PCI adicionada}
+
       writeln;
 
       if PCIesc > PCI then
       begin
         textcolor(11);
-        writeln('Dado incorreto!'); 
+        
         {Aviso de digitação de valor incorreto}
+        writeln('Dado incorreto!'); 
+
         textcolor(15);
       end;
 
@@ -461,9 +482,10 @@ begin
     writeln;
     writeln;
     writeln('Informe o teor de oxigenio no sopro.');
+    
+    {Leitura do teor de oxigênio no sopro}
     write('Teor de oxigenio:'); 
     readln(po2); 
-    {Leitura do teor de oxigênio no sopro}
     
     {Cálculo do volume}
     Vo2:= 0.224*feg; 
@@ -527,12 +549,14 @@ begin
     
     while cont <=t do
     begin
-      writeln('Minerio ',cont,'         ',PropM[cont]:7:2,'              ',TeorM[cont]:7:2);  {Apresentação da proporção de
+      {Apresentação da proporção de
       cada minério na carga e do respectivo teor de ferro}
+      writeln('Minerio ',cont,'         ',PropM[cont]:7:2,'              ',TeorM[cont]:7:2);  
       cont:=cont+1;
     end;
 
-    writeln('                     TEOR MEDIO DE FERRO: ',TeorMM:3:2,'%.'); {Apresentação do teor médio de ferro na carga}
+    {Apresentação do teor médio de ferro na carga}
+    writeln('                     TEOR MEDIO DE FERRO: ',TeorMM:3:2,'%.'); 
     textcolor(12);
     
     writeln;
@@ -549,12 +573,21 @@ begin
       cont:=cont+1;
     end;
     
-    writeln('                   TEOR MEDIO DE CARBONO: ',TeorCM:3:2,'%.'); {Apresentação do
+    {Apresentação do
     teor médio de carbono fixo na carga}
+    writeln('                   TEOR MEDIO DE CARBONO: ',TeorCM:3:2,'%.'); 
+
     writeln;
-    writeln('TEOR DE CARBONO NO PCI: ',CF:3:2,'%.'); {Apresentação do teor de carbono fixo do PCI}
-    writeln('TEOR DE OXIGENIO NO SOPRO: ',po2:3:2,'%.'); {Apresentação do teor de oxigênio no sopro}
-    writeln('QUANTIDADE DE PCI ADICIONADA: ',PCIesc:7:2,' ton.'); {Apresentação da quantidade de PCI adicionada}
+    
+    {Apresentação do teor de carbono fixo do PCI}
+    writeln('TEOR DE CARBONO NO PCI: ',CF:3:2,'%.'); 
+
+    {Apresentação do teor de oxigênio no sopro}
+    writeln('TEOR DE OXIGENIO NO SOPRO: ',po2:3:2,'%.'); 
+
+    {Apresentação da quantidade de PCI adicionada}
+    writeln('QUANTIDADE DE PCI ADICIONADA: ',PCIesc:7:2,' ton.'); 
+
     gotoxy(80,25);
     readkey;
     clrscr;
@@ -599,8 +632,8 @@ begin
     
     while cont<= t do
     begin
-      writeln('Massa de minerio ',cont,': ',MasM[cont]:7:2,' ton.'); 
       {Apresentação da massa de cada minério carregado}
+      writeln('Massa de minerio ',cont,': ',MasM[cont]:7:2,' ton.'); 
       cont:=cont+1;
     end;
     
@@ -608,15 +641,17 @@ begin
     MT:=MT/1000;
 
     textcolor(12);
-    writeln('TOTAL CARREGADO: ',MT:7:2,' toneladas por dia.'); 
+    
     {Massa total de minério carregado diariamente}
+    writeln('TOTAL CARREGADO: ',MT:7:2,' toneladas por dia.'); 
+
     textcolor(15);
     cont:=1;
     
     while cont<= y do
     begin
-      writeln('Massa do coque ',cont,': ',MasC[cont]:7:2,' ton.'); 
       {Apresentação da massa de cada coque carregado}
+      writeln('Massa do coque ',cont,': ',MasC[cont]:7:2,' ton.'); 
       cont:=cont+1;
     end;
 
