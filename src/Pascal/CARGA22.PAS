@@ -666,29 +666,57 @@ begin
     textcolor(15);
     textcolor(12);
     textcolor(12);
-    writeln('Coke Rate: ', CRate:7:2,' kg/ton de gusa'); {Apresentação do Coke rate obtido}
+    
+    {Apresentação do Coke rate obtido}
+    writeln('Coke Rate: ', CRate:7:2,' kg/ton de gusa'); 
+
     textcolor(15);
-    writeln('Coke Rate maximo: ',CRmax:7:2,' kg/ton de gusa'); {Apresentação do Coke rate máximo (em uma operação ALL COKE)}
-    writeln('Coke Rate minimo: ',CRmin:7:2,' kg/ton de gusa'); {Apresentação do Coke rate teórico mínimo 
+    
+    {Apresentação do Coke rate máximo (em uma operação ALL COKE)}
+    writeln('Coke Rate maximo: ',CRmax:7:2,' kg/ton de gusa'); 
+
+    {Apresentação do Coke rate teórico mínimo 
     (através da utilização da quantidade máxima de PCI)}
+    writeln('Coke Rate minimo: ',CRmin:7:2,' kg/ton de gusa'); 
+
     writeln;
     textcolor(12);
-    writeln('Massa do PCI: ',PCIesc:5:2,' ton'); {Apresentação da massa de PCI adicionada}
-    writeln('PCI Rate: ',PCIrat :7:2,' kg/ton de gusa'); {Apresentação do PCI rate obtido}
+    
+    {Apresentação da massa de PCI adicionada}
+    writeln('Massa do PCI: ',PCIesc:5:2,' ton'); 
+
+    {Apresentação do PCI rate obtido}
+    writeln('PCI Rate: ',PCIrat :7:2,' kg/ton de gusa'); 
+    
     textcolor(15);
-    writeln('PCI Rate maximo: ',PCIratmx:5:2,' Kg/ton de gusa'); {Apresentação do PCI rate máximo permitido}
+    
+    {Apresentação do PCI rate máximo permitido}
+    writeln('PCI Rate maximo: ',PCIratmx:5:2,' Kg/ton de gusa'); 
+
     textcolor(12);
     writeln;
-    writeln('Fuel Rate: ',FR:7:2,' kg/ton de gusa'); {Apresentação do Fuel rate obtido}
+    
+    {Apresentação do Fuel rate obtido}
+    writeln('Fuel Rate: ',FR:7:2,' kg/ton de gusa'); 
+
     writeln;
     textcolor(15);
-    writeln('Volume de oxigenio consumido: ',Vo2:5:2,'Nm3/dia.'); {Apresentação do volume de oxigênio consumido}
+    
+    {Apresentação do volume de oxigênio consumido}
+    writeln('Volume de oxigenio consumido: ',Vo2:5:2,'Nm3/dia.'); 
+
     textcolor(12);
-    writeln('Volume de sopro: ',Vazao:5:2,'Nm3/min'); {Apresentação do vazão de sopro}
+    
+    {Apresentação do vazão de sopro}
+    writeln('Volume de sopro: ',Vazao:5:2,'Nm3/min'); 
+
     textcolor(15);
     gotoxy(1,25);
-    write('Pressione [Enter] para ir a tela de gravacao de resultados.'); {Finalização da
+    
+    {Finalização da
     apresentação dos dados de entrada e dos resultados}
+    write('Pressione [Enter] para ir a tela de gravacao de resultados.'); 
+    
     readln;
     clrscr;
 
