@@ -162,23 +162,23 @@ begin
     { Loop para inicialização dos vetores criados}
     while cont <=3 do
     begin
-      PropM[cont]:=0;
       {Proporção do minério (1,2 ou 3) na carga de minérios}
+      PropM[cont]:=0;
       
-      TeorM[cont]:=0;
       {Teor de ferro no minério (1,2 ou 3)}
+      TeorM[cont]:=0;
       
-      MasM[cont]:=0;
       {Massa do minério (1,2 ou 3) carregado}
+      MasM[cont]:=0;
       
-      PropC[cont]:=0;
       {Proporção do coque (1,2 ou 3)} 
+      PropC[cont]:=0;
       
-      TeorC[cont]:=0;
       {Teor de carbono fixo no coque (1,2 ou 3)}
+      TeorC[cont]:=0;
       
-      MasC[cont]:=0;
       {Massa do coque (1,2 ou 3) carregado} 
+      MasC[cont]:=0;
       
       cont:=cont+1;
     end;
@@ -212,8 +212,10 @@ begin
       If g+h>100 then 
       begin
         textcolor(11);
+
         {Aviso de erro na digitação dos teores de ferro e carbono}
         writeln('Dados incorretos!'); 
+
         textcolor(15);
       end;
     until g+h<=100;
@@ -225,6 +227,7 @@ begin
     writeln;
     writeln;
     repeat
+
       {Leitura do número de minérios (ou similares) a serem utilizados}
       Writeln('Quantos tipos de minérios serao utilizados(m',#160,'ximo de 3)?');
       readln(t); 
@@ -237,6 +240,7 @@ begin
 
         {Aviso de erro na digitação do número de minérios}
         writeln('Dado incorreto!');
+
         textcolor(15);
       end;
     until t<=3;
@@ -257,6 +261,7 @@ begin
         {Leitura do teor de ferro, no caso de um só minério}
         writeln('Informe o teor de ferro no minerio.');
         readln(TeorM[1]);
+
         PropM[1]:=100;
       end
       else
@@ -275,6 +280,7 @@ begin
           {Leitura do teor de ferro para cada minério}
           write('Teor de ferro:');
           readln(TeorM[cont]); 
+
           cont:=cont+1;
           writeln;
         end;
@@ -412,6 +418,7 @@ begin
     textcolor(15);
     writeln;
     writeln;
+
     {Leitura do teor de carbono fixo no PCI}
     writeln('Informe o teor de carbono no PCI:');
     readln(CF); 
@@ -537,6 +544,7 @@ begin
     write('------------------------------------GUSA:---------------------------------------');
     textcolor(15);
     writeln('Gusa:',xt:7:2,' ton (',g:5:2,' % de Fe,',h:5:2,' % de C.).'); 
+
     {Apresentação da massa de gusa produzida 
     e dos teores presentes de ferro e carbono} 
     textcolor(12);
@@ -568,8 +576,10 @@ begin
     
     while cont <=y do
     begin
-      writeln('Coque ',cont,'           ',PropC[cont]:7:2,'              ',TeorC[cont]:7:2); {Apresentação da proporção de
+      {Apresentação da proporção de
       cada coque na carga e do respectivo teor de carbono fixo}
+      writeln('Coque ',cont,'           ',PropC[cont]:7:2,'              ',TeorC[cont]:7:2); 
+
       cont:=cont+1;
     end;
     
@@ -650,8 +660,10 @@ begin
     
     while cont<= y do
     begin
+      
       {Apresentação da massa de cada coque carregado}
       writeln('Massa do coque ',cont,': ',MasC[cont]:7:2,' ton.'); 
+      
       cont:=cont+1;
     end;
 
@@ -716,7 +728,7 @@ begin
     {Finalização da
     apresentação dos dados de entrada e dos resultados}
     write('Pressione [Enter] para ir a tela de gravacao de resultados.'); 
-    
+
     readln;
     clrscr;
 
