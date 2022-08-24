@@ -39,8 +39,15 @@ uses crt;
 {Definição das variáveis utilizadas}
 var xt,xk,g,h,MT,po2,NCcarr,feg,PCcarr,CRmax,CRmin,Pcoq,PCqu,PCI,                   
     TeorCM,CF,PCIesc,PCIrat,PCIratmx,FR,Vo2,Vsopro,Vazao,TeorMM,MTC,CRate:real;
+
+    {From compiler - Note: Local variable "z" not used}
     t,cont,y,z:integer;
+
+    {From compiler - Note: Local variable "s" not used}
+    {From compiler - Note: Local variable "c" not used}
+    {From compiler - Note: Local variable "i" not used}
     s,resp,c,i,opcao:char;
+
     Texto:text;
     PropM: array[1..3] of real;
     TeorM: array[1..3] of real;
