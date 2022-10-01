@@ -39,8 +39,11 @@ uses crt;
 {Definição das variáveis utilizadas}
 var xt,xk,g,h,MT,po2,NCcarr,feg,PCcarr,CRmax,CRmin,Pcoq,PCqu,PCI,                   
     TeorCM,CF,PCIesc,PCIrat,PCIratmx,FR,Vo2,Vsopro,Vazao,TeorMM,MTC,CRate:real;
-    t,cont,y,z:integer;
-    s,resp,c,i,opcao:char;
+
+    t,cont,y:integer;
+
+    resp,opcao:char;
+
     Texto:text;
     PropM: array[1..3] of real;
     TeorM: array[1..3] of real;
