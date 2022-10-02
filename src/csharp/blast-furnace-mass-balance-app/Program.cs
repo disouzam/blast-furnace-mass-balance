@@ -1,6 +1,7 @@
 ﻿using System;
 
-namespace blast_furnace_mass_balance_app;
+namespace BlastFurnace.MassBalance.ConsoleApp;
+
 class Program
 {
     static void Main(string[] args)
