@@ -25,3 +25,7 @@ hs_err_pid*
 
 # Pascal files / Lazarus IDE
 src/Pascal/backup
+
+# dotnet files
+**/obj
+**/bin
