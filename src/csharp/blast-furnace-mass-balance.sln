@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blast-furnace-mass-balance-app", "blast-furnace-mass-balance-app\blast-furnace-mass-balance-app.csproj", "{03C9047B-201A-4200-BE2A-ED499A095A5B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blast-furnace-mass-balance-lib", "blast-furnace-mass-balance-lib\blast-furnace-mass-balance-lib.csproj", "{7677CCB8-2FBF-4D12-8E3F-FE367109B5D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{03C9047B-201A-4200-BE2A-ED499A095A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03C9047B-201A-4200-BE2A-ED499A095A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03C9047B-201A-4200-BE2A-ED499A095A5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7677CCB8-2FBF-4D12-8E3F-FE367109B5D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7677CCB8-2FBF-4D12-8E3F-FE367109B5D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7677CCB8-2FBF-4D12-8E3F-FE367109B5D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7677CCB8-2FBF-4D12-8E3F-FE367109B5D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
