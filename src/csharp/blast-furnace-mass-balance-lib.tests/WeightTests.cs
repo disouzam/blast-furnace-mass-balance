@@ -1,8 +1,8 @@
-using FluentAssertions;
 using System;
-using Xunit;
 
-using blast_furnace_mass_balance_lib;
+using FluentAssertions;
+
+using Xunit;
 
 namespace blast_furnace_mass_balance_lib.tests;
 
