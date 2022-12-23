@@ -2,9 +2,9 @@
 
 namespace BlastFurnace.MassBalance.ConsoleApp;
 
-class Program
+static class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
         Console.WriteLine("Blast Furnace Mass Balance Application");
     }

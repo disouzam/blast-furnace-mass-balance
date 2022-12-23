@@ -8,4 +8,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlastFurnace.MassBalance.Lib\BlastFurnace.MassBalance.Lib.csproj" />
+  </ItemGroup>
+
 </Project>
