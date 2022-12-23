@@ -181,7 +181,7 @@ begin
     textcolor(12);
 
     {Início da entrada de dados}
-    writeln('                   QUANTIDADE E COMPOSIÇAO DO GUSA');
+    writeln('                   QUANTIDADE E COMPOSI',#199,#195,'O DO GUSA');
     textcolor(15);
     writeln;
     writeln;
@@ -193,7 +193,7 @@ begin
 
     {Loop de detecção de erros na execução}
     repeat 
-      writeln('Informe o teor de ferro e carbono no gusa que ser',#160,' produzido.');
+      writeln('Informe o teor de ferro e carbono no gusa que ser',#225,' produzido.');
       write('Teor de ferro:');
 
       {Leitura do teor de ferro no gusa} 
@@ -215,14 +215,14 @@ begin
 
     clrscr;
     textcolor(12);
-    writeln('                           TIPOS DE MINERIO');
+    writeln('                           TIPOS DE MIN',#201,'RIO');
     textcolor(15);
     writeln;
     writeln;
     repeat
 
       {Leitura do número de minérios (ou similares) a serem utilizados}
-      Writeln('Quantos tipos de minérios serao utilizados(m',#160,'ximo de 3)?');
+      writeln('Quantos tipos de min',#233,'rios ser'#227'o utilizados (m',#225,'ximo de 3)?');
       readln(t);
 
       writeln;
@@ -241,7 +241,7 @@ begin
     writeln;
     textcolor(12);
     writeln;
-    writeln('                 PROPORÇÃO DE MINERIO E TEOR DE FERRO');
+    writeln('                 PROPOR',#199,#195,'O DE MIN',#201,'RIO E TEOR DE FERRO');
     textcolor(15);
     writeln;
     writeln;
@@ -252,7 +252,7 @@ begin
       begin
 
         {Leitura do teor de ferro, no caso de um só minério}
-        writeln('Informe o teor de ferro no minerio.');
+        writeln('Informe o teor de ferro no min',#233,'rio.');
         readln(TeorM[1]);
 
         PropM[1]:=100;
@@ -264,10 +264,10 @@ begin
         {Leitura da proporção e do teor de ferro para cada minério, para o caso de mais de um minério}
         while cont<=t do 
         begin
-          writeln('Informe a proporcao do minerio ',cont,' e o teor de ferro nele.');
+          writeln('Informe a propor',#231,#227,'o do min',#233,'rio ',cont,' e o teor de ferro nele.');
 
           {Leitura da proporção para cada minério}
-          write('Proporcao:');
+          write('Propor',#231,#227,'o:');
           readln(PropM[cont]);
 
           {Leitura do teor de ferro para cada minério}
@@ -300,7 +300,7 @@ begin
 
     repeat
       {Leitura do número de coques a serem utilizados}
-      writeln('Quantos tipos de coque serao utilizados(m',#160,'ximo de 3)?');
+      writeln('Quantos tipos de coque ser',#227,'o utilizados (m',#225,'ximo de 3)?');
       readln(y);
       writeln;
 
@@ -318,7 +318,7 @@ begin
     writeln;
     writeln;
     textcolor(12);
-    writeln('                          PROPORÇÃO E TEOR DE CARBONO');
+    writeln('                          PROPOR',#199,#195,'O E TEOR DE CARBONO');
     textcolor(15);
     writeln;
     repeat
@@ -337,10 +337,10 @@ begin
         {Leitura da proporção e do teor de carbono para cada coque, para o caso de mais de um coque}
         while cont <=y do 
         begin
-          writeln('Informe a propor',#135,'ao do coque ',cont,' na mistura e teor de carbono fixo nele.');
+          writeln('Informe a propor',#231,#227,'o do coque ',cont,' na mistura e teor de carbono fixo nele.');
 
           {Leitura da proporção para cada coque}
-          write('Propor',#135,'ao:');
+          write('Propor',#231,#227,'o:');
           readln(PropC[cont]);
 
           {Leitura do teor de carbono para cada coque}
@@ -426,7 +426,7 @@ begin
     PCI:=PCI/1000;
     writeln;
     repeat
-      writeln('Você poderá usar no máximo ',PCI:10:3,' toneladas de PCI.');
+      writeln('Voc',#234,' poder',#225,' usar no m',#225,'ximo ',PCI:10:3,' toneladas de PCI.');
 
       {Leitura da massa de PCI adicionada}
       write('Informe um valor em toneladas:');
@@ -477,14 +477,14 @@ begin
 
     clrscr;
     textcolor(12);
-    writeln('                            TEOR DE OXIGENIO NO SOPRO');
+    writeln('                            TEOR DE OXIG',#202,'NIO NO SOPRO');
     textcolor(15);
     writeln;
     writeln;
-    writeln('Informe o teor de oxigenio no sopro.');
+    writeln('Informe o teor de oxig',#234,'nio no sopro.');
 
     {Leitura do teor de oxigênio no sopro}
-    write('Teor de oxigenio:');
+    write('Teor de oxig',#234,'nio:');
     readln(po2);
 
     {Cálculo do volume}
@@ -543,27 +543,27 @@ begin
     textcolor(12);
     writeln;
 
-    writeln('----------------------------------MINERIOS:------------------------------------');
+    writeln('----------------------------------MIN',#201,'RIOS:------------------------------------');
     textcolor(15);
-    writeln('Minerio           Proporcao(%)           Teor(%)');
+    writeln('Min',#233,'rio           Propor',#231,#227,'o(%)           Teor(%)');
     cont:=1;
 
     while cont <=t do
     begin
       {Apresentação da proporção de
       cada minério na carga e do respectivo teor de ferro}
-      writeln('Minerio ',cont,'         ',PropM[cont]:7:2,'              ',TeorM[cont]:7:2);
+      writeln('Min',#233,'rio ',cont,'         ',PropM[cont]:7:2,'              ',TeorM[cont]:7:2);
       cont:=cont+1;
     end;
 
     {Apresentação do teor médio de ferro na carga}
-    writeln('                     TEOR MEDIO DE FERRO: ',TeorMM:3:2,'%.');
+    writeln('                     TEOR M',#201,'DIO DE FERRO: ',TeorMM:3:2,'%.');
     textcolor(12);
 
     writeln;
     writeln('-----------------------------------COQUE:--------------------------------------');
     textcolor(15);
-    writeln('Coque             Proporcao(%)           Teor(%)');
+    writeln('Coque             Propor',#231,#227,'o(%)           Teor(%)');
 
     cont:=1;
 
@@ -578,7 +578,7 @@ begin
 
     {Apresentação do
     teor médio de carbono fixo na carga}
-    writeln('                   TEOR MEDIO DE CARBONO: ',TeorCM:3:2,'%.');
+    writeln('                   TEOR M',#201,'DIO DE CARBONO: ',TeorCM:3:2,'%.');
 
     writeln;
 
@@ -586,7 +586,7 @@ begin
     writeln('TEOR DE CARBONO NO PCI: ',CF:3:2,'%.');
 
     {Apresentação do teor de oxigênio no sopro}
-    writeln('TEOR DE OXIGENIO NO SOPRO: ',po2:3:2,'%.');
+    writeln('TEOR DE OXIG',#202,'NIO NO SOPRO: ',po2:3:2,'%.');
 
     {Apresentação da quantidade de PCI adicionada}
     writeln('QUANTIDADE DE PCI ADICIONADA: ',PCIesc:7:2,' ton.');
@@ -636,7 +636,7 @@ begin
     while cont<= t do
     begin
       {Apresentação da massa de cada minério carregado}
-      writeln('Massa de minerio ',cont,': ',MasM[cont]:7:2,' ton.');
+      writeln('Massa de min',#233,'rio ',cont,': ',MasM[cont]:7:2,' ton.');
       cont:=cont+1;
     end;
 
@@ -678,11 +678,11 @@ begin
     textcolor(15);
 
     {Apresentação do Coke rate máximo (em uma operação ALL COKE)}
-    writeln('Coke Rate maximo: ',CRmax:7:2,' kg/ton de gusa');
+    writeln('Coke Rate m',#225,'ximo: ',CRmax:7:2,' kg/ton de gusa');
 
     {Apresentação do Coke rate teórico mínimo 
     (através da utilização da quantidade máxima de PCI)}
-    writeln('Coke Rate minimo: ',CRmin:7:2,' kg/ton de gusa');
+    writeln('Coke Rate m',#237,'nimo: ',CRmin:7:2,' kg/ton de gusa');
 
     writeln;
     textcolor(12);
@@ -696,7 +696,7 @@ begin
     textcolor(15);
 
     {Apresentação do PCI rate máximo permitido}
-    writeln('PCI Rate maximo: ',PCIratmx:5:2,' Kg/ton de gusa');
+    writeln('PCI Rate m',#225,'ximo: ',PCIratmx:5:2,' Kg/ton de gusa');
 
     textcolor(12);
     writeln;
@@ -708,7 +708,7 @@ begin
     textcolor(15);
 
     {Apresentação do volume de oxigênio consumido}
-    writeln('Volume de oxigenio consumido: ',Vo2:5:2,'Nm3/dia.');
+    writeln('Volume de oxig',#234,'nio consumido: ',Vo2:5:2,'Nm3/dia.');
 
     textcolor(12);
 
@@ -720,17 +720,17 @@ begin
 
     {Finalização da
     apresentação dos dados de entrada e dos resultados}
-    write('Pressione [Enter] para ir a tela de gravacao de resultados.');
+    write('Pressione [Enter] para ir a tela de grava',#231,#227,'o de resultados.');
 
     readln;
     clrscr;
 
     {Procedimentos para armazenamento dos dados em um arquivo texto}
-    Writeln('                               GRAVACAO DOS RESULTADOS');
+    Writeln('                               GRAVA',#199,#195,'O DOS RESULTADOS');
     writeln;
     writeln;
     writeln('Deseja criar um arquivo texto com os dados obtidos?');
-    write('Opcoes:(s)sim (n)nao?');
+    write('Op',#231,#245,'es:(s)sim (n)n',#227,'o?');
     readln(resp);
     writeln;
     writeln;
@@ -739,16 +739,16 @@ begin
     begin
       assign(Texto,'Calculo.doc');
       opcao:='i';
-      writeln('Sera criado um arquivo chamado: Calculo.doc.');
+      writeln('Ser',#225,' criado um arquivo chamado: Calculo.doc.');
       writeln;
       textcolor(12);
-      writeln('ATENCAO! Se esse arquivo já havia sido criado anteriormente e voce escolher a');
-      Writeln('opcao (c)criar,na proxima pergunta, ele será sobrescrito e TODOS os dados serao');
+      writeln('ATENCAO! Se esse arquivo j',#225,' havia sido criado anteriormente e voce escolher a');
+      Writeln('op',#231,#227,'o (c)criar,na pr',#243,'xima pergunta, ele ser',#225,' sobrescrito e TODOS os dados ser',#227,'o');
       writeln('perdidos.');
       writeln;
       textcolor(15);
       writeln('Deseja criar um arquivo ou continuar inserindo dados no arquivo atual?');
-      writeln('Opçoes:(c)criar (i)inserir):');
+      writeln('Op',#231,#245,'es:(c)criar (i)inserir):');
       readln(opcao);
 
       if opcao = 'c' then
@@ -763,25 +763,25 @@ begin
       {Formatação da apresentação dos dados de entrada e dos resultados no arquivo texto}
       writeln(Texto,'                                DADOS DE ENTRADA');
       writeln(Texto);
-      write(Texto,'------------------------------------GUSA:---------------------------------------');
+      writeln(Texto,'------------------------------------GUSA:---------------------------------------');
       writeln(Texto,'                             Gusa:',xt:7:2,' ton (',g:5:2,' % de Fe,',h:5:2,' % de C.).');
       writeln(Texto);
-      writeln(Texto,'----------------------------------MINERIOS:-------------------------------------');
+      writeln(Texto,'----------------------------------MIN',#201,'RIOS:-------------------------------------');
       writeln(Texto);
-      writeln(Texto,'               Minerio           Proporcao(%)           Teor(%)');
+      writeln(Texto,'               Min',#233,'rio           Propor',#231,#227,'o(%)           Teor(%)');
       cont:=1;
 
       while cont <=t do
       begin
-        writeln(Texto,'               Minerio ',cont,'         ',PropM[cont]:7:2,'               ',TeorM[cont]:7:2);
+        writeln(Texto,'               Min',#233,'rio ',cont,'         ',PropM[cont]:7:2,'               ',TeorM[cont]:7:2);
         cont:=cont+1;
       end;
 
-      writeln(Texto,'                                    TEOR MEDIO DE FERRO: ',TeorMM:3:2,'%.');
+      writeln(Texto,'                                    TEOR M',#201,'DIO DE FERRO: ',TeorMM:3:2,'%.');
       writeln(Texto);
       writeln(Texto,'-----------------------------------COQUE:---------------------------------------');
       writeln(Texto);
-      writeln(Texto,'               Coque             Proporcao(%)           Teor(%)');
+      writeln(Texto,'               Coque             Propor',#231,#227,'o(%)           Teor(%)');
 
       cont:=1;
       while cont <=y do
@@ -790,10 +790,10 @@ begin
         cont:=cont+1;
       end;
 
-      writeln(Texto,'                                  TEOR MEDIO DE CARBONO: ',TeorCM:3:2,'%.');
+      writeln(Texto,'                                  TEOR M',#201,'DIO DE CARBONO: ',TeorCM:3:2,'%.');
       writeln(Texto);
       writeln(Texto,'                           TEOR DE CARBONO NO PCI: ',CF:3:2,'%.');
-      writeln(Texto,'                        TEOR DE OXIGENIO NO SOPRO: ',po2:3:2,'%.');
+      writeln(Texto,'                        TEOR DE OXIG',#202,'NIO NO SOPRO: ',po2:3:2,'%.');
       writeln(Texto,'                      Quantidade de PCI adicionada: ',PCIesc:7:2,' ton.');
       readkey;
       writeln(Texto);
@@ -802,12 +802,12 @@ begin
       writeln(Texto);
       writeln(Texto,'                               RESULTADOS');
       writeln(Texto);
-      writeln(Texto,'--------------------------------MINERIOS----------------------------------------');
+      writeln(Texto,'--------------------------------MIN',#201,'RIOS----------------------------------------');
 
       cont:=1;
       while cont<= t do
       begin
-        writeln(Texto,'                        Massa de minerio ',cont,': ',MasM[cont]:7:2,' ton.');
+        writeln(Texto,'                        Massa de min',#233,'rio ',cont,': ',MasM[cont]:7:2,' ton.');
         cont:=cont+1;
       end;
 
@@ -831,17 +831,17 @@ begin
       writeln(Texto);
       writeln(Texto,'---------------------------------RATES------------------------------------------');
       writeln(Texto,'                        Coke Rate: ', CRate:7:2,' kg/ton de gusa');
-      writeln(Texto,'                        Coke Rate maximo: ',CRmax:7:2,' kg/ton de gusa');
-      writeln(Texto,'                        Coke Rate minimo: ',CRmin:7:2,' kg/ton de gusa');
+      writeln(Texto,'                        Coke Rate m',#225,'ximo: ',CRmax:7:2,' kg/ton de gusa');
+      writeln(Texto,'                        Coke Rate m',#237,'nimo: ',CRmin:7:2,' kg/ton de gusa');
       writeln(Texto);
 
       writeln(Texto,'                        PCI Rate: ',PCIrat :7:2,' kg/ton de gusa');
-      writeln(Texto,'                        PCI Rate maximo: ',PCIratmx:5:2,' Kg/ton de gusa');
+      writeln(Texto,'                        PCI Rate m',#225,'ximo: ',PCIratmx:5:2,' Kg/ton de gusa');
       writeln(Texto);
       writeln(Texto,'                        Fuel Rate: ',FR:7:2,' kg/ton de gusa');
       writeln(Texto);
       writeln(Texto,'-----------------------------DADOS DE SOPRO-------------------------------------');
-      writeln(Texto,'                        Volume de oxigenio consumido: ',Vo2:5:2,'Nm3/dia.');
+          writeln(Texto,'                        Volume de oxig',#234,'nio consumido: ',Vo2:5:2,'Nm3/dia.');
       writeln(Texto,'                        Volume de sopro: ',Vazao:5:2,'Nm3/min');
       writeln(Texto);
       writeln(Texto);
@@ -875,13 +875,13 @@ begin
   end;{end do while inicial}
 
   clrscr;
-  writeln('    Este programa foi elaborado por alunos do quarto período, do curso ');
+  writeln('    Este programa foi elaborado por alunos do quarto per',#237,'odo, do curso ');
   writeln('    de Tecnologia em Metalurgia e Materiais - CEFET/ES, Abril de 2006.');
   gotoxy(1,5);
   textcolor(11);
   writeln('                               ALUNOS:');
   writeln;
-  writeln('                   Daniel Figueiredo Leao Oliveira');
+  writeln('                   Daniel Figueiredo Le',#227,'o Oliveira');
   writeln;
   writeln('                        Dickson Alves de Souza');
   writeln;
