@@ -1,52 +1,53 @@
                                 DADOS DE ENTRADA
 
-------------------------------------GUSA:---------------------------------------                             Gusa:   1.00 ton (95.50 % de Fe, 4.50 % de C.).
+------------------------------------GUSA:---------------------------------------
+                             Gusa:   1.00 ton (95.00 % de Fe, 4.00 % de C.).
 
-----------------------------------MINERIOS:-------------------------------------
+----------------------------------MINÉRIOS:-------------------------------------
 
-               Minerio           Proporcao(%)           Teor(%)
-               Minerio 1          100.00                 70.00
-                                    TEOR MEDIO DE FERRO: 70.00%.
+               Minério           Proporção(%)           Teor(%)
+               Minério 1          100.00                 65.00
+                                    TEOR MÉDIO DE FERRO: 65.00%.
 
 -----------------------------------COQUE:---------------------------------------
 
-               Coque             Proporcao(%)           Teor(%)
-               Coque 1            100.00                 100.00
-                                  TEOR MEDIO DE CARBONO: 100.00%.
+               Coque             Proporção(%)           Teor(%)
+               Coque 1            100.00                  90.00
+                                  TEOR MÉDIO DE CARBONO: 90.00%.
 
-                           TEOR DE CARBONO NO PCI: 100.00%.
-                        TEOR DE OXIGENIO NO SOPRO: 21.00%.
-                      Quantidade de PCI adicionada:    0.00 ton.
+                           TEOR DE CARBONO NO PCI: 80.00%.
+                        TEOR DE OXIGÊNIO NO SOPRO: 21.00%.
+                      Quantidade de PCI adicionada:    0.10 ton.
 
 
 
 
                                RESULTADOS
 
---------------------------------MINERIOS----------------------------------------
-                        Massa de minerio 1:    1.36 ton.
-                        TOTAL CARREGADO:    1.36 toneladas por dia.
+--------------------------------MINÉRIOS----------------------------------------
+                        Massa de minério 1:    1.46 ton.
+                        TOTAL CARREGADO:    1.46 toneladas por dia.
 
 ---------------------------------COQUE------------------------------------------
-                        Massa do coque 1:    0.48 ton.
-                        TOTAL CARREGADO:    0.48 toneladas por dia.
+                        Massa do coque 1:    0.44 ton.
+                        TOTAL CARREGADO:    0.44 toneladas por dia.
 
 ----------------------------------PCI-------------------------------------------
-                        Massa do PCI:  0.00 ton
+                        Massa do PCI:  0.10 ton
 
 ---------------------------------RATES------------------------------------------
-                        Coke Rate:  478.84 kg/ton de gusa
-                        Coke Rate maximo:  478.84 kg/ton de gusa
-                        Coke Rate minimo:  249.64 kg/ton de gusa
+                        Coke Rate:  435.08 kg/ton de gusa
+                        Coke Rate máximo:  523.97 kg/ton de gusa
+                        Coke Rate mínimo:  270.63 kg/ton de gusa
 
-                        PCI Rate:    0.00 kg/ton de gusa
-                        PCI Rate maximo: 229.20 Kg/ton de gusa
+                        PCI Rate:  100.00 kg/ton de gusa
+                        PCI Rate máximo: 285.00 Kg/ton de gusa
 
-                        Fuel Rate:  478.84 kg/ton de gusa
+                        Fuel Rate:  535.08 kg/ton de gusa
 
 -----------------------------DADOS DE SOPRO-------------------------------------
-                        Volume de oxigenio consumido: 213.92Nm3/dia.
-                        Volume de sopro:  0.71Nm3/min
+                        Volume de oxigênio consumido: 212.80Nm3/dia.
+                        Volume de sopro:  0.70Nm3/min
 
 
 
