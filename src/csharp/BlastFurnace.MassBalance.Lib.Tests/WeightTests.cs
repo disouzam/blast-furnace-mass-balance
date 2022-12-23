@@ -33,7 +33,7 @@ public class WeightTests
 
         act.Should().
             Throw<ArgumentOutOfRangeException>().
-            WithMessage("Specified argument was out of the range of valid values. (Parameter 'value can't be negative!')");
+            WithMessage("Value can't be negative! (Parameter 'value')");
 
     }
 }
