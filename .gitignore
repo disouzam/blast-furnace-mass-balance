@@ -29,3 +29,9 @@ src/Pascal/backup
 # dotnet files
 **/obj
 **/bin
+**/.vs
+
+# Pascal files
+src/Pascal/lib/x86_64-win64
+*.lps
+*.exe
