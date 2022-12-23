@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 using FluentAssertions;
 
@@ -29,7 +29,7 @@ public class WeightTests
     [Fact]
     public void NegativeWeightMustThrowException()
     {
-        Action act = () => new Weight(-10, WeightUnits.kilogram);
+        Action act = () => _ = new Weight(-10, WeightUnits.kilogram);
 
         act.Should().
             Throw<ArgumentOutOfRangeException>().
