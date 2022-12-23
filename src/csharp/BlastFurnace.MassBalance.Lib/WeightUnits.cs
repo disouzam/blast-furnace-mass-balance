@@ -1,4 +1,4 @@
-namespace BlastFurnace.MassBalance.Lib;
+﻿namespace BlastFurnace.MassBalance.Lib;
 
 public enum WeightUnits
 {
