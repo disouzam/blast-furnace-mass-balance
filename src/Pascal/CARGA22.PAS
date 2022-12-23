@@ -65,16 +65,6 @@ begin
   gotoxy(1,24);
   write('Pressione qualquer tecla para continuar.');
   readkey;
-  cont:=1;
-
-  {Loop para funções gráficas de apresentação do programa}
-  while cont <=40 do 
-  begin
-    write(#220);
-    cont:=cont+1;
-    delay(40);
-  end;
-
   Textmode(3);
   TextColor(15);
   resp:= 's';
