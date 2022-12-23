@@ -4,7 +4,7 @@ using FluentAssertions;
 
 using Xunit;
 
-namespace blast_furnace_mass_balance_lib.tests;
+namespace BlastFurnace.MassBalance.Lib.tests;
 
 public class WeightTests
 {

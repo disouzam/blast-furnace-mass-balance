@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>blast_furnace_mass_balance_lib.tests</RootNamespace>
+    <RootNamespace>BlastFurnace.MassBalance.Lib.tests</RootNamespace>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\blast-furnace-mass-balance-lib\blast-furnace-mass-balance-lib.csproj" />
+    <ProjectReference Include="..\BlastFurnace.MassBalance.Lib\BlastFurnace.MassBalance.Lib.csproj" />
   </ItemGroup>
 
 </Project>
