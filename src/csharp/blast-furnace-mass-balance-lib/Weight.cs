@@ -1,3 +1,5 @@
+using System;
+
 namespace blast_furnace_mass_balance_lib;
 
 public class Weight
@@ -8,6 +10,11 @@ public class Weight
 
     public Weight(double value, WeightUnits units)
     {
+        if (value < 0 )
+        {
+            throw new ArgumentOutOfRangeException($"{nameof(value)} can't be negative!");
+        }
+
         Value = value;
         Unit = units;
     }
