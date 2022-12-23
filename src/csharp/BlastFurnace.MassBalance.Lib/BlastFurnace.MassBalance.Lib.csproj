@@ -5,6 +5,9 @@
     <RootNamespace>BlastFurnace.MassBalance.Lib</RootNamespace>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>BlastFurnace.MassBalance.Lib.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>

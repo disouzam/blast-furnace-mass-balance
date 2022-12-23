@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BlastFurnace.MassBalance.Lib</name>
+    </assembly>
+    <members>
+        <member name="T:BlastFurnace.MassBalance.Lib.Weight">
+            <summary>
+            Holds both the quantity and unit of weights processed by mass balance and other engineering calculations
+            </summary>
+        </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.WeightUnits">
+            <summary>
+            Describe the weight units available to be used in mass balance and other engineering calculations
+            </summary>
+            <remarks>
+            <list type="bullet">
+            <item>kilogram</item>
+            <item>metric ton</item> 
+            </list>
+            </remarks>
+        </member>
+    </members>
+</doc>
