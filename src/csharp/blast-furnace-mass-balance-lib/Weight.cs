@@ -12,7 +12,7 @@ public class Weight
     {
         if (value < 0 )
         {
-            throw new ArgumentOutOfRangeException($"{nameof(value)} can't be negative!");
+            throw new ArgumentOutOfRangeException(nameof(value), $"{nameof(value)} can't be negative!");
         }
 
         Value = value;
