@@ -4,6 +4,19 @@
         <name>BlastFurnace.MassBalance.Lib</name>
     </assembly>
     <members>
+        <member name="T:BlastFurnace.MassBalance.Lib.UnitConversion">
+            <summary>
+            Static class that performs conversion between different measurement units
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.UnitConversion.WeightConversion(BlastFurnace.MassBalance.Lib.Weight,BlastFurnace.MassBalance.Lib.WeightUnits)">
+            <summary>
+            Performs conversion between weight units
+            </summary>
+            <param name="originalWeight"></param>
+            <param name="newWeightUnits"></param>
+            <returns></returns>
+        </member>
         <member name="T:BlastFurnace.MassBalance.Lib.Weight">
             <summary>
             Holds both the quantity and unit of weights processed by mass balance and other engineering calculations

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>BlastFurnace.MassBalance.Lib.tests</RootNamespace>
+    <RootNamespace>BlastFurnace.MassBalance.Lib.Tests</RootNamespace>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
