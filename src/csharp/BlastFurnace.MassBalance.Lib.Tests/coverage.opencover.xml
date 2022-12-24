@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CoverageSession>
+  <Summary numSequencePoints="27" visitedSequencePoints="27" numBranchPoints="14" visitedBranchPoints="14" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="17" minCyclomaticComplexity="17" visitedClasses="2" numClasses="2" visitedMethods="5" numMethods="5" />
+  <Modules>
+    <Module hash="10943465-873D-4499-8A34-96CEF805BF6E">
+      <ModulePath>BlastFurnace.MassBalance.Lib.dll</ModulePath>
+      <ModuleTime>2022-12-24T08:05:38</ModuleTime>
+      <ModuleName>BlastFurnace.MassBalance.Lib</ModuleName>
+      <Files>
+        <File uid="1" fullPath="src\csharp\BlastFurnace.MassBalance.Lib\UnitConversion.cs" />
+        <File uid="2" fullPath="src\csharp\BlastFurnace.MassBalance.Lib\Weight.cs" />
+      </Files>
+      <Classes>
+        <Class>
+          <Summary numSequencePoints="19" visitedSequencePoints="19" numBranchPoints="12" visitedBranchPoints="12" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="12" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="2" numMethods="2" />
+          <FullName>BlastFurnace.MassBalance.Lib.UnitConversion</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="12" nPathComplexity="12" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="17" visitedSequencePoints="17" numBranchPoints="12" visitedBranchPoints="12" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="12" minCyclomaticComplexity="12" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>BlastFurnace.MassBalance.Lib.Weight BlastFurnace.MassBalance.Lib.UnitConversion::WeightConversion(BlastFurnace.MassBalance.Lib.Weight,BlastFurnace.MassBalance.Lib.WeightUnits)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="7" uspid="24" ordinal="0" sl="24" sc="1" el="24" ec="2" bec="8" bev="8" fileid="1" />
+                <SequencePoint vc="1" uspid="30" ordinal="1" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="31" ordinal="2" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="33" ordinal="3" sl="33" sc="1" el="33" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="34" ordinal="4" sl="34" sc="1" el="34" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="36" ordinal="5" sl="36" sc="1" el="36" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="37" ordinal="6" sl="37" sc="1" el="37" ec="2" bec="4" bev="4" fileid="1" />
+                <SequencePoint vc="1" uspid="44" ordinal="7" sl="44" sc="1" el="44" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="45" ordinal="8" sl="45" sc="1" el="45" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="47" ordinal="9" sl="47" sc="1" el="47" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="48" ordinal="10" sl="48" sc="1" el="48" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="50" ordinal="11" sl="50" sc="1" el="50" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="51" ordinal="12" sl="51" sc="1" el="51" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="55" ordinal="13" sl="55" sc="1" el="55" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="56" ordinal="14" sl="56" sc="1" el="56" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="4" uspid="59" ordinal="15" sl="59" sc="1" el="59" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="4" uspid="61" ordinal="16" sl="61" sc="1" el="61" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="4" uspid="24" ordinal="0" path="0" offset="8" offsetend="10" sl="24" fileid="1" />
+                <BranchPoint vc="3" uspid="24" ordinal="1" path="1" offset="8" offsetend="19" sl="24" fileid="1" />
+                <BranchPoint vc="2" uspid="24" ordinal="4" path="0" offset="20" offsetend="22" sl="24" fileid="1" />
+                <BranchPoint vc="1" uspid="24" ordinal="5" path="1" offset="20" offsetend="28" sl="24" fileid="1" />
+                <BranchPoint vc="1" uspid="24" ordinal="7" path="1" offset="24" offsetend="40" sl="24" fileid="1" />
+                <BranchPoint vc="1" uspid="24" ordinal="6" path="0" offset="24" offsetend="58" sl="24" fileid="1" />
+                <BranchPoint vc="3" uspid="24" ordinal="3" path="1" offset="12" offsetend="91" sl="24" fileid="1" />
+                <BranchPoint vc="2" uspid="37" ordinal="8" path="0" offset="92" offsetend="94" sl="37" fileid="1" />
+                <BranchPoint vc="1" uspid="37" ordinal="9" path="1" offset="92" offsetend="100" sl="37" fileid="1" />
+                <BranchPoint vc="1" uspid="37" ordinal="11" path="1" offset="96" offsetend="115" sl="37" fileid="1" />
+                <BranchPoint vc="1" uspid="37" ordinal="10" path="0" offset="96" offsetend="124" sl="37" fileid="1" />
+                <BranchPoint vc="1" uspid="24" ordinal="2" path="0" offset="12" offsetend="157" sl="24" fileid="1" />
+              </BranchPoints>
+              <MethodPoint vc="17" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="24" ec="1" el="61" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="2" visitedSequencePoints="2" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void BlastFurnace.MassBalance.Lib.UnitConversion::.cctor()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="10" ordinal="0" sl="10" sc="1" el="10" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="11" ordinal="1" sl="11" sc="1" el="11" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="2" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="10" ec="1" el="11" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="8" visitedSequencePoints="8" numBranchPoints="2" visitedBranchPoints="2" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="3" numMethods="3" />
+          <FullName>BlastFurnace.MassBalance.Lib.Weight</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Double BlastFurnace.MassBalance.Lib.Weight::get_Value()</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="23" uspid="13" ordinal="0" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="13" ec="1" el="13" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>BlastFurnace.MassBalance.Lib.WeightUnits BlastFurnace.MassBalance.Lib.Weight::get_Unit()</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="29" uspid="18" ordinal="0" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="18" ec="1" el="18" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="100" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="2" visitedBranchPoints="2" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void BlastFurnace.MassBalance.Lib.Weight::.ctor(System.Double,BlastFurnace.MassBalance.Lib.WeightUnits)</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="14" uspid="26" ordinal="0" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="14" uspid="28" ordinal="1" sl="28" sc="1" el="28" ec="2" bec="2" bev="2" fileid="2" />
+                <SequencePoint vc="1" uspid="30" ordinal="2" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="13" uspid="33" ordinal="3" sl="33" sc="1" el="33" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="13" uspid="34" ordinal="4" sl="34" sc="1" el="34" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="13" uspid="35" ordinal="5" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="1" uspid="28" ordinal="0" path="0" offset="16" offsetend="18" sl="28" fileid="2" />
+                <BranchPoint vc="13" uspid="28" ordinal="1" path="1" offset="16" offsetend="34" sl="28" fileid="2" />
+              </BranchPoints>
+              <MethodPoint vc="6" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="26" ec="1" el="35" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Module>
+  </Modules>
+</CoverageSession>

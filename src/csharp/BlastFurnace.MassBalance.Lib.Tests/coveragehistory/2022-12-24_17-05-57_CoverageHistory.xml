@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2022-12-24_17-05-57" tag="5cd8c51">
+  <assembly name="BlastFurnace.MassBalance.Lib">
+    <class name="BlastFurnace.MassBalance.Lib.UnitConversion" coveredlines="19" coverablelines="19" totallines="63" coveredbranches="12" totalbranches="12" coveredcodeelements="2" totalcodeelements="2" />
+    <class name="BlastFurnace.MassBalance.Lib.Weight" coveredlines="8" coverablelines="8" totallines="36" coveredbranches="2" totalbranches="2" coveredcodeelements="3" totalcodeelements="3" />
+  </assembly>
+</coverage>
