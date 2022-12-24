@@ -4,6 +4,16 @@
         <name>BlastFurnace.MassBalance.Lib</name>
     </assembly>
     <members>
+        <member name="T:BlastFurnace.MassBalance.Lib.About">
+            <summary>
+            Contains description and other metadata of BlasFurnace Mass Balance library/application
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.About.Description">
+            <summary>
+            A textual description of the purpose of Blast Furnace mass balance library/application
+            </summary>
+        </member>
         <member name="T:BlastFurnace.MassBalance.Lib.UnitConversion">
             <summary>
             Static class that performs conversion between different measurement units
