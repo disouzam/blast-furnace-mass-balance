@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BlastFurnace.MassBalance.Lib</name>
+    </assembly>
+    <members>
+        <member name="T:BlastFurnace.MassBalance.Lib.UnitConversion">
+            <summary>
+            Static class that performs conversion between different measurement units
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.UnitConversion.WeightConversion(BlastFurnace.MassBalance.Lib.Weight,BlastFurnace.MassBalance.Lib.WeightUnits)">
+            <summary>
+            Performs conversion between weight units
+            </summary>
+            <param name="originalWeight"></param>
+            <param name="newWeightUnits"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.Weight">
+            <summary>
+            Holds both the quantity and unit of weights processed by mass balance and other engineering calculations
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.Weight.Value">
+            <summary>
+            The value of weight
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.Weight.Unit">
+            <summary>
+            The unit of measurement of weight
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Weight.#ctor(System.Double,BlastFurnace.MassBalance.Lib.WeightUnits)">
+            <summary>
+            Initialize Weight and validate it
+            </summary>
+            <param name="value"></param>
+            <param name="units"></param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.WeightUnits">
+            <summary>
+            Describe the weight units available to be used in mass balance and other engineering calculations
+            </summary>
+            <remarks>
+            <list type="bullet">
+            <item>kilogram</item>
+            <item>metric ton</item> 
+            </list>
+            </remarks>
+        </member>
+    </members>
+</doc>

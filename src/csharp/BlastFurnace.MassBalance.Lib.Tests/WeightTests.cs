@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 
 using FluentAssertions;
 
 using Xunit;
 
-namespace BlastFurnace.MassBalance.Lib.tests;
+namespace BlastFurnace.MassBalance.Lib.Tests;
 
 public class WeightTests
 {
@@ -29,11 +29,11 @@ public class WeightTests
     [Fact]
     public void NegativeWeightMustThrowException()
     {
-        Action act = () => new Weight(-10, WeightUnits.kilogram);
+        Action act = () => _ = new Weight(-10, WeightUnits.kilogram);
 
         act.Should().
             Throw<ArgumentOutOfRangeException>().
-            WithMessage("Specified argument was out of the range of valid values. (Parameter 'value can't be negative!')");
+            WithMessage("Value can't be negative! (Parameter 'value')");
 
     }
 }
