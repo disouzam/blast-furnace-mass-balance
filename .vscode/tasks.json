@@ -1,41 +1,618 @@
 {
     "version": "2.0.0",
     "tasks": [
+        // TASK GROUP ------ GIT TASKS
+        // Task ------ [GIT] Get the last commit hash (in current branch)
         {
-            "label": "build",
+            "label": "[GIT] Get the last commit hash (in current branch)",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "git log --pretty=format:%h  -1",
+            "type": "shell",
+            "detail": "",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [dotnet] Check outdated packages in all projects under this repo
+        {
+            "label": "[dotnet] Check outdated packages in all projects under this repo",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "cd ${workspaceFolder}\\src\\csharp && dotnet list package --outdated --interactive",
+            "type": "shell",
+            "detail": "",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ COMPLETE REPOSITORY / ALL PROJECTS
+        // Task ------ [REPOSITORY-LEVEL] Clean and Remove bin and obj folders
+        {
+            "label": "[REPOSITORY-LEVEL] Clean and Remove bin and obj folders",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"[REPOSITORY-LEVEL] Clean and Remove bin and obj folders\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[BlastFurnace.MassBalance.App] Clean",
+                "[BlastFurnace.MassBalance.Lib] Clean",
+                "[BlastFurnace.MassBalance.Lib.Tests] Clean",
+                "[BlastFurnace.MassBalance.App] Remove bin and obj folders",
+                "[BlastFurnace.MassBalance.Lib] Remove bin and obj folders",
+                "[BlastFurnace.MassBalance.Lib.Tests] Remove bin and obj folders"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [REPOSITORY-LEVEL] Build All Projects
+        {
+            "label": "[REPOSITORY-LEVEL] Build All Projects",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"[REPOSITORY-LEVEL] Build All Projects\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[BlastFurnace.MassBalance.Lib] Build",
+                "[BlastFurnace.MassBalance.Lib.Tests] Build",
+                "[BlastFurnace.MassBalance.App] Build"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [REPOSITORY-LEVEL] Build, Test, Generate and Open Reports for All Projects
+        {
+            "label": "[REPOSITORY-LEVEL] Build, Test, Generate and Open Reports for All Projects",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"[REPOSITORY-LEVEL] Build, Test, Generate and Open Reports for All Projects\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[GIT] Get the last commit hash (in current branch)",
+                "[REPOSITORY-LEVEL] Clean and Remove bin and obj folders",
+                "[REPOSITORY-LEVEL] Build All Projects",
+                "[REPOSITORY-LEVEL] Run all tests and generate reports"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [REPOSITORY-LEVEL] Build, Test, Generate and Open Reports for All Projects - Mutation testing version
+        {
+            "label": "[REPOSITORY-LEVEL] Build, Test, Generate and Open Reports for All Projects - Mutation testing version",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"[REPOSITORY-LEVEL] Build, Test, Generate and Open Reports for All Projects\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[GIT] Get the last commit hash (in current branch)",
+                "[REPOSITORY-LEVEL] Clean and Remove bin and obj folders",
+                "[REPOSITORY-LEVEL] Build All Projects",
+                "[REPOSITORY-LEVEL] Run all tests and generate reports",
+                "[BlastFurnace.MassBalance.Lib] Run Stryker.NET Mutation testing"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [REPOSITORY-LEVEL] Run all tests and generate reports
+        {
+            "label": "[REPOSITORY-LEVEL] Run all tests and generate reports",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"Run all tests and generate reports\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[BlastFurnace.MassBalance.Lib] Build, Test, Generate and Open Report"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [REPOSITORY-LEVEL] Open all reports
+        {
+            "label": "[REPOSITORY-LEVEL] Open all reports",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"Open all reports\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[BlastFurnace.MassBalance.Lib] Open Tests Report",
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ CLEAN
+        // Task ------ [BlastFurnace.MassBalance.App] Clean
+        {
+            "label": "[BlastFurnace.MassBalance.App] Clean",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "clean",
+                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.App\\BlastFurnace.MassBalance.App.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [BlastFurnace.MassBalance.Lib] Clean
+        {
+            "label": "[BlastFurnace.MassBalance.Lib] Clean",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "clean",
+                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib\\BlastFurnace.MassBalance.Lib.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [BlastFurnace.MassBalance.Lib.Tests] Clean
+        {
+            "label": "[BlastFurnace.MassBalance.Lib.Tests] Clean",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "clean",
+                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\BlastFurnace.MassBalance.Lib.Tests.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ REMOVE BIN AND OBJ FOLDERS
+        // Task ------ [BlastFurnace.MassBalance.App] Remove bin and obj folders
+        {
+            "label": "[BlastFurnace.MassBalance.App] Remove bin and obj folders",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "cd .vscode\\BatchScripts && BlastFurnace.MassBalance.App-remove-bin-obj.bat",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [BlastFurnace.MassBalance.Lib] Remove bin and obj folders
+        {
+            "label": "[BlastFurnace.MassBalance.Lib] Remove bin and obj folders",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "cd .vscode\\BatchScripts && BlastFurnace.MassBalance.Lib-remove-bin-obj.bat",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [BlastFurnace.MassBalance.Lib.Tests] Remove bin and obj folders
+        {
+            "label": "[BlastFurnace.MassBalance.Lib.Tests] Remove bin and obj folders",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "cd .vscode\\BatchScripts && BlastFurnace.MassBalance.Lib.Tests-remove-bin-obj.bat",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ BUILD AND TEST
+        // Task ------ [BlastFurnace.MassBalance.Lib] Build, Test, Generate and Open Report
+        {
+            "label": "[BlastFurnace.MassBalance.Lib] Build, Test, Generate and Open Report",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "echo Finished task \"[BlastFurnace.MassBalance.Lib] Build, Test, Generate and Open Report\"",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "[GIT] Get the last commit hash (in current branch)",
+                "[BlastFurnace.MassBalance.Lib.Tests] Build",
+                "[BlastFurnace.MassBalance.Lib] Run Tests",
+                "[BlastFurnace.MassBalance.Lib] Generate Tests Report",
+                "[BlastFurnace.MassBalance.Lib] Open Tests Report"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ BUILD TASKS
+        // Task ------ [BlastFurnace.MassBalance.App] Build 
+        {
+            "label": "[BlastFurnace.MassBalance.App] Build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
                 "${workspaceFolder}/src/csharp/BlastFurnace.MassBalance.App/BlastFurnace.MassBalance.App.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "-c:${config:configuration}",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
         },
+        // Task ------ [BlastFurnace.MassBalance.Lib] Build
         {
-            "label": "publish",
+            "label": "[BlastFurnace.MassBalance.Lib] Build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/csharp/BlastFurnace.MassBalance.Lib/BlastFurnace.MassBalance.Lib.csproj",
+                "-c:${config:configuration}",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [BlastFurnace.MassBalance.Lib.Tests] Build
+        {
+            "label": "[BlastFurnace.MassBalance.Lib.Tests] Build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\BlastFurnace.MassBalance.Lib.Tests.csproj",
+                "-c:${config:configuration}",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ PUBLISH TASKS
+        // Task ------ [BlastFurnace.MassBalance.App] Publish project
+        {
+            "label": "[BlastFurnace.MassBalance.App] Publish project",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
             "command": "dotnet",
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/src/csharp/BlastFurnace.MassBalance.App/BlastFurnace.MassBalance.App.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.App\\BlastFurnace.MassBalance.App.csproj",
+                "-c:${config:configuration}",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
         },
+        // Task ------ [BlastFurnace.MassBalance.Lib] Publish project
         {
-            "label": "watch",
+            "label": "[BlastFurnace.MassBalance.Lib] Publish project",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib\\BlastFurnace.MassBalance.Lib.csproj",
+                "-c:${config:configuration}",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ WATCH TASKS
+        // [BlastFurnace.MassBalance.Lib.Tests] Watch
+        {
+            "label": "[BlastFurnace.MassBalance.Lib.Tests] Watch",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
             "command": "dotnet",
             "type": "process",
             "args": [
                 "watch",
-                "run",
-                "--project",
-                "${workspaceFolder}/src/csharp/BlastFurnace.MassBalance.App/BlastFurnace.MassBalance.App.csproj"
+                "test",
+                "--project:${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\BlastFurnace.MassBalance.Lib.Tests.csproj"
             ],
             "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ RUN TASKS
+        // Task ------ [BlastFurnace.MassBalance.App] Run
+        {
+            "label": "[BlastFurnace.MassBalance.App] Run",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "run",
+                "--project",
+                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.App\\BlastFurnace.MassBalance.App.csproj",
+                "-property:GenerateFullPaths=true",
+                "-consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ TESTS TASKS
+        // Cobertura: https://docs.microsoft.com/pt-br/dotnet/core/testing/unit-testing-code-coverage?tabs=windows
+        // Task ------ [BlastFurnace.MassBalance.Lib] List Tests
+        {
+            "label": "[BlastFurnace.MassBalance.Lib] List Tests",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "--list-tests"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [BlastFurnace.MassBalance.Lib] Run Tests
+        {
+            "label": "[BlastFurnace.MassBalance.Lib] Run Tests",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "-v:Minimal",
+                "-c:${config:configuration}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests",
+                "env": {
+                    "CollectCoverage": "true",
+                    "CoverletOutputFormat": "opencover",
+                    "CoverletOutput": "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\coverage.opencover.xml",
+                    "ThresholdType": "Branch",
+                    "Threshold": "${config:BlastFurnace.MassBalance.Lib.branchCoverage.threshold}"
+                }
+            },
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [BlastFurnace.MassBalance.Lib] Run Stryker.NET Mutation testing
+        {
+            "label": "[BlastFurnace.MassBalance.Lib] Run Stryker.NET Mutation testing",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "stryker",
+                "--open-report"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ GENERATE TESTS REPORTS
+        // Task ------ [BlastFurnace.MassBalance.Lib] Generate Tests Report
+        {
+            "label": "[BlastFurnace.MassBalance.Lib] Generate Tests Report",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "reportgenerator",
+                "-reports:\"${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\coverage.opencover.xml\"",
+                "-targetdir:\"${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\coveragereport\"",
+                "-reporttypes:Html",
+                "-historydir:\"${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\coveragehistory\"",
+                "-Title:\"BlastFurnace.MassBalance.Lib - Test report\"",
+                "-Tag:${input:last.commit.hash}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests",
+            },
+            "problemMatcher": "$msCompile"
+        },
+        // TASK GROUP ------ OPEN TESTS REPORT
+        // Task ------ [BlastFurnace.MassBalance.Lib] Open Tests Report
+        {
+            "label": "[BlastFurnace.MassBalance.Lib] Open Tests Report",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "start",
+            "type": "shell",
+            "windows": {
+                "command": "start"
+            },
+            "args": [
+                "chrome",
+                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\coveragereport\\index.html"
+            ],
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "last.commit.hash",
+            "description": "Enter the last commit hash",
+            "default": "00000000"
         }
     ]
 }

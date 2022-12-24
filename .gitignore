@@ -35,3 +35,5 @@ src/Pascal/backup
 src/Pascal/lib/x86_64-win64
 *.lps
 *.exe
+**/coveragereport
+.vscode/log

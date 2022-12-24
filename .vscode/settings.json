@@ -1,9 +1,28 @@
 {
+    "configuration": "Release",
+    "BlastFurnace.MassBalance.Lib.branchCoverage.threshold": 77,
+    "debug.terminal.clearBeforeReusing": true,
+    "terminal.integrated.automationProfile.windows": {
+        "path": "C:\\Windows\\System32\\cmd.exe"
+    },
     "files.exclude": {
         "**/bin": true,
         "**/obj": true,
+        "**/.git": true,
+        "**/.git-hooks-for-reuse": false,
         "**/.vs": true,
-        "**/.git": true
+        "**/.vscode": false,
+        "**/.config": false
     },
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "editor.codeLens": true,
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "files.autoSave": "onWindowChange",
+    "editor.stickyTabStops": true,
+    "xml.format.splitAttributesIndentSize": 4,
+    "editor.detectIndentation": false,
+    "files.eol": "\n",
     "dotnet-test-explorer.testProjectPath": "**/*[Tt]ests.@(csproj|vbproj|fsproj)"
 }
