@@ -1,0 +1,36 @@
+{
+    "stryker-config": {
+        "additional-timeout": 20000,
+        "baseline": {},
+        "concurrency": 4,
+        "coverage-analysis": "perTest",
+        "disable-bail": false,
+        "disable-mix-mutants": false,
+        "ignore-methods": [],
+        "ignore-mutations": [],
+        "language-version": "Csharp11",
+        "mutate": [],
+        "mutation-level": "Complete",
+        "project": "BlastFurnace.MassBalance.Lib\\BlastFurnace.MassBalance.Lib.csproj",
+        "project-info": {},
+        "report-file-name": "stryker-report.html",
+        "reporters": [
+            "progress",
+            "html",
+            "cleartext"
+        ],
+        "since": {},
+        "solution": "..\\BlastFurnace.MassBalance.sln",
+        "target-framework": "net7.0",
+        "test-case-filter": "",
+        "test-projects": [
+            "BlastFurnace.MassBalance.Lib.Tests.csproj"
+        ],
+        "thresholds": {
+            "high": 80,
+            "low": 70,
+            "break": 50
+        },
+        "verbosity": "debug"
+    }
+}
