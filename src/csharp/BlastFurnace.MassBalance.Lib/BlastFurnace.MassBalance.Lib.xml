@@ -47,6 +47,11 @@
             <param name="fePercent"></param>
             <param name="cPercent"></param>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.HotMetal.ToString">
+            <summary>
+            String representation of HotMetal
+            </summary>
+        </member>
         <member name="T:BlastFurnace.MassBalance.Lib.Percentual">
             <summary>
             Describe percent quantities (from 0 to 100%) that describe raw material chemistry
@@ -62,6 +67,11 @@
             Initialize and validate Percentual instance
             </summary>
             <param name="value"></param>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Percentual.ToString">
+            <summary>
+            String representation of Percentual
+            </summary>
         </member>
         <member name="T:BlastFurnace.MassBalance.Lib.UnitConversion">
             <summary>
