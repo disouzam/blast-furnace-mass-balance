@@ -1,5 +1,6 @@
 program calculo_de_carga;
 
+// Migrated
 {Este programa realiza um cálculo de carga simplificado para um alto forno, 
 feito com base nos exercícios feitos em sala de aula e, também, com base nos
 conhecimentos do grupo, tanto na montagem da linha de pensamento como na
@@ -33,13 +34,14 @@ Após o uso do programa, pode-se armazenar os dados em um arquivo texto
 
 }
 
+// Migration not required
 {
   enconding: Windows-1252 - https://www.ascii-code.com/
 
   "ASCII, stands for American Standard Code for Information Interchange. It's a 7-bit character code where every single bit represents a unique character. On this webpage you will find 8 bits, 256 characters, ASCII table according to Windows-1252 (code page 1252) which is a superset of ISO 8859-1 in terms of printable characters. In the range 128 to 159 (hex 80 to 9F), ISO/IEC 8859-1 has invisible control characters, while Windows-1252 has writable characters. Windows-1252 is probably the most-used 8-bit character encoding in the world."
-
 }
 
+// Migration not required
 {Definição da biblioteca a ser utilizada}
 uses crt;
 
@@ -192,6 +194,7 @@ begin
     textcolor(15);
     writeln;
     writeln;
+    // Migrated
     Write('Informe a quantidade de gusa que deve ser produzido (em toneladas):');
 
     { Leitura da massa de gusa em toneladas}
@@ -199,13 +202,16 @@ begin
     writeln;
 
     {Loop de detecção de erros na execução}
-    repeat 
+    repeat
+
+      // Migrated
       writeln('Informe o teor de ferro e carbono no gusa que ser',#225,' produzido.');
       write('Teor de ferro:');
 
       {Leitura do teor de ferro no gusa} 
       readln(g);
 
+      // Migrated
       write('Teor de carbono:');
       readln(h);
       writeln;
@@ -876,7 +882,9 @@ begin
 
     writeln;
     writeln;
+    // Migrated
     writeln('Deseja executar o programa novamente?');
+    // Migrated
     write('Opçoes: (s)sim (n)nao?');
     readln(resp);
   end;{end do while inicial}
