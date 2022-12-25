@@ -10,8 +10,10 @@ indent_style = space
 # Code files
 [*.{cs,csx,vb,vbx}]
 indent_size = 4
+tab_width = 4
 insert_final_newline = true
 charset = utf-8-bom
+end_of_line = lf
 
 ###############################
 # .NET Coding Conventions     #
