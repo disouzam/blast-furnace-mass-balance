@@ -245,6 +245,13 @@ csharp_space_between_method_call_empty_parameter_list_parentheses = false
 # Wrapping preferences
 csharp_preserve_single_line_statements = true
 csharp_preserve_single_line_blocks = true
+# dotnet_style_operator_placement_when_wrapping = beginning_of_line
+# csharp_using_directive_placement = outside_namespace:silent
+# csharp_prefer_simple_using_statement = true:suggestion
+# csharp_style_namespace_declarations = block_scoped:silent
+# csharp_style_prefer_method_group_conversion = true:silent
+# csharp_style_prefer_top_level_statements = true:silent
+# csharp_style_expression_bodied_lambdas = true:silent
 
 ###############################
 # VB Coding Conventions       #
