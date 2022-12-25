@@ -102,7 +102,6 @@
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
-                "[GIT] Get the last commit hash (in current branch)",
                 "[REPOSITORY-LEVEL] Clean and Remove bin and obj folders",
                 "[REPOSITORY-LEVEL] Build All Projects",
                 "[REPOSITORY-LEVEL] Run all tests and generate reports"
@@ -121,11 +120,10 @@
                 "clear": false
             },
             "hide": false,
-            "command": "echo Finished task \"[REPOSITORY-LEVEL] Build, Test, Generate and Open Reports for All Projects\"",
+            "command": "echo Finished task \"[REPOSITORY-LEVEL] Build, Test, Generate and Open Reports for All Projects - Mutation testing version\"",
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
-                "[GIT] Get the last commit hash (in current branch)",
                 "[REPOSITORY-LEVEL] Clean and Remove bin and obj folders",
                 "[REPOSITORY-LEVEL] Build All Projects",
                 "[REPOSITORY-LEVEL] Run all tests and generate reports",
