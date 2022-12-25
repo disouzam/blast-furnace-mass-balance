@@ -10,5 +10,7 @@ static class Program
         Console.WriteLine(header.AppTitle);
         Console.WriteLine();
         Console.WriteLine(header.DescriptiveText);
+
+        CalculationController.Run();
     }
 }
