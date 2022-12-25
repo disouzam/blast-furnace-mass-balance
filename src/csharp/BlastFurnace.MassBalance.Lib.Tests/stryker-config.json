@@ -1,8 +1,13 @@
 {
     "stryker-config": {
         "additional-timeout": 20000,
-        "baseline": {},
-        "concurrency": 4,
+        "baseline": {
+            "enabled": false
+        },
+        "project-info": {
+            "version": "main"
+        },
+        "concurrency": 2,
         "coverage-analysis": "perTest",
         "disable-bail": false,
         "disable-mix-mutants": false,
@@ -12,14 +17,16 @@
         "mutate": [],
         "mutation-level": "Complete",
         "project": "BlastFurnace.MassBalance.Lib\\BlastFurnace.MassBalance.Lib.csproj",
-        "project-info": {},
         "report-file-name": "stryker-report.html",
         "reporters": [
             "progress",
             "html",
             "cleartext"
         ],
-        "since": {},
+        "since": {
+            "enabled": false,
+            "target": "main"
+        },
         "solution": "..\\BlastFurnace.MassBalance.sln",
         "target-framework": "net7.0",
         "test-case-filter": "",
