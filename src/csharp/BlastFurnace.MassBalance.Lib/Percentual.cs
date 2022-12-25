@@ -1,5 +1,8 @@
 ﻿using System;
 
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json;
+
 namespace BlastFurnace.MassBalance.Lib;
 
 /// <summary>
@@ -23,5 +26,19 @@ public class Percentual
             throw new ArgumentOutOfRangeException(nameof(value), $"Percentage value must belong to [0,100] interval. Current value ({value}) is invalid!");
         }
         Value = value;
+    }
+
+    /// <summary>
+    /// String representation of Percentual
+    /// </summary>
+    public override string ToString()
+    {
+        // https://code-maze.com/csharp-serialize-enum-to-string/
+        var serializerSettings = new JsonSerializerSettings();
+        serializerSettings.Converters.Add(new StringEnumConverter());
+
+        var jsonRepresentation = JsonConvert.SerializeObject(this, Formatting.Indented, serializerSettings);
+
+        return jsonRepresentation.ToString();
     }
 }

@@ -1,5 +1,8 @@
 ﻿using System;
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
 namespace BlastFurnace.MassBalance.Lib;
 
 /// <summary>
@@ -37,5 +40,19 @@ public class HotMetal
         Weight = weight;
         FePercent = fePercent;
         CPercent = cPercent;
+    }
+
+    /// <summary>
+    /// String representation of HotMetal
+    /// </summary>
+    public override string ToString()
+    {
+        // https://code-maze.com/csharp-serialize-enum-to-string/
+        var serializerSettings = new JsonSerializerSettings();
+        serializerSettings.Converters.Add(new StringEnumConverter());
+
+        var jsonRepresentation = JsonConvert.SerializeObject(this, Formatting.Indented, serializerSettings);
+
+        return jsonRepresentation.ToString();
     }
 }
