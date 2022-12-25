@@ -65,5 +65,16 @@ namespace BlastFurnace.MassBalance.Lib
                 return GetDescription();
             }
         }
+
+        /// <summary>
+        /// Title of the application
+        /// </summary>
+        public static string AppTitle
+        {
+            get
+            {
+                return "Blast Furnace Mass Balance Application";
+            }
+        }
     }
 }

@@ -12,7 +12,7 @@ public class AboutTests
         var i = 0;
         var smallestLength = About.Description.Length < expectedMessageInPortuguese.Length ? About.Description.Length : expectedMessageInPortuguese.Length;
 
-        while (i < smallestLength) 
+        while (i < smallestLength)
         {
             About.Description.Substring(0, i).Should().Be(expectedMessageInPortuguese.Substring(0, i));
             i++;
@@ -20,6 +20,12 @@ public class AboutTests
 
         About.Description.Length.Should().Be(expectedMessageInPortuguese.Length);
         About.Description.Should().Be(expectedMessageInPortuguese);
+    }
+
+    [Fact]
+    public void CheckAppTitle()
+    {
+        About.AppTitle.Should().Be("Blast Furnace Mass Balance Application");
     }
 
     private static string expectedMessageInPortuguese = "Este programa realiza um cálculo de carga simplificado para um alto forno, feito com base nos exercícios feitos em sala de aula e, também, com base nos conhecimentos do grupo, tanto na montagem da linha de pensamento como na montagem do programa usando a linguagem Pascal." +
