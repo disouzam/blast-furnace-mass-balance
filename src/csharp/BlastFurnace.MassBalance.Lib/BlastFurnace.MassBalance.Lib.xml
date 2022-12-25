@@ -19,6 +19,50 @@
             Title of the application
             </summary>
         </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.HotMetal">
+            <summary>
+            Describes hot metal weight and composition
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.HotMetal.Weight">
+            <summary>
+            Weight of hot metal
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.HotMetal.FePercent">
+            <summary>
+            Percentage of Iron in Hot Metal
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.HotMetal.CPercent">
+            <summary>
+            Percentage of Carbon in Hot Metal
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.HotMetal.#ctor(BlastFurnace.MassBalance.Lib.Weight,BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Percentual)">
+            <summary>
+            Initialize and validate hot metal setting
+            </summary>
+            <param name="weight"></param>
+            <param name="fePercent"></param>
+            <param name="cPercent"></param>
+        </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.Percentual">
+            <summary>
+            Describe percent quantities (from 0 to 100%) that describe raw material chemistry
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.Percentual.Value">
+            <summary>
+            Hold the percentage value
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Percentual.#ctor(System.Double)">
+            <summary>
+            Initialize and validate Percentual instance
+            </summary>
+            <param name="value"></param>
+        </member>
         <member name="T:BlastFurnace.MassBalance.Lib.UnitConversion">
             <summary>
             Static class that performs conversion between different measurement units
