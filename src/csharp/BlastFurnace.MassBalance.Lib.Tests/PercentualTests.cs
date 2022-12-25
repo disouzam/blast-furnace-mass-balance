@@ -37,4 +37,11 @@ public class PercentualTests
         var act2 = () => _ = new Percentual(randomValue2);
         act2.Should().Throw<ArgumentOutOfRangeException>().WithMessage($"Percentage value must belong to [0,100] interval. Current value ({randomValue2}) is invalid! (Parameter 'value')");
     }
+
+    [Fact]
+    public void CheckStringRepresentation()
+    {
+        var percentualValue = new Percentual(20);
+        percentualValue.ToString().Should().Be("{\r\n  \"Value\": 20.0\r\n}");
+    }
 }

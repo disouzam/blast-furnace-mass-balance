@@ -33,12 +33,7 @@ public class Percentual
     /// </summary>
     public override string ToString()
     {
-        // https://code-maze.com/csharp-serialize-enum-to-string/
-        var serializerSettings = new JsonSerializerSettings();
-        serializerSettings.Converters.Add(new StringEnumConverter());
-
-        var jsonRepresentation = JsonConvert.SerializeObject(this, Formatting.Indented, serializerSettings);
-
+        var jsonRepresentation = JsonConvert.SerializeObject(this, Formatting.Indented);
         return jsonRepresentation.ToString();
     }
 }
