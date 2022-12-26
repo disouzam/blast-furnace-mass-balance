@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 using BlastFurnace.MassBalance.Lib;
 namespace BlastFurnace.MassBalance.ConsoleApp;
@@ -24,13 +24,14 @@ internal static class CalculationController
 
     private static HotMetal GetHotMetalInfo()
     {
-        Console.WriteLine("Informe a quantidade de gusa que deve ser produzido(em toneladas):");
+        Console.WriteLine("Informe a quantidade de gusa que deve ser produzido (em toneladas):");
         var reading = Console.ReadLine();
 
         double weightReading;
         while (!double.TryParse(reading, out weightReading))
         {
             Console.WriteLine("Valor incorreto! Digite novamente...");
+            reading = Console.ReadLine();
         }
 
         Console.WriteLine("Informe o teor de ferro e carbono no gusa que será produzido.");
@@ -42,6 +43,7 @@ internal static class CalculationController
         while (!double.TryParse(reading, out fePercentageReading))
         {
             Console.WriteLine("Valor incorreto! Digite novamente...");
+            reading = Console.ReadLine();
         }
 
         Console.WriteLine("Teor de carbono:");
@@ -52,6 +54,7 @@ internal static class CalculationController
         while (!double.TryParse(reading, out cPercentageReading))
         {
             Console.WriteLine("Valor incorreto! Digite novamente...");
+            reading = Console.ReadLine();
         }
 
         var hotMetal = new HotMetal(new Weight(weightReading, WeightUnits.metricTon), new Percentual(fePercentageReading), new Percentual(cPercentageReading));
