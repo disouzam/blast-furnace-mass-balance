@@ -1,5 +1,6 @@
 program calculo_de_carga;
 
+// Migrated
 {Este programa realiza um cálculo de carga simplificado para um alto forno, 
 feito com base nos exercícios feitos em sala de aula e, também, com base nos
 conhecimentos do grupo, tanto na montagem da linha de pensamento como na
@@ -33,13 +34,14 @@ Após o uso do programa, pode-se armazenar os dados em um arquivo texto
 
 }
 
+// Migration not required
 {
   enconding: Windows-1252 - https://www.ascii-code.com/
 
   "ASCII, stands for American Standard Code for Information Interchange. It's a 7-bit character code where every single bit represents a unique character. On this webpage you will find 8 bits, 256 characters, ASCII table according to Windows-1252 (code page 1252) which is a superset of ISO 8859-1 in terms of printable characters. In the range 128 to 159 (hex 80 to 9F), ISO/IEC 8859-1 has invisible control characters, while Windows-1252 has writable characters. Windows-1252 is probably the most-used 8-bit character encoding in the world."
-
 }
 
+// Migration not required
 {Definição da biblioteca a ser utilizada}
 uses crt;
 
@@ -68,8 +70,10 @@ begin
   {Cor do texto}
   TextColor( 15 );
   gotoxy(13,10);
+  // Migrated
   writeln('CALCULO DE CARGA');
   gotoxy(1,24);
+  // Migrated
   write('Pressione qualquer tecla para continuar.');
   readkey;
   Textmode(3);
@@ -192,6 +196,7 @@ begin
     textcolor(15);
     writeln;
     writeln;
+    // Migrated
     Write('Informe a quantidade de gusa que deve ser produzido (em toneladas):');
 
     { Leitura da massa de gusa em toneladas}
@@ -199,13 +204,16 @@ begin
     writeln;
 
     {Loop de detecção de erros na execução}
-    repeat 
+    repeat
+
+      // Migrated
       writeln('Informe o teor de ferro e carbono no gusa que ser',#225,' produzido.');
       write('Teor de ferro:');
 
       {Leitura do teor de ferro no gusa} 
       readln(g);
 
+      // Migrated
       write('Teor de carbono:');
       readln(h);
       writeln;
@@ -229,6 +237,7 @@ begin
     repeat
 
       {Leitura do número de minérios (ou similares) a serem utilizados}
+      // Migrated;
       writeln('Quantos tipos de min',#233,'rios ser'#227'o utilizados (m',#225,'ximo de 3)?');
       readln(t);
 
@@ -238,6 +247,7 @@ begin
       begin
         textcolor(11);
 
+        // Migrated;
         {Aviso de erro na digitação do número de minérios}
         writeln('Dado incorreto!');
 
@@ -258,6 +268,7 @@ begin
       if t=1 then
       begin
 
+        // Migrated;
         {Leitura do teor de ferro, no caso de um só minério}
         writeln('Informe o teor de ferro no min',#233,'rio.');
         readln(TeorM[1]);
@@ -268,15 +279,19 @@ begin
       begin
         cont:=1;
 
+        // Migrated;
         {Leitura da proporção e do teor de ferro para cada minério, para o caso de mais de um minério}
         while cont<=t do 
         begin
-          writeln('Informe a propor',#231,#227,'o do min',#233,'rio ',cont,' e o teor de ferro nele.');
+         // Migrated;
+         writeln('Informe a propor',#231,#227,'o do min',#233,'rio ',cont,' e o teor de ferro nele.');
 
+         // Migrated;
           {Leitura da proporção para cada minério}
           write('Propor',#231,#227,'o:');
           readln(PropM[cont]);
 
+          // Migrated;
           {Leitura do teor de ferro para cada minério}
           write('Teor de ferro:');
           readln(TeorM[cont]);
@@ -286,6 +301,7 @@ begin
         end;
       end;
 
+      // Migrated;
       if PropM[1]+PropM[2]+PropM[3] <> 100 then 
       begin
         textcolor(11);
@@ -307,6 +323,7 @@ begin
 
     repeat
       {Leitura do número de coques a serem utilizados}
+      // Migrated;
       writeln('Quantos tipos de coque ser',#227,'o utilizados (m',#225,'ximo de 3)?');
       readln(y);
       writeln;
@@ -332,6 +349,7 @@ begin
       if y=1 then
       begin
         {Leitura do teor de  carbono fixo, no caso de um só coque}
+        // Migrated;
         writeln('Informe o teor de carbono no coque.');
         readln(TeorC[1]);
 
@@ -347,10 +365,12 @@ begin
           writeln('Informe a propor',#231,#227,'o do coque ',cont,' na mistura e teor de carbono fixo nele.');
 
           {Leitura da proporção para cada coque}
+          // Migrated;
           write('Propor',#231,#227,'o:');
           readln(PropC[cont]);
 
           {Leitura do teor de carbono para cada coque}
+          // Migrated;
           write('Teor de carbono:');
           readln(TeorC[cont]);
 
@@ -363,6 +383,7 @@ begin
         textcolor(11);
 
         {Aviso de erro na digitação das proporções}
+        // Migrated;
         writeln('Dados incorretos!');
 
         textcolor(15);
@@ -420,6 +441,7 @@ begin
     writeln;
 
     {Leitura do teor de carbono fixo no PCI}
+    // Migrated;
     writeln('Informe o teor de carbono no PCI:');
     readln(CF);
 
@@ -436,6 +458,7 @@ begin
       writeln('Voc',#234,' poder',#225,' usar no m',#225,'ximo ',PCI:10:3,' toneladas de PCI.');
 
       {Leitura da massa de PCI adicionada}
+      // Migrated;
       write('Informe um valor em toneladas:');
       readln(PCIesc);
 
@@ -491,6 +514,7 @@ begin
     writeln('Informe o teor de oxig',#234,'nio no sopro.');
 
     {Leitura do teor de oxigênio no sopro}
+    // Migrated;
     write('Teor de oxig',#234,'nio:');
     readln(po2);
 
@@ -876,7 +900,9 @@ begin
 
     writeln;
     writeln;
+    // Migrated
     writeln('Deseja executar o programa novamente?');
+    // Migrated
     write('Opçoes: (s)sim (n)nao?');
     readln(resp);
   end;{end do while inicial}

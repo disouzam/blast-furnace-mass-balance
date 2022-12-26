@@ -10,8 +10,10 @@ indent_style = space
 # Code files
 [*.{cs,csx,vb,vbx}]
 indent_size = 4
+tab_width = 4
 insert_final_newline = true
 charset = utf-8-bom
+end_of_line = lf
 
 ###############################
 # .NET Coding Conventions     #
@@ -207,6 +209,7 @@ csharp_prefer_simple_default_expression = true:suggestion
 csharp_style_pattern_local_over_anonymous_function = true:suggestion
 csharp_style_inlined_variable_declaration = true:suggestion
 csharp_style_unused_value_assignment_preference = discard_variable:error
+csharp_style_implicit_object_creation_when_type_is_apparent = false:silent
 
 ###############################
 # C# Formatting Rules         #
@@ -242,6 +245,13 @@ csharp_space_between_method_call_empty_parameter_list_parentheses = false
 # Wrapping preferences
 csharp_preserve_single_line_statements = true
 csharp_preserve_single_line_blocks = true
+# dotnet_style_operator_placement_when_wrapping = beginning_of_line
+# csharp_using_directive_placement = outside_namespace:silent
+# csharp_prefer_simple_using_statement = true:suggestion
+# csharp_style_namespace_declarations = block_scoped:silent
+# csharp_style_prefer_method_group_conversion = true:silent
+# csharp_style_prefer_top_level_statements = true:silent
+# csharp_style_expression_bodied_lambdas = true:silent
 
 ###############################
 # VB Coding Conventions       #

@@ -4,6 +4,255 @@
         <name>BlastFurnace.MassBalance.Lib</name>
     </assembly>
     <members>
+        <member name="T:BlastFurnace.MassBalance.Lib.About">
+            <summary>
+            Contains description and other metadata of BlasFurnace Mass Balance library/application
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.About.Description">
+            <summary>
+            A textual description of the purpose of Blast Furnace mass balance library/application
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.About.AppTitle">
+            <summary>
+            Title of the application
+            </summary>
+        </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.AirBlow">
+            <summary>
+            Describes composition and other variables related to air blow in Blast Furnace
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.AirBlow.O2Content">
+            <summary>
+            Oxygen content in air blow
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.AirBlow.#ctor(BlastFurnace.MassBalance.Lib.Percentual)">
+            <summary>
+            Initialize air blow properties
+            </summary>
+            <param name="o2Content"></param>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.AirBlow.ToString">
+            <summary>
+            String representation of air blow
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.Coke">
+            <summary>
+            Describes coke composition and its proportion in a mixture with other cokes
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.Coke.CContent">
+            <summary>
+            C content of coke
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.Coke.Proportion">
+            <summary>
+            Proportion of coke in a blending setup
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Coke.#ctor(BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Percentual)">
+            <summary>
+            Initialize an coke instance
+            </summary>
+            <param name="cContent"></param>
+            <param name="proportion"></param>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Coke.ToString">
+            <summary>
+            String representation of Coke
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.CokeBlend">
+            <summary>
+            A collection of Cokes
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.CokeBlend.Cokes">
+            <summary>
+            A read-only collection of Cokes
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.CokeBlend.TotalProportion">
+            <summary>
+            Total proportion of Cokes in this blend.
+            </summary>
+            <remarks>
+            For a full set up coke blend, this value must be equal to 100%
+            For a partially defined coke blend, this value can be lower than 100%
+            </remarks>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.Add(BlastFurnace.MassBalance.Lib.Coke)">
+            <summary>
+            Add one coke to the blend of Cokes
+            </summary>
+            <param name="coke"></param>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.NormalizeProportions">
+            <summary>
+            Normalize proportions of Cokes to 100%
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.ToString">
+            <summary>
+            String representation of CokeBlend
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.HotMetal">
+            <summary>
+            Describes hot metal weight and composition
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.HotMetal.Weight">
+            <summary>
+            Weight of hot metal
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.HotMetal.FePercent">
+            <summary>
+            Percentage of Iron in Hot Metal
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.HotMetal.CPercent">
+            <summary>
+            Percentage of Carbon in Hot Metal
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.HotMetal.#ctor(BlastFurnace.MassBalance.Lib.Weight,BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Percentual)">
+            <summary>
+            Initialize and validate hot metal setting
+            </summary>
+            <param name="weight"></param>
+            <param name="fePercent"></param>
+            <param name="cPercent"></param>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.HotMetal.ToString">
+            <summary>
+            String representation of HotMetal
+            </summary>
+        </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.IronOre">
+            <summary>
+            Describes iron ore composition and its proportion in a mixture with other iron ores
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.IronOre.FeContent">
+            <summary>
+            Fe content of Iron Ore
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.IronOre.Proportion">
+            <summary>
+            Proportion of Iron Ore in a blending setup
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.IronOre.#ctor(BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Percentual)">
+            <summary>
+            Initialize an iron ore instance
+            </summary>
+            <param name="feContent"></param>
+            <param name="proportion"></param>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.IronOre.ToString">
+            <summary>
+            String representation of IronOre
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.IronOreBlend">
+            <summary>
+            A collection of Iron Ores
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.IronOreBlend.IronOres">
+            <summary>
+            A read-only collection of iron ores
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.IronOreBlend.TotalProportion">
+            <summary>
+            Total proportion of iron ores in this blend.
+            </summary>
+            <remarks>
+            For a full set up iron ore blend, this value must be equal to 100%
+            For a partially defined iron ore blend, this value can be lower than 100%
+            </remarks>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.IronOreBlend.Add(BlastFurnace.MassBalance.Lib.IronOre)">
+            <summary>
+            Add one iron ore to the blend of iron ores
+            </summary>
+            <param name="ironOre"></param>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.IronOreBlend.NormalizeProportions">
+            <summary>
+            Normalize proportions of iron ores to 100%
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.IronOreBlend.ToString">
+            <summary>
+            String representation of IronOreBlend
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.Percentual">
+            <summary>
+            Describe percent quantities (from 0 to 100%) that describe raw material chemistry
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.Percentual.Value">
+            <summary>
+            Hold the percentage value
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Percentual.#ctor(System.Double)">
+            <summary>
+            Initialize and validate Percentual instance
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Percentual.ToString">
+            <summary>
+            String representation of Percentual
+            </summary>
+        </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection">
+            <summary>
+            Describes Pulverized Coal Injection composition
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.CContent">
+            <summary>
+            C content of Pulverized Coal Injection
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.Weight">
+            <summary>
+            Weight of Pulverized Coal Injection
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.#ctor(BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Weight)">
+            <summary>
+            Initialize an Pulverized Coal Injection instance
+            </summary>
+            <param name="cContent"></param>
+            <param name="weight"></param>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.ToString">
+            <summary>
+            String representation of Pulverized Coal Injection
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:BlastFurnace.MassBalance.Lib.UnitConversion">
             <summary>
             Static class that performs conversion between different measurement units

@@ -1,6 +1,7 @@
 ﻿using System;
 
 using FluentAssertions;
+using FluentAssertions.Execution;
 
 using Xunit;
 
@@ -13,8 +14,11 @@ public class WeightTests
     {
         var newWeight = new Weight(1000, WeightUnits.kilogram);
 
-        newWeight.Value.Should().Be(1000);
-        newWeight.Unit.Should().Be(WeightUnits.kilogram);
+        using (new AssertionScope())
+        {
+            newWeight.Value.Should().Be(1000);
+            newWeight.Unit.Should().Be(WeightUnits.kilogram);
+        }
     }
 
     [Fact]
@@ -22,8 +26,11 @@ public class WeightTests
     {
         var newWeight = new Weight(0, WeightUnits.kilogram);
 
-        newWeight.Value.Should().Be(0);
-        newWeight.Unit.Should().Be(WeightUnits.kilogram);
+        using (new AssertionScope())
+        {
+            newWeight.Value.Should().Be(0);
+            newWeight.Unit.Should().Be(WeightUnits.kilogram);
+        }
     }
 
     [Fact]

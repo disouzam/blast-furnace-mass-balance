@@ -1,6 +1,6 @@
 {
-    "configuration": "Release",
-    "BlastFurnace.MassBalance.Lib.branchCoverage.threshold": 77,
+    "configuration": "Debug",
+    "BlastFurnace.MassBalance.Lib.branchCoverage.threshold": 85,
     "debug.terminal.clearBeforeReusing": true,
     "terminal.integrated.automationProfile.windows": {
         "path": "C:\\Windows\\System32\\cmd.exe"

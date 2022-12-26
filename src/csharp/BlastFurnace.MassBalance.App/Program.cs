@@ -6,6 +6,11 @@ static class Program
 {
     static void Main()
     {
-        Console.WriteLine("Blast Furnace Mass Balance Application");
+        var header = new Header();
+        Console.WriteLine(header.AppTitle);
+        Console.WriteLine();
+        Console.WriteLine(header.DescriptiveText);
+
+        CalculationController.Run();
     }
 }

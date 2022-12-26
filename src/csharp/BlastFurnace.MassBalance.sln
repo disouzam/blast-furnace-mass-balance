@@ -9,6 +9,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlastFurnace.MassBalance.Li
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlastFurnace.MassBalance.Lib.Tests", "BlastFurnace.MassBalance.Lib.Tests\BlastFurnace.MassBalance.Lib.Tests.csproj", "{47C9A96F-01D4-42BB-A45D-22763DC7CC35}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.SolutionConfiguration", "0.SolutionConfiguration", "{627A890A-E776-4565-A512-EF1A55FE43DE}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Application", "1.Application", "{3182A279-75D0-42A1-B361-4B5F85A75197}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Library", "2.Library", "{8DFF0473-606D-4212-B9E7-73E21B58E690}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Tests", "3.Tests", "{43AF5DD4-CEB9-4C37-A8A4-9816E549BF27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +41,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{03C9047B-201A-4200-BE2A-ED499A095A5B} = {3182A279-75D0-42A1-B361-4B5F85A75197}
+		{7677CCB8-2FBF-4D12-8E3F-FE367109B5D2} = {8DFF0473-606D-4212-B9E7-73E21B58E690}
+		{47C9A96F-01D4-42BB-A45D-22763DC7CC35} = {43AF5DD4-CEB9-4C37-A8A4-9816E549BF27}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF2F2CAA-2FC3-439C-96D8-D1F934E7A4DD}
