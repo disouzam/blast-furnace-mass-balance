@@ -203,6 +203,34 @@
             String representation of Percentual
             </summary>
         </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection">
+            <summary>
+            Describes Pulverized Coal Injection composition
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.CContent">
+            <summary>
+            C content of Pulverized Coal Injection
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.Weight">
+            <summary>
+            Weight of Pulverized Coal Injection
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.#ctor(BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Weight)">
+            <summary>
+            Initialize an Pulverized Coal Injection instance
+            </summary>
+            <param name="cContent"></param>
+            <param name="weight"></param>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.ToString">
+            <summary>
+            String representation of Pulverized Coal Injection
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:BlastFurnace.MassBalance.Lib.UnitConversion">
             <summary>
             Static class that performs conversion between different measurement units
