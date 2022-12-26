@@ -14,7 +14,9 @@ public class AboutTests
 
         while (i < smallestLength)
         {
+#pragma warning disable IDE0057 // Use range operator
             About.Description.Substring(0, i).Should().Be(expectedMessageInPortuguese.Substring(0, i));
+#pragma warning restore IDE0057 // Use range operator
             i++;
         }
 
@@ -28,7 +30,7 @@ public class AboutTests
         About.AppTitle.Should().Be("Blast Furnace Mass Balance Application");
     }
 
-    private static string expectedMessageInPortuguese = "Este programa realiza um cálculo de carga simplificado para um alto forno, feito com base nos exercícios feitos em sala de aula e, também, com base nos conhecimentos do grupo, tanto na montagem da linha de pensamento como na montagem do programa usando a linguagem Pascal." +
+    private static readonly string expectedMessageInPortuguese = "Este programa realiza um cálculo de carga simplificado para um alto forno, feito com base nos exercícios feitos em sala de aula e, também, com base nos conhecimentos do grupo, tanto na montagem da linha de pensamento como na montagem do programa usando a linguagem Pascal." +
 "\r\n" + "\r\n" +
 "O programa considera o carregamento de até 3 tipos de minérios (estes podem ser os minérios, pelotas e sínteres)." +
 "\r\n" + "\r\n" +
