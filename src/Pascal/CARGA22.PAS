@@ -439,6 +439,7 @@ begin
     writeln;
 
     {Leitura do teor de carbono fixo no PCI}
+    // Migrated;
     writeln('Informe o teor de carbono no PCI:');
     readln(CF);
 
@@ -455,6 +456,7 @@ begin
       writeln('Voc',#234,' poder',#225,' usar no m',#225,'ximo ',PCI:10:3,' toneladas de PCI.');
 
       {Leitura da massa de PCI adicionada}
+      // Migrated;
       write('Informe um valor em toneladas:');
       readln(PCIesc);
 
