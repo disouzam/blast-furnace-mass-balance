@@ -16,6 +16,9 @@ internal static class CalculationController
             var ironOreBlend = GetIronOreBlend();
             Console.WriteLine(ironOreBlend.ToString());
 
+            var cokeBlend = GetCokeBlend();
+            Console.WriteLine(cokeBlend.ToString());
+
             Console.WriteLine("Deseja executar o programa novamente?");
             Console.WriteLine("Opções: (s)sim (n)nao?");
             selectedChoice = Console.ReadLine();
@@ -160,5 +163,105 @@ internal static class CalculationController
         }
 
         return ironOreBlend;
+    }
+
+    private static CokeBlend GetCokeBlend()
+    {
+        Console.WriteLine("Quantos tipos de coques serão utilizados (máximo de 3)?");
+        var reading = Console.ReadLine();
+
+        var validReading = double.TryParse(reading, out var numberOfCokes);
+        while (!validReading || numberOfCokes > 3)
+        {
+            if (!validReading)
+            {
+                Console.WriteLine("Valor incorreto! Digite novamente...");
+            }
+
+            if (numberOfCokes > 3)
+            {
+                Console.WriteLine("Essa aplicação só processa até 3 tipos de coques! Digite novamente...");
+            }
+            reading = Console.ReadLine();
+            validReading = double.TryParse(reading, out numberOfCokes);
+        }
+
+        var cokeBlend = new CokeBlend();
+
+        double cContent;
+        if (numberOfCokes > 1)
+        {
+            for (var counter = 0; counter < numberOfCokes; counter++)
+            {
+                Console.WriteLine($"Informe a proporção do coque #{counter} e o teor de carbono fixo nele.");
+
+                Console.WriteLine("Proporção:");
+                reading = Console.ReadLine();
+
+                validReading = double.TryParse(reading, out var proportion);
+                while (!validReading || proportion < 0 || proportion > 100)
+                {
+                    if (!validReading)
+                    {
+                        Console.WriteLine("Valor incorreto! Digite novamente...");
+                    }
+
+                    if (proportion < 0 || proportion > 100)
+                    {
+                        Console.WriteLine("A proporção de um coque deve estar no intervalo [0,100] e a soma das proporções deve ser menor ou igual a 100%! Digite novamente...");
+                    }
+                    reading = Console.ReadLine();
+                    validReading = double.TryParse(reading, out proportion);
+                }
+
+                Console.WriteLine("Teor de carbono fixo:");
+                reading = Console.ReadLine();
+
+                validReading = double.TryParse(reading, out cContent);
+                while (!validReading || cContent < 0 || cContent > 100)
+                {
+                    if (!validReading)
+                    {
+                        Console.WriteLine("Valor incorreto! Digite novamente...");
+                    }
+
+                    if (cContent < 0 || cContent > 100)
+                    {
+                        Console.WriteLine("O teor de C fixo do coque é um valor no intervalo [0,100]! Digite novamente...");
+                    }
+                    reading = Console.ReadLine();
+                    validReading = double.TryParse(reading, out cContent);
+                }
+
+                var coke = new Coke(new Percentual(cContent), new Percentual(proportion));
+                cokeBlend.Add(coke);
+            }
+        }
+        else
+        {
+            Console.WriteLine("Informe o teor de carbono fixo no coque.");
+            reading = Console.ReadLine();
+            validReading = double.TryParse(reading, out cContent);
+
+            while (!validReading || cContent < 0 || cContent > 100)
+            {
+                if (!validReading)
+                {
+                    Console.WriteLine("Valor incorreto! Digite novamente...");
+                }
+
+                if (cContent < 0 || cContent > 100)
+                {
+                    Console.WriteLine("O teor de C fixo do coque é um valor no intervalo [0,100]! Digite novamente...");
+                }
+                reading = Console.ReadLine();
+                validReading = double.TryParse(reading, out cContent);
+            }
+
+            var coke = new Coke(new Percentual(cContent), new Percentual(100));
+            cokeBlend.Add(coke);
+        }
+
+        return cokeBlend;
     }
 }
