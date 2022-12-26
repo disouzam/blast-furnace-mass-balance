@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 namespace BlastFurnace.MassBalance.Lib;
 
