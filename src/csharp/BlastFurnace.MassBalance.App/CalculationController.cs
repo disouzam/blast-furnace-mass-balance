@@ -19,6 +19,9 @@ internal static class CalculationController
             var cokeBlend = GetCokeBlend();
             Console.WriteLine(cokeBlend.ToString());
 
+            var pci = GetPulverizedCoalInjection();
+            Console.WriteLine(pci.ToString());
+
             Console.WriteLine("Deseja executar o programa novamente?");
             Console.WriteLine("Opções: (s)sim (n)nao?");
             selectedChoice = Console.ReadLine();
@@ -263,5 +266,32 @@ internal static class CalculationController
         }
 
         return cokeBlend;
+    }
+
+    private static PulverizedCoalInjection GetPulverizedCoalInjection()
+    {
+        Console.WriteLine("Informe o teor de carbono no PCI:");
+        var reading = Console.ReadLine();
+
+        double cReading;
+        while (!double.TryParse(reading, out cReading))
+        {
+            Console.WriteLine("Valor incorreto! Digite novamente...");
+            reading = Console.ReadLine();
+        }
+
+        Console.WriteLine("Informe o peso de PCI adicionado (em toneladas):");
+        reading = Console.ReadLine();
+
+        double weightReading;
+        while (!double.TryParse(reading, out weightReading))
+        {
+            Console.WriteLine("Valor incorreto! Digite novamente...");
+            reading = Console.ReadLine();
+        }
+        
+        var pci = new PulverizedCoalInjection(new Percentual(cReading), new Weight(weightReading, WeightUnits.metricTon));
+
+        return pci;
     }
 }
