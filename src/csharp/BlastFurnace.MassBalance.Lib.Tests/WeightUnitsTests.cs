@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 
 using Xunit;
 
@@ -23,15 +24,21 @@ public class WeightUnitsTests
     [Fact] 
     public void CheckIntegerRepresentation() 
     {
-        ((int)kilogram).Should().Be(0);
-        ((int)metricTons).Should().Be(1);
+        using (new AssertionScope())
+        {
+            ((int)kilogram).Should().Be(0);
+            ((int)metricTons).Should().Be(1);
+        }
     }
 
     // Check each individual value - String representation
     [Fact]
     public void CheckStringRepresentation()
     {
-        kilogram.ToString().Should().Be("kilogram");
-        metricTons.ToString().Should().Be("metricTon");
+        using (new AssertionScope())
+        {
+            kilogram.ToString().Should().Be("kilogram");
+            metricTons.ToString().Should().Be("metricTon");
+        }
     }
 }

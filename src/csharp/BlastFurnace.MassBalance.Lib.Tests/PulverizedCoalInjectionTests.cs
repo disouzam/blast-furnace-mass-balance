@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 
 using Xunit;
 
@@ -10,9 +11,13 @@ public class PulverizedCoalInjectionTests
     public void CheckValidInitialization()
     {
         var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(100, WeightUnits.metricTon));
-        pci.Should().NotBeNull();
-        pci.CContent.Value.Should().Be(90);
-        pci.Weight.Value.Should().Be(100);
+
+        using (new AssertionScope())
+        {
+            pci.Should().NotBeNull();
+            pci.CContent.Value.Should().Be(90);
+            pci.Weight.Value.Should().Be(100);
+        }
     }
 
     [Fact]

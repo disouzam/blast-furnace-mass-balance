@@ -1,6 +1,7 @@
 ﻿using System;
 
 using FluentAssertions;
+using FluentAssertions.Execution;
 
 using Xunit;
 
@@ -21,17 +22,20 @@ public class HotMetalTests
     [Fact]
     public void CheckValidInitialization()
     {
-        hotMetal.Should().NotBeNull();
-        hotMetal.Weight.Value.Should().Be(1);
-        hotMetal.Weight.Unit.Should().Be(WeightUnits.kilogram);
-        hotMetal.FePercent.Value.Should().Be(95);
-        hotMetal.CPercent.Value.Should().Be(5);
+        using (new AssertionScope())
+        {
+            hotMetal.Should().NotBeNull();
+            hotMetal.Weight.Value.Should().Be(1);
+            hotMetal.Weight.Unit.Should().Be(WeightUnits.kilogram);
+            hotMetal.FePercent.Value.Should().Be(95);
+            hotMetal.CPercent.Value.Should().Be(5);
 
-        hotMetal2.Should().NotBeNull();
-        hotMetal2.Weight.Value.Should().Be(1);
-        hotMetal2.Weight.Unit.Should().Be(WeightUnits.metricTon);
-        hotMetal2.FePercent.Value.Should().Be(94);
-        hotMetal2.CPercent.Value.Should().Be(5);
+            hotMetal2.Should().NotBeNull();
+            hotMetal2.Weight.Value.Should().Be(1);
+            hotMetal2.Weight.Unit.Should().Be(WeightUnits.metricTon);
+            hotMetal2.FePercent.Value.Should().Be(94);
+            hotMetal2.CPercent.Value.Should().Be(5);
+        }
     }
 
     [Fact]

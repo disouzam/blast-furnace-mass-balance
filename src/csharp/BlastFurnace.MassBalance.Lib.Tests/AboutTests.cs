@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 
 using Xunit;
 
@@ -20,8 +21,11 @@ public class AboutTests
             i++;
         }
 
-        About.Description.Length.Should().Be(expectedMessageInPortuguese.Length);
-        About.Description.Should().Be(expectedMessageInPortuguese);
+        using (new AssertionScope())
+        {
+            About.Description.Length.Should().Be(expectedMessageInPortuguese.Length);
+            About.Description.Should().Be(expectedMessageInPortuguese);
+        }
     }
 
     [Fact]
@@ -48,5 +52,4 @@ public class AboutTests
 "\r\n" + "\r\n" +
 "Após o uso do programa, pode-se armazenar os dados em um arquivo texto (Calculo_de_carga.doc)" +
 "\r\n";
-
 }

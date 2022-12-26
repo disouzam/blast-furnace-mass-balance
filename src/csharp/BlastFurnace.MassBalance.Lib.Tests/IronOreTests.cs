@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 
 using Xunit;
 
@@ -10,9 +11,13 @@ public class IronOreTests
     public void CheckValidInitialization()
     {
         var ironOre1 = new IronOre(new Percentual(70), new Percentual(100));
-        ironOre1.Should().NotBeNull();
-        ironOre1.FeContent.Value.Should().Be(70);
-        ironOre1.Proportion.Value.Should().Be(100);
+
+        using (new AssertionScope())
+        {
+            ironOre1.Should().NotBeNull();
+            ironOre1.FeContent.Value.Should().Be(70);
+            ironOre1.Proportion.Value.Should().Be(100);
+        }
     }
 
     [Fact]

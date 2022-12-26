@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Execution;
 
 using Xunit;
 
@@ -10,9 +11,13 @@ public class CokeTests
     public void CheckValidInitialization()
     {
         var coke1 = new Coke(new Percentual(90), new Percentual(100));
-        coke1.Should().NotBeNull();
-        coke1.CContent.Value.Should().Be(90);
-        coke1.Proportion.Value.Should().Be(100);
+
+        using (new AssertionScope())
+        {
+            coke1.Should().NotBeNull();
+            coke1.CContent.Value.Should().Be(90);
+            coke1.Proportion.Value.Should().Be(100);
+        }
     }
 
     [Fact]

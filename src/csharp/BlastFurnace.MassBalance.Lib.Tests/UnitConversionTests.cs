@@ -1,6 +1,7 @@
 ﻿using System;
 
 using FluentAssertions;
+using FluentAssertions.Execution;
 
 using Xunit;
 
@@ -19,23 +20,30 @@ public class UnitConversionTests
 
         var convertedWeight = UnitConversion.WeightConversion(originalWeight, newWeightUnit);
 
-        convertedWeight.Value.Should().BeApproximately(convertedValue, 0.0001);
-        convertedWeight.Unit.Should().Be(newWeightUnit);
+        using (new AssertionScope())
+        {
+            convertedWeight.Value.Should().BeApproximately(convertedValue, 0.0001);
+            convertedWeight.Unit.Should().Be(newWeightUnit);
+        }
     }
 
     [Fact]
     public void CheckInvalidWeightConversions()
     {
         var originalWeight = new Weight(1, WeightUnits.kilogram);
-        var act = () => UnitConversion.WeightConversion(originalWeight, (WeightUnits)int.MaxValue);
-        act.Should().Throw<NotImplementedException>().WithMessage("Conversion between kilogram and 2147483647 is not implemented yet!");
 
-        var originalWeight2 = new Weight(1, WeightUnits.metricTon);
-        var act2 = () => UnitConversion.WeightConversion(originalWeight2, (WeightUnits)int.MaxValue);
-        act2.Should().Throw<NotImplementedException>().WithMessage("Conversion between metricTon and 2147483647 is not implemented yet!");
+        using (new AssertionScope())
+        {
+            var act = () => UnitConversion.WeightConversion(originalWeight, (WeightUnits)int.MaxValue);
+            act.Should().Throw<NotImplementedException>().WithMessage("Conversion between kilogram and 2147483647 is not implemented yet!");
 
-        var originalWeight3 = new Weight(1, (WeightUnits)int.MaxValue);
-        var act3 = () => UnitConversion.WeightConversion(originalWeight3, WeightUnits.kilogram);
-        act3.Should().Throw<NotImplementedException>().WithMessage("Conversion between 2147483647 and kilogram is not implemented yet!");
+            var originalWeight2 = new Weight(1, WeightUnits.metricTon);
+            var act2 = () => UnitConversion.WeightConversion(originalWeight2, (WeightUnits)int.MaxValue);
+            act2.Should().Throw<NotImplementedException>().WithMessage("Conversion between metricTon and 2147483647 is not implemented yet!");
+
+            var originalWeight3 = new Weight(1, (WeightUnits)int.MaxValue);
+            var act3 = () => UnitConversion.WeightConversion(originalWeight3, WeightUnits.kilogram);
+            act3.Should().Throw<NotImplementedException>().WithMessage("Conversion between 2147483647 and kilogram is not implemented yet!");
+        }
     }
 }
