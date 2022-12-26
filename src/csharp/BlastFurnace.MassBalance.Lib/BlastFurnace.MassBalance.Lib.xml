@@ -47,6 +47,43 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.CokeBlend">
+            <summary>
+            A collection of Cokes
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.CokeBlend.Cokes">
+            <summary>
+            A read-only collection of Cokes
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.CokeBlend.TotalProportion">
+            <summary>
+            Total proportion of Cokes in this blend.
+            </summary>
+            <remarks>
+            For a full set up coke blend, this value must be equal to 100%
+            For a partially defined coke blend, this value can be lower than 100%
+            </remarks>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.Add(BlastFurnace.MassBalance.Lib.Coke)">
+            <summary>
+            Add one coke to the blend of Cokes
+            </summary>
+            <param name="coke"></param>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.NormalizeProportions">
+            <summary>
+            Normalize proportions of Cokes to 100%
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.ToString">
+            <summary>
+            String representation of CokeBlend
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:BlastFurnace.MassBalance.Lib.HotMetal">
             <summary>
             Describes hot metal weight and composition
