@@ -9,7 +9,7 @@
         },
         "concurrency": 2,
         "coverage-analysis": "perTest",
-        "disable-bail": false,
+        "disable-bail": true,
         "disable-mix-mutants": false,
         "ignore-methods": [],
         "ignore-mutations": [],
