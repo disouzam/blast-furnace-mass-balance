@@ -22,6 +22,9 @@ internal static class CalculationController
             var pci = GetPulverizedCoalInjection();
             Console.WriteLine(pci.ToString());
 
+            var airBlow = GetAirBlow();
+            Console.WriteLine(airBlow.ToString());
+
             Console.WriteLine("Deseja executar o programa novamente?");
             Console.WriteLine("Opções: (s)sim (n)nao?");
             selectedChoice = Console.ReadLine();
@@ -293,5 +296,22 @@ internal static class CalculationController
         var pci = new PulverizedCoalInjection(new Percentual(cReading), new Weight(weightReading, WeightUnits.metricTon));
 
         return pci;
+    }
+
+    private static AirBlow GetAirBlow()
+    {
+        Console.WriteLine("Informe o teor de oxigênio no sopro: ");
+        var reading = Console.ReadLine();
+
+        double o2ContentReading;
+        while (!double.TryParse(reading, out o2ContentReading))
+        {
+            Console.WriteLine("Valor incorreto! Digite novamente...");
+            reading = Console.ReadLine();
+        }
+
+        var airBlow = new AirBlow(new Percentual(o2ContentReading));
+
+        return airBlow;
     }
 }
