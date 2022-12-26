@@ -321,6 +321,7 @@ begin
 
     repeat
       {Leitura do número de coques a serem utilizados}
+      // Migrated;
       writeln('Quantos tipos de coque ser',#227,'o utilizados (m',#225,'ximo de 3)?');
       readln(y);
       writeln;
@@ -346,6 +347,7 @@ begin
       if y=1 then
       begin
         {Leitura do teor de  carbono fixo, no caso de um só coque}
+        // Migrated;
         writeln('Informe o teor de carbono no coque.');
         readln(TeorC[1]);
 
@@ -361,10 +363,12 @@ begin
           writeln('Informe a propor',#231,#227,'o do coque ',cont,' na mistura e teor de carbono fixo nele.');
 
           {Leitura da proporção para cada coque}
+          // Migrated;
           write('Propor',#231,#227,'o:');
           readln(PropC[cont]);
 
           {Leitura do teor de carbono para cada coque}
+          // Migrated;
           write('Teor de carbono:');
           readln(TeorC[cont]);
 
@@ -377,6 +381,7 @@ begin
         textcolor(11);
 
         {Aviso de erro na digitação das proporções}
+        // Migrated;
         writeln('Dados incorretos!');
 
         textcolor(15);
