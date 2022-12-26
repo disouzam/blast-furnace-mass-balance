@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace BlastFurnace.MassBalance.Lib;
 
@@ -8,6 +12,19 @@ namespace BlastFurnace.MassBalance.Lib;
 /// </summary>
 public class IronOreBlend
 {
+    private readonly List<IronOre> ironOres = new List<IronOre>();
+
+    /// <summary>
+    /// A read-only collection of iron ores
+    /// </summary>
+    public ReadOnlyCollection<IronOre> IronOres
+    {
+        get
+        {
+            return ironOres.AsReadOnly();
+        }
+    }
+
     /// <summary>
     /// Total proportion of iron ores in this blend.
     /// </summary>
@@ -16,8 +33,6 @@ public class IronOreBlend
     /// For a partially defined iron ore blend, this value can be lower than 100%
     /// </remarks>
     public double TotalProportion { get; private set; }
-
-    private readonly List<IronOre> ironOres= new List<IronOre>();
 
     /// <summary>
     /// Add one iron ore to the blend of iron ores
@@ -40,7 +55,7 @@ public class IronOreBlend
     /// </summary>
     public void NormalizeProportions()
     {
-        var tempTotalProportion= 0d;
+        var tempTotalProportion = 0d;
 
         foreach (var ironOre in ironOres)
         {
@@ -49,5 +64,16 @@ public class IronOreBlend
         }
 
         TotalProportion = tempTotalProportion;
+    }
+
+    /// <summary>
+    /// String representation of IronOreBlend
+    /// </summary>
+    /// <returns></returns>
+    public override string ToString()
+    {
+        var jsonRepresentation = JsonConvert.SerializeObject(this, Formatting.Indented);
+
+        return jsonRepresentation.ToString();
     }
 }
