@@ -1,6 +1,7 @@
 ﻿using System;
 
 using FluentAssertions;
+using FluentAssertions.Execution;
 
 using Xunit;
 
@@ -12,7 +13,12 @@ public class IronOreBlendTests
     public void CreateNewObject()
     {
         var ironOreBlend = new IronOreBlend();
-        ironOreBlend.Should().NotBeNull();
+
+        using (new AssertionScope())
+        {
+            ironOreBlend.Should().NotBeNull("because no iron ore has been added.");
+            ironOreBlend.IronOres.Count.Should().Be(0, "because no iron ore has been added.");
+        }
     }
 
     [Fact]
@@ -23,8 +29,23 @@ public class IronOreBlendTests
 
         var act = () => ironOreBlend.Add(ironOre);
 
-        act.Should().NotThrow();
-        ironOreBlend.Should().NotBeNull();
+        using (new AssertionScope())
+        {
+            act.Should().NotThrow();
+            ironOreBlend.Should().NotBeNull();
+            ironOreBlend.TotalProportion.Should().Be(100);
+        }
+
+        var ironOres = ironOreBlend.IronOres;
+
+        using (new AssertionScope())
+        {
+            ironOres.Should().NotBeNull();
+            ironOres.Count.Should().Be(1);
+            ironOres[0].Should().NotBeNull();
+            ironOres[0].FeContent.Value.Should().Be(70);
+            ironOres[0].Proportion.Value.Should().Be(100);
+        }
     }
 
     [Fact]
@@ -37,9 +58,23 @@ public class IronOreBlendTests
         var ironOre2 = new IronOre(new Percentual(65), new Percentual(75));
         var act = () => ironOreBlend.Add(ironOre2);
 
-        act.Should().Throw<InvalidOperationException>().WithMessage("Total proportion must be at a maximum of 100%.");
-        ironOreBlend.Should().NotBeNull();
-        ironOreBlend.TotalProportion.Should().Be(80);
+        using (new AssertionScope())
+        {
+            act.Should().Throw<InvalidOperationException>().WithMessage("Total proportion must be at a maximum of 100%.");
+            ironOreBlend.Should().NotBeNull();
+            ironOreBlend.TotalProportion.Should().Be(80);
+        }
+
+        var ironOres = ironOreBlend.IronOres;
+
+        using (new AssertionScope())
+        {
+            ironOres.Should().NotBeNull();
+            ironOres.Count.Should().Be(1);
+            ironOres[0].Should().NotBeNull();
+            ironOres[0].FeContent.Value.Should().Be(70);
+            ironOres[0].Proportion.Value.Should().Be(80);
+        }
     }
 
     [Fact]
@@ -50,7 +85,22 @@ public class IronOreBlendTests
 
         ironOreBlend.Add(ironOre);
         ironOreBlend.NormalizeProportions();
-        ironOreBlend.TotalProportion.Should().Be(100);
+
+        using (new AssertionScope())
+        {
+            ironOreBlend.TotalProportion.Should().Be(100);
+        }
+
+        var ironOres = ironOreBlend.IronOres;
+
+        using (new AssertionScope())
+        {
+            ironOres.Should().NotBeNull();
+            ironOres.Count.Should().Be(1);
+            ironOres[0].Should().NotBeNull();
+            ironOres[0].FeContent.Value.Should().Be(70);
+            ironOres[0].Proportion.Value.Should().Be(100);
+        }
     }
 
     [Fact]

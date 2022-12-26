@@ -1,6 +1,7 @@
 ﻿using System;
 
 using FluentAssertions;
+using FluentAssertions.Execution;
 
 using Xunit;
 
@@ -12,7 +13,12 @@ public class CokeBlendTests
     public void CreateNewObject()
     {
         var cokeBlend = new CokeBlend();
-        cokeBlend.Should().NotBeNull();
+
+        using (new AssertionScope())
+        {
+            cokeBlend.Should().NotBeNull("because no coke has been added.");
+            cokeBlend.Cokes.Count.Should().Be(0, "because no coke has been added.");
+        }
     }
 
     [Fact]
@@ -23,16 +29,23 @@ public class CokeBlendTests
 
         var act = () => cokeBlend.Add(coke);
 
-        act.Should().NotThrow();
-        cokeBlend.Should().NotBeNull();
-        cokeBlend.TotalProportion.Should().Be(100);
+        using (new AssertionScope())
+        {
+            act.Should().NotThrow();
+            cokeBlend.Should().NotBeNull();
+            cokeBlend.TotalProportion.Should().Be(100);
+        }
 
         var cokes = cokeBlend.Cokes;
-        cokes.Should().NotBeNull();
-        cokes.Count.Should().Be(1);
-        cokes[0].Should().NotBeNull();
-        cokes[0].CContent.Value.Should().Be(95);
-        cokes[0].Proportion.Value.Should().Be(100);
+
+        using (new AssertionScope())
+        {
+            cokes.Should().NotBeNull();
+            cokes.Count.Should().Be(1);
+            cokes[0].Should().NotBeNull();
+            cokes[0].CContent.Value.Should().Be(95);
+            cokes[0].Proportion.Value.Should().Be(100);
+        }
     }
 
     [Fact]
@@ -45,16 +58,23 @@ public class CokeBlendTests
         var coke2 = new Coke(new Percentual(85), new Percentual(75));
         var act = () => cokeBlend.Add(coke2);
 
-        act.Should().Throw<InvalidOperationException>().WithMessage("Total proportion must be at a maximum of 100%.");
-        cokeBlend.Should().NotBeNull();
-        cokeBlend.TotalProportion.Should().Be(80);
+        using (new AssertionScope())
+        {
+            act.Should().Throw<InvalidOperationException>().WithMessage("Total proportion must be at a maximum of 100%.");
+            cokeBlend.Should().NotBeNull();
+            cokeBlend.TotalProportion.Should().Be(80);
+        }
 
         var cokes = cokeBlend.Cokes;
-        cokes.Should().NotBeNull();
-        cokes.Count.Should().Be(1);
-        cokes[0].Should().NotBeNull();
-        cokes[0].CContent.Value.Should().Be(95);
-        cokes[0].Proportion.Value.Should().Be(80);
+
+        using (new AssertionScope())
+        {
+            cokes.Should().NotBeNull();
+            cokes.Count.Should().Be(1);
+            cokes[0].Should().NotBeNull();
+            cokes[0].CContent.Value.Should().Be(95);
+            cokes[0].Proportion.Value.Should().Be(80);
+        }
     }
 
     [Fact]
@@ -65,14 +85,22 @@ public class CokeBlendTests
 
         cokeBlend.Add(coke);
         cokeBlend.NormalizeProportions();
-        cokeBlend.TotalProportion.Should().Be(100);
+
+        using (new AssertionScope())
+        {
+            cokeBlend.TotalProportion.Should().Be(100);
+        }
 
         var cokes = cokeBlend.Cokes;
-        cokes.Should().NotBeNull();
-        cokes.Count.Should().Be(1);
-        cokes[0].Should().NotBeNull();
-        cokes[0].CContent.Value.Should().Be(95);
-        cokes[0].Proportion.Value.Should().Be(100);
+
+        using (new AssertionScope())
+        {
+            cokes.Should().NotBeNull();
+            cokes.Count.Should().Be(1);
+            cokes[0].Should().NotBeNull();
+            cokes[0].CContent.Value.Should().Be(95);
+            cokes[0].Proportion.Value.Should().Be(100);
+        }
     }
 
     [Fact]
