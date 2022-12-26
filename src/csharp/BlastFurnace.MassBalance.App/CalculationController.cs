@@ -93,7 +93,7 @@ internal static class CalculationController
         {
             for (var counter = 0; counter < numberOfOres; counter++)
             {
-                Console.WriteLine($"Informe a proporção do minério #{counter} e o teor de ferro nele.");
+                Console.WriteLine($"Informe a proporção do minério #{counter + 1} e o teor de ferro nele.");
 
                 Console.WriteLine("Proporção:");
                 reading = Console.ReadLine();
@@ -193,7 +193,7 @@ internal static class CalculationController
         {
             for (var counter = 0; counter < numberOfCokes; counter++)
             {
-                Console.WriteLine($"Informe a proporção do coque #{counter} e o teor de carbono fixo nele.");
+                Console.WriteLine($"Informe a proporção do coque #{counter + 1} e o teor de carbono fixo nele.");
 
                 Console.WriteLine("Proporção:");
                 reading = Console.ReadLine();
