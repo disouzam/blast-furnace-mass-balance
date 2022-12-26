@@ -235,6 +235,7 @@ begin
     repeat
 
       {Leitura do número de minérios (ou similares) a serem utilizados}
+      // Migrated;
       writeln('Quantos tipos de min',#233,'rios ser'#227'o utilizados (m',#225,'ximo de 3)?');
       readln(t);
 
@@ -244,6 +245,7 @@ begin
       begin
         textcolor(11);
 
+        // Migrated;
         {Aviso de erro na digitação do número de minérios}
         writeln('Dado incorreto!');
 
@@ -264,6 +266,7 @@ begin
       if t=1 then
       begin
 
+        // Migrated;
         {Leitura do teor de ferro, no caso de um só minério}
         writeln('Informe o teor de ferro no min',#233,'rio.');
         readln(TeorM[1]);
@@ -274,15 +277,19 @@ begin
       begin
         cont:=1;
 
+        // Migrated;
         {Leitura da proporção e do teor de ferro para cada minério, para o caso de mais de um minério}
         while cont<=t do 
         begin
-          writeln('Informe a propor',#231,#227,'o do min',#233,'rio ',cont,' e o teor de ferro nele.');
+         // Migrated;
+         writeln('Informe a propor',#231,#227,'o do min',#233,'rio ',cont,' e o teor de ferro nele.');
 
+         // Migrated;
           {Leitura da proporção para cada minério}
           write('Propor',#231,#227,'o:');
           readln(PropM[cont]);
 
+          // Migrated;
           {Leitura do teor de ferro para cada minério}
           write('Teor de ferro:');
           readln(TeorM[cont]);
@@ -292,6 +299,7 @@ begin
         end;
       end;
 
+      // Migrated;
       if PropM[1]+PropM[2]+PropM[3] <> 100 then 
       begin
         textcolor(11);
