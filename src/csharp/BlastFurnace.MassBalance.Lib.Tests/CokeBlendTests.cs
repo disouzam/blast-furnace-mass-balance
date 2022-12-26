@@ -25,6 +25,14 @@ public class CokeBlendTests
 
         act.Should().NotThrow();
         obj.Should().NotBeNull();
+        obj.TotalProportion.Should().Be(100);
+
+        var readOnlyList = obj.Cokes;
+        readOnlyList.Should().NotBeNull();
+        readOnlyList.Count.Should().Be(1);
+        readOnlyList[0].Should().NotBeNull();
+        readOnlyList[0].CContent.Value.Should().Be(95);
+        readOnlyList[0].Proportion.Value.Should().Be(100);
     }
 
     [Fact]
@@ -40,6 +48,13 @@ public class CokeBlendTests
         act.Should().Throw<InvalidOperationException>().WithMessage("Total proportion must be at a maximum of 100%.");
         obj.Should().NotBeNull();
         obj.TotalProportion.Should().Be(80);
+
+        var readOnlyList = obj.Cokes;
+        readOnlyList.Should().NotBeNull();
+        readOnlyList.Count.Should().Be(1);
+        readOnlyList[0].Should().NotBeNull();
+        readOnlyList[0].CContent.Value.Should().Be(95);
+        readOnlyList[0].Proportion.Value.Should().Be(80);
     }
 
     [Fact]
@@ -51,6 +66,13 @@ public class CokeBlendTests
         obj.Add(coke);
         obj.NormalizeProportions();
         obj.TotalProportion.Should().Be(100);
+
+        var readOnlyList = obj.Cokes;
+        readOnlyList.Should().NotBeNull();
+        readOnlyList.Count.Should().Be(1);
+        readOnlyList[0].Should().NotBeNull();
+        readOnlyList[0].CContent.Value.Should().Be(95);
+        readOnlyList[0].Proportion.Value.Should().Be(100);
     }
 
     [Fact]
