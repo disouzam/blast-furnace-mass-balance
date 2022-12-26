@@ -19,6 +19,28 @@
             Title of the application
             </summary>
         </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.AirBlow">
+            <summary>
+            Describes composition and other variables related to air blow in Blast Furnace
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.AirBlow.O2Content">
+            <summary>
+            Oxygen content in air blow
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.AirBlow.#ctor(BlastFurnace.MassBalance.Lib.Percentual)">
+            <summary>
+            Initialize air blow properties
+            </summary>
+            <param name="o2Content"></param>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.AirBlow.ToString">
+            <summary>
+            String representation of air blow
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:BlastFurnace.MassBalance.Lib.Coke">
             <summary>
             Describes coke composition and its proportion in a mixture with other cokes
