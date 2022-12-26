@@ -85,6 +85,11 @@
             A collection of Iron Ores
             </summary>
         </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.IronOreBlend.IronOres">
+            <summary>
+            A read-only collection of iron ores
+            </summary>
+        </member>
         <member name="P:BlastFurnace.MassBalance.Lib.IronOreBlend.TotalProportion">
             <summary>
             Total proportion of iron ores in this blend.
@@ -105,6 +110,12 @@
             <summary>
             Normalize proportions of iron ores to 100%
             </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.IronOreBlend.ToString">
+            <summary>
+            String representation of IronOreBlend
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:BlastFurnace.MassBalance.Lib.Percentual">
             <summary>
