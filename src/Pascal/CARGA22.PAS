@@ -70,8 +70,10 @@ begin
   {Cor do texto}
   TextColor( 15 );
   gotoxy(13,10);
+  // Migrated
   writeln('CALCULO DE CARGA');
   gotoxy(1,24);
+  // Migrated
   write('Pressione qualquer tecla para continuar.');
   readkey;
   Textmode(3);
@@ -512,6 +514,7 @@ begin
     writeln('Informe o teor de oxig',#234,'nio no sopro.');
 
     {Leitura do teor de oxigênio no sopro}
+    // Migrated;
     write('Teor de oxig',#234,'nio:');
     readln(po2);
 
