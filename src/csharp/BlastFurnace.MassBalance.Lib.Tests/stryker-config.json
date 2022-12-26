@@ -2,7 +2,7 @@
     "stryker-config": {
         "additional-timeout": 20000,
         "baseline": {
-            "enabled": false
+            "enabled": true
         },
         "project-info": {
             "version": "main"
@@ -24,7 +24,7 @@
             "cleartext"
         ],
         "since": {
-            "enabled": false,
+            "enabled": true,
             "target": "main"
         },
         "solution": "..\\BlastFurnace.MassBalance.sln",
