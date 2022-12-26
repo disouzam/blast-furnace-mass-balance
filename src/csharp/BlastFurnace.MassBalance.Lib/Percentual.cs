@@ -1,6 +1,5 @@
 ﻿using System;
 
-using Newtonsoft.Json.Converters;
 using Newtonsoft.Json;
 
 namespace BlastFurnace.MassBalance.Lib;
