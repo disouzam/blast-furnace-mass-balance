@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace BlastFurnace.MassBalance.Lib;
 
@@ -113,7 +114,11 @@ public class IronOreBlend
     /// <returns></returns>
     public override string ToString()
     {
-        var jsonRepresentation = JsonConvert.SerializeObject(this, Formatting.Indented);
+        // https://code-maze.com/csharp-serialize-enum-to-string/
+        var serializerSettings = new JsonSerializerSettings();
+        serializerSettings.Converters.Add(new StringEnumConverter());
+
+        var jsonRepresentation = JsonConvert.SerializeObject(this, Formatting.Indented, serializerSettings);
 
         return jsonRepresentation.ToString();
     }
