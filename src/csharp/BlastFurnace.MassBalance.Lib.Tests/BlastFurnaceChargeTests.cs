@@ -74,7 +74,7 @@ public class BlastFurnaceChargeTests
         return blastFurnaceCharge;
     }
 
-    private BlastFurnaceCharge GetEmptyBlastFurnaceChargeInstance()
+    private static BlastFurnaceCharge GetEmptyBlastFurnaceChargeInstance()
     {
         var blastFurnaceCharge = new BlastFurnaceCharge();
         return blastFurnaceCharge;
