@@ -21,6 +21,16 @@ public class Weight
     public WeightUnits Unit { get; private set; }
 
     /// <summary>
+    /// Get double converted value associated with this weight in the unit specified in outputUnit
+    /// </summary>
+    /// <param name="outputUnit"></param>
+    /// <returns></returns>
+    public double GetWeightValue(WeightUnits outputUnit)
+    {
+        return UnitConversion.WeightConversion(this,outputUnit).Value;
+    }
+
+    /// <summary>
     /// Initialize Weight and validate it
     /// </summary>
     /// <param name="value"></param>
