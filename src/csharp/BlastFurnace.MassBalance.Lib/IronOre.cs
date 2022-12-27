@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace BlastFurnace.MassBalance.Lib;
 
@@ -18,7 +19,7 @@ public class IronOre
     public Percentual Proportion { get; set; }
 
     /// <summary>
-    /// Initialize an iron ore instance
+    /// Initialize an iron ore instance with zero weight
     /// </summary>
     /// <param name="feContent"></param>
     /// <param name="proportion"></param>
@@ -26,7 +27,26 @@ public class IronOre
     {
         FeContent = feContent;
         Proportion = proportion;
+        Weight = new Weight(0, WeightUnits.metricTon);
     }
+
+    /// <summary>
+    /// Initialize an iron ore instance with a given proportion and weight
+    /// </summary>
+    /// <param name="feContent"></param>
+    /// <param name="proportion"></param>
+    /// <param name="weight"></param>
+    public IronOre(Percentual feContent, Percentual proportion, Weight weight)
+    {
+        FeContent = feContent;
+        Proportion = proportion;
+        Weight = weight;
+    }
+
+    /// <summary>
+    /// Weight of current iron ore
+    /// </summary>
+    public Weight Weight { get; set; }
 
     /// <summary>
     /// String representation of IronOre
@@ -34,7 +54,12 @@ public class IronOre
     /// <returns></returns>
     public override string ToString()
     {
-        var jsonRepresentation = JsonConvert.SerializeObject(this, Formatting.Indented);
+        // https://code-maze.com/csharp-serialize-enum-to-string/
+        var serializerSettings = new JsonSerializerSettings();
+        serializerSettings.Converters.Add(new StringEnumConverter());
+
+        var jsonRepresentation = JsonConvert.SerializeObject(this, Formatting.Indented, serializerSettings);
+
         return jsonRepresentation.ToString();
     }
 }
