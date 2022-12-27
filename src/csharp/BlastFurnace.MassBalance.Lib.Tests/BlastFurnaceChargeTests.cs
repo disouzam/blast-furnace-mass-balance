@@ -11,10 +11,14 @@ public class BlastFurnaceChargeTests
 
     private readonly BlastFurnaceCharge? blastFurnaceCharge1;
 
-    private static BlastFurnaceCharge GetBlastFurnaceChargeInstance()
+    private static HotMetal GetHotMetal()
     {
         var hotMetal = new HotMetal(new Weight(1, WeightUnits.kilogram), new Percentual(95), new Percentual(5));
+        return hotMetal;
+    }
 
+    private static IronOreBlend GetIronOreBlend()
+    {
         var ironOreBlend = new IronOreBlend();
         var ironOre = new IronOre(new Percentual(70), new Percentual(25));
         ironOreBlend.Add(ironOre);
@@ -25,6 +29,11 @@ public class BlastFurnaceChargeTests
         var ironOre3 = new IronOre(new Percentual(60), new Percentual(40));
         ironOreBlend.Add(ironOre3);
 
+        return ironOreBlend;
+    }
+
+    private static CokeBlend GetCokeBlend()
+    {
         var cokeBlend = new CokeBlend();
         var coke = new Coke(new Percentual(95), new Percentual(25));
         cokeBlend.Add(coke);
@@ -35,9 +44,29 @@ public class BlastFurnaceChargeTests
         var coke3 = new Coke(new Percentual(80), new Percentual(40));
         cokeBlend.Add(coke3);
 
-        var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(100, WeightUnits.metricTon));
+        return cokeBlend;
+    }
 
+
+    private static PulverizedCoalInjection GetPCI()
+    {
+        var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(100, WeightUnits.metricTon));
+        return pci;
+    }
+
+    private static AirBlow GetAirBlow()
+    {
         var airBlow = new AirBlow(new Percentual(21));
+        return airBlow;
+    }
+
+    private static BlastFurnaceCharge GetBlastFurnaceChargeInstance()
+    {
+        var hotMetal = GetHotMetal();
+        var ironOreBlend = GetIronOreBlend();
+        var cokeBlend = GetCokeBlend();
+        var pci = GetPCI();
+        var airBlow = GetAirBlow();        
 
         var blastFurnaceCharge = new BlastFurnaceCharge(hotMetal, ironOreBlend, cokeBlend, pci, airBlow);
 
@@ -47,7 +76,7 @@ public class BlastFurnaceChargeTests
     private BlastFurnaceCharge GetEmptyBlastFurnaceChargeInstance()
     {
         var blastFurnaceCharge = new BlastFurnaceCharge();
-        return blastFurnaceCharge;  
+        return blastFurnaceCharge;
     }
 
     public BlastFurnaceChargeTests()
@@ -61,6 +90,7 @@ public class BlastFurnaceChargeTests
     {
         using (new AssertionScope())
         {
+            blastFurnaceCharge0.Should().NotBeNull();
             blastFurnaceCharge0.Should().BeOfType<BlastFurnaceCharge>();
 
             blastFurnaceCharge0.HotMetal.Should().NotBeNull();
@@ -90,7 +120,7 @@ public class BlastFurnaceChargeTests
             blastFurnaceCharge0.AirBlow.Should().BeOfType<AirBlow>();
             blastFurnaceCharge0.AirBlow?.O2Content.Value.Should().Be(21);
         }
-        
+
         using (new AssertionScope())
         {
             blastFurnaceCharge1.Should().NotBeNull();
@@ -101,6 +131,115 @@ public class BlastFurnaceChargeTests
             blastFurnaceCharge1?.CokeBlend.Should().BeNull();
             blastFurnaceCharge1?.PCI.Should().BeNull();
             blastFurnaceCharge1?.AirBlow.Should().BeNull();
+        }
+    }
+
+    [Fact]
+    public void CheckAddHotMetal()
+    {
+        var hotMetal = GetHotMetal();
+        blastFurnaceCharge1?.AddHotMetal(hotMetal);
+
+        using (new AssertionScope())
+        {
+            blastFurnaceCharge1?.HotMetal.Should().NotBeNull();
+            blastFurnaceCharge1?.IronOreBlend.Should().BeNull();
+            blastFurnaceCharge1?.CokeBlend.Should().BeNull();
+            blastFurnaceCharge1?.PCI.Should().BeNull();
+            blastFurnaceCharge1?.AirBlow.Should().BeNull();
+
+            blastFurnaceCharge1?.HotMetal.Should().NotBeNull();
+            blastFurnaceCharge1?.HotMetal.Should().BeOfType<HotMetal>();
+            blastFurnaceCharge1?.HotMetal?.Weight.Value.Should().Be(1);
+            blastFurnaceCharge1?.HotMetal?.Weight.Unit.Should().Be(WeightUnits.kilogram);
+        }
+    }
+
+    [Fact]
+    public void CheckAddIronOreBlend()
+    {
+        var ironOreBlend = GetIronOreBlend();
+
+        blastFurnaceCharge1?.AddIronOreBlend(ironOreBlend);
+
+        using (new AssertionScope())
+        {
+            blastFurnaceCharge1?.HotMetal.Should().BeNull();
+            blastFurnaceCharge1?.IronOreBlend.Should().NotBeNull();
+            blastFurnaceCharge1?.CokeBlend.Should().BeNull();
+            blastFurnaceCharge1?.PCI.Should().BeNull();
+            blastFurnaceCharge1?.AirBlow.Should().BeNull();
+
+            blastFurnaceCharge1?.IronOreBlend.Should().NotBeNull();
+            blastFurnaceCharge1?.IronOreBlend.Should().BeOfType<IronOreBlend>();
+            blastFurnaceCharge1?.IronOreBlend?.TotalProportion.Value.Should().Be(100);
+            blastFurnaceCharge1?.IronOreBlend?.AverageFeContent.Value.Should().Be(64.25);
+            blastFurnaceCharge1?.IronOreBlend?.IronOres.Count.Should().Be(3);
+        }
+    }
+
+    [Fact]
+    public void CheckAddCokeBlend()
+    {
+        var cokeBlend = GetCokeBlend();
+
+        blastFurnaceCharge1?.AddCokeBlend(cokeBlend);
+
+        using (new AssertionScope())
+        {
+            blastFurnaceCharge1?.HotMetal.Should().BeNull();
+            blastFurnaceCharge1?.IronOreBlend.Should().BeNull();
+            blastFurnaceCharge1?.CokeBlend.Should().NotBeNull();
+            blastFurnaceCharge1?.PCI.Should().BeNull();
+            blastFurnaceCharge1?.AirBlow.Should().BeNull();
+
+            blastFurnaceCharge1?.CokeBlend.Should().NotBeNull();
+            blastFurnaceCharge1?.CokeBlend.Should().BeOfType<CokeBlend>();
+            blastFurnaceCharge1?.CokeBlend?.TotalProportion.Value.Should().Be(100);
+            blastFurnaceCharge1?.CokeBlend?.AverageCContent.Value.Should().Be(85.5);
+            blastFurnaceCharge1?.CokeBlend?.Cokes.Count.Should().Be(3);
+        }
+    }
+
+    [Fact]
+    public void CheckAddPCI()
+    {
+        var pci = GetPCI();
+        blastFurnaceCharge1?.AddPCI(pci);
+
+        using (new AssertionScope())
+        {
+            blastFurnaceCharge1?.HotMetal.Should().BeNull();
+            blastFurnaceCharge1?.IronOreBlend.Should().BeNull();
+            blastFurnaceCharge1?.CokeBlend.Should().BeNull();
+            blastFurnaceCharge1?.PCI.Should().NotBeNull();
+            blastFurnaceCharge1?.AirBlow.Should().BeNull();
+
+            blastFurnaceCharge1?.PCI.Should().NotBeNull();
+            blastFurnaceCharge1?.PCI.Should().BeOfType<PulverizedCoalInjection>();
+            blastFurnaceCharge1?.PCI?.CContent.Value.Should().Be(90);
+            blastFurnaceCharge1?.PCI?.Weight.Value.Should().Be(100);
+            blastFurnaceCharge1?.PCI?.Weight.Unit.Should().Be(WeightUnits.metricTon);
+        }
+    }
+
+    [Fact]
+    public void CheckAddAirBlow()
+    {
+        var airBlow = GetAirBlow();
+        blastFurnaceCharge1?.AddAirBlow(airBlow);
+
+        using (new AssertionScope())
+        {
+            blastFurnaceCharge1?.HotMetal.Should().BeNull();
+            blastFurnaceCharge1?.IronOreBlend.Should().BeNull();
+            blastFurnaceCharge1?.CokeBlend.Should().BeNull();
+            blastFurnaceCharge1?.PCI.Should().BeNull();
+            blastFurnaceCharge1?.AirBlow.Should().NotBeNull();
+
+            blastFurnaceCharge1?.AirBlow.Should().NotBeNull();
+            blastFurnaceCharge1?.AirBlow.Should().BeOfType<AirBlow>();
+            blastFurnaceCharge1?.AirBlow?.O2Content.Value.Should().Be(21);
         }
     }
 }
