@@ -62,7 +62,7 @@ public class IronOreBlendTests
 
         using (new AssertionScope())
         {
-            act.Should().Throw<InvalidOperationException>().WithMessage("Total proportion must be at a maximum of 100%.");
+            act.Should().Throw<InvalidOperationException>().WithMessage("Total proportion must be at a maximum of 100%. Iron ore passed as parameter was not added to the blend.");
             ironOreBlend.Should().NotBeNull();
             ironOreBlend.TotalProportion.Should().Be(80);
             ironOreBlend.AverageFeContent.Value.Should().Be(70);

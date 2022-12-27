@@ -75,7 +75,7 @@ public class IronOreBlend
     {
         if (TotalProportion + ironOre.Proportion.Value > 100)
         {
-            throw new InvalidOperationException("Total proportion must be at a maximum of 100%.");
+            throw new InvalidOperationException("Total proportion must be at a maximum of 100%. Iron ore passed as parameter was not added to the blend.");
         }
 
         TotalProportion += ironOre.Proportion.Value;
