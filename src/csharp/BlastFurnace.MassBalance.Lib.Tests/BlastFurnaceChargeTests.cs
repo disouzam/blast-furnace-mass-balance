@@ -9,6 +9,8 @@ public class BlastFurnaceChargeTests
 {
     private readonly BlastFurnaceCharge blastFurnaceCharge0;
 
+    private readonly BlastFurnaceCharge? blastFurnaceCharge1;
+
     private static BlastFurnaceCharge GetBlastFurnaceChargeInstance()
     {
         var hotMetal = new HotMetal(new Weight(1, WeightUnits.kilogram), new Percentual(95), new Percentual(5));
@@ -42,9 +44,16 @@ public class BlastFurnaceChargeTests
         return blastFurnaceCharge;
     }
 
+    private BlastFurnaceCharge GetEmptyBlastFurnaceChargeInstance()
+    {
+        var blastFurnaceCharge = new BlastFurnaceCharge();
+        return blastFurnaceCharge;  
+    }
+
     public BlastFurnaceChargeTests()
     {
         blastFurnaceCharge0 = GetBlastFurnaceChargeInstance();
+        blastFurnaceCharge1 = GetEmptyBlastFurnaceChargeInstance();
     }
 
     [Fact]
@@ -52,32 +61,46 @@ public class BlastFurnaceChargeTests
     {
         using (new AssertionScope())
         {
+            blastFurnaceCharge0.Should().BeOfType<BlastFurnaceCharge>();
+
             blastFurnaceCharge0.HotMetal.Should().NotBeNull();
             blastFurnaceCharge0.HotMetal.Should().BeOfType<HotMetal>();
-            blastFurnaceCharge0.HotMetal.Weight.Value.Should().Be(1);
-            blastFurnaceCharge0.HotMetal.Weight.Unit.Should().Be(WeightUnits.kilogram);
+            blastFurnaceCharge0.HotMetal?.Weight.Value.Should().Be(1);
+            blastFurnaceCharge0.HotMetal?.Weight.Unit.Should().Be(WeightUnits.kilogram);
 
             blastFurnaceCharge0.IronOreBlend.Should().NotBeNull();
             blastFurnaceCharge0.IronOreBlend.Should().BeOfType<IronOreBlend>();
-            blastFurnaceCharge0.IronOreBlend.TotalProportion.Value.Should().Be(100);
-            blastFurnaceCharge0.IronOreBlend.AverageFeContent.Value.Should().Be(64.25);
-            blastFurnaceCharge0.IronOreBlend.IronOres.Count.Should().Be(3);
+            blastFurnaceCharge0.IronOreBlend?.TotalProportion.Value.Should().Be(100);
+            blastFurnaceCharge0.IronOreBlend?.AverageFeContent.Value.Should().Be(64.25);
+            blastFurnaceCharge0.IronOreBlend?.IronOres.Count.Should().Be(3);
 
             blastFurnaceCharge0.CokeBlend.Should().NotBeNull();
             blastFurnaceCharge0.CokeBlend.Should().BeOfType<CokeBlend>();
-            blastFurnaceCharge0.CokeBlend.TotalProportion.Value.Should().Be(100);
-            blastFurnaceCharge0.CokeBlend.AverageCContent.Value.Should().Be(85.5);
-            blastFurnaceCharge0.CokeBlend.Cokes.Count.Should().Be(3);
+            blastFurnaceCharge0.CokeBlend?.TotalProportion.Value.Should().Be(100);
+            blastFurnaceCharge0.CokeBlend?.AverageCContent.Value.Should().Be(85.5);
+            blastFurnaceCharge0.CokeBlend?.Cokes.Count.Should().Be(3);
 
             blastFurnaceCharge0.PCI.Should().NotBeNull();
             blastFurnaceCharge0.PCI.Should().BeOfType<PulverizedCoalInjection>();
-            blastFurnaceCharge0.PCI.CContent.Value.Should().Be(90);
-            blastFurnaceCharge0.PCI.Weight.Value.Should().Be(100);
-            blastFurnaceCharge0.PCI.Weight.Unit.Should().Be(WeightUnits.metricTon);
+            blastFurnaceCharge0.PCI?.CContent.Value.Should().Be(90);
+            blastFurnaceCharge0.PCI?.Weight.Value.Should().Be(100);
+            blastFurnaceCharge0.PCI?.Weight.Unit.Should().Be(WeightUnits.metricTon);
 
             blastFurnaceCharge0.AirBlow.Should().NotBeNull();
             blastFurnaceCharge0.AirBlow.Should().BeOfType<AirBlow>();
-            blastFurnaceCharge0.AirBlow.O2Content.Value.Should().Be(21);
+            blastFurnaceCharge0.AirBlow?.O2Content.Value.Should().Be(21);
+        }
+        
+        using (new AssertionScope())
+        {
+            blastFurnaceCharge1.Should().NotBeNull();
+            blastFurnaceCharge1.Should().BeOfType<BlastFurnaceCharge>();
+
+            blastFurnaceCharge1?.HotMetal.Should().BeNull();
+            blastFurnaceCharge1?.IronOreBlend.Should().BeNull();
+            blastFurnaceCharge1?.CokeBlend.Should().BeNull();
+            blastFurnaceCharge1?.PCI.Should().BeNull();
+            blastFurnaceCharge1?.AirBlow.Should().BeNull();
         }
     }
 }

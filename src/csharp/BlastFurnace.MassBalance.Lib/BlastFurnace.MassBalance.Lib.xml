@@ -46,6 +46,46 @@
             A wrapper class to group all raw materials for a blast furnace and perform mass balance calculation
             </summary>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.AddHotMetal(BlastFurnace.MassBalance.Lib.HotMetal)">
+            <summary>
+            Add only Hot Metal to an existing instance of BlastFurnaceCharge
+            </summary>
+            <param name="hotMetal"></param>
+            <returns>A handle of this instance after adding Hot Metal to the object</returns>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.AddIronOreBlend(BlastFurnace.MassBalance.Lib.IronOreBlend)">
+            <summary>
+            Add only Iron Ore Blend to an existing instance of BlastFurnaceCharge
+            </summary>
+            <param name="ironOreBlend"></param>
+            <returns>A handle of this instance after adding Iron Ore Blend to the object</returns>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.AddCokeBlend(BlastFurnace.MassBalance.Lib.CokeBlend)">
+            <summary>
+            Add only Coke Blend to an existing instance of BlastFurnaceCharge
+            </summary>
+            <param name="cokeBlend"></param>
+            <returns>A handle of this instance after adding Coke Blend to the object</returns>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.AddPCI(BlastFurnace.MassBalance.Lib.PulverizedCoalInjection)">
+            <summary>
+            Add only Pulverized Coal Injection to an existing instance of BlastFurnaceCharge
+            </summary>
+            <param name="pci"></param>
+            <returns>A handle of this instance after adding Pulverized Coal Injection to the object</returns>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.AddAirBlow(BlastFurnace.MassBalance.Lib.AirBlow)">
+            <summary>
+            Add only Air Blow to an existing instance of BlastFurnaceCharge
+            </summary>
+            <param name="airBlow"></param>
+            <returns>A handle of this instance after adding Air Blow to the object</returns>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.#ctor">
+            <summary>
+            Parameterless constructor
+            </summary>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.#ctor(BlastFurnace.MassBalance.Lib.HotMetal,BlastFurnace.MassBalance.Lib.IronOreBlend,BlastFurnace.MassBalance.Lib.CokeBlend,BlastFurnace.MassBalance.Lib.PulverizedCoalInjection,BlastFurnace.MassBalance.Lib.AirBlow)">
             <summary>
             Initialization of Blast Furnace Charge
