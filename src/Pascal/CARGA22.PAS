@@ -451,6 +451,7 @@ begin
     PCcarr:=NCcarr*12;
 
     {Cálculo do teor médio de carbono fixo na mistura de coques}
+    // Migrated
     TeorCM:=(TeorC[1]*PropC[1]+TeorC[2]*PropC[2]+TeorC[3]*PropC[3])/100;
 
     {peso de coque sem uso de PCI }
