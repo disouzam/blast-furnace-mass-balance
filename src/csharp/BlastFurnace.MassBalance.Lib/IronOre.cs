@@ -11,12 +11,12 @@ public class IronOre
     /// <summary>
     /// Fe content of Iron Ore
     /// </summary>
-    public Percentual FeContent { get; set; }
+    public Percentual FeContent { get; private set; }
 
     /// <summary>
     /// Proportion of Iron Ore in a blending setup
     /// </summary>
-    public Percentual Proportion { get; set; }
+    public Percentual Proportion { get; private set; }
 
     /// <summary>
     /// Initialize an iron ore instance with zero weight
@@ -46,7 +46,7 @@ public class IronOre
     /// <summary>
     /// Weight of current iron ore
     /// </summary>
-    public Weight Weight { get; set; }
+    public Weight Weight { get; private set; }
 
     /// <summary>
     /// String representation of IronOre

@@ -14,6 +14,8 @@ public class IronOreBlend
 {
     private readonly List<IronOre> ironOres;
 
+    private WeightUnits unit;
+
     /// <summary>
     /// Initialization of iron ore blend
     /// </summary>
@@ -88,8 +90,17 @@ public class IronOreBlend
             throw new InvalidOperationException("Total proportion must be at a maximum of 100%. Iron ore passed as parameter was not added to the blend.");
         }
 
-        TotalProportion.Value += ironOre.Proportion.Value;
-        ironOres.Add(ironOre);
+        if (ironOres.Count == 0)
+        {
+            unit = ironOre.Weight.Unit;
+        }
+
+        var convertedWeight = ironOre.Weight.GetWeightValue(unit);
+        var newWeight = new Weight(convertedWeight, unit);
+        var ironOreToAdd = new IronOre(ironOre.FeContent, ironOre.Proportion, newWeight);
+
+        TotalProportion.Value += ironOreToAdd.Proportion.Value;
+        ironOres.Add(ironOreToAdd);
     }
 
     /// <summary>

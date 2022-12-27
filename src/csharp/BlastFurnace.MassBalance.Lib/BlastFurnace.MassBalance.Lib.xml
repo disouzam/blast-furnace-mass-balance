@@ -394,6 +394,13 @@
             The unit of measurement of weight
             </summary>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Weight.GetWeightValue(BlastFurnace.MassBalance.Lib.WeightUnits)">
+            <summary>
+            Get double converted value associated with this weight in the unit specified in outputUnit
+            </summary>
+            <param name="outputUnit"></param>
+            <returns></returns>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.Weight.#ctor(System.Double,BlastFurnace.MassBalance.Lib.WeightUnits)">
             <summary>
             Initialize Weight and validate it
