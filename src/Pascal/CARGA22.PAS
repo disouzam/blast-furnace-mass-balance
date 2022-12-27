@@ -192,18 +192,23 @@ begin
     while cont <=3 do
     begin
       {Proporção do minério (1,2 ou 3) na carga de minérios}
+      // Migration not required
       PropM[cont]:=0;
 
       {Teor de ferro no minério (1,2 ou 3)}
+      // Migration not required
       TeorM[cont]:=0;
 
       {Massa do minério (1,2 ou 3) carregado}
+      // Migration not required
       MasM[cont]:=0;
 
-      {Proporção do coque (1,2 ou 3)} 
+      {Proporção do coque (1,2 ou 3)}
+      // Migration not required
       PropC[cont]:=0;
 
       {Teor de carbono fixo no coque (1,2 ou 3)}
+      // Migration not required
       TeorC[cont]:=0;
 
       {Massa do coque (1,2 ou 3) carregado} 
