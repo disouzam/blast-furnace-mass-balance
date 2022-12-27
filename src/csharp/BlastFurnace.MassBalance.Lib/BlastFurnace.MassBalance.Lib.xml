@@ -93,6 +93,11 @@
             For a partially defined coke blend, this value can be lower than 100%
             </remarks>
         </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.CokeBlend.AverageCContent">
+            <summary>
+            Calculate and returns average carbon content of coke blend
+            </summary>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.Add(BlastFurnace.MassBalance.Lib.Coke)">
             <summary>
             Add one coke to the blend of Cokes

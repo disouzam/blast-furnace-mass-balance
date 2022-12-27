@@ -43,6 +43,39 @@ public class CokeBlend
     public Percentual TotalProportion { get; private set; }
 
     /// <summary>
+    /// Calculate and returns average carbon content of coke blend
+    /// </summary>
+    public Percentual AverageCContent
+    {
+        get
+        {
+            var currentTotalProportion = 0.0d;
+            if (TotalProportion.Value == 100)
+            {
+                currentTotalProportion = 100;
+            }
+            else
+            {
+                foreach (var coke in cokes)
+                {
+                    currentTotalProportion += coke.Proportion.Value;
+                }
+            }
+
+            var averageCContentValue = 0.0d;
+
+            foreach (var coke in cokes)
+            {
+                averageCContentValue += coke.CContent.Value * coke.Proportion.Value / currentTotalProportion;
+            }
+
+            var averageCContent = new Percentual(averageCContentValue);
+
+            return averageCContent;
+        }
+    }
+
+    /// <summary>
     /// Add one coke to the blend of Cokes
     /// </summary>
     /// <param name="coke"></param>
