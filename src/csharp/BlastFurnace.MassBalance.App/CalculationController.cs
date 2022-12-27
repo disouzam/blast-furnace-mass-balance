@@ -25,6 +25,9 @@ internal static class CalculationController
             var airBlow = GetAirBlow();
             Console.WriteLine(airBlow.ToString());
 
+            var blastFurnaceCharge = new BlastFurnaceCharge(hotMetal, ironOreBlend, cokeBlend, pci, airBlow);
+            Console.WriteLine(blastFurnaceCharge.ToString());
+
             Console.WriteLine("Deseja executar o programa novamente?");
             Console.WriteLine("Opções: (s)sim (n)nao?");
             selectedChoice = Console.ReadLine();
