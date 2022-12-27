@@ -34,6 +34,39 @@ public class IronOreBlend
     public double TotalProportion { get; private set; }
 
     /// <summary>
+    /// Calculate and returns average iron content of iron ore blend
+    /// </summary>
+    public Percentual AverageFeContent
+    {
+        get
+        {
+            var currentTotalProportion = 0.0d;
+            if (TotalProportion == 100)
+            {
+                currentTotalProportion = 100;
+            }
+            else
+            {
+                foreach (var ironOre in ironOres)
+                {
+                    currentTotalProportion += ironOre.Proportion.Value;
+                }
+            }
+
+            var averageFeContentValue = 0.0d;
+
+            foreach (var ironOre in ironOres)
+            {
+                averageFeContentValue += ironOre.FeContent.Value * ironOre.Proportion.Value / currentTotalProportion;
+            }
+
+            var averageFeContent = new Percentual(averageFeContentValue);
+
+            return averageFeContent;
+        }
+    }
+
+    /// <summary>
     /// Add one iron ore to the blend of iron ores
     /// </summary>
     /// <param name="ironOre"></param>

@@ -186,6 +186,11 @@
             For a partially defined iron ore blend, this value can be lower than 100%
             </remarks>
         </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.IronOreBlend.AverageFeContent">
+            <summary>
+            Calculate and returns average iron content of iron ore blend
+            </summary>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.IronOreBlend.Add(BlastFurnace.MassBalance.Lib.IronOre)">
             <summary>
             Add one iron ore to the blend of iron ores
