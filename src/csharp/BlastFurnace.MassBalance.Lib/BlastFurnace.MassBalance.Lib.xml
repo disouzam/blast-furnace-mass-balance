@@ -172,6 +172,11 @@
             A collection of Iron Ores
             </summary>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.IronOreBlend.#ctor">
+            <summary>
+            Initialization of iron ore blend
+            </summary>
+        </member>
         <member name="P:BlastFurnace.MassBalance.Lib.IronOreBlend.IronOres">
             <summary>
             A read-only collection of iron ores

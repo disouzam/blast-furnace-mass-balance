@@ -34,7 +34,7 @@ public class IronOreBlendTests
         {
             act.Should().NotThrow();
             ironOreBlend.Should().NotBeNull();
-            ironOreBlend.TotalProportion.Should().Be(100);
+            ironOreBlend.TotalProportion.Value.Should().Be(100);
             ironOreBlend.AverageFeContent.Value.Should().Be(70);
         }
 
@@ -64,7 +64,7 @@ public class IronOreBlendTests
         {
             act.Should().Throw<InvalidOperationException>().WithMessage("Total proportion must be at a maximum of 100%. Iron ore passed as parameter was not added to the blend.");
             ironOreBlend.Should().NotBeNull();
-            ironOreBlend.TotalProportion.Should().Be(80);
+            ironOreBlend.TotalProportion.Value.Should().Be(80);
             ironOreBlend.AverageFeContent.Value.Should().Be(70);
         }
 
@@ -91,7 +91,7 @@ public class IronOreBlendTests
 
         using (new AssertionScope())
         {
-            ironOreBlend.TotalProportion.Should().Be(100);
+            ironOreBlend.TotalProportion.Value.Should().Be(100);
             ironOreBlend.AverageFeContent.Value.Should().Be(70);
         }
 
@@ -120,7 +120,7 @@ public class IronOreBlendTests
         var ironOre3 = new IronOre(new Percentual(60), new Percentual(40));
         ironOreBlend.Add(ironOre3);
 
-        ironOreBlend.ToString().Should().Be("{\r\n  \"IronOres\": [\r\n    {\r\n      \"FeContent\": {\r\n        \"Value\": 70.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 25.0\r\n      }\r\n    },\r\n    {\r\n      \"FeContent\": {\r\n        \"Value\": 65.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 35.0\r\n      }\r\n    },\r\n    {\r\n      \"FeContent\": {\r\n        \"Value\": 60.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 40.0\r\n      }\r\n    }\r\n  ],\r\n  \"TotalProportion\": 100.0,\r\n  \"AverageFeContent\": {\r\n    \"Value\": 64.25\r\n  }\r\n}");
+        ironOreBlend.ToString().Should().Be("{\r\n  \"IronOres\": [\r\n    {\r\n      \"FeContent\": {\r\n        \"Value\": 70.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 25.0\r\n      }\r\n    },\r\n    {\r\n      \"FeContent\": {\r\n        \"Value\": 65.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 35.0\r\n      }\r\n    },\r\n    {\r\n      \"FeContent\": {\r\n        \"Value\": 60.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 40.0\r\n      }\r\n    }\r\n  ],\r\n  \"TotalProportion\": {\r\n    \"Value\": 100.0\r\n  },\r\n  \"AverageFeContent\": {\r\n    \"Value\": 64.25\r\n  }\r\n}");
         ironOreBlend.AverageFeContent.Value.Should().Be(64.25);
     }
 }

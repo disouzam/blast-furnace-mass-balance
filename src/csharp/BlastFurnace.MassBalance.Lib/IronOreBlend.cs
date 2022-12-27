@@ -11,7 +11,16 @@ namespace BlastFurnace.MassBalance.Lib;
 /// </summary>
 public class IronOreBlend
 {
-    private readonly List<IronOre> ironOres = new List<IronOre>();
+    private readonly List<IronOre> ironOres;
+
+    /// <summary>
+    /// Initialization of iron ore blend
+    /// </summary>
+    public IronOreBlend()
+    {
+        ironOres = new List<IronOre>();
+        TotalProportion = new Percentual(0);
+    }
 
     /// <summary>
     /// A read-only collection of iron ores
@@ -31,7 +40,7 @@ public class IronOreBlend
     /// For a full set up iron ore blend, this value must be equal to 100%
     /// For a partially defined iron ore blend, this value can be lower than 100%
     /// </remarks>
-    public double TotalProportion { get; private set; }
+    public Percentual TotalProportion { get; private set; }
 
     /// <summary>
     /// Calculate and returns average iron content of iron ore blend
@@ -41,7 +50,7 @@ public class IronOreBlend
         get
         {
             var currentTotalProportion = 0.0d;
-            if (TotalProportion == 100)
+            if (TotalProportion.Value == 100)
             {
                 currentTotalProportion = 100;
             }
@@ -73,12 +82,12 @@ public class IronOreBlend
     /// <exception cref="InvalidOperationException"></exception>
     public void Add(IronOre ironOre)
     {
-        if (TotalProportion + ironOre.Proportion.Value > 100)
+        if (TotalProportion.Value + ironOre.Proportion.Value > 100)
         {
             throw new InvalidOperationException("Total proportion must be at a maximum of 100%. Iron ore passed as parameter was not added to the blend.");
         }
 
-        TotalProportion += ironOre.Proportion.Value;
+        TotalProportion.Value += ironOre.Proportion.Value;
         ironOres.Add(ironOre);
     }
 
@@ -91,11 +100,11 @@ public class IronOreBlend
 
         foreach (var ironOre in ironOres)
         {
-            ironOre.Proportion.Value = ironOre.Proportion.Value / TotalProportion * 100;
+            ironOre.Proportion.Value = ironOre.Proportion.Value / TotalProportion.Value * 100;
             tempTotalProportion += ironOre.Proportion.Value;
         }
 
-        TotalProportion = tempTotalProportion;
+        TotalProportion.Value = tempTotalProportion;
     }
 
     /// <summary>
