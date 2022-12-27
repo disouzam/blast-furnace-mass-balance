@@ -2,7 +2,8 @@
     "stryker-config": {
         "additional-timeout": 20000,
         "baseline": {
-            "enabled": true
+            "enabled": true,
+            "provider": "Disk"
         },
         "project-info": {
             "version": "main"
