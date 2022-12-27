@@ -343,6 +343,7 @@ begin
       end;
     until PropM[1]+PropM[2]+PropM[3]=100;
 
+    // Migrated
     TeorMM:=(TeorM[1]*PropM[1]+TeorM[2]*PropM[2]+TeorM[3]*PropM[3])/100;
     clrscr;
     textcolor(12);
