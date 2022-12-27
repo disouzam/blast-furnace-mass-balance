@@ -17,6 +17,17 @@ public class IronOreBlend
     private WeightUnits unit;
 
     /// <summary>
+    /// Get the required weight of iron ore blend based on hot metal characteristics
+    /// </summary>
+    /// <returns></returns>
+    public Weight GetBlendRequiredWeight(HotMetal hotmetal)
+    {
+        var totalIronWeight = hotmetal.Weight.Value * hotmetal.FePercent.Value / 100;
+        var response = new Weight(totalIronWeight, hotmetal.Weight.Unit);
+        return response;
+    }
+
+    /// <summary>
     /// Initialization of iron ore blend
     /// </summary>
     public IronOreBlend()

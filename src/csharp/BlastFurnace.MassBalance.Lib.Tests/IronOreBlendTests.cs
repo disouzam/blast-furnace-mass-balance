@@ -123,4 +123,22 @@ public class IronOreBlendTests
         ironOreBlend.ToString().Should().Be("{\r\n  \"IronOres\": [\r\n    {\r\n      \"FeContent\": {\r\n        \"Value\": 70.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 25.0\r\n      },\r\n      \"Weight\": {\r\n        \"Value\": 0.0,\r\n        \"Unit\": \"metricTon\"\r\n      }\r\n    },\r\n    {\r\n      \"FeContent\": {\r\n        \"Value\": 65.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 35.0\r\n      },\r\n      \"Weight\": {\r\n        \"Value\": 0.0,\r\n        \"Unit\": \"metricTon\"\r\n      }\r\n    },\r\n    {\r\n      \"FeContent\": {\r\n        \"Value\": 60.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 40.0\r\n      },\r\n      \"Weight\": {\r\n        \"Value\": 0.0,\r\n        \"Unit\": \"metricTon\"\r\n      }\r\n    }\r\n  ],\r\n  \"TotalProportion\": {\r\n    \"Value\": 100.0\r\n  },\r\n  \"AverageFeContent\": {\r\n    \"Value\": 64.25\r\n  }\r\n}");
         ironOreBlend.AverageFeContent.Value.Should().Be(64.25);
     }
+
+    [Fact]
+    public void CalculateRequiredWeightOfIronBlend()
+    {
+        var hotMetal = new HotMetal(new Weight(1000, WeightUnits.kilogram), new Percentual(94), new Percentual(5));
+
+        var ironOreBlend = new IronOreBlend();
+        var ironOre = new IronOre(new Percentual(70), new Percentual(25));
+        ironOreBlend.Add(ironOre);
+
+        var ironOre2 = new IronOre(new Percentual(65), new Percentual(35));
+        ironOreBlend.Add(ironOre2);
+
+        var ironOre3 = new IronOre(new Percentual(60), new Percentual(40));
+        ironOreBlend.Add(ironOre3);
+
+        ironOreBlend.GetBlendRequiredWeight(hotMetal).Value.Should().Be(940);
+    }
 }

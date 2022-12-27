@@ -275,6 +275,12 @@
             A collection of Iron Ores
             </summary>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.IronOreBlend.GetBlendRequiredWeight(BlastFurnace.MassBalance.Lib.HotMetal)">
+            <summary>
+            Get the required weight of iron ore blend based on hot metal characteristics
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.IronOreBlend.#ctor">
             <summary>
             Initialization of iron ore blend
