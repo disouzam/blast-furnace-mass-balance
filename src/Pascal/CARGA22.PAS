@@ -86,79 +86,104 @@ begin
 
     {Inicialização das variáveis, evitando-se erros nas equações}
 
-    {Massa de gusa (em toneladas)} 
+    {Massa de gusa (em toneladas)}
+    // Migration not required
     xt:=0;
 
-    {Massa de gusa (em kilogramas)} 
+    {Massa de gusa (em kilogramas)}
+    // Migration not required
     xk:=0;
 
     {Teor de ferro no gusa(%)}
+    // Migration not required
     g:=0;
 
     {Teor de carbono no gusa(%)}
+    // Migration not required
     h:=0;
 
-    {Massa total de minérios carregados} 
+    {Massa total de minérios carregados}
+    // Migration not required
     MT:=0;
 
     {Percentual de oxigênio no ar soprado}
+    // Migration not required
     po2:=0;
 
     {Número de kmols de carbono necessário para ser carregado}
+    // Migration not required
     NCcarr:=0;
 
     {Massa de carbono a ser carregado}
+    // Migration not required
     PCcarr:=0;
 
     {Coke rate máximo(em kg/ton de gusa)}
+    // Migration not required
     CRmax:=0;
 
     {Coke rate mínimo(em kg/ton de gusa)}
+    // Migration not required
     CRmin:=0;
 
     {Massa de coque (sem o uso de PCI)-para o cálculo do Coke rate máximo}
+    // Migration not required
     Pcoq:=0;
 
     {Massa de carbono queimado}
+    // Migration not required
     PCqu:=0;
 
     {Massa máxima de PCI que pode ser adicionada}
+    // Migration not required
     PCI:=0;
 
     {Teor médio de carbono fixo na carga de coques}
+    // Migration not required
     TeorCM:=0;
 
     {Teor de carbono no PCI}
+    // Migration not required
     CF:=0;
 
     {Massa de PCI, inferior à máxima massa permitida}
+    // Migration not required
     PCIesc:=0;
 
     {PCI rate (em kg/ton de gusa)}
+    // Migration not required
     PCIrat:=0;
 
     {PCI rate máximo (em kg/ton de gusa}
+    // Migration not required
     PCIratmx:=0;
 
-    {Fuel rate (em kg/ton de gusa)} 
+    {Fuel rate (em kg/ton de gusa)}
+    // Migration not required
     FR:=0;
 
     {Volume de oxigênio consumido(em Nm3/dia)}
+    // Migration not required
     Vo2:=0;
 
     {Volume de sopro (em Nm3/dia)}
+    // Migration not required
     Vsopro:=0;
 
     {Vazão do sopro(em Nm3/min)}
+    // Migration not required
     Vazao:=0;
 
     {Teor médio de ferro na carga dos minérios}
+    // Migration not required
     TeorMM:=0;
 
     {Massa total de coque carregado}
+    // Migration not required
     MTC:=0;
 
     {Coque rate (em kg/ton de gusa)}
+    // Migration not required
     CRate:=0;
 
     cont:=1;
