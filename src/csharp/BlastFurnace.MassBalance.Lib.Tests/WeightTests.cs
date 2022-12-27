@@ -43,4 +43,17 @@ public class WeightTests
             WithMessage("Value can't be negative! (Parameter 'value')");
 
     }
+
+    [Fact]
+    public void CheckStringRepresentation()
+    {
+        using (new AssertionScope())
+        {
+            var newWeight = new Weight(1000, WeightUnits.kilogram);
+            newWeight.ToString().Should().Be("{\r\n  \"Value\": 1000.0,\r\n  \"Unit\": \"kilogram\"\r\n}");
+
+            var newWeight2 = new Weight(575, WeightUnits.metricTon);
+            newWeight2.ToString().Should().Be("{\r\n  \"Value\": 575.0,\r\n  \"Unit\": \"metricTon\"\r\n}");
+        }
+    }
 }
