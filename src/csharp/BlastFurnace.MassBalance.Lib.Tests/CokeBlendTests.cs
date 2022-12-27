@@ -33,7 +33,7 @@ public class CokeBlendTests
         {
             act.Should().NotThrow();
             cokeBlend.Should().NotBeNull();
-            cokeBlend.TotalProportion.Should().Be(100);
+            cokeBlend.TotalProportion.Value.Should().Be(100);
         }
 
         var cokes = cokeBlend.Cokes;
@@ -62,7 +62,7 @@ public class CokeBlendTests
         {
             act.Should().Throw<InvalidOperationException>().WithMessage("Total proportion must be at a maximum of 100%.");
             cokeBlend.Should().NotBeNull();
-            cokeBlend.TotalProportion.Should().Be(80);
+            cokeBlend.TotalProportion.Value.Should().Be(80);
         }
 
         var cokes = cokeBlend.Cokes;
@@ -88,7 +88,7 @@ public class CokeBlendTests
 
         using (new AssertionScope())
         {
-            cokeBlend.TotalProportion.Should().Be(100);
+            cokeBlend.TotalProportion.Value.Should().Be(100);
         }
 
         var cokes = cokeBlend.Cokes;
@@ -116,6 +116,6 @@ public class CokeBlendTests
         var coke3 = new Coke(new Percentual(80), new Percentual(40));
         cokeBlend.Add(coke3);
 
-        cokeBlend.ToString().Should().Be("{\r\n  \"Cokes\": [\r\n    {\r\n      \"CContent\": {\r\n        \"Value\": 95.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 25.0\r\n      }\r\n    },\r\n    {\r\n      \"CContent\": {\r\n        \"Value\": 85.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 35.0\r\n      }\r\n    },\r\n    {\r\n      \"CContent\": {\r\n        \"Value\": 80.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 40.0\r\n      }\r\n    }\r\n  ],\r\n  \"TotalProportion\": 100.0\r\n}");
+        cokeBlend.ToString().Should().Be("{\r\n  \"Cokes\": [\r\n    {\r\n      \"CContent\": {\r\n        \"Value\": 95.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 25.0\r\n      }\r\n    },\r\n    {\r\n      \"CContent\": {\r\n        \"Value\": 85.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 35.0\r\n      }\r\n    },\r\n    {\r\n      \"CContent\": {\r\n        \"Value\": 80.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 40.0\r\n      }\r\n    }\r\n  ],\r\n  \"TotalProportion\": {\r\n    \"Value\": 100.0\r\n  }\r\n}");
     }
 }

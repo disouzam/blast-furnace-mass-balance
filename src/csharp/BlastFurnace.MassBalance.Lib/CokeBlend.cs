@@ -11,7 +11,16 @@ namespace BlastFurnace.MassBalance.Lib;
 /// </summary>
 public class CokeBlend
 {
-    private readonly List<Coke> cokes = new List<Coke>();
+    private readonly List<Coke> cokes;
+
+    /// <summary>
+    /// Initialization of coke blend
+    /// </summary>
+    public CokeBlend()
+    {
+        cokes = new List<Coke>();
+        TotalProportion = new Percentual(0);
+    }
 
     /// <summary>
     /// A read-only collection of Cokes
@@ -31,7 +40,7 @@ public class CokeBlend
     /// For a full set up coke blend, this value must be equal to 100%
     /// For a partially defined coke blend, this value can be lower than 100%
     /// </remarks>
-    public double TotalProportion { get; private set; }
+    public Percentual TotalProportion { get; private set; }
 
     /// <summary>
     /// Add one coke to the blend of Cokes
@@ -40,12 +49,12 @@ public class CokeBlend
     /// <exception cref="InvalidOperationException"></exception>
     public void Add(Coke coke)
     {
-        if (TotalProportion + coke.Proportion.Value > 100)
+        if (TotalProportion.Value + coke.Proportion.Value > 100)
         {
             throw new InvalidOperationException("Total proportion must be at a maximum of 100%.");
         }
 
-        TotalProportion += coke.Proportion.Value;
+        TotalProportion.Value += coke.Proportion.Value;
         cokes.Add(coke);
     }
 
@@ -58,11 +67,11 @@ public class CokeBlend
 
         foreach (var coke in cokes)
         {
-            coke.Proportion.Value = coke.Proportion.Value / TotalProportion * 100;
+            coke.Proportion.Value = coke.Proportion.Value / TotalProportion.Value * 100;
             tempTotalProportion += coke.Proportion.Value;
         }
 
-        TotalProportion = tempTotalProportion;
+        TotalProportion.Value = tempTotalProportion;
     }
 
     /// <summary>

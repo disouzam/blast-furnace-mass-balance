@@ -74,6 +74,11 @@
             A collection of Cokes
             </summary>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.#ctor">
+            <summary>
+            Initialization of coke blend
+            </summary>
+        </member>
         <member name="P:BlastFurnace.MassBalance.Lib.CokeBlend.Cokes">
             <summary>
             A read-only collection of Cokes
