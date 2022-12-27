@@ -1,4 +1,6 @@
-﻿using FluentAssertions;
+﻿using System;
+
+using FluentAssertions;
 using FluentAssertions.Execution;
 
 using Xunit;
@@ -46,7 +48,6 @@ public class BlastFurnaceChargeTests
 
         return cokeBlend;
     }
-
 
     private static PulverizedCoalInjection GetPCI()
     {
@@ -240,6 +241,76 @@ public class BlastFurnaceChargeTests
             blastFurnaceCharge1?.AirBlow.Should().NotBeNull();
             blastFurnaceCharge1?.AirBlow.Should().BeOfType<AirBlow>();
             blastFurnaceCharge1?.AirBlow?.O2Content.Value.Should().Be(21);
+        }
+    }
+
+    [Fact]
+    public void TryAddingAnotherHotMetal()
+    {
+        var hotMetal = GetHotMetal();
+        blastFurnaceCharge1?.AddHotMetal(hotMetal);
+
+        var act = () => blastFurnaceCharge1?.AddHotMetal(hotMetal);
+
+        using (new AssertionScope())
+        {
+            act.Should().Throw<InvalidOperationException>().WithMessage("Hot Metal has been already initialized. You can edit it but not change the instance.");
+        }
+    }
+
+    [Fact]
+    public void TryAddingAnotherIronOreBlend()
+    {
+        var ironOreBlend = GetIronOreBlend();
+        blastFurnaceCharge1?.AddIronOreBlend(ironOreBlend);
+
+        var act = () => blastFurnaceCharge1?.AddIronOreBlend(ironOreBlend);
+
+        using (new AssertionScope())
+        {
+            act.Should().Throw<InvalidOperationException>().WithMessage("Iron Ore Blend has been already initialized. You can edit it but not change the instance.");
+        }
+    }
+
+    [Fact]
+    public void TryAddingAnotherCokeBlend()
+    {
+        var cokeBlend = GetCokeBlend();
+        blastFurnaceCharge1?.AddCokeBlend(cokeBlend);
+
+        var act = () => blastFurnaceCharge1?.AddCokeBlend(cokeBlend);
+
+        using (new AssertionScope())
+        {
+            act.Should().Throw<InvalidOperationException>().WithMessage("Coke Blend has been already initialized. You can edit it but not change the instance.");
+        }
+    }
+
+    [Fact]
+    public void TryAddingAnotherPCI()
+    {
+        var pci = GetPCI();
+        blastFurnaceCharge1?.AddPCI(pci);
+
+        var act = () => blastFurnaceCharge1?.AddPCI(pci);
+
+        using (new AssertionScope())
+        {
+            act.Should().Throw<InvalidOperationException>().WithMessage("Pulverized Coal Injection has been already initialized. You can edit it but not change the instance.");
+        }
+    }
+
+    [Fact]
+    public void TryAddingAnotherAirBlow()
+    {
+        var airBlow = GetAirBlow();
+        blastFurnaceCharge1?.AddAirBlow(airBlow);
+
+        var act = () => blastFurnaceCharge1?.AddAirBlow(airBlow);
+
+        using (new AssertionScope())
+        {
+            act.Should().Throw<InvalidOperationException>().WithMessage("Air Blow has been already initialized. You can edit it but not change the instance.");
         }
     }
 }

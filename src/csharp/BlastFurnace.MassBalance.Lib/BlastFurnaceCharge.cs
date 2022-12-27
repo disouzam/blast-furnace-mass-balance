@@ -1,4 +1,6 @@
-﻿namespace BlastFurnace.MassBalance.Lib;
+﻿using System;
+
+namespace BlastFurnace.MassBalance.Lib;
 
 /// <summary>
 /// A wrapper class to group all raw materials for a blast furnace and perform mass balance calculation
@@ -12,6 +14,10 @@ public class BlastFurnaceCharge
     /// <returns>A handle of this instance after adding Hot Metal to the object</returns>
     public BlastFurnaceCharge AddHotMetal(HotMetal hotMetal)
     {
+        if (HotMetal != null)
+        {
+            throw new InvalidOperationException("Hot Metal has been already initialized. You can edit it but not change the instance.");
+        }
         HotMetal = hotMetal;
         return this;
     }
@@ -23,6 +29,10 @@ public class BlastFurnaceCharge
     /// <returns>A handle of this instance after adding Iron Ore Blend to the object</returns>
     public BlastFurnaceCharge AddIronOreBlend(IronOreBlend ironOreBlend)
     {
+        if (IronOreBlend != null)
+        {
+            throw new InvalidOperationException("Iron Ore Blend has been already initialized. You can edit it but not change the instance.");
+        }
         IronOreBlend = ironOreBlend;
         return this;
     }
@@ -34,6 +44,10 @@ public class BlastFurnaceCharge
     /// <returns>A handle of this instance after adding Coke Blend to the object</returns>
     public BlastFurnaceCharge AddCokeBlend(CokeBlend cokeBlend)
     {
+        if (CokeBlend != null)
+        {
+            throw new InvalidOperationException("Coke Blend has been already initialized. You can edit it but not change the instance.");
+        }
         CokeBlend = cokeBlend;
         return this;
     }
@@ -45,6 +59,10 @@ public class BlastFurnaceCharge
     /// <returns>A handle of this instance after adding Pulverized Coal Injection to the object</returns>
     public BlastFurnaceCharge AddPCI(PulverizedCoalInjection pci)
     {
+        if (PCI != null)
+        {
+            throw new InvalidOperationException("Pulverized Coal Injection has been already initialized. You can edit it but not change the instance.");
+        }
         PCI = pci;
         return this;
     }
@@ -56,6 +74,10 @@ public class BlastFurnaceCharge
     /// <returns>A handle of this instance after adding Air Blow to the object</returns>
     public BlastFurnaceCharge AddAirBlow(AirBlow airBlow)
     {
+        if (AirBlow != null)
+        {
+            throw new InvalidOperationException("Air Blow has been already initialized. You can edit it but not change the instance.");
+        }
         AirBlow = airBlow;
         return this;
     }
