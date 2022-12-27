@@ -41,6 +41,46 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge">
+            <summary>
+            A wrapper class to group all raw materials for a blast furnace and perform mass balance calculation
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.#ctor(BlastFurnace.MassBalance.Lib.HotMetal,BlastFurnace.MassBalance.Lib.IronOreBlend,BlastFurnace.MassBalance.Lib.CokeBlend,BlastFurnace.MassBalance.Lib.PulverizedCoalInjection,BlastFurnace.MassBalance.Lib.AirBlow)">
+            <summary>
+            Initialization of Blast Furnace Charge
+            </summary>
+            <param name="hotMetal"></param>
+            <param name="ironOreBlend"></param>
+            <param name="cokeBlend"></param>
+            <param name="pci"></param>
+            <param name="airBlow"></param>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.HotMetal">
+            <summary>
+            Hot metal composition and weight that intends to be produced in blast furnace
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.IronOreBlend">
+            <summary>
+            Iron ore blend used in blast furnace
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.CokeBlend">
+            <summary>
+             Coke blend used in blast furnace
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.AirBlow">
+            <summary>
+            Air composition to blow blast furnace
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.PCI">
+            <summary>
+            Pulverized coal injection composition and weight
+            </summary>
+        </member>
         <member name="T:BlastFurnace.MassBalance.Lib.Coke">
             <summary>
             Describes coke composition and its proportion in a mixture with other cokes
