@@ -264,6 +264,13 @@
             Weight of current iron ore
             </summary>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.IronOre.SetWeight(System.Double,BlastFurnace.MassBalance.Lib.WeightUnits)">
+            <summary>
+            Set new value and unit for iron ore weight
+            </summary>
+            <param name="newValue"></param>
+            <param name="newUnit"></param>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.IronOre.ToString">
             <summary>
             String representation of IronOre

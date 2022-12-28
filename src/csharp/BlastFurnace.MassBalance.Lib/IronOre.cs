@@ -49,6 +49,17 @@ public class IronOre
     public Weight Weight { get; private set; }
 
     /// <summary>
+    /// Set new value and unit for iron ore weight
+    /// </summary>
+    /// <param name="newValue"></param>
+    /// <param name="newUnit"></param>
+    public void SetWeight(double newValue, WeightUnits newUnit)
+    {
+        var newWeight = new Weight(newValue, newUnit);
+        Weight = newWeight;
+    }
+
+    /// <summary>
     /// String representation of IronOre
     /// </summary>
     /// <returns></returns>
