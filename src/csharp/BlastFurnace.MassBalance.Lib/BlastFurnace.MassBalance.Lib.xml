@@ -41,6 +41,91 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge">
+            <summary>
+            A wrapper class to group all raw materials for a blast furnace and perform mass balance calculation
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.AddHotMetal(BlastFurnace.MassBalance.Lib.HotMetal)">
+            <summary>
+            Add only Hot Metal to an existing instance of BlastFurnaceCharge
+            </summary>
+            <param name="hotMetal"></param>
+            <returns>A handle of this instance after adding Hot Metal to the object</returns>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.AddIronOreBlend(BlastFurnace.MassBalance.Lib.IronOreBlend)">
+            <summary>
+            Add only Iron Ore Blend to an existing instance of BlastFurnaceCharge
+            </summary>
+            <param name="ironOreBlend"></param>
+            <returns>A handle of this instance after adding Iron Ore Blend to the object</returns>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.AddCokeBlend(BlastFurnace.MassBalance.Lib.CokeBlend)">
+            <summary>
+            Add only Coke Blend to an existing instance of BlastFurnaceCharge
+            </summary>
+            <param name="cokeBlend"></param>
+            <returns>A handle of this instance after adding Coke Blend to the object</returns>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.AddPCI(BlastFurnace.MassBalance.Lib.PulverizedCoalInjection)">
+            <summary>
+            Add only Pulverized Coal Injection to an existing instance of BlastFurnaceCharge
+            </summary>
+            <param name="pci"></param>
+            <returns>A handle of this instance after adding Pulverized Coal Injection to the object</returns>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.AddAirBlow(BlastFurnace.MassBalance.Lib.AirBlow)">
+            <summary>
+            Add only Air Blow to an existing instance of BlastFurnaceCharge
+            </summary>
+            <param name="airBlow"></param>
+            <returns>A handle of this instance after adding Air Blow to the object</returns>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.SetIronOreWeights">
+            <summary>
+            Set iron ore weights based on hot metal setup
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.#ctor">
+            <summary>
+            Parameterless constructor
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.#ctor(BlastFurnace.MassBalance.Lib.HotMetal,BlastFurnace.MassBalance.Lib.IronOreBlend,BlastFurnace.MassBalance.Lib.CokeBlend,BlastFurnace.MassBalance.Lib.PulverizedCoalInjection,BlastFurnace.MassBalance.Lib.AirBlow)">
+            <summary>
+            Initialization of Blast Furnace Charge
+            </summary>
+            <param name="hotMetal"></param>
+            <param name="ironOreBlend"></param>
+            <param name="cokeBlend"></param>
+            <param name="pci"></param>
+            <param name="airBlow"></param>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.HotMetal">
+            <summary>
+            Hot metal composition and weight that intends to be produced in blast furnace
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.IronOreBlend">
+            <summary>
+            Iron ore blend used in blast furnace
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.CokeBlend">
+            <summary>
+             Coke blend used in blast furnace
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.AirBlow">
+            <summary>
+            Air composition to blow blast furnace
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.PCI">
+            <summary>
+            Pulverized coal injection composition and weight
+            </summary>
+        </member>
         <member name="T:BlastFurnace.MassBalance.Lib.Coke">
             <summary>
             Describes coke composition and its proportion in a mixture with other cokes
@@ -74,6 +159,11 @@
             A collection of Cokes
             </summary>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.#ctor">
+            <summary>
+            Initialization of coke blend
+            </summary>
+        </member>
         <member name="P:BlastFurnace.MassBalance.Lib.CokeBlend.Cokes">
             <summary>
             A read-only collection of Cokes
@@ -88,6 +178,11 @@
             For a partially defined coke blend, this value can be lower than 100%
             </remarks>
         </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.CokeBlend.AverageCContent">
+            <summary>
+            Calculate and returns average carbon content of coke blend
+            </summary>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.Add(BlastFurnace.MassBalance.Lib.Coke)">
             <summary>
             Add one coke to the blend of Cokes
@@ -99,6 +194,12 @@
             <summary>
             Normalize proportions of Cokes to 100%
             </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.MaximumCokeRate(BlastFurnace.MassBalance.Lib.HotMetal)">
+            <summary>
+            Maximum coke rate in kg of coke / metric ton of hot metal
+            </summary>
+            <param name="hotMetal"></param>
         </member>
         <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.ToString">
             <summary>
@@ -156,10 +257,30 @@
         </member>
         <member name="M:BlastFurnace.MassBalance.Lib.IronOre.#ctor(BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Percentual)">
             <summary>
-            Initialize an iron ore instance
+            Initialize an iron ore instance with zero weight
             </summary>
             <param name="feContent"></param>
             <param name="proportion"></param>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.IronOre.#ctor(BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Weight)">
+            <summary>
+            Initialize an iron ore instance with a given proportion and weight
+            </summary>
+            <param name="feContent"></param>
+            <param name="proportion"></param>
+            <param name="weight"></param>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.IronOre.Weight">
+            <summary>
+            Weight of current iron ore
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.IronOre.SetWeight(System.Double,BlastFurnace.MassBalance.Lib.WeightUnits)">
+            <summary>
+            Set new value and unit for iron ore weight
+            </summary>
+            <param name="newValue"></param>
+            <param name="newUnit"></param>
         </member>
         <member name="M:BlastFurnace.MassBalance.Lib.IronOre.ToString">
             <summary>
@@ -170,6 +291,22 @@
         <member name="T:BlastFurnace.MassBalance.Lib.IronOreBlend">
             <summary>
             A collection of Iron Ores
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.IronOreBlend.GetBlendRequiredWeight(BlastFurnace.MassBalance.Lib.HotMetal)">
+            <summary>
+            Get the required weight of iron ore blend based on hot metal characteristics
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.IronOreBlend.SetIronOreWeightsBasedOnRequiredWeight(BlastFurnace.MassBalance.Lib.HotMetal)">
+            <summary>
+            Set individual iron ore weights based on calculated required weight
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.IronOreBlend.#ctor">
+            <summary>
+            Initialization of iron ore blend
             </summary>
         </member>
         <member name="P:BlastFurnace.MassBalance.Lib.IronOreBlend.IronOres">
@@ -185,6 +322,11 @@
             For a full set up iron ore blend, this value must be equal to 100%
             For a partially defined iron ore blend, this value can be lower than 100%
             </remarks>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.IronOreBlend.AverageFeContent">
+            <summary>
+            Calculate and returns average iron content of iron ore blend
+            </summary>
         </member>
         <member name="M:BlastFurnace.MassBalance.Lib.IronOreBlend.Add(BlastFurnace.MassBalance.Lib.IronOre)">
             <summary>
@@ -281,6 +423,13 @@
             The unit of measurement of weight
             </summary>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Weight.GetWeightValue(BlastFurnace.MassBalance.Lib.WeightUnits)">
+            <summary>
+            Get double converted value associated with this weight in the unit specified in outputUnit
+            </summary>
+            <param name="outputUnit"></param>
+            <returns></returns>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.Weight.#ctor(System.Double,BlastFurnace.MassBalance.Lib.WeightUnits)">
             <summary>
             Initialize Weight and validate it
@@ -288,6 +437,12 @@
             <param name="value"></param>
             <param name="units"></param>
             <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Weight.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:BlastFurnace.MassBalance.Lib.WeightUnits">
             <summary>

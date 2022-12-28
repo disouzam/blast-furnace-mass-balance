@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace BlastFurnace.MassBalance.Lib;
 
@@ -11,7 +12,59 @@ namespace BlastFurnace.MassBalance.Lib;
 /// </summary>
 public class IronOreBlend
 {
-    private readonly List<IronOre> ironOres = new List<IronOre>();
+    private readonly List<IronOre> ironOres;
+
+    private WeightUnits unit;
+
+    /// <summary>
+    /// Get the required weight of iron ore blend based on hot metal characteristics
+    /// </summary>
+    /// <returns></returns>
+    public Weight GetBlendRequiredWeight(HotMetal hotmetal)
+    {
+        var hotMetalWeightUnitAdjusted = hotmetal.Weight.GetWeightValue(unit);
+        var totalIronWeight = hotMetalWeightUnitAdjusted * hotmetal.FePercent.Value / 100;
+        var blendRequiredWeight = totalIronWeight / AverageFeContent.Value * 100;
+        var response = new Weight(blendRequiredWeight, unit);
+        return response;
+    }
+
+    /// <summary>
+    /// Set individual iron ore weights based on calculated required weight
+    /// </summary>
+    public void SetIronOreWeightsBasedOnRequiredWeight(HotMetal hotmetal)
+    {
+        var totalWeight = GetBlendRequiredWeight(hotmetal);
+
+        var currentTotalProportion = 0.0d;
+        if (TotalProportion.Value == 100)
+        {
+            currentTotalProportion = 100;
+        }
+        else
+        {
+            foreach (var ironOre in ironOres)
+            {
+                currentTotalProportion += ironOre.Proportion.Value;
+            }
+        }
+
+        foreach (var ironOre in ironOres)
+        {
+            var currentIronOreWeight = totalWeight.Value * ironOre.Proportion.Value / currentTotalProportion;
+            ironOre.SetWeight(currentIronOreWeight, unit);
+        }
+    }
+
+
+    /// <summary>
+    /// Initialization of iron ore blend
+    /// </summary>
+    public IronOreBlend()
+    {
+        ironOres = new List<IronOre>();
+        TotalProportion = new Percentual(0);
+    }
 
     /// <summary>
     /// A read-only collection of iron ores
@@ -31,7 +84,40 @@ public class IronOreBlend
     /// For a full set up iron ore blend, this value must be equal to 100%
     /// For a partially defined iron ore blend, this value can be lower than 100%
     /// </remarks>
-    public double TotalProportion { get; private set; }
+    public Percentual TotalProportion { get; private set; }
+
+    /// <summary>
+    /// Calculate and returns average iron content of iron ore blend
+    /// </summary>
+    public Percentual AverageFeContent
+    {
+        get
+        {
+            var currentTotalProportion = 0.0d;
+            if (TotalProportion.Value == 100)
+            {
+                currentTotalProportion = 100;
+            }
+            else
+            {
+                foreach (var ironOre in ironOres)
+                {
+                    currentTotalProportion += ironOre.Proportion.Value;
+                }
+            }
+
+            var averageFeContentValue = 0.0d;
+
+            foreach (var ironOre in ironOres)
+            {
+                averageFeContentValue += ironOre.FeContent.Value * ironOre.Proportion.Value / currentTotalProportion;
+            }
+
+            var averageFeContent = new Percentual(averageFeContentValue);
+
+            return averageFeContent;
+        }
+    }
 
     /// <summary>
     /// Add one iron ore to the blend of iron ores
@@ -40,13 +126,22 @@ public class IronOreBlend
     /// <exception cref="InvalidOperationException"></exception>
     public void Add(IronOre ironOre)
     {
-        if (TotalProportion + ironOre.Proportion.Value > 100)
+        if (TotalProportion.Value + ironOre.Proportion.Value > 100)
         {
-            throw new InvalidOperationException("Total proportion must be at a maximum of 100%.");
+            throw new InvalidOperationException("Total proportion must be at a maximum of 100%. Iron ore passed as parameter was not added to the blend.");
         }
 
-        TotalProportion += ironOre.Proportion.Value;
-        ironOres.Add(ironOre);
+        if (ironOres.Count == 0)
+        {
+            unit = ironOre.Weight.Unit;
+        }
+
+        var convertedWeight = ironOre.Weight.GetWeightValue(unit);
+        var newWeight = new Weight(convertedWeight, unit);
+        var ironOreToAdd = new IronOre(ironOre.FeContent, ironOre.Proportion, newWeight);
+
+        TotalProportion.Value += ironOreToAdd.Proportion.Value;
+        ironOres.Add(ironOreToAdd);
     }
 
     /// <summary>
@@ -58,11 +153,11 @@ public class IronOreBlend
 
         foreach (var ironOre in ironOres)
         {
-            ironOre.Proportion.Value = ironOre.Proportion.Value / TotalProportion * 100;
+            ironOre.Proportion.Value = ironOre.Proportion.Value / TotalProportion.Value * 100;
             tempTotalProportion += ironOre.Proportion.Value;
         }
 
-        TotalProportion = tempTotalProportion;
+        TotalProportion.Value = tempTotalProportion;
     }
 
     /// <summary>
@@ -71,7 +166,11 @@ public class IronOreBlend
     /// <returns></returns>
     public override string ToString()
     {
-        var jsonRepresentation = JsonConvert.SerializeObject(this, Formatting.Indented);
+        // https://code-maze.com/csharp-serialize-enum-to-string/
+        var serializerSettings = new JsonSerializerSettings();
+        serializerSettings.Converters.Add(new StringEnumConverter());
+
+        var jsonRepresentation = JsonConvert.SerializeObject(this, Formatting.Indented, serializerSettings);
 
         return jsonRepresentation.ToString();
     }

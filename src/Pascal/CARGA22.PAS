@@ -86,79 +86,104 @@ begin
 
     {Inicialização das variáveis, evitando-se erros nas equações}
 
-    {Massa de gusa (em toneladas)} 
+    {Massa de gusa (em toneladas)}
+    // Migration not required
     xt:=0;
 
-    {Massa de gusa (em kilogramas)} 
+    {Massa de gusa (em kilogramas)}
+    // Migration not required
     xk:=0;
 
     {Teor de ferro no gusa(%)}
+    // Migration not required
     g:=0;
 
     {Teor de carbono no gusa(%)}
+    // Migration not required
     h:=0;
 
-    {Massa total de minérios carregados} 
+    {Massa total de minérios carregados}
+    // Migration not required
     MT:=0;
 
     {Percentual de oxigênio no ar soprado}
+    // Migration not required
     po2:=0;
 
     {Número de kmols de carbono necessário para ser carregado}
+    // Migration not required
     NCcarr:=0;
 
     {Massa de carbono a ser carregado}
+    // Migration not required
     PCcarr:=0;
 
     {Coke rate máximo(em kg/ton de gusa)}
+    // Migration not required
     CRmax:=0;
 
     {Coke rate mínimo(em kg/ton de gusa)}
+    // Migration not required
     CRmin:=0;
 
     {Massa de coque (sem o uso de PCI)-para o cálculo do Coke rate máximo}
+    // Migration not required
     Pcoq:=0;
 
     {Massa de carbono queimado}
+    // Migration not required
     PCqu:=0;
 
     {Massa máxima de PCI que pode ser adicionada}
+    // Migration not required
     PCI:=0;
 
     {Teor médio de carbono fixo na carga de coques}
+    // Migration not required
     TeorCM:=0;
 
     {Teor de carbono no PCI}
+    // Migration not required
     CF:=0;
 
     {Massa de PCI, inferior à máxima massa permitida}
+    // Migration not required
     PCIesc:=0;
 
     {PCI rate (em kg/ton de gusa)}
+    // Migration not required
     PCIrat:=0;
 
     {PCI rate máximo (em kg/ton de gusa}
+    // Migration not required
     PCIratmx:=0;
 
-    {Fuel rate (em kg/ton de gusa)} 
+    {Fuel rate (em kg/ton de gusa)}
+    // Migration not required
     FR:=0;
 
     {Volume de oxigênio consumido(em Nm3/dia)}
+    // Migration not required
     Vo2:=0;
 
     {Volume de sopro (em Nm3/dia)}
+    // Migration not required
     Vsopro:=0;
 
     {Vazão do sopro(em Nm3/min)}
+    // Migration not required
     Vazao:=0;
 
     {Teor médio de ferro na carga dos minérios}
+    // Migration not required
     TeorMM:=0;
 
     {Massa total de coque carregado}
+    // Migration not required
     MTC:=0;
 
     {Coque rate (em kg/ton de gusa)}
+    // Migration not required
     CRate:=0;
 
     cont:=1;
@@ -167,18 +192,23 @@ begin
     while cont <=3 do
     begin
       {Proporção do minério (1,2 ou 3) na carga de minérios}
+      // Migration not required
       PropM[cont]:=0;
 
       {Teor de ferro no minério (1,2 ou 3)}
+      // Migration not required
       TeorM[cont]:=0;
 
       {Massa do minério (1,2 ou 3) carregado}
+      // Migration not required
       MasM[cont]:=0;
 
-      {Proporção do coque (1,2 ou 3)} 
+      {Proporção do coque (1,2 ou 3)}
+      // Migration not required
       PropC[cont]:=0;
 
       {Teor de carbono fixo no coque (1,2 ou 3)}
+      // Migration not required
       TeorC[cont]:=0;
 
       {Massa do coque (1,2 ou 3) carregado} 
@@ -313,6 +343,7 @@ begin
       end;
     until PropM[1]+PropM[2]+PropM[3]=100;
 
+    // Migrated
     TeorMM:=(TeorM[1]*PropM[1]+TeorM[2]*PropM[2]+TeorM[3]*PropM[3])/100;
     clrscr;
     textcolor(12);
@@ -393,41 +424,51 @@ begin
     clrscr;
 
     {Conversão de unidades para a massa de gusa: de toneladas para kilogramas}
+    // Migration not required;
     xk:= xt*1000;
 
     {Cálculo da massa de ferro no gusa (feg),em kilogramas) }
+    // Migration not required;
     feg:= (xk*g)/(100);
 
     {Cálculo da massa total de minérios carregados (em kilogramas)}
+    // Migrated;
     MT:= (feg*10000)/(TeorM[1]*PropM[1]+TeorM[2]*PropM[2]+TeorM[3]*PropM[3]);
     cont:=1;
 
     while cont<= 3 do
     begin
       {Cálculo da massa individual de cada minério ( em kilogramas)}
+      // Migrated;
       MasM[cont]:= (PropM[cont]*MT/100);
 
-      {Conversão da massa individual de cada minério de kilogramas para toneladas} 
+      {Conversão da massa individual de cada minério de kilogramas para toneladas}
+      // Migration not required;
       MasM[cont]:=MasM[cont]/1000;
       cont:= cont+1;
     end;
     cont:=1;
 
     {Cálculo do número de kmols de carbono a serem carregados}
+    // Migrated;
     NCcarr:=(2.12*feg)/(56)+(xk*h)/(1200);
 
     {Cálculo da massa de carbono a ser carregada (em kilogramas)}
+    // Migrated;
     PCcarr:=NCcarr*12;
 
     {Cálculo do teor médio de carbono fixo na mistura de coques}
+    // Migrated
     TeorCM:=(TeorC[1]*PropC[1]+TeorC[2]*PropC[2]+TeorC[3]*PropC[3])/100;
 
     {peso de coque sem uso de PCI }
+    // Migrated;
     Pcoq:= PCcarr/(TeorCM/100);
 
     cont:=1;
 
     {Cálculo do coke rate máximo (em kilogramas/ ton de gusa)}
+    // Migrated;
     CRmax:=Pcoq/xt;
 
     {Cálculo da massa de carbono queimado (em kilogramas)}
