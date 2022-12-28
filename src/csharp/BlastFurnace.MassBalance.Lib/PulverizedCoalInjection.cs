@@ -32,6 +32,16 @@ public class PulverizedCoalInjection
     }
 
     /// <summary>
+    /// Initialize an Pulverized Coal Injection instance
+    /// </summary>
+    /// <param name="cContent"></param>
+    public PulverizedCoalInjection(Percentual cContent)
+    {
+        CContent = cContent;
+        Weight = new Weight(0, WeightUnits.metricTon);
+    }
+
+    /// <summary>
     /// Calculate the maximum PCI rate allowable
     /// </summary>
     /// <returns></returns>

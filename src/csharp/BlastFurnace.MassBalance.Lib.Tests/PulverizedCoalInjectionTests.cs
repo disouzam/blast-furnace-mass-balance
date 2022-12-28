@@ -23,6 +23,20 @@ public class PulverizedCoalInjectionTests
     }
 
     [Fact]
+    public void CheckInitializationWithJustPercentual()
+    {
+        var pci = new PulverizedCoalInjection(new Percentual(90));
+
+        using (new AssertionScope())
+        {
+            pci.Should().NotBeNull();
+            pci.CContent.Value.Should().Be(90);
+            pci.Weight.Value.Should().Be(0);
+            pci.Weight.Unit.Should().Be(WeightUnits.metricTon);
+        }
+    }
+
+    [Fact]
     public void CheckPCIRateMaximum()
     {
         var hotMetal = new HotMetal(new Weight(155, WeightUnits.metricTon), new Percentual(95), new Percentual(4));
@@ -39,7 +53,7 @@ public class PulverizedCoalInjectionTests
     {
         HotMetal? hotmetal = null;
         var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(10, WeightUnits.metricTon));
-        
+
         var act = () => pci.MaximumPCIRate(hotmetal);
         act.Should().Throw<ArgumentNullException>();
     }
