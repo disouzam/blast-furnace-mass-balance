@@ -198,23 +198,23 @@ public class IronOreBlendTests
             ironOreBlend2.GetBlendRequiredWeight(hotMetal).Value.Should().BeApproximately(1.459, 0.001);
             ironOreBlend2.GetBlendRequiredWeight(hotMetal).Unit.Should().Be(WeightUnits.metricTon);
 
-            ironOreBlend.SetIronOreWeightsBasedOnRequiredWeight(hotMetal);
+            ironOreBlend2.SetIronOreWeightsBasedOnRequiredWeight(hotMetal);
 
-            var ironOres = ironOreBlend.IronOres;
+            var ironOres = ironOreBlend2.IronOres;
 
             ironOres[0].FeContent.Value.Should().Be(70);
-            ironOres[0].Proportion.Value.Should().Be(25);
-            ironOres[0].Weight.Value.Should().BeApproximately(0.366, 0.001);
+            ironOres[0].Proportion.Value.Should().Be(15);
+            ironOres[0].Weight.Value.Should().BeApproximately(0.257, 0.001);
             ironOres[0].Weight.Unit.Should().Be(WeightUnits.metricTon);
 
             ironOres[1].FeContent.Value.Should().Be(65);
-            ironOres[1].Proportion.Value.Should().Be(35);
-            ironOres[1].Weight.Value.Should().BeApproximately(0.512, 0.001);
+            ironOres[1].Proportion.Value.Should().Be(45);
+            ironOres[1].Weight.Value.Should().BeApproximately(0.772, 0.001);
             ironOres[1].Weight.Unit.Should().Be(WeightUnits.metricTon);
 
             ironOres[2].FeContent.Value.Should().Be(60);
-            ironOres[2].Proportion.Value.Should().Be(40);
-            ironOres[2].Weight.Value.Should().BeApproximately(0.585, 0.001);
+            ironOres[2].Proportion.Value.Should().Be(25);
+            ironOres[2].Weight.Value.Should().BeApproximately(0.429, 0.001);
             ironOres[2].Weight.Unit.Should().Be(WeightUnits.metricTon);
         }
     }
