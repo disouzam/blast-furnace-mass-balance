@@ -195,6 +195,12 @@
             Normalize proportions of Cokes to 100%
             </summary>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.MaximumCokeRate(BlastFurnace.MassBalance.Lib.HotMetal)">
+            <summary>
+            Maximum coke rate in kg of coke / metric ton of hot metal
+            </summary>
+            <param name="hotMetal"></param>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.ToString">
             <summary>
             String representation of CokeBlend

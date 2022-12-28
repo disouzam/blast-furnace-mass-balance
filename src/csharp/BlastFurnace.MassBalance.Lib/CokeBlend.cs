@@ -108,6 +108,39 @@ public class CokeBlend
     }
 
     /// <summary>
+    /// Maximum coke rate in kg of coke / metric ton of hot metal
+    /// </summary>
+    /// <param name="hotMetal"></param>
+    public double MaximumCokeRate(HotMetal hotMetal)
+    {
+        if (hotMetal == null)
+        {
+            throw new ArgumentNullException(nameof(hotMetal));
+        }
+
+        var atomicWeightCarbon = 12;
+        var atomicWeightFe = 56;
+
+        var hotMetalWeightinKg = hotMetal.Weight.GetWeightValue(WeightUnits.kilogram);
+
+        var feWeightInHotMetalInKg = hotMetalWeightinKg * hotMetal.FePercent.Value / 100;
+        var cWeightInHotMetalInKg = hotMetalWeightinKg * hotMetal.CPercent.Value / 100;
+
+        // Number of kmols of carbon required to be loaded at blast furnace
+        var numberOfKmolsCarbonRequired = (2.12 * feWeightInHotMetalInKg) / atomicWeightFe + cWeightInHotMetalInKg / atomicWeightCarbon;
+
+        // Mass of Carbon that must be loaded at blast furnace
+        var carbonWeightRequired = numberOfKmolsCarbonRequired * atomicWeightCarbon;
+
+        // Coke weight without use of PCI
+        var cokeWeightRequiredWithoutPCI = carbonWeightRequired / (AverageCContent.Value / 100);
+
+        // Maximum coke rate
+        var maxCokeRate = cokeWeightRequiredWithoutPCI / hotMetal.Weight.GetWeightValue(WeightUnits.metricTon);
+        return maxCokeRate;
+    }
+
+    /// <summary>
     /// String representation of CokeBlend
     /// </summary>
     /// <returns></returns>
