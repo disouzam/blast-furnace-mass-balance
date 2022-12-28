@@ -5,6 +5,10 @@
             "enabled": true,
             "provider": "Disk"
         },
+        "since": {
+            "enabled": true,
+            "target": "main"
+        },
         "project-info": {
             "version": "main"
         },
@@ -24,10 +28,6 @@
             "html",
             "cleartext"
         ],
-        "since": {
-            "enabled": true,
-            "target": "main"
-        },
         "solution": "..\\BlastFurnace.MassBalance.sln",
         "target-framework": "net7.0",
         "test-case-filter": "",
