@@ -28,7 +28,7 @@ public class PulverizedCoalInjection
     public PulverizedCoalInjection(Percentual cContent, Weight weight)
     {
         CContent = cContent;
-        Weight = weight;
+        SetWeight(weight);
     }
 
     /// <summary>
@@ -38,8 +38,25 @@ public class PulverizedCoalInjection
     public PulverizedCoalInjection(Percentual cContent)
     {
         CContent = cContent;
-        Weight = new Weight(0, WeightUnits.metricTon);
+        var weight = new Weight(0, WeightUnits.metricTon);
+        SetWeight(weight);
     }
+
+    /// <summary>
+    /// Set weight for PCI and validate the value against maximum PCI weight
+    /// </summary>
+    /// <param name="weight"></param>
+    /// <exception cref="InvalidOperationException"></exception>
+    public void SetWeight(Weight weight)
+    {
+        if (weight.GetWeightValue(WeightUnits.metricTon) > maximumPCIWeight.GetWeightValue(WeightUnits.metricTon))
+        {
+            throw new InvalidOperationException($"It is not possible to set weight of PCI higher than {maximumPCIWeight.GetWeightValue(WeightUnits.metricTon):F0} metric tons.");
+        }
+        this.Weight = new Weight(weight.Value, weight.Unit);
+    }
+
+    private Weight maximumPCIWeight = new Weight(double.MaxValue, WeightUnits.metricTon);
 
     /// <summary>
     /// Calculate the maximum PCI rate allowable
@@ -63,6 +80,10 @@ public class PulverizedCoalInjection
 
         // Maximum PCI rate in kilograms of PCI per metric ton of hot metal
         var PCIratmx = PCI / hotMetal.Weight.GetWeightValue(WeightUnits.metricTon);
+
+        var PCIMaxWeightInMetricTon = PCI / 1000;
+
+        maximumPCIWeight = new Weight(PCIMaxWeightInMetricTon, WeightUnits.metricTon);
 
         return PCIratmx;
     }
