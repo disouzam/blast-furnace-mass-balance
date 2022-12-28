@@ -143,7 +143,8 @@ public class CokeBlendTests
         var coke3 = new Coke(new Percentual(80), new Percentual(40));
         cokeBlend.Add(coke3);
 
-        var act = () => cokeBlend.MaximumCokeRate(null);
+        HotMetal? hotmetal = null;
+        var act = () => cokeBlend.MaximumCokeRate(hotmetal);
         act.Should().Throw<ArgumentNullException>();
     }
 
