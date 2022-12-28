@@ -139,6 +139,83 @@ public class IronOreBlendTests
         var ironOre3 = new IronOre(new Percentual(60), new Percentual(40));
         ironOreBlend.Add(ironOre3);
 
-        IronOreBlend.GetBlendRequiredWeight(hotMetal).Value.Should().Be(940);
+        ironOreBlend.GetBlendRequiredWeight(hotMetal).Value.Should().BeApproximately(1.463, 0.001);
+        ironOreBlend.GetBlendRequiredWeight(hotMetal).Unit.Should().Be(WeightUnits.metricTon);
+    }
+
+    [Fact]
+    public void CalculateAndSetRequiredWeightOfIronBlend()
+    {
+        var hotMetal = new HotMetal(new Weight(1000, WeightUnits.kilogram), new Percentual(94), new Percentual(5));
+
+        var ironOreBlend = new IronOreBlend();
+        var ironOre = new IronOre(new Percentual(70), new Percentual(25));
+        ironOreBlend.Add(ironOre);
+
+        var ironOre2 = new IronOre(new Percentual(65), new Percentual(35));
+        ironOreBlend.Add(ironOre2);
+
+        var ironOre3 = new IronOre(new Percentual(60), new Percentual(40));
+        ironOreBlend.Add(ironOre3);
+
+        using (new AssertionScope())
+        {
+            ironOreBlend.GetBlendRequiredWeight(hotMetal).Value.Should().BeApproximately(1.463, 0.001);
+            ironOreBlend.GetBlendRequiredWeight(hotMetal).Unit.Should().Be(WeightUnits.metricTon);
+
+            ironOreBlend.SetIronOreWeightsBasedOnRequiredWeight(hotMetal);
+
+            var ironOres = ironOreBlend.IronOres;
+
+            ironOres[0].FeContent.Value.Should().Be(70);
+            ironOres[0].Proportion.Value.Should().Be(25);
+            ironOres[0].Weight.Value.Should().BeApproximately(0.366, 0.001);
+            ironOres[0].Weight.Unit.Should().Be(WeightUnits.metricTon);
+
+            ironOres[1].FeContent.Value.Should().Be(65);
+            ironOres[1].Proportion.Value.Should().Be(35);
+            ironOres[1].Weight.Value.Should().BeApproximately(0.512, 0.001);
+            ironOres[1].Weight.Unit.Should().Be(WeightUnits.metricTon);
+
+            ironOres[2].FeContent.Value.Should().Be(60);
+            ironOres[2].Proportion.Value.Should().Be(40);
+            ironOres[2].Weight.Value.Should().BeApproximately(0.585, 0.001);
+            ironOres[2].Weight.Unit.Should().Be(WeightUnits.metricTon);
+        }
+
+        var ironOreBlend2 = new IronOreBlend();
+        var ironOre4 = new IronOre(new Percentual(70), new Percentual(15));
+        ironOreBlend2.Add(ironOre4);
+
+        var ironOre5 = new IronOre(new Percentual(65), new Percentual(45));
+        ironOreBlend2.Add(ironOre5);
+
+        var ironOre6 = new IronOre(new Percentual(60), new Percentual(25));
+        ironOreBlend2.Add(ironOre6);
+
+        using (new AssertionScope())
+        {
+            ironOreBlend2.GetBlendRequiredWeight(hotMetal).Value.Should().BeApproximately(1.459, 0.001);
+            ironOreBlend2.GetBlendRequiredWeight(hotMetal).Unit.Should().Be(WeightUnits.metricTon);
+
+            ironOreBlend.SetIronOreWeightsBasedOnRequiredWeight(hotMetal);
+
+            var ironOres = ironOreBlend.IronOres;
+
+            ironOres[0].FeContent.Value.Should().Be(70);
+            ironOres[0].Proportion.Value.Should().Be(25);
+            ironOres[0].Weight.Value.Should().BeApproximately(0.366, 0.001);
+            ironOres[0].Weight.Unit.Should().Be(WeightUnits.metricTon);
+
+            ironOres[1].FeContent.Value.Should().Be(65);
+            ironOres[1].Proportion.Value.Should().Be(35);
+            ironOres[1].Weight.Value.Should().BeApproximately(0.512, 0.001);
+            ironOres[1].Weight.Unit.Should().Be(WeightUnits.metricTon);
+
+            ironOres[2].FeContent.Value.Should().Be(60);
+            ironOres[2].Proportion.Value.Should().Be(40);
+            ironOres[2].Weight.Value.Should().BeApproximately(0.585, 0.001);
+            ironOres[2].Weight.Unit.Should().Be(WeightUnits.metricTon);
+        }
     }
 }

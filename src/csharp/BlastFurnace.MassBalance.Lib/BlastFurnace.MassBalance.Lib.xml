@@ -288,6 +288,11 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.IronOreBlend.SetIronOreWeightsBasedOnRequiredWeight(BlastFurnace.MassBalance.Lib.HotMetal)">
+            <summary>
+            Set individual iron ore weights based on calculated required weight
+            </summary>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.IronOreBlend.#ctor">
             <summary>
             Initialization of iron ore blend

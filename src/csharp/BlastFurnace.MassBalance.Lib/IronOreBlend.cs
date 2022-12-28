@@ -20,12 +20,42 @@ public class IronOreBlend
     /// Get the required weight of iron ore blend based on hot metal characteristics
     /// </summary>
     /// <returns></returns>
-    public static Weight GetBlendRequiredWeight(HotMetal hotmetal)
+    public Weight GetBlendRequiredWeight(HotMetal hotmetal)
     {
-        var totalIronWeight = hotmetal.Weight.Value * hotmetal.FePercent.Value / 100;
-        var response = new Weight(totalIronWeight, hotmetal.Weight.Unit);
+        var hotMetalWeightUnitAdjusted = hotmetal.Weight.GetWeightValue(unit);
+        var totalIronWeight = hotMetalWeightUnitAdjusted * hotmetal.FePercent.Value / 100;
+        var blendRequiredWeight = totalIronWeight / AverageFeContent.Value * 100;
+        var response = new Weight(blendRequiredWeight, unit);
         return response;
     }
+
+    /// <summary>
+    /// Set individual iron ore weights based on calculated required weight
+    /// </summary>
+    public void SetIronOreWeightsBasedOnRequiredWeight(HotMetal hotmetal)
+    {
+        var totalWeight = GetBlendRequiredWeight(hotmetal);
+
+        var currentTotalProportion = 0.0d;
+        if (TotalProportion.Value == 100)
+        {
+            currentTotalProportion = 100;
+        }
+        else
+        {
+            foreach (var ironOre in ironOres)
+            {
+                currentTotalProportion += ironOre.Proportion.Value;
+            }
+        }
+
+        foreach (var ironOre in ironOres)
+        {
+            var currentIronOreWeight = totalWeight.Value * ironOre.Proportion.Value / currentTotalProportion;
+            ironOre.SetWeight(currentIronOreWeight, unit);
+        }
+    }
+
 
     /// <summary>
     /// Initialization of iron ore blend
