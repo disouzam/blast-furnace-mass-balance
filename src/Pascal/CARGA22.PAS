@@ -424,30 +424,37 @@ begin
     clrscr;
 
     {Conversão de unidades para a massa de gusa: de toneladas para kilogramas}
+    // Migration not required;
     xk:= xt*1000;
 
     {Cálculo da massa de ferro no gusa (feg),em kilogramas) }
+    // Migration not required;
     feg:= (xk*g)/(100);
 
     {Cálculo da massa total de minérios carregados (em kilogramas)}
+    // Migrated;
     MT:= (feg*10000)/(TeorM[1]*PropM[1]+TeorM[2]*PropM[2]+TeorM[3]*PropM[3]);
     cont:=1;
 
     while cont<= 3 do
     begin
       {Cálculo da massa individual de cada minério ( em kilogramas)}
+      // Migrated;
       MasM[cont]:= (PropM[cont]*MT/100);
 
-      {Conversão da massa individual de cada minério de kilogramas para toneladas} 
+      {Conversão da massa individual de cada minério de kilogramas para toneladas}
+      // Migration not required;
       MasM[cont]:=MasM[cont]/1000;
       cont:= cont+1;
     end;
     cont:=1;
 
     {Cálculo do número de kmols de carbono a serem carregados}
+    // Migrated;
     NCcarr:=(2.12*feg)/(56)+(xk*h)/(1200);
 
     {Cálculo da massa de carbono a ser carregada (em kilogramas)}
+    // Migrated;
     PCcarr:=NCcarr*12;
 
     {Cálculo do teor médio de carbono fixo na mistura de coques}
@@ -455,11 +462,13 @@ begin
     TeorCM:=(TeorC[1]*PropC[1]+TeorC[2]*PropC[2]+TeorC[3]*PropC[3])/100;
 
     {peso de coque sem uso de PCI }
+    // Migrated;
     Pcoq:= PCcarr/(TeorCM/100);
 
     cont:=1;
 
     {Cálculo do coke rate máximo (em kilogramas/ ton de gusa)}
+    // Migrated;
     CRmax:=Pcoq/xt;
 
     {Cálculo da massa de carbono queimado (em kilogramas)}
