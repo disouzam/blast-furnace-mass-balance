@@ -82,6 +82,8 @@ public class BlastFurnaceCharge
         return this;
     }
 
+    //public void SetIronOre
+
     /// <summary>
     /// Parameterless constructor
     /// </summary>
