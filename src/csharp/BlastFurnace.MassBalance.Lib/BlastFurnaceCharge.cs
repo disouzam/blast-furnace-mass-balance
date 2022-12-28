@@ -82,7 +82,23 @@ public class BlastFurnaceCharge
         return this;
     }
 
-    //public void SetIronOre
+    /// <summary>
+    /// Set iron ore weights based on hot metal setup
+    /// </summary>
+    public void SetIronOreWeights()
+    {
+        if (HotMetal == null)
+        {
+            throw new InvalidOperationException("Hot metal is not fully defined. Firstly set hot metal parameters before calculating iron ore weights.");
+        }
+
+        if (IronOreBlend == null)
+        {
+            throw new InvalidOperationException("Iron ore blend is not fully defined. Firstly set iron ore blend parameters before calculating iron ore weights.");
+        }
+
+        IronOreBlend.SetIronOreWeightsBasedOnRequiredWeight(HotMetal);
+    }
 
     /// <summary>
     /// Parameterless constructor

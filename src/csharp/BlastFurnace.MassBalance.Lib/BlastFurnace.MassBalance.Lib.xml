@@ -81,6 +81,11 @@
             <param name="airBlow"></param>
             <returns>A handle of this instance after adding Air Blow to the object</returns>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.SetIronOreWeights">
+            <summary>
+            Set iron ore weights based on hot metal setup
+            </summary>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.#ctor">
             <summary>
             Parameterless constructor

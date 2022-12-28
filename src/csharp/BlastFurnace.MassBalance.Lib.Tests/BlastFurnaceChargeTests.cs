@@ -67,7 +67,7 @@ public class BlastFurnaceChargeTests
         var ironOreBlend = GetIronOreBlend();
         var cokeBlend = GetCokeBlend();
         var pci = GetPCI();
-        var airBlow = GetAirBlow();        
+        var airBlow = GetAirBlow();
 
         var blastFurnaceCharge = new BlastFurnaceCharge(hotMetal, ironOreBlend, cokeBlend, pci, airBlow);
 
@@ -311,6 +311,58 @@ public class BlastFurnaceChargeTests
         using (new AssertionScope())
         {
             act.Should().Throw<InvalidOperationException>().WithMessage("Air Blow has been already initialized. You can edit it but not change the instance.");
+        }
+    }
+
+    [Fact]
+    public void TrySetIronOreWeightsWithoutHotMetal()
+    {
+        var blastFurnaceCharge = new BlastFurnaceCharge();
+
+        var act = () => blastFurnaceCharge.SetIronOreWeights();
+
+        act.Should().Throw<InvalidOperationException>().WithMessage("Hot metal is not fully defined. Firstly set hot metal parameters before calculating iron ore weights.");
+    }
+
+    [Fact]
+    public void TrySetIronOreWeightsWithoutIronOreBlend()
+    {
+        var blastFurnaceCharge = new BlastFurnaceCharge();
+
+        var hotMetal = GetHotMetal();
+        blastFurnaceCharge?.AddHotMetal(hotMetal);
+
+        var act = () => blastFurnaceCharge?.SetIronOreWeights();
+
+        act.Should().Throw<InvalidOperationException>().WithMessage("Iron ore blend is not fully defined. Firstly set iron ore blend parameters before calculating iron ore weights.");
+    }
+
+    [Fact]
+    public void SetIronOreWeights()
+    {
+        var blastFurnaceCharge = new BlastFurnaceCharge();
+
+        var hotMetal = new HotMetal(new Weight(1, WeightUnits.metricTon), new Percentual(95), new Percentual(5));
+        blastFurnaceCharge?.AddHotMetal(hotMetal);
+
+        var ironOreBlend = GetIronOreBlend();
+        blastFurnaceCharge?.AddIronOreBlend(ironOreBlend);
+
+
+        using (new AssertionScope())
+        {
+            var ironOres = blastFurnaceCharge?.IronOreBlend?.IronOres;
+
+            ironOres?[0].Weight.Value.Should().BeApproximately(0, 0.001);
+            ironOres?[1].Weight.Value.Should().BeApproximately(0, 0.001);
+            ironOres?[2].Weight.Value.Should().BeApproximately(0, 0.001);
+
+            blastFurnaceCharge?.SetIronOreWeights();
+
+            ironOres = blastFurnaceCharge?.IronOreBlend?.IronOres;
+            ironOres?[0].Weight.Value.Should().BeApproximately(0.369, 0.001);
+            ironOres?[1].Weight.Value.Should().BeApproximately(0.517, 0.001);
+            ironOres?[2].Weight.Value.Should().BeApproximately(0.591, 0.001);
         }
     }
 }
