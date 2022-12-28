@@ -1,4 +1,6 @@
-﻿using FluentAssertions;
+﻿using System;
+
+using FluentAssertions;
 using FluentAssertions.Execution;
 
 using Xunit;
@@ -18,6 +20,28 @@ public class PulverizedCoalInjectionTests
             pci.CContent.Value.Should().Be(90);
             pci.Weight.Value.Should().Be(100);
         }
+    }
+
+    [Fact]
+    public void CheckPCIRateMaximum()
+    {
+        var hotMetal = new HotMetal(new Weight(155, WeightUnits.metricTon), new Percentual(95), new Percentual(4));
+        var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(10, WeightUnits.metricTon));
+
+        using (new AssertionScope())
+        {
+            pci.MaximumPCIRate(hotMetal).Should().BeApproximately(253.333, 0.001);
+        }
+    }
+
+    [Fact]
+    public void CheckPCIRateMaximumWithNullHotMetal()
+    {
+        HotMetal? hotmetal = null;
+        var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(10, WeightUnits.metricTon));
+        
+        var act = () => pci.MaximumPCIRate(hotmetal);
+        act.Should().Throw<ArgumentNullException>();
     }
 
     [Fact]

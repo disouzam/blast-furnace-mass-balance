@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace BlastFurnace.MassBalance.Lib;
@@ -27,6 +29,32 @@ public class PulverizedCoalInjection
     {
         CContent = cContent;
         Weight = weight;
+    }
+
+    /// <summary>
+    /// Calculate the maximum PCI rate allowable
+    /// </summary>
+    /// <returns></returns>
+    public double MaximumPCIRate(HotMetal hotMetal)
+    {
+        if (hotMetal == null)
+        {
+            throw new ArgumentNullException(nameof(hotMetal));
+        }
+
+        var hotMetalWeightinKg = hotMetal.Weight.GetWeightValue(WeightUnits.kilogram);
+        var feWeightInHotMetalInKg = hotMetalWeightinKg * hotMetal.FePercent.Value / 100;
+
+        // Mass of burned carbon (in kilograms)
+        var PCqu = (0.02 * feWeightInHotMetalInKg) * (12);
+
+        // Maximum weight of PCI allowed (also in kilograms)
+        var PCI = PCqu / (CContent.Value / 100);
+
+        // Maximum PCI rate in kilograms of PCI per metric ton of hot metal
+        var PCIratmx = PCI / hotMetal.Weight.GetWeightValue(WeightUnits.metricTon);
+
+        return PCIratmx;
     }
 
     /// <summary>

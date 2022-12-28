@@ -389,6 +389,12 @@
             <param name="cContent"></param>
             <param name="weight"></param>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.MaximumPCIRate(BlastFurnace.MassBalance.Lib.HotMetal)">
+            <summary>
+            Calculate the maximum PCI rate allowable
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.ToString">
             <summary>
             String representation of Pulverized Coal Injection
