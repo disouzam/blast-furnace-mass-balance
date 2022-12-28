@@ -139,6 +139,6 @@ public class IronOreBlendTests
         var ironOre3 = new IronOre(new Percentual(60), new Percentual(40));
         ironOreBlend.Add(ironOre3);
 
-        ironOreBlend.GetBlendRequiredWeight(hotMetal).Value.Should().Be(940);
+        IronOreBlend.GetBlendRequiredWeight(hotMetal).Value.Should().Be(940);
     }
 }
