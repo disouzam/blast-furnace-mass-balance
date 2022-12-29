@@ -382,6 +382,12 @@
             </summary>
             <param name="value"></param>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Percentual.SetValue(System.Double)">
+            <summary>
+            Set value of the percentual
+            </summary>
+            <param name="value"></param>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.Percentual.ToString">
             <summary>
             String representation of Percentual

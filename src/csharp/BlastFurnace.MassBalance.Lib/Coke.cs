@@ -11,12 +11,12 @@ public class Coke
     /// <summary>
     /// C content of coke
     /// </summary>
-    public Percentual CContent { get; set; }
+    public Percentual CContent { get; private set; }
 
     /// <summary>
     /// Proportion of coke in a blending setup
     /// </summary>
-    public Percentual Proportion { get; set; }
+    public Percentual Proportion { get; private set; }
 
     /// <summary>
     /// Initialize an coke instance

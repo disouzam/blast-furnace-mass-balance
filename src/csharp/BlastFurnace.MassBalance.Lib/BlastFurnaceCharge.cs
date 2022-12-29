@@ -133,25 +133,25 @@ public class BlastFurnaceCharge
     /// <summary>
     /// Hot metal composition and weight that intends to be produced in blast furnace
     /// </summary>
-    public HotMetal? HotMetal { get; set; } = null;
+    public HotMetal? HotMetal { get; private set; } = null;
 
     /// <summary>
     /// Iron ore blend used in blast furnace
     /// </summary>
-    public IronOreBlend? IronOreBlend { get; set; } = null;
+    public IronOreBlend? IronOreBlend { get; private set; } = null;
 
     /// <summary>
     ///  Coke blend used in blast furnace
     /// </summary>
-    public CokeBlend? CokeBlend { get; set; } = null;
+    public CokeBlend? CokeBlend { get; private set; } = null;
 
     /// <summary>
     /// Air composition to blow blast furnace
     /// </summary>
-    public AirBlow? AirBlow { get; set; } = null;
+    public AirBlow? AirBlow { get; private set; } = null;
 
     /// <summary>
     /// Pulverized coal injection composition and weight
     /// </summary>
-    public PulverizedCoalInjection? PCI { get; set; } = null;
+    public PulverizedCoalInjection? PCI { get; private set; } = null;
 }

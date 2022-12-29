@@ -140,7 +140,7 @@ public class IronOreBlend
         var newWeight = new Weight(convertedWeight, unit);
         var ironOreToAdd = new IronOre(ironOre.FeContent, ironOre.Proportion, newWeight);
 
-        TotalProportion.Value += ironOreToAdd.Proportion.Value;
+        TotalProportion.SetValue(TotalProportion.Value + ironOreToAdd.Proportion.Value);
         ironOres.Add(ironOreToAdd);
     }
 
@@ -153,11 +153,11 @@ public class IronOreBlend
 
         foreach (var ironOre in ironOres)
         {
-            ironOre.Proportion.Value = ironOre.Proportion.Value / TotalProportion.Value * 100;
+            ironOre.Proportion.SetValue(ironOre.Proportion.Value / TotalProportion.Value * 100);
             tempTotalProportion += ironOre.Proportion.Value;
         }
 
-        TotalProportion.Value = tempTotalProportion;
+        TotalProportion.SetValue(tempTotalProportion);
     }
 
     /// <summary>

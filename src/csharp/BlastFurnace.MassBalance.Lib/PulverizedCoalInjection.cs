@@ -13,12 +13,12 @@ public class PulverizedCoalInjection
     /// <summary>
     /// C content of Pulverized Coal Injection
     /// </summary>
-    public Percentual CContent { get; set; }
+    public Percentual CContent { get; private set; }
 
     /// <summary>
     /// Weight of Pulverized Coal Injection
     /// </summary>
-    public Weight Weight { get; set; }
+    public Weight Weight { get; private set; }
 
     /// <summary>
     /// Initialize an Pulverized Coal Injection instance

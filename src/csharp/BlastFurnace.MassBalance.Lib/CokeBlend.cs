@@ -98,7 +98,7 @@ public class CokeBlend
         var newWeight = new Weight(convertedWeight, unit);
         var cokeToAdd = new Coke(coke.CContent, coke.Proportion, newWeight);
 
-        TotalProportion.Value += cokeToAdd.Proportion.Value;
+        TotalProportion.SetValue(TotalProportion.Value + cokeToAdd.Proportion.Value);
         cokes.Add(cokeToAdd);
     }
 
@@ -111,11 +111,11 @@ public class CokeBlend
 
         foreach (var coke in cokes)
         {
-            coke.Proportion.Value = coke.Proportion.Value / TotalProportion.Value * 100;
+            coke.Proportion.SetValue(coke.Proportion.Value / TotalProportion.Value * 100);
             tempTotalProportion += coke.Proportion.Value;
         }
 
-        TotalProportion.Value = tempTotalProportion;
+        TotalProportion.SetValue(tempTotalProportion);
     }
 
     /// <summary>

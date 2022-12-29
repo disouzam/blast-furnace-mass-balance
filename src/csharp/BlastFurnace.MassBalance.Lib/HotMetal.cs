@@ -13,17 +13,17 @@ public class HotMetal
     /// <summary>
     /// Weight of hot metal
     /// </summary>
-    public Weight Weight { get; set; }
+    public Weight Weight { get; private set; }
 
     /// <summary>
     /// Percentage of Iron in Hot Metal
     /// </summary>
-    public Percentual FePercent { get; set; }
+    public Percentual FePercent { get; private set; }
 
     /// <summary>
     /// Percentage of Carbon in Hot Metal
     /// </summary>
-    public Percentual CPercent { get; set; }
+    public Percentual CPercent { get; private set; }
 
     /// <summary>
     /// Initialize and validate hot metal setting
