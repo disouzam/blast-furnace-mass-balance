@@ -84,7 +84,9 @@ public class PulverizedCoalInjectionTests
         HotMetal? hotmetal = null;
         var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(10, WeightUnits.metricTon));
 
+#pragma warning disable CS8604 // Possible null reference argument.
         var act = () => pci.MaximumPCIRate(hotmetal);
+#pragma warning restore CS8604 // Possible null reference argument.
         act.Should().Throw<ArgumentNullException>();
     }
 

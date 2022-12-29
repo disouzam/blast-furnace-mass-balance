@@ -20,6 +20,7 @@ public class PulverizedCoalInjection
     /// </summary>
     public Weight Weight { get; private set; }
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     /// <summary>
     /// Initialize an Pulverized Coal Injection instance
     /// </summary>
@@ -41,6 +42,7 @@ public class PulverizedCoalInjection
         var weight = new Weight(0, WeightUnits.metricTon);
         SetWeight(weight);
     }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
     /// <summary>
     /// Set weight for PCI and validate the value against maximum PCI weight

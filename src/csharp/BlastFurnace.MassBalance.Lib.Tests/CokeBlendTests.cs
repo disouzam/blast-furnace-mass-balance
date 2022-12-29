@@ -167,7 +167,9 @@ public class CokeBlendTests
         cokeBlend.Add(coke3);
 
         HotMetal? hotmetal = null;
+#pragma warning disable CS8604 // Possible null reference argument.
         var act = () => cokeBlend.MaximumCokeRate(hotmetal);
+#pragma warning restore CS8604 // Possible null reference argument.
         act.Should().Throw<ArgumentNullException>();
     }
 
