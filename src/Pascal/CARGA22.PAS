@@ -508,6 +508,7 @@ begin
 
       writeln;
 
+      // Migrated;
       if PCIesc > PCI then
       begin
         textcolor(11);
