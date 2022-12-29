@@ -13,6 +13,8 @@ public class CokeBlend
 {
     private readonly List<Coke> cokes;
 
+    private WeightUnits unit;
+
     /// <summary>
     /// Initialization of coke blend
     /// </summary>
@@ -87,8 +89,17 @@ public class CokeBlend
             throw new InvalidOperationException("Total proportion must be at a maximum of 100%.");
         }
 
-        TotalProportion.Value += coke.Proportion.Value;
-        cokes.Add(coke);
+        if (cokes.Count == 0)
+        {
+            unit = coke.Weight.Unit;
+        }
+
+        var convertedWeight = coke.Weight.GetWeightValue(unit);
+        var newWeight = new Weight(convertedWeight, unit);
+        var cokeToAdd = new Coke(coke.CContent, coke.Proportion, newWeight);
+
+        TotalProportion.Value += cokeToAdd.Proportion.Value;
+        cokes.Add(cokeToAdd);
     }
 
     /// <summary>
