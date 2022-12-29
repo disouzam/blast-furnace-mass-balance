@@ -487,12 +487,15 @@ begin
     readln(CF);
 
     {Cálculo da massa máxima de PCI permitida (em kilogramas)}
+    // Migrated;
     PCI:=(PCqu)/(CF/100);
 
     {Cálculo do PCI rate máximo (em kilogramas/ton de gusa)}
+    // Migrated;
     PCIratmx:= PCI/xt;
 
     {Conversão da massa máxima de PCI de kilogramas para toneladas}
+    // Migration not required
     PCI:=PCI/1000;
     writeln;
     repeat
@@ -505,6 +508,7 @@ begin
 
       writeln;
 
+      // Migrated;
       if PCIesc > PCI then
       begin
         textcolor(11);

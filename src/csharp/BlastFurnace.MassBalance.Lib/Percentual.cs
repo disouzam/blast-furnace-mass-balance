@@ -12,13 +12,22 @@ public class Percentual
     /// <summary>
     /// Hold the percentage value
     /// </summary>
-    public double Value { get; set; }
+    public double Value { get; private set; }
 
     /// <summary>
     /// Initialize and validate Percentual instance
     /// </summary>
     /// <param name="value"></param>
     public Percentual(double value)
+    {
+        SetValue(value);
+    }
+
+    /// <summary>
+    /// Set value of the percentual
+    /// </summary>
+    /// <param name="value"></param>
+    public void SetValue(double value)
     {
         if (value < 0 || value > 100)
         {

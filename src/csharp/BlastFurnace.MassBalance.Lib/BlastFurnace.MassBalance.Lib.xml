@@ -148,6 +148,26 @@
             <param name="cContent"></param>
             <param name="proportion"></param>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Coke.#ctor(BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Weight)">
+            <summary>
+            Initialize an coke instance
+            </summary>
+            <param name="cContent"></param>
+            <param name="proportion"></param>
+            <param name="weight"></param>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.Coke.Weight">
+            <summary>
+            Weight of current coke
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Coke.SetWeight(System.Double,BlastFurnace.MassBalance.Lib.WeightUnits)">
+            <summary>
+            Set new value and unit for coke weight
+            </summary>
+            <param name="newValue"></param>
+            <param name="newUnit"></param>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.Coke.ToString">
             <summary>
             String representation of Coke
@@ -362,6 +382,12 @@
             </summary>
             <param name="value"></param>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Percentual.SetValue(System.Double)">
+            <summary>
+            Set value of the percentual
+            </summary>
+            <param name="value"></param>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.Percentual.ToString">
             <summary>
             String representation of Percentual
@@ -388,6 +414,25 @@
             </summary>
             <param name="cContent"></param>
             <param name="weight"></param>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.#ctor(BlastFurnace.MassBalance.Lib.Percentual)">
+            <summary>
+            Initialize an Pulverized Coal Injection instance
+            </summary>
+            <param name="cContent"></param>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.SetWeight(BlastFurnace.MassBalance.Lib.Weight)">
+            <summary>
+            Set weight for PCI and validate the value against maximum PCI weight
+            </summary>
+            <param name="weight"></param>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.MaximumPCIRate(BlastFurnace.MassBalance.Lib.HotMetal)">
+            <summary>
+            Calculate the maximum PCI rate allowable
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.ToString">
             <summary>

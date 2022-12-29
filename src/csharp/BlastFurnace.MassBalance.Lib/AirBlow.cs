@@ -10,7 +10,7 @@ public class AirBlow
     /// <summary>
     /// Oxygen content in air blow
     /// </summary>
-    public Percentual O2Content { get; set; }
+    public Percentual O2Content { get; private set; }
 
     /// <summary>
     /// Initialize air blow properties

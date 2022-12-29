@@ -108,6 +108,29 @@ public class CokeBlendTests
     }
 
     [Fact]
+    public void AddCokesWithDifferentUnits()
+    {
+        var cokeBlend = new CokeBlend();
+        var coke = new Coke(new Percentual(95), new Percentual(25), new Weight(4500, WeightUnits.kilogram));
+        cokeBlend.Add(coke);
+
+        var coke2 = new Coke(new Percentual(85), new Percentual(35), new Weight(9, WeightUnits.metricTon));
+        cokeBlend.Add(coke2);
+
+        var coke3 = new Coke(new Percentual(80), new Percentual(40), new Weight(700, WeightUnits.kilogram));
+        cokeBlend.Add(coke3);
+
+        using (new AssertionScope())
+        {
+            var cokes = cokeBlend.Cokes;
+            cokes.Count.Should().Be(3);
+            cokes[0].Weight.Unit.Should().Be(WeightUnits.kilogram);
+            cokes[1].Weight.Unit.Should().Be(WeightUnits.kilogram);
+            cokes[2].Weight.Unit.Should().Be(WeightUnits.kilogram);
+        }
+    }
+
+    [Fact]
     public void CheckMaximumCokeRate()
     {
         var cokeBlend = new CokeBlend();
@@ -144,7 +167,9 @@ public class CokeBlendTests
         cokeBlend.Add(coke3);
 
         HotMetal? hotmetal = null;
+#pragma warning disable CS8604 // Possible null reference argument.
         var act = () => cokeBlend.MaximumCokeRate(hotmetal);
+#pragma warning restore CS8604 // Possible null reference argument.
         act.Should().Throw<ArgumentNullException>();
     }
 
@@ -163,7 +188,7 @@ public class CokeBlendTests
 
         using (new AssertionScope())
         {
-            cokeBlend.ToString().Should().Be("{\r\n  \"Cokes\": [\r\n    {\r\n      \"CContent\": {\r\n        \"Value\": 95.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 25.0\r\n      }\r\n    },\r\n    {\r\n      \"CContent\": {\r\n        \"Value\": 85.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 35.0\r\n      }\r\n    },\r\n    {\r\n      \"CContent\": {\r\n        \"Value\": 80.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 40.0\r\n      }\r\n    }\r\n  ],\r\n  \"TotalProportion\": {\r\n    \"Value\": 100.0\r\n  },\r\n  \"AverageCContent\": {\r\n    \"Value\": 85.5\r\n  }\r\n}");
+            cokeBlend.ToString().Should().Be("{\r\n  \"Cokes\": [\r\n    {\r\n      \"CContent\": {\r\n        \"Value\": 95.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 25.0\r\n      },\r\n      \"Weight\": {\r\n        \"Value\": 0.0,\r\n        \"Unit\": 1\r\n      }\r\n    },\r\n    {\r\n      \"CContent\": {\r\n        \"Value\": 85.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 35.0\r\n      },\r\n      \"Weight\": {\r\n        \"Value\": 0.0,\r\n        \"Unit\": 1\r\n      }\r\n    },\r\n    {\r\n      \"CContent\": {\r\n        \"Value\": 80.0\r\n      },\r\n      \"Proportion\": {\r\n        \"Value\": 40.0\r\n      },\r\n      \"Weight\": {\r\n        \"Value\": 0.0,\r\n        \"Unit\": 1\r\n      }\r\n    }\r\n  ],\r\n  \"TotalProportion\": {\r\n    \"Value\": 100.0\r\n  },\r\n  \"AverageCContent\": {\r\n    \"Value\": 85.5\r\n  }\r\n}");
             cokeBlend.AverageCContent.Value.Should().Be(85.5);
         }
     }
