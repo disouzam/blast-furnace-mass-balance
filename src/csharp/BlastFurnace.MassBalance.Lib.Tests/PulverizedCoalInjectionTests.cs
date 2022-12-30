@@ -75,6 +75,7 @@ public class PulverizedCoalInjectionTests
             pci3.SetWeight(new Weight(PCIWeightValueInMetricTon, WeightUnits.metricTon));
 
             pci3.Weight.Value.Should().BeApproximately(PCIWeightValueInMetricTon, 0.001);
+            pci3.PCIRate(hotMetal).Should().BeApproximately(304.0, 0.001);
         }
     }
 
