@@ -1,4 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using System.Runtime.ConstrainedExecution;
+
+using Newtonsoft.Json;
 
 namespace BlastFurnace.MassBalance.Lib;
 
@@ -19,6 +22,49 @@ public class AirBlow
     public AirBlow(Percentual o2Content)
     {
         O2Content = o2Content;
+    }
+
+    //{ Cálculo da vazão de sopro(em Nm3 / min)}
+    //Vazao:= Vsopro / 1440;
+
+    /// <summary>
+    /// Get required air volume
+    /// </summary>
+    /// <param name="hotMetal"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentNullException"></exception>
+    public Volume GetRequiredAirVolume(HotMetal hotMetal)
+    {
+        if (hotMetal == null)
+        {
+            throw new ArgumentNullException(nameof(hotMetal));
+        }
+
+        var hotMetalWeightinKg = hotMetal.Weight.GetWeightValue(WeightUnits.kilogram);
+        var feWeightInHotMetalInKg = hotMetalWeightinKg * hotMetal.FePercent.Value / 100;
+
+        var requiredOxygenVolume = 0.224 * feWeightInHotMetalInKg;
+
+        var requiredAirVolumeValue = requiredOxygenVolume / (O2Content.Value / 100);
+
+        var requiredAirVolume = new Volume(requiredAirVolumeValue, VolumeUnits.Nm3);
+        return requiredAirVolume;
+    }
+
+    /// <summary>
+    /// Air blow rate in Nm3/min
+    /// </summary>
+    /// <returns></returns>
+    public double AirBlowRateRequiredPerMinute(HotMetal hotMetal)
+    {
+        if (hotMetal == null)
+        {
+            throw new ArgumentNullException(nameof(hotMetal));
+        }
+
+        var blowRate = GetRequiredAirVolume(hotMetal).GetVolumeValue(VolumeUnits.Nm3) / 1440;
+
+        return blowRate;
     }
 
     /// <summary>
