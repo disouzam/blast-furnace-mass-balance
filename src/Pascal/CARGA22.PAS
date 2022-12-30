@@ -571,12 +571,15 @@ begin
     readln(po2);
 
     {Cálculo do volume}
+    // Migrated;
     Vo2:= 0.224*feg;
 
     {Cálculo do volume de ar a ser soprado (em Nm3)}
+    // Migrated;
     Vsopro:= Vo2/(po2/100);
 
     {Cálculo da vazão de sopro (em Nm3/min)}
+    // Migrated;
     Vazao:= Vsopro/1440;
 
     clrscr;
