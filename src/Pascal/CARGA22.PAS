@@ -533,12 +533,14 @@ begin
     CRate:=MTC/xt;
 
     {Cálculo do coke rate mínimo (em kilogrmas/ton de gusa)}
+    // Migrated;
     CRmin:=(((feg/56+(xk*h)/1200)*12)*100)/(xt*TeorCM);
     cont:=1;
 
     while cont<= 3 do
     begin
       {Cálculo da massa ndividual de cada coque carregado (em toneladas)}
+      // Migrated;
       MasC[cont]:= (PropC[cont]*(MTC/1000))/(100);
       cont:= cont+1;
     end;
@@ -550,6 +552,7 @@ begin
     FR:= PCIrat + CRate;
 
     {Conversão da massa de PCI adicionada de kilogramas para toneladas}
+    // Migration not required;
     PCIesc:=PCIesc/1000;
 
     clrscr;
