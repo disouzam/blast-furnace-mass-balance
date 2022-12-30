@@ -35,6 +35,20 @@
             </summary>
             <param name="o2Content"></param>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.AirBlow.GetRequiredAirVolume(BlastFurnace.MassBalance.Lib.HotMetal)">
+            <summary>
+            Get required air volume
+            </summary>
+            <param name="hotMetal"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.AirBlow.AirBlowRateRequiredPerMinute(BlastFurnace.MassBalance.Lib.HotMetal)">
+            <summary>
+            Air blow rate in Nm3/min
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.AirBlow.ToString">
             <summary>
             String representation of air blow
@@ -214,6 +228,14 @@
             <summary>
             Normalize proportions of Cokes to 100%
             </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.CokeRate(BlastFurnace.MassBalance.Lib.HotMetal,BlastFurnace.MassBalance.Lib.PulverizedCoalInjection)">
+            <summary>
+            Actual coke rate in kg of coke / metric ton of hot metal
+            </summary>
+            <param name="hotMetal"></param>
+            <param name="pci"></param>
+            <returns></returns>
         </member>
         <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.MaximumCokeRate(BlastFurnace.MassBalance.Lib.HotMetal)">
             <summary>
@@ -447,6 +469,13 @@
             <param name="weight"></param>
             <exception cref="T:System.InvalidOperationException"></exception>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.PCIRate(BlastFurnace.MassBalance.Lib.HotMetal)">
+            <summary>
+            Actual PCI rate in kg of PCI / metric ton of hot metal
+            </summary>
+            <param name="hotMetal"></param>
+            <returns></returns>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.PulverizedCoalInjection.MaximumPCIRate(BlastFurnace.MassBalance.Lib.HotMetal)">
             <summary>
             Calculate the maximum PCI rate allowable
@@ -471,6 +500,71 @@
             <param name="originalWeight"></param>
             <param name="newWeightUnits"></param>
             <returns></returns>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.UnitConversion.VolumeConversion(BlastFurnace.MassBalance.Lib.Volume,BlastFurnace.MassBalance.Lib.VolumeUnits)">
+            <summary>
+            Performs conversion between volume units
+            </summary>
+            <param name="originalVolume"></param>
+            <param name="newVolumeUnits"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.Volume">
+            <summary>
+            Holds both the quantity and unit of volume processed by mass balance and other engineering calculations
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.Volume.Value">
+            <summary>
+            The value of volume
+            </summary>
+        </member>
+        <member name="P:BlastFurnace.MassBalance.Lib.Volume.Unit">
+            <summary>
+            The unit of measurement of volume
+            </summary>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Volume.GetVolumeValue(BlastFurnace.MassBalance.Lib.VolumeUnits)">
+            <summary>
+            Get double converted value associated with this volume in the unit specified in outputUnit
+            </summary>
+            <param name="outputUnit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Volume.#ctor(System.Double,BlastFurnace.MassBalance.Lib.VolumeUnits)">
+            <summary>
+            Initialize Volume and validate it
+            </summary>
+            <param name="value"></param>
+            <param name="units"></param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.Volume.ToString">
+            <summary>
+            String representation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BlastFurnace.MassBalance.Lib.VolumeUnits">
+            <summary>
+            Describe the volume units available to be used in mass balance and other engineering calculations
+            </summary>
+            <remarks>
+            <list type="bullet">
+            <item>Standard Liter, NL</item>
+            <item>Standard Cubic Meter, Nm³</item> 
+            </list>
+            </remarks>
+        </member>
+        <member name="F:BlastFurnace.MassBalance.Lib.VolumeUnits.NL">
+            <summary>
+            Standard Liter
+            </summary>
+        </member>
+        <member name="F:BlastFurnace.MassBalance.Lib.VolumeUnits.Nm3">
+            <summary>
+            Standard Cubic Meter
+            </summary>
         </member>
         <member name="T:BlastFurnace.MassBalance.Lib.Weight">
             <summary>
@@ -518,6 +612,16 @@
             <item>metric ton</item> 
             </list>
             </remarks>
+        </member>
+        <member name="F:BlastFurnace.MassBalance.Lib.WeightUnits.kilogram">
+            <summary>
+            Kilogram
+            </summary>
+        </member>
+        <member name="F:BlastFurnace.MassBalance.Lib.WeightUnits.metricTon">
+            <summary>
+            Metric ton
+            </summary>
         </member>
     </members>
 </doc>
