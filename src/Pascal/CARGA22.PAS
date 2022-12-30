@@ -522,9 +522,11 @@ begin
     until PCIesc <= PCI;
 
     {Conversão da massa de PCI adicionada de toneladas para kilogramas}
+    // Migration not required;
     PCIesc:=PCIesc*1000;
 
     {Massa total da mistura de coque a ser carregada (em kilogramas)}
+    // Migrated;
     MTC:=(24*feg-PCIesc*CF+feg*150/7+xk*h)/(TeorCM);
 
     {Coke rate (em kilogramas/ton de gusa)}
