@@ -119,6 +119,26 @@ public class CokeBlend
     }
 
     /// <summary>
+    /// Actual coke rate in kg of coke / metric ton of hot metal
+    /// </summary>
+    /// <param name="hotMetal"></param>
+    /// <returns></returns>
+    public double CokeRate(HotMetal hotMetal, PulverizedCoalInjection pci)
+    {
+        if (hotMetal == null)
+        {
+            throw new ArgumentNullException(nameof(hotMetal));
+        }
+
+        var blendRequiredWeight = GetBlendRequiredWeight(hotMetal, pci);
+        var blendWeightInKilogram = blendRequiredWeight.GetWeightValue(WeightUnits.kilogram);
+        var hotMetalInMetricTon = hotMetal.Weight.GetWeightValue(WeightUnits.metricTon);
+
+        return blendWeightInKilogram / hotMetalInMetricTon;
+    }
+
+
+    /// <summary>
     /// Maximum coke rate in kg of coke / metric ton of hot metal
     /// </summary>
     /// <param name="hotMetal"></param>

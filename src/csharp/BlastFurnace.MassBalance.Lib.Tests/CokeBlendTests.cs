@@ -203,6 +203,25 @@ public class CokeBlendTests
     }
 
     [Fact]
+    public void CheckCokeRate()
+    {
+        var cokeBlend = new CokeBlend();
+        var coke = new Coke(new Percentual(95), new Percentual(25));
+        cokeBlend.Add(coke);
+
+        var coke2 = new Coke(new Percentual(85), new Percentual(35));
+        cokeBlend.Add(coke2);
+
+        var coke3 = new Coke(new Percentual(80), new Percentual(40));
+        cokeBlend.Add(coke3);
+
+        var hotMetal = new HotMetal(new Weight(155, WeightUnits.metricTon), new Percentual(95), new Percentual(4));
+        var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(10, WeightUnits.metricTon));
+
+        cokeBlend.CokeRate(hotMetal, pci).Should().BeApproximately(483.633, 0.001);
+    }
+
+    [Fact]
     public void CheckSetCokeWeightsBasedOnRequiredWeight()
     {
         var cokeBlend = new CokeBlend();
