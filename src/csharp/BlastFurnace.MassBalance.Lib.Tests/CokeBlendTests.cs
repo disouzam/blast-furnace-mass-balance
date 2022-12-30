@@ -186,7 +186,7 @@ public class CokeBlendTests
         var coke3 = new Coke(new Percentual(80), new Percentual(40));
         cokeBlend.Add(coke3);
 
-        var hotMetal = new HotMetal(new Weight(155, WeightUnits.metricTon), new Percentual(95), new Percentual(4));        
+        var hotMetal = new HotMetal(new Weight(155, WeightUnits.metricTon), new Percentual(95), new Percentual(4));
 
         using (new AssertionScope())
         {
@@ -199,7 +199,64 @@ public class CokeBlendTests
             var blendRequiredWeight2 = cokeBlend.GetBlendRequiredWeight(hotMetal, pci2);
             blendRequiredWeight2.Value.Should().BeApproximately(85.489, 0.001);
             blendRequiredWeight2.Unit.Should().Be(WeightUnits.metricTon);
+        }
+    }
 
+    [Fact]
+    public void CheckSetCokeWeightsBasedOnRequiredWeight()
+    {
+        var cokeBlend = new CokeBlend();
+        var coke = new Coke(new Percentual(95), new Percentual(25));
+        cokeBlend.Add(coke);
+
+        var coke2 = new Coke(new Percentual(85), new Percentual(35));
+        cokeBlend.Add(coke2);
+
+        var coke3 = new Coke(new Percentual(80), new Percentual(40));
+        cokeBlend.Add(coke3);
+
+        var hotMetal = new HotMetal(new Weight(155, WeightUnits.metricTon), new Percentual(95), new Percentual(4));
+        var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(10, WeightUnits.metricTon));
+
+        using (new AssertionScope())
+        {
+            cokeBlend.SetCokeWeightsBasedOnRequiredWeight(hotMetal, pci);
+
+            var cokes = cokeBlend.Cokes;
+
+            cokes[0].Weight.Value.Should().BeApproximately(18.740, 0.001);
+            cokes[1].Weight.Value.Should().BeApproximately(26.237, 0.001);
+            cokes[2].Weight.Value.Should().BeApproximately(29.985, 0.001);
+
+            var pci2 = new PulverizedCoalInjection(new Percentual(90), new Weight(0, WeightUnits.metricTon));
+
+            cokeBlend.SetCokeWeightsBasedOnRequiredWeight(hotMetal, pci2);
+            var cokes2 = cokeBlend.Cokes;
+
+            cokes2[0].Weight.Value.Should().BeApproximately(21.372, 0.001);
+            cokes2[1].Weight.Value.Should().BeApproximately(29.921, 0.001);
+            cokes2[2].Weight.Value.Should().BeApproximately(34.195, 0.001);
+        }
+
+        var cokeBlend2 = new CokeBlend();
+        var coke4 = new Coke(new Percentual(95), new Percentual(10));
+        cokeBlend2.Add(coke4);
+
+        var coke5 = new Coke(new Percentual(85), new Percentual(15));
+        cokeBlend2.Add(coke5);
+
+        var coke6 = new Coke(new Percentual(80), new Percentual(20));
+        cokeBlend2.Add(coke6);
+
+        using (new AssertionScope())
+        {
+            cokeBlend2.SetCokeWeightsBasedOnRequiredWeight(hotMetal, pci);
+
+            var cokes2 = cokeBlend2.Cokes;
+
+            cokes2[0].Weight.Value.Should().BeApproximately(16.756, 0.001);
+            cokes2[1].Weight.Value.Should().BeApproximately(25.135, 0.001);
+            cokes2[2].Weight.Value.Should().BeApproximately(33.513, 0.001);
         }
     }
 

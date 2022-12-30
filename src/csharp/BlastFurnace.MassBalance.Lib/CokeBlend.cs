@@ -171,6 +171,33 @@ public class CokeBlend
     }
 
     /// <summary>
+    /// Set individual coke weights based on calculated required weight
+    /// </summary>
+    public void SetCokeWeightsBasedOnRequiredWeight(HotMetal hotmetal, PulverizedCoalInjection pci)
+    {
+        var totalWeight = GetBlendRequiredWeight(hotmetal, pci);
+
+        var currentTotalProportion = 0.0d;
+        if (TotalProportion.Value == 100)
+        {
+            currentTotalProportion = 100;
+        }
+        else
+        {
+            foreach (var coke in cokes)
+            {
+                currentTotalProportion += coke.Proportion.Value;
+            }
+        }
+
+        foreach (var coke in cokes)
+        {
+            var currentCokeWeight = totalWeight.Value * coke.Proportion.Value / currentTotalProportion;
+            coke.SetWeight(currentCokeWeight, unit);
+        }
+    }
+
+    /// <summary>
     /// String representation of CokeBlend
     /// </summary>
     /// <returns></returns>

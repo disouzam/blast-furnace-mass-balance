@@ -229,6 +229,11 @@
             <param name="pci"></param>
             <returns></returns>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.SetCokeWeightsBasedOnRequiredWeight(BlastFurnace.MassBalance.Lib.HotMetal,BlastFurnace.MassBalance.Lib.PulverizedCoalInjection)">
+            <summary>
+            Set individual coke weights based on calculated required weight
+            </summary>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.ToString">
             <summary>
             String representation of CokeBlend
