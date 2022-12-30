@@ -261,6 +261,24 @@ public class CokeBlendTests
     }
 
     [Fact]
+    public void CheckMinimumCokeRate()
+    {
+        var cokeBlend = new CokeBlend();
+        var coke = new Coke(new Percentual(95), new Percentual(25));
+        cokeBlend.Add(coke);
+
+        var coke2 = new Coke(new Percentual(85), new Percentual(35));
+        cokeBlend.Add(coke2);
+
+        var coke3 = new Coke(new Percentual(80), new Percentual(40));
+        cokeBlend.Add(coke3);
+
+        var hotMetal = new HotMetal(new Weight(155, WeightUnits.metricTon), new Percentual(95), new Percentual(4));
+
+        cokeBlend.MinimumCokeRate(hotMetal).Should().BeApproximately(238.563, 0.001);
+    }
+
+    [Fact]
     public void CheckStringRepresentation()
     {
         var cokeBlend = new CokeBlend();

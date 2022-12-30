@@ -221,11 +221,17 @@
             </summary>
             <param name="hotMetal"></param>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.MinimumCokeRate(BlastFurnace.MassBalance.Lib.HotMetal)">
+            <summary>
+            Minimum coke rate in kg of coke / metric ton of hot metal
+            </summary>
+            <param name="hotMetal"></param>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.CokeBlend.GetBlendRequiredWeight(BlastFurnace.MassBalance.Lib.HotMetal,BlastFurnace.MassBalance.Lib.PulverizedCoalInjection)">
             <summary>
             Get the required weight of coke blend based on hot metal characteristics and pci characteristics
             </summary>
-            <param name="hotmetal"></param>
+            <param name="hotMetal"></param>
             <param name="pci"></param>
             <returns></returns>
         </member>
