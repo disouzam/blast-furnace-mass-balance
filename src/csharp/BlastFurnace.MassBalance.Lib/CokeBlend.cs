@@ -137,7 +137,6 @@ public class CokeBlend
         return blendWeightInKilogram / hotMetalInMetricTon;
     }
 
-
     /// <summary>
     /// Maximum coke rate in kg of coke / metric ton of hot metal
     /// </summary>
