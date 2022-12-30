@@ -122,6 +122,7 @@ public class CokeBlend
     /// Actual coke rate in kg of coke / metric ton of hot metal
     /// </summary>
     /// <param name="hotMetal"></param>
+    /// <param name="pci"></param>
     /// <returns></returns>
     public double CokeRate(HotMetal hotMetal, PulverizedCoalInjection pci)
     {
