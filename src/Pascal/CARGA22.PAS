@@ -530,6 +530,7 @@ begin
     MTC:=(24*feg-PCIesc*CF+feg*150/7+xk*h)/(TeorCM);
 
     {Coke rate (em kilogramas/ton de gusa)}
+    // Migrated;
     CRate:=MTC/xt;
 
     {Cálculo do coke rate mínimo (em kilogrmas/ton de gusa)}
@@ -546,6 +547,7 @@ begin
     end;
 
     {Cálculo do PCI rate (em kilogramas/ton de gusa)}
+    // Migrated;
     PCIrat:=PCIesc/xt;
 
     {Cálculo do Fuel rate (em kilogramas/ton de gusa)}
