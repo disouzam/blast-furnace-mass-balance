@@ -152,6 +152,25 @@ public class CokeBlend
     }
 
     /// <summary>
+    /// Get the required weight of coke blend based on hot metal characteristics and pci characteristics
+    /// </summary>
+    /// <param name="hotmetal"></param>
+    /// <param name="pci"></param>
+    /// <returns></returns>
+    public Weight GetBlendRequiredWeight(HotMetal hotmetal, PulverizedCoalInjection pci)
+    {
+        var hotMetalWeightUnitAdjusted = hotmetal.Weight.GetWeightValue(unit);
+        var totalIronWeight = hotMetalWeightUnitAdjusted * hotmetal.FePercent.Value / 100;
+
+        var pciAddedWeightUnitAdjusted = pci.Weight.GetWeightValue(unit);
+
+        var blendRequiredWeight= (24 * totalIronWeight - pciAddedWeightUnitAdjusted * pci.CContent.Value + totalIronWeight * 150 / 7 + hotMetalWeightUnitAdjusted * hotmetal.CPercent.Value) / (AverageCContent.Value);
+
+        var response = new Weight(blendRequiredWeight, unit);
+        return response;
+    }
+
+    /// <summary>
     /// String representation of CokeBlend
     /// </summary>
     /// <returns></returns>

@@ -174,6 +174,36 @@ public class CokeBlendTests
     }
 
     [Fact]
+    public void CheckBlendRequiredWeight()
+    {
+        var cokeBlend = new CokeBlend();
+        var coke = new Coke(new Percentual(95), new Percentual(25));
+        cokeBlend.Add(coke);
+
+        var coke2 = new Coke(new Percentual(85), new Percentual(35));
+        cokeBlend.Add(coke2);
+
+        var coke3 = new Coke(new Percentual(80), new Percentual(40));
+        cokeBlend.Add(coke3);
+
+        var hotMetal = new HotMetal(new Weight(155, WeightUnits.metricTon), new Percentual(95), new Percentual(4));        
+
+        using (new AssertionScope())
+        {
+            var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(10, WeightUnits.metricTon));
+            var blendRequiredWeight = cokeBlend.GetBlendRequiredWeight(hotMetal, pci);
+            blendRequiredWeight.Value.Should().BeApproximately(74.963, 0.001);
+            blendRequiredWeight.Unit.Should().Be(WeightUnits.metricTon);
+
+            var pci2 = new PulverizedCoalInjection(new Percentual(90), new Weight(0, WeightUnits.metricTon));
+            var blendRequiredWeight2 = cokeBlend.GetBlendRequiredWeight(hotMetal, pci2);
+            blendRequiredWeight2.Value.Should().BeApproximately(85.489, 0.001);
+            blendRequiredWeight2.Unit.Should().Be(WeightUnits.metricTon);
+
+        }
+    }
+
+    [Fact]
     public void CheckStringRepresentation()
     {
         var cokeBlend = new CokeBlend();
