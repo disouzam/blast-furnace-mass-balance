@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlastFurnace.MassBalance.Lib\BlastFurnace.MassBalance.Lib.csproj" />
+    <ProjectReference Include="..\src\BlastFurnace.MassBalance.Lib\BlastFurnace.MassBalance.Lib.csproj" />
   </ItemGroup>
 
 </Project>

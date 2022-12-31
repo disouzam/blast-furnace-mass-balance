@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BlastFurnace.MassBalance.Lib\BlastFurnace.MassBalance.Lib.csproj" />
+    <ProjectReference Include="..\BlastFurnace.MassBalance.Lib\BlastFurnace.MassBalance.Lib.csproj" />
   </ItemGroup>
 
 </Project>

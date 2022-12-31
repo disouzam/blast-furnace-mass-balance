@@ -7,19 +7,19 @@
       <ModuleTime>2022-12-31T01:24:27</ModuleTime>
       <ModuleName>BlastFurnace.MassBalance.Lib</ModuleName>
       <Files>
-        <File uid="1" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\src\csharp\BlastFurnace.MassBalance.Lib\About.cs" />
-        <File uid="2" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\src\csharp\BlastFurnace.MassBalance.Lib\AirBlow.cs" />
-        <File uid="3" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\src\csharp\BlastFurnace.MassBalance.Lib\BlastFurnaceCharge.cs" />
-        <File uid="4" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\src\csharp\BlastFurnace.MassBalance.Lib\Coke.cs" />
-        <File uid="5" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\src\csharp\BlastFurnace.MassBalance.Lib\CokeBlend.cs" />
-        <File uid="6" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\src\csharp\BlastFurnace.MassBalance.Lib\HotMetal.cs" />
-        <File uid="7" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\src\csharp\BlastFurnace.MassBalance.Lib\IronOre.cs" />
-        <File uid="8" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\src\csharp\BlastFurnace.MassBalance.Lib\IronOreBlend.cs" />
-        <File uid="9" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\src\csharp\BlastFurnace.MassBalance.Lib\Percentual.cs" />
-        <File uid="10" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\src\csharp\BlastFurnace.MassBalance.Lib\PulverizedCoalInjection.cs" />
-        <File uid="11" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\src\csharp\BlastFurnace.MassBalance.Lib\UnitConversion.cs" />
-        <File uid="12" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\src\csharp\BlastFurnace.MassBalance.Lib\Volume.cs" />
-        <File uid="13" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\src\csharp\BlastFurnace.MassBalance.Lib\Weight.cs" />
+        <File uid="1" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\csharp\src\BlastFurnace.MassBalance.Lib\About.cs" />
+        <File uid="2" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\csharp\src\BlastFurnace.MassBalance.Lib\AirBlow.cs" />
+        <File uid="3" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\csharp\src\BlastFurnace.MassBalance.Lib\BlastFurnaceCharge.cs" />
+        <File uid="4" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\csharp\src\BlastFurnace.MassBalance.Lib\Coke.cs" />
+        <File uid="5" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\csharp\src\BlastFurnace.MassBalance.Lib\CokeBlend.cs" />
+        <File uid="6" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\csharp\src\BlastFurnace.MassBalance.Lib\HotMetal.cs" />
+        <File uid="7" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\csharp\src\BlastFurnace.MassBalance.Lib\IronOre.cs" />
+        <File uid="8" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\csharp\src\BlastFurnace.MassBalance.Lib\IronOreBlend.cs" />
+        <File uid="9" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\csharp\src\BlastFurnace.MassBalance.Lib\Percentual.cs" />
+        <File uid="10" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\csharp\src\BlastFurnace.MassBalance.Lib\PulverizedCoalInjection.cs" />
+        <File uid="11" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\csharp\src\BlastFurnace.MassBalance.Lib\UnitConversion.cs" />
+        <File uid="12" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\csharp\src\BlastFurnace.MassBalance.Lib\Volume.cs" />
+        <File uid="13" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\csharp\src\BlastFurnace.MassBalance.Lib\Weight.cs" />
       </Files>
       <Classes>
         <Class>

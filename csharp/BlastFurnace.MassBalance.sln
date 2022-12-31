@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlastFurnace.MassBalance.App", "src/BlastFurnace.MassBalance.App\BlastFurnace.MassBalance.App.csproj", "{03C9047B-201A-4200-BE2A-ED499A095A5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlastFurnace.MassBalance.App", "src\BlastFurnace.MassBalance.App\BlastFurnace.MassBalance.App.csproj", "{03C9047B-201A-4200-BE2A-ED499A095A5B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlastFurnace.MassBalance.Lib", "BlastFurnace.MassBalance.Lib\BlastFurnace.MassBalance.Lib.csproj", "{7677CCB8-2FBF-4D12-8E3F-FE367109B5D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlastFurnace.MassBalance.Lib", "src\BlastFurnace.MassBalance.Lib\BlastFurnace.MassBalance.Lib.csproj", "{7677CCB8-2FBF-4D12-8E3F-FE367109B5D2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlastFurnace.MassBalance.Lib.Tests", "BlastFurnace.MassBalance.Lib.Tests\BlastFurnace.MassBalance.Lib.Tests.csproj", "{47C9A96F-01D4-42BB-A45D-22763DC7CC35}"
 EndProject
