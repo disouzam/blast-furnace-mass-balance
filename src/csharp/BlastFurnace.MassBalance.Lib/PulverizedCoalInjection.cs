@@ -61,6 +61,24 @@ public class PulverizedCoalInjection
     private Weight maximumPCIWeight = new Weight(double.MaxValue, WeightUnits.metricTon);
 
     /// <summary>
+    /// Actual PCI rate in kg of PCI / metric ton of hot metal
+    /// </summary>
+    /// <param name="hotMetal"></param>
+    /// <returns></returns>
+    public double PCIRate(HotMetal hotMetal)
+    {
+        if (hotMetal == null)
+        {
+            throw new ArgumentNullException(nameof(hotMetal));
+        }
+
+        var pciWeightInKilogram = Weight.GetWeightValue(WeightUnits.kilogram);
+        var hotMetalInMetricTon = hotMetal.Weight.GetWeightValue(WeightUnits.metricTon);
+
+        return pciWeightInKilogram / hotMetalInMetricTon;
+    }
+
+    /// <summary>
     /// Calculate the maximum PCI rate allowable
     /// </summary>
     /// <returns></returns>

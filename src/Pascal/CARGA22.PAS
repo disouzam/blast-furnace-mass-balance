@@ -522,32 +522,39 @@ begin
     until PCIesc <= PCI;
 
     {Conversão da massa de PCI adicionada de toneladas para kilogramas}
+    // Migration not required;
     PCIesc:=PCIesc*1000;
 
     {Massa total da mistura de coque a ser carregada (em kilogramas)}
+    // Migrated;
     MTC:=(24*feg-PCIesc*CF+feg*150/7+xk*h)/(TeorCM);
 
     {Coke rate (em kilogramas/ton de gusa)}
+    // Migrated;
     CRate:=MTC/xt;
 
     {Cálculo do coke rate mínimo (em kilogrmas/ton de gusa)}
+    // Migrated;
     CRmin:=(((feg/56+(xk*h)/1200)*12)*100)/(xt*TeorCM);
     cont:=1;
 
     while cont<= 3 do
     begin
       {Cálculo da massa ndividual de cada coque carregado (em toneladas)}
+      // Migrated;
       MasC[cont]:= (PropC[cont]*(MTC/1000))/(100);
       cont:= cont+1;
     end;
 
     {Cálculo do PCI rate (em kilogramas/ton de gusa)}
+    // Migrated;
     PCIrat:=PCIesc/xt;
 
     {Cálculo do Fuel rate (em kilogramas/ton de gusa)}
     FR:= PCIrat + CRate;
 
     {Conversão da massa de PCI adicionada de kilogramas para toneladas}
+    // Migration not required;
     PCIesc:=PCIesc/1000;
 
     clrscr;
@@ -564,12 +571,15 @@ begin
     readln(po2);
 
     {Cálculo do volume}
+    // Migrated;
     Vo2:= 0.224*feg;
 
     {Cálculo do volume de ar a ser soprado (em Nm3)}
+    // Migrated;
     Vsopro:= Vo2/(po2/100);
 
     {Cálculo da vazão de sopro (em Nm3/min)}
+    // Migrated;
     Vazao:= Vsopro/1440;
 
     clrscr;

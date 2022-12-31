@@ -119,6 +119,31 @@ public class CokeBlend
     }
 
     /// <summary>
+    /// Actual coke rate in kg of coke / metric ton of hot metal
+    /// </summary>
+    /// <param name="hotMetal"></param>
+    /// <param name="pci"></param>
+    /// <returns></returns>
+    public double CokeRate(HotMetal hotMetal, PulverizedCoalInjection pci)
+    {
+        if (hotMetal == null)
+        {
+            throw new ArgumentNullException(nameof(hotMetal));
+        }
+
+        if (pci == null)
+        {
+            throw new ArgumentNullException(nameof(pci));
+        }
+
+        var blendRequiredWeight = GetBlendRequiredWeight(hotMetal, pci);
+        var blendWeightInKilogram = blendRequiredWeight.GetWeightValue(WeightUnits.kilogram);
+        var hotMetalInMetricTon = hotMetal.Weight.GetWeightValue(WeightUnits.metricTon);
+
+        return blendWeightInKilogram / hotMetalInMetricTon;
+    }
+
+    /// <summary>
     /// Maximum coke rate in kg of coke / metric ton of hot metal
     /// </summary>
     /// <param name="hotMetal"></param>
@@ -149,6 +174,92 @@ public class CokeBlend
         // Maximum coke rate
         var maxCokeRate = cokeWeightRequiredWithoutPCI / hotMetal.Weight.GetWeightValue(WeightUnits.metricTon);
         return maxCokeRate;
+    }
+
+    /// <summary>
+    /// Minimum coke rate in kg of coke / metric ton of hot metal
+    /// </summary>
+    /// <param name="hotMetal"></param>
+    public double MinimumCokeRate(HotMetal hotMetal)
+    {
+        var atomicWeightCarbon = 12;
+        var atomicWeightFe = 56;
+
+        var hotMetalWeightinKg = hotMetal.Weight.GetWeightValue(WeightUnits.kilogram);
+        var hotMetalWeightinMetricTon = hotMetal.Weight.GetWeightValue(WeightUnits.metricTon);
+
+        var feWeightInHotMetalInKg = hotMetalWeightinKg * hotMetal.FePercent.Value / 100;
+        var cWeightInHotMetalInKg = hotMetalWeightinKg * hotMetal.CPercent.Value / 100;
+
+        var minimumCokeRate = (((feWeightInHotMetalInKg / atomicWeightFe + (cWeightInHotMetalInKg) / (atomicWeightCarbon * 100)) * atomicWeightCarbon) * 100) / (hotMetalWeightinMetricTon * AverageCContent.Value);
+
+        return minimumCokeRate;
+    }
+
+    /// <summary>
+    /// Get the required weight of coke blend based on hot metal characteristics and pci characteristics
+    /// </summary>
+    /// <param name="hotMetal"></param>
+    /// <param name="pci"></param>
+    /// <returns></returns>
+    public Weight GetBlendRequiredWeight(HotMetal hotMetal, PulverizedCoalInjection pci)
+    {
+        if (hotMetal == null)
+        {
+            throw new ArgumentNullException(nameof(hotMetal));
+        }
+
+        if (pci == null)
+        {
+            throw new ArgumentNullException(nameof(pci));
+        }
+
+        var hotMetalWeightUnitAdjusted = hotMetal.Weight.GetWeightValue(unit);
+        var totalIronWeight = hotMetalWeightUnitAdjusted * hotMetal.FePercent.Value / 100;
+
+        var pciAddedWeightUnitAdjusted = pci.Weight.GetWeightValue(unit);
+
+        var blendRequiredWeight = (24 * totalIronWeight - pciAddedWeightUnitAdjusted * pci.CContent.Value + totalIronWeight * 150 / 7 + hotMetalWeightUnitAdjusted * hotMetal.CPercent.Value) / (AverageCContent.Value);
+
+        var response = new Weight(blendRequiredWeight, unit);
+        return response;
+    }
+
+    /// <summary>
+    /// Set individual coke weights based on calculated required weight
+    /// </summary>
+    public void SetCokeWeightsBasedOnRequiredWeight(HotMetal hotMetal, PulverizedCoalInjection pci)
+    {
+        if (hotMetal == null)
+        {
+            throw new ArgumentNullException(nameof(hotMetal));
+        }
+
+        if (pci == null)
+        {
+            throw new ArgumentNullException(nameof(pci));
+        }
+
+        var totalWeight = GetBlendRequiredWeight(hotMetal, pci);
+
+        var currentTotalProportion = 0.0d;
+        if (TotalProportion.Value == 100)
+        {
+            currentTotalProportion = 100;
+        }
+        else
+        {
+            foreach (var coke in cokes)
+            {
+                currentTotalProportion += coke.Proportion.Value;
+            }
+        }
+
+        foreach (var coke in cokes)
+        {
+            var currentCokeWeight = totalWeight.Value * coke.Proportion.Value / currentTotalProportion;
+            coke.SetWeight(currentCokeWeight, unit);
+        }
     }
 
     /// <summary>
