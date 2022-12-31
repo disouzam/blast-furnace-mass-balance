@@ -37,3 +37,5 @@ src/Pascal/lib/x86_64-win64
 *.exe
 **/coveragereport
 .vscode/log
+src/csharp/.sonarqube/conf
+src/csharp/.sonarqube/out
