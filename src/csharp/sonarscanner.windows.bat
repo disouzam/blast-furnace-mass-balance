@@ -21,6 +21,8 @@ echo %CoverletOutputFormat%
 set "CoverletOutput=..\BlastFurnace.MassBalance.Lib.Tests\coverage.opencover.xml"
 echo %CoverletOutput%
 
+dotnet test -v:Minimal -c:Debug 
+
 dotnet build-server shutdown
 
 dotnet sonarscanner begin  /k:%project% /d:sonar.host.url=%host% /d:sonar.login=%login% /d:sonar.vbnet.opencover.reportsPaths="**\coverage.opencover.xml" /d:sonar.coverage.exclusions="**Tests*.cs,*.json,*.Setup/*.*,*.Repository.*/*.*,**Migrations/*"
