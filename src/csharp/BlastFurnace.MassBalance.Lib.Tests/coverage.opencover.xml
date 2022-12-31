@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CoverageSession>
-  <Summary numSequencePoints="566" visitedSequencePoints="566" numBranchPoints="108" visitedBranchPoints="108" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="167" minCyclomaticComplexity="167" visitedClasses="13" numClasses="13" visitedMethods="87" numMethods="87" />
+  <Summary numSequencePoints="578" visitedSequencePoints="578" numBranchPoints="114" visitedBranchPoints="114" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="173" minCyclomaticComplexity="173" visitedClasses="13" numClasses="13" visitedMethods="88" numMethods="88" />
   <Modules>
-    <Module hash="86D6A438-ED84-4628-9F1F-F55365A7CB4C">
+    <Module hash="E92263D1-ED31-4EF1-81E5-FD164E64EE4C">
       <ModulePath>BlastFurnace.MassBalance.Lib.dll</ModulePath>
-      <ModuleTime>2022-12-31T12:23:25</ModuleTime>
+      <ModuleTime>2022-12-31T01:24:27</ModuleTime>
       <ModuleName>BlastFurnace.MassBalance.Lib</ModuleName>
       <Files>
         <File uid="1" fullPath="D:\GitHubRepos\blast-furnace-mass-balance\src\csharp\BlastFurnace.MassBalance.Lib\About.cs" />
@@ -119,7 +119,7 @@
               <Name>BlastFurnace.MassBalance.Lib.Percentual BlastFurnace.MassBalance.Lib.AirBlow::get_O2Content()</Name>
               <FileRef uid="2" />
               <SequencePoints>
-                <SequencePoint vc="29" uspid="15" ordinal="0" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="32" uspid="15" ordinal="0" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="2" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="15" ec="1" el="15" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
@@ -188,10 +188,10 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.AirBlow::.ctor(BlastFurnace.MassBalance.Lib.Percentual)</Name>
               <FileRef uid="2" />
               <SequencePoints>
-                <SequencePoint vc="22" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="22" uspid="22" ordinal="1" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="22" uspid="23" ordinal="2" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="22" uspid="24" ordinal="3" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="25" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="25" uspid="22" ordinal="1" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="25" uspid="23" ordinal="2" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="25" uspid="24" ordinal="3" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="2" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="4" uspid="0" p8:type="SequencePoint" ordinal="4" offset="4" sc="0" sl="21" ec="1" el="24" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
@@ -199,7 +199,7 @@
           </Methods>
         </Class>
         <Class>
-          <Summary numSequencePoints="65" visitedSequencePoints="65" numBranchPoints="14" visitedBranchPoints="14" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="4" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="13" numMethods="13" />
+          <Summary numSequencePoints="77" visitedSequencePoints="77" numBranchPoints="20" visitedBranchPoints="20" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="6" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="14" numMethods="14" />
           <FullName>BlastFurnace.MassBalance.Lib.BlastFurnaceCharge</FullName>
           <Methods>
             <Method cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
@@ -208,17 +208,17 @@
               <Name>BlastFurnace.MassBalance.Lib.BlastFurnaceCharge BlastFurnace.MassBalance.Lib.BlastFurnaceCharge::AddHotMetal(BlastFurnace.MassBalance.Lib.HotMetal)</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="5" uspid="16" ordinal="0" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="5" uspid="17" ordinal="1" sl="17" sc="1" el="17" ec="2" bec="2" bev="2" fileid="3" />
+                <SequencePoint vc="6" uspid="16" ordinal="0" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="6" uspid="17" ordinal="1" sl="17" sc="1" el="17" ec="2" bec="2" bev="2" fileid="3" />
                 <SequencePoint vc="1" uspid="18" ordinal="2" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="3" />
                 <SequencePoint vc="1" uspid="19" ordinal="3" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="4" uspid="21" ordinal="4" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="4" uspid="22" ordinal="5" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="4" uspid="23" ordinal="6" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="5" uspid="21" ordinal="4" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="5" uspid="22" ordinal="5" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="5" uspid="23" ordinal="6" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints>
                 <BranchPoint vc="1" uspid="17" ordinal="0" path="0" offset="12" offsetend="14" sl="17" fileid="3" />
-                <BranchPoint vc="4" uspid="17" ordinal="1" path="1" offset="12" offsetend="26" sl="17" fileid="3" />
+                <BranchPoint vc="5" uspid="17" ordinal="1" path="1" offset="12" offsetend="26" sl="17" fileid="3" />
               </BranchPoints>
               <MethodPoint vc="7" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="16" ec="1" el="23" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
             </Method>
@@ -248,17 +248,17 @@
               <Name>BlastFurnace.MassBalance.Lib.BlastFurnaceCharge BlastFurnace.MassBalance.Lib.BlastFurnaceCharge::AddCokeBlend(BlastFurnace.MassBalance.Lib.CokeBlend)</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="3" uspid="46" ordinal="0" sl="46" sc="1" el="46" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="3" uspid="47" ordinal="1" sl="47" sc="1" el="47" ec="2" bec="2" bev="2" fileid="3" />
+                <SequencePoint vc="4" uspid="46" ordinal="0" sl="46" sc="1" el="46" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="4" uspid="47" ordinal="1" sl="47" sc="1" el="47" ec="2" bec="2" bev="2" fileid="3" />
                 <SequencePoint vc="1" uspid="48" ordinal="2" sl="48" sc="1" el="48" ec="2" bec="0" bev="0" fileid="3" />
                 <SequencePoint vc="1" uspid="49" ordinal="3" sl="49" sc="1" el="49" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="2" uspid="51" ordinal="4" sl="51" sc="1" el="51" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="2" uspid="52" ordinal="5" sl="52" sc="1" el="52" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="2" uspid="53" ordinal="6" sl="53" sc="1" el="53" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="3" uspid="51" ordinal="4" sl="51" sc="1" el="51" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="3" uspid="52" ordinal="5" sl="52" sc="1" el="52" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="3" uspid="53" ordinal="6" sl="53" sc="1" el="53" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints>
                 <BranchPoint vc="1" uspid="47" ordinal="0" path="0" offset="12" offsetend="14" sl="47" fileid="3" />
-                <BranchPoint vc="2" uspid="47" ordinal="1" path="1" offset="12" offsetend="26" sl="47" fileid="3" />
+                <BranchPoint vc="3" uspid="47" ordinal="1" path="1" offset="12" offsetend="26" sl="47" fileid="3" />
               </BranchPoints>
               <MethodPoint vc="7" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="46" ec="1" el="53" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
             </Method>
@@ -268,17 +268,17 @@
               <Name>BlastFurnace.MassBalance.Lib.BlastFurnaceCharge BlastFurnace.MassBalance.Lib.BlastFurnaceCharge::AddPCI(BlastFurnace.MassBalance.Lib.PulverizedCoalInjection)</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="3" uspid="61" ordinal="0" sl="61" sc="1" el="61" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="3" uspid="62" ordinal="1" sl="62" sc="1" el="62" ec="2" bec="2" bev="2" fileid="3" />
+                <SequencePoint vc="4" uspid="61" ordinal="0" sl="61" sc="1" el="61" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="4" uspid="62" ordinal="1" sl="62" sc="1" el="62" ec="2" bec="2" bev="2" fileid="3" />
                 <SequencePoint vc="1" uspid="63" ordinal="2" sl="63" sc="1" el="63" ec="2" bec="0" bev="0" fileid="3" />
                 <SequencePoint vc="1" uspid="64" ordinal="3" sl="64" sc="1" el="64" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="2" uspid="66" ordinal="4" sl="66" sc="1" el="66" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="2" uspid="67" ordinal="5" sl="67" sc="1" el="67" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="2" uspid="68" ordinal="6" sl="68" sc="1" el="68" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="3" uspid="66" ordinal="4" sl="66" sc="1" el="66" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="3" uspid="67" ordinal="5" sl="67" sc="1" el="67" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="3" uspid="68" ordinal="6" sl="68" sc="1" el="68" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints>
                 <BranchPoint vc="1" uspid="62" ordinal="0" path="0" offset="12" offsetend="14" sl="62" fileid="3" />
-                <BranchPoint vc="2" uspid="62" ordinal="1" path="1" offset="12" offsetend="26" sl="62" fileid="3" />
+                <BranchPoint vc="3" uspid="62" ordinal="1" path="1" offset="12" offsetend="26" sl="62" fileid="3" />
               </BranchPoints>
               <MethodPoint vc="7" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="61" ec="1" el="68" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
             </Method>
@@ -326,16 +326,45 @@
               </BranchPoints>
               <MethodPoint vc="9" uspid="0" p8:type="SequencePoint" ordinal="5" offset="5" sc="0" sl="89" ec="1" el="101" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
             </Method>
+            <Method cyclomaticComplexity="6" nPathComplexity="6" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="12" visitedSequencePoints="12" numBranchPoints="6" visitedBranchPoints="6" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="6" minCyclomaticComplexity="6" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Double BlastFurnace.MassBalance.Lib.BlastFurnaceCharge::GetFuelRate()</Name>
+              <FileRef uid="3" />
+              <SequencePoints>
+                <SequencePoint vc="5" uspid="108" ordinal="0" sl="108" sc="1" el="108" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="5" uspid="109" ordinal="1" sl="109" sc="1" el="109" ec="2" bec="2" bev="2" fileid="3" />
+                <SequencePoint vc="1" uspid="110" ordinal="2" sl="110" sc="1" el="110" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="1" uspid="111" ordinal="3" sl="111" sc="1" el="111" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="4" uspid="114" ordinal="4" sl="114" sc="1" el="114" ec="2" bec="2" bev="2" fileid="3" />
+                <SequencePoint vc="1" uspid="115" ordinal="5" sl="115" sc="1" el="115" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="1" uspid="116" ordinal="6" sl="116" sc="1" el="116" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="3" uspid="119" ordinal="7" sl="119" sc="1" el="119" ec="2" bec="2" bev="2" fileid="3" />
+                <SequencePoint vc="1" uspid="120" ordinal="8" sl="120" sc="1" el="120" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="1" uspid="121" ordinal="9" sl="121" sc="1" el="121" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="2" uspid="124" ordinal="10" sl="124" sc="1" el="124" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="2" uspid="125" ordinal="11" sl="125" sc="1" el="125" ec="2" bec="0" bev="0" fileid="3" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="1" uspid="109" ordinal="0" path="0" offset="12" offsetend="14" sl="109" fileid="3" />
+                <BranchPoint vc="4" uspid="109" ordinal="1" path="1" offset="12" offsetend="26" sl="109" fileid="3" />
+                <BranchPoint vc="1" uspid="114" ordinal="2" path="0" offset="37" offsetend="39" sl="114" fileid="3" />
+                <BranchPoint vc="3" uspid="114" ordinal="3" path="1" offset="37" offsetend="51" sl="114" fileid="3" />
+                <BranchPoint vc="1" uspid="119" ordinal="4" path="0" offset="62" offsetend="64" sl="119" fileid="3" />
+                <BranchPoint vc="2" uspid="119" ordinal="5" path="1" offset="62" offsetend="76" sl="119" fileid="3" />
+              </BranchPoints>
+              <MethodPoint vc="12" uspid="0" p8:type="SequencePoint" ordinal="6" offset="6" sc="0" sl="108" ec="1" el="125" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+            </Method>
             <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
               <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
               <Name>BlastFurnace.MassBalance.Lib.HotMetal BlastFurnace.MassBalance.Lib.BlastFurnaceCharge::get_HotMetal()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="72" uspid="136" ordinal="0" sl="136" sc="1" el="136" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="90" uspid="160" ordinal="0" sl="160" sc="1" el="160" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="6" offset="6" sc="0" sl="136" ec="1" el="136" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="7" offset="7" sc="0" sl="160" ec="1" el="160" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
               <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -343,10 +372,10 @@
               <Name>BlastFurnace.MassBalance.Lib.IronOreBlend BlastFurnace.MassBalance.Lib.BlastFurnaceCharge::get_IronOreBlend()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="73" uspid="141" ordinal="0" sl="141" sc="1" el="141" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="82" uspid="165" ordinal="0" sl="165" sc="1" el="165" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="7" offset="7" sc="0" sl="141" ec="1" el="141" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="8" offset="8" sc="0" sl="165" ec="1" el="165" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
               <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -354,10 +383,10 @@
               <Name>BlastFurnace.MassBalance.Lib.CokeBlend BlastFurnace.MassBalance.Lib.BlastFurnaceCharge::get_CokeBlend()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="66" uspid="146" ordinal="0" sl="146" sc="1" el="146" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="84" uspid="170" ordinal="0" sl="170" sc="1" el="170" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="8" offset="8" sc="0" sl="146" ec="1" el="146" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="9" offset="9" sc="0" sl="170" ec="1" el="170" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
               <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -365,10 +394,10 @@
               <Name>BlastFurnace.MassBalance.Lib.AirBlow BlastFurnace.MassBalance.Lib.BlastFurnaceCharge::get_AirBlow()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="62" uspid="151" ordinal="0" sl="151" sc="1" el="151" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="71" uspid="175" ordinal="0" sl="175" sc="1" el="175" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="9" offset="9" sc="0" sl="151" ec="1" el="151" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="10" offset="10" sc="0" sl="175" ec="1" el="175" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
               <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -376,10 +405,10 @@
               <Name>BlastFurnace.MassBalance.Lib.PulverizedCoalInjection BlastFurnace.MassBalance.Lib.BlastFurnaceCharge::get_PCI()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="66" uspid="156" ordinal="0" sl="156" sc="1" el="156" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="85" uspid="180" ordinal="0" sl="180" sc="1" el="180" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="10" offset="10" sc="0" sl="156" ec="1" el="156" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="11" offset="11" sc="0" sl="180" ec="1" el="180" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
               <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -387,12 +416,12 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.BlastFurnaceCharge::.ctor()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="17" uspid="106" ordinal="0" sl="106" sc="1" el="106" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="17" uspid="107" ordinal="1" sl="107" sc="1" el="107" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="17" uspid="109" ordinal="2" sl="109" sc="1" el="109" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="20" uspid="130" ordinal="0" sl="130" sc="1" el="130" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="20" uspid="131" ordinal="1" sl="131" sc="1" el="131" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="20" uspid="133" ordinal="2" sl="133" sc="1" el="133" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="3" uspid="0" p8:type="SequencePoint" ordinal="11" offset="11" sc="0" sl="106" ec="1" el="109" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+              <MethodPoint vc="3" uspid="0" p8:type="SequencePoint" ordinal="12" offset="12" sc="0" sl="130" ec="1" el="133" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
               <Summary numSequencePoints="13" visitedSequencePoints="13" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -400,22 +429,22 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.BlastFurnaceCharge::.ctor(BlastFurnace.MassBalance.Lib.HotMetal,BlastFurnace.MassBalance.Lib.IronOreBlend,BlastFurnace.MassBalance.Lib.CokeBlend,BlastFurnace.MassBalance.Lib.PulverizedCoalInjection,BlastFurnace.MassBalance.Lib.AirBlow)</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="14" uspid="119" ordinal="0" sl="119" sc="1" el="119" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="14" uspid="120" ordinal="1" sl="120" sc="1" el="120" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="14" uspid="121" ordinal="2" sl="121" sc="1" el="121" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="14" uspid="122" ordinal="3" sl="122" sc="1" el="122" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="14" uspid="123" ordinal="4" sl="123" sc="1" el="123" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="14" uspid="124" ordinal="5" sl="124" sc="1" el="124" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="14" uspid="125" ordinal="6" sl="125" sc="1" el="125" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="14" uspid="126" ordinal="7" sl="126" sc="1" el="126" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="14" uspid="127" ordinal="8" sl="127" sc="1" el="127" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="14" uspid="128" ordinal="9" sl="128" sc="1" el="128" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="14" uspid="129" ordinal="10" sl="129" sc="1" el="129" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="14" uspid="130" ordinal="11" sl="130" sc="1" el="130" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="14" uspid="131" ordinal="12" sl="131" sc="1" el="131" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="17" uspid="143" ordinal="0" sl="143" sc="1" el="143" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="17" uspid="144" ordinal="1" sl="144" sc="1" el="144" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="17" uspid="145" ordinal="2" sl="145" sc="1" el="145" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="17" uspid="146" ordinal="3" sl="146" sc="1" el="146" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="17" uspid="147" ordinal="4" sl="147" sc="1" el="147" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="17" uspid="148" ordinal="5" sl="148" sc="1" el="148" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="17" uspid="149" ordinal="6" sl="149" sc="1" el="149" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="17" uspid="150" ordinal="7" sl="150" sc="1" el="150" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="17" uspid="151" ordinal="8" sl="151" sc="1" el="151" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="17" uspid="152" ordinal="9" sl="152" sc="1" el="152" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="17" uspid="153" ordinal="10" sl="153" sc="1" el="153" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="17" uspid="154" ordinal="11" sl="154" sc="1" el="154" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="17" uspid="155" ordinal="12" sl="155" sc="1" el="155" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="13" uspid="0" p8:type="SequencePoint" ordinal="12" offset="12" sc="0" sl="119" ec="1" el="131" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+              <MethodPoint vc="13" uspid="0" p8:type="SequencePoint" ordinal="13" offset="13" sc="0" sl="143" ec="1" el="155" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
@@ -429,7 +458,7 @@
               <Name>BlastFurnace.MassBalance.Lib.Percentual BlastFurnace.MassBalance.Lib.Coke::get_CContent()</Name>
               <FileRef uid="4" />
               <SequencePoints>
-                <SequencePoint vc="318" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="360" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="4" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="14" ec="1" el="14" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
@@ -440,7 +469,7 @@
               <Name>BlastFurnace.MassBalance.Lib.Percentual BlastFurnace.MassBalance.Lib.Coke::get_Proportion()</Name>
               <FileRef uid="4" />
               <SequencePoints>
-                <SequencePoint vc="512" uspid="19" ordinal="0" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="578" uspid="19" ordinal="0" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="4" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="19" ec="1" el="19" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
@@ -451,7 +480,7 @@
               <Name>BlastFurnace.MassBalance.Lib.Weight BlastFurnace.MassBalance.Lib.Coke::get_Weight()</Name>
               <FileRef uid="4" />
               <SequencePoints>
-                <SequencePoint vc="331" uspid="49" ordinal="0" sl="49" sc="1" el="49" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="371" uspid="49" ordinal="0" sl="49" sc="1" el="49" ec="2" bec="0" bev="0" fileid="4" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="49" ec="1" el="49" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
@@ -492,12 +521,12 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.Coke::.ctor(BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Percentual)</Name>
               <FileRef uid="4" />
               <SequencePoints>
-                <SequencePoint vc="88" uspid="26" ordinal="0" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="88" uspid="27" ordinal="1" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="88" uspid="28" ordinal="2" sl="28" sc="1" el="28" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="88" uspid="29" ordinal="3" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="88" uspid="30" ordinal="4" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="88" uspid="31" ordinal="5" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="100" uspid="26" ordinal="0" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="100" uspid="27" ordinal="1" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="100" uspid="28" ordinal="2" sl="28" sc="1" el="28" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="100" uspid="29" ordinal="3" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="100" uspid="30" ordinal="4" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="100" uspid="31" ordinal="5" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="4" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="6" uspid="0" p8:type="SequencePoint" ordinal="5" offset="5" sc="0" sl="26" ec="1" el="31" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
@@ -508,12 +537,12 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.Coke::.ctor(BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Weight)</Name>
               <FileRef uid="4" />
               <SequencePoints>
-                <SequencePoint vc="91" uspid="39" ordinal="0" sl="39" sc="1" el="39" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="91" uspid="40" ordinal="1" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="91" uspid="41" ordinal="2" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="91" uspid="42" ordinal="3" sl="42" sc="1" el="42" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="91" uspid="43" ordinal="4" sl="43" sc="1" el="43" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="91" uspid="44" ordinal="5" sl="44" sc="1" el="44" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="103" uspid="39" ordinal="0" sl="39" sc="1" el="39" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="103" uspid="40" ordinal="1" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="103" uspid="41" ordinal="2" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="103" uspid="42" ordinal="3" sl="42" sc="1" el="42" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="103" uspid="43" ordinal="4" sl="43" sc="1" el="43" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="103" uspid="44" ordinal="5" sl="44" sc="1" el="44" ec="2" bec="0" bev="0" fileid="4" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="6" uspid="0" p8:type="SequencePoint" ordinal="6" offset="6" sc="0" sl="39" ec="1" el="44" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
@@ -543,7 +572,7 @@
               <Name>BlastFurnace.MassBalance.Lib.Percentual BlastFurnace.MassBalance.Lib.CokeBlend::get_TotalProportion()</Name>
               <FileRef uid="5" />
               <SequencePoints>
-                <SequencePoint vc="322" uspid="45" ordinal="0" sl="45" sc="1" el="45" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="364" uspid="45" ordinal="0" sl="45" sc="1" el="45" ec="2" bec="0" bev="0" fileid="5" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="45" ec="1" el="45" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
@@ -554,34 +583,34 @@
               <Name>BlastFurnace.MassBalance.Lib.Percentual BlastFurnace.MassBalance.Lib.CokeBlend::get_AverageCContent()</Name>
               <FileRef uid="5" />
               <SequencePoints>
-                <SequencePoint vc="17" uspid="53" ordinal="0" sl="53" sc="1" el="53" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="17" uspid="54" ordinal="1" sl="54" sc="1" el="54" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="17" uspid="55" ordinal="2" sl="55" sc="1" el="55" ec="2" bec="2" bev="2" fileid="5" />
-                <SequencePoint vc="14" uspid="56" ordinal="3" sl="56" sc="1" el="56" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="14" uspid="57" ordinal="4" sl="57" sc="1" el="57" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="14" uspid="58" ordinal="5" sl="58" sc="1" el="58" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="19" uspid="53" ordinal="0" sl="53" sc="1" el="53" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="19" uspid="54" ordinal="1" sl="54" sc="1" el="54" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="19" uspid="55" ordinal="2" sl="55" sc="1" el="55" ec="2" bec="2" bev="2" fileid="5" />
+                <SequencePoint vc="16" uspid="56" ordinal="3" sl="56" sc="1" el="56" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="16" uspid="57" ordinal="4" sl="57" sc="1" el="57" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="16" uspid="58" ordinal="5" sl="58" sc="1" el="58" ec="2" bec="0" bev="0" fileid="5" />
                 <SequencePoint vc="3" uspid="60" ordinal="6" sl="60" sc="1" el="60" ec="2" bec="0" bev="0" fileid="5" />
                 <SequencePoint vc="17" uspid="61" ordinal="7" sl="61" sc="1" el="61" ec="2" bec="2" bev="2" fileid="5" />
                 <SequencePoint vc="4" uspid="62" ordinal="8" sl="62" sc="1" el="62" ec="2" bec="0" bev="0" fileid="5" />
                 <SequencePoint vc="4" uspid="63" ordinal="9" sl="63" sc="1" el="63" ec="2" bec="0" bev="0" fileid="5" />
                 <SequencePoint vc="4" uspid="64" ordinal="10" sl="64" sc="1" el="64" ec="2" bec="0" bev="0" fileid="5" />
                 <SequencePoint vc="3" uspid="65" ordinal="11" sl="65" sc="1" el="65" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="17" uspid="67" ordinal="12" sl="67" sc="1" el="67" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="135" uspid="69" ordinal="13" sl="69" sc="1" el="69" ec="2" bec="2" bev="2" fileid="5" />
-                <SequencePoint vc="42" uspid="70" ordinal="14" sl="70" sc="1" el="70" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="42" uspid="71" ordinal="15" sl="71" sc="1" el="71" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="42" uspid="72" ordinal="16" sl="72" sc="1" el="72" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="17" uspid="74" ordinal="17" sl="74" sc="1" el="74" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="17" uspid="76" ordinal="18" sl="76" sc="1" el="76" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="17" uspid="77" ordinal="19" sl="77" sc="1" el="77" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="19" uspid="67" ordinal="12" sl="67" sc="1" el="67" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="153" uspid="69" ordinal="13" sl="69" sc="1" el="69" ec="2" bec="2" bev="2" fileid="5" />
+                <SequencePoint vc="48" uspid="70" ordinal="14" sl="70" sc="1" el="70" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="48" uspid="71" ordinal="15" sl="71" sc="1" el="71" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="48" uspid="72" ordinal="16" sl="72" sc="1" el="72" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="19" uspid="74" ordinal="17" sl="74" sc="1" el="74" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="19" uspid="76" ordinal="18" sl="76" sc="1" el="76" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="19" uspid="77" ordinal="19" sl="77" sc="1" el="77" ec="2" bec="0" bev="0" fileid="5" />
               </SequencePoints>
               <BranchPoints>
-                <BranchPoint vc="14" uspid="55" ordinal="0" path="0" offset="35" offsetend="37" sl="55" fileid="5" />
+                <BranchPoint vc="16" uspid="55" ordinal="0" path="0" offset="35" offsetend="37" sl="55" fileid="5" />
                 <BranchPoint vc="3" uspid="55" ordinal="1" path="1" offset="35" offsetend="51" sl="55" fileid="5" />
                 <BranchPoint vc="4" uspid="61" ordinal="3" path="1" offset="101" offsetend="68" sl="61" fileid="5" />
                 <BranchPoint vc="3" uspid="61" ordinal="2" path="0" offset="101" offsetend="103" sl="61" fileid="5" />
-                <BranchPoint vc="42" uspid="69" ordinal="5" path="1" offset="195" offsetend="147" sl="69" fileid="5" />
-                <BranchPoint vc="17" uspid="69" ordinal="4" path="0" offset="195" offsetend="197" sl="69" fileid="5" />
+                <BranchPoint vc="48" uspid="69" ordinal="5" path="1" offset="195" offsetend="147" sl="69" fileid="5" />
+                <BranchPoint vc="19" uspid="69" ordinal="4" path="0" offset="195" offsetend="197" sl="69" fileid="5" />
               </BranchPoints>
               <MethodPoint vc="20" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="53" ec="1" el="77" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
             </Method>
@@ -591,26 +620,26 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.CokeBlend::Add(BlastFurnace.MassBalance.Lib.Coke)</Name>
               <FileRef uid="5" />
               <SequencePoints>
-                <SequencePoint vc="88" uspid="86" ordinal="0" sl="86" sc="1" el="86" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="88" uspid="87" ordinal="1" sl="87" sc="1" el="87" ec="2" bec="2" bev="2" fileid="5" />
+                <SequencePoint vc="100" uspid="86" ordinal="0" sl="86" sc="1" el="86" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="100" uspid="87" ordinal="1" sl="87" sc="1" el="87" ec="2" bec="2" bev="2" fileid="5" />
                 <SequencePoint vc="1" uspid="88" ordinal="2" sl="88" sc="1" el="88" ec="2" bec="0" bev="0" fileid="5" />
                 <SequencePoint vc="1" uspid="89" ordinal="3" sl="89" sc="1" el="89" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="87" uspid="92" ordinal="4" sl="92" sc="1" el="92" ec="2" bec="2" bev="2" fileid="5" />
-                <SequencePoint vc="31" uspid="93" ordinal="5" sl="93" sc="1" el="93" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="31" uspid="94" ordinal="6" sl="94" sc="1" el="94" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="31" uspid="95" ordinal="7" sl="95" sc="1" el="95" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="87" uspid="97" ordinal="8" sl="97" sc="1" el="97" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="87" uspid="98" ordinal="9" sl="98" sc="1" el="98" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="87" uspid="99" ordinal="10" sl="99" sc="1" el="99" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="87" uspid="101" ordinal="11" sl="101" sc="1" el="101" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="87" uspid="102" ordinal="12" sl="102" sc="1" el="102" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="87" uspid="103" ordinal="13" sl="103" sc="1" el="103" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="99" uspid="92" ordinal="4" sl="92" sc="1" el="92" ec="2" bec="2" bev="2" fileid="5" />
+                <SequencePoint vc="35" uspid="93" ordinal="5" sl="93" sc="1" el="93" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="35" uspid="94" ordinal="6" sl="94" sc="1" el="94" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="35" uspid="95" ordinal="7" sl="95" sc="1" el="95" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="99" uspid="97" ordinal="8" sl="97" sc="1" el="97" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="99" uspid="98" ordinal="9" sl="98" sc="1" el="98" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="99" uspid="99" ordinal="10" sl="99" sc="1" el="99" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="99" uspid="101" ordinal="11" sl="101" sc="1" el="101" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="99" uspid="102" ordinal="12" sl="102" sc="1" el="102" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="99" uspid="103" ordinal="13" sl="103" sc="1" el="103" ec="2" bec="0" bev="0" fileid="5" />
               </SequencePoints>
               <BranchPoints>
                 <BranchPoint vc="1" uspid="87" ordinal="0" path="0" offset="37" offsetend="39" sl="87" fileid="5" />
-                <BranchPoint vc="87" uspid="87" ordinal="1" path="1" offset="37" offsetend="51" sl="87" fileid="5" />
-                <BranchPoint vc="31" uspid="92" ordinal="2" path="0" offset="69" offsetend="71" sl="92" fileid="5" />
-                <BranchPoint vc="87" uspid="92" ordinal="3" path="1" offset="69" offsetend="90" sl="92" fileid="5" />
+                <BranchPoint vc="99" uspid="87" ordinal="1" path="1" offset="37" offsetend="51" sl="87" fileid="5" />
+                <BranchPoint vc="35" uspid="92" ordinal="2" path="0" offset="69" offsetend="71" sl="92" fileid="5" />
+                <BranchPoint vc="99" uspid="92" ordinal="3" path="1" offset="69" offsetend="90" sl="92" fileid="5" />
               </BranchPoints>
               <MethodPoint vc="14" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="86" ec="1" el="103" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
             </Method>
@@ -642,24 +671,24 @@
               <Name>System.Double BlastFurnace.MassBalance.Lib.CokeBlend::CokeRate(BlastFurnace.MassBalance.Lib.HotMetal,BlastFurnace.MassBalance.Lib.PulverizedCoalInjection)</Name>
               <FileRef uid="5" />
               <SequencePoints>
-                <SequencePoint vc="4" uspid="128" ordinal="0" sl="128" sc="1" el="128" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="4" uspid="129" ordinal="1" sl="129" sc="1" el="129" ec="2" bec="2" bev="2" fileid="5" />
+                <SequencePoint vc="6" uspid="128" ordinal="0" sl="128" sc="1" el="128" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="6" uspid="129" ordinal="1" sl="129" sc="1" el="129" ec="2" bec="2" bev="2" fileid="5" />
                 <SequencePoint vc="2" uspid="130" ordinal="2" sl="130" sc="1" el="130" ec="2" bec="0" bev="0" fileid="5" />
                 <SequencePoint vc="2" uspid="131" ordinal="3" sl="131" sc="1" el="131" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="2" uspid="134" ordinal="4" sl="134" sc="1" el="134" ec="2" bec="2" bev="2" fileid="5" />
+                <SequencePoint vc="4" uspid="134" ordinal="4" sl="134" sc="1" el="134" ec="2" bec="2" bev="2" fileid="5" />
                 <SequencePoint vc="1" uspid="135" ordinal="5" sl="135" sc="1" el="135" ec="2" bec="0" bev="0" fileid="5" />
                 <SequencePoint vc="1" uspid="136" ordinal="6" sl="136" sc="1" el="136" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="1" uspid="139" ordinal="7" sl="139" sc="1" el="139" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="1" uspid="140" ordinal="8" sl="140" sc="1" el="140" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="1" uspid="141" ordinal="9" sl="141" sc="1" el="141" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="1" uspid="143" ordinal="10" sl="143" sc="1" el="143" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="1" uspid="144" ordinal="11" sl="144" sc="1" el="144" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="3" uspid="139" ordinal="7" sl="139" sc="1" el="139" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="3" uspid="140" ordinal="8" sl="140" sc="1" el="140" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="3" uspid="141" ordinal="9" sl="141" sc="1" el="141" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="3" uspid="143" ordinal="10" sl="143" sc="1" el="143" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="3" uspid="144" ordinal="11" sl="144" sc="1" el="144" ec="2" bec="0" bev="0" fileid="5" />
               </SequencePoints>
               <BranchPoints>
                 <BranchPoint vc="2" uspid="129" ordinal="0" path="0" offset="7" offsetend="9" sl="129" fileid="5" />
-                <BranchPoint vc="2" uspid="129" ordinal="1" path="1" offset="7" offsetend="21" sl="129" fileid="5" />
+                <BranchPoint vc="4" uspid="129" ordinal="1" path="1" offset="7" offsetend="21" sl="129" fileid="5" />
                 <BranchPoint vc="1" uspid="134" ordinal="2" path="0" offset="29" offsetend="31" sl="134" fileid="5" />
-                <BranchPoint vc="1" uspid="134" ordinal="3" path="1" offset="29" offsetend="43" sl="134" fileid="5" />
+                <BranchPoint vc="3" uspid="134" ordinal="3" path="1" offset="29" offsetend="43" sl="134" fileid="5" />
               </BranchPoints>
               <MethodPoint vc="12" uspid="0" p8:type="SequencePoint" ordinal="5" offset="5" sc="0" sl="128" ec="1" el="144" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
             </Method>
@@ -717,26 +746,26 @@
               <Name>BlastFurnace.MassBalance.Lib.Weight BlastFurnace.MassBalance.Lib.CokeBlend::GetBlendRequiredWeight(BlastFurnace.MassBalance.Lib.HotMetal,BlastFurnace.MassBalance.Lib.PulverizedCoalInjection)</Name>
               <FileRef uid="5" />
               <SequencePoints>
-                <SequencePoint vc="9" uspid="206" ordinal="0" sl="206" sc="1" el="206" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="9" uspid="207" ordinal="1" sl="207" sc="1" el="207" ec="2" bec="2" bev="2" fileid="5" />
+                <SequencePoint vc="11" uspid="206" ordinal="0" sl="206" sc="1" el="206" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="11" uspid="207" ordinal="1" sl="207" sc="1" el="207" ec="2" bec="2" bev="2" fileid="5" />
                 <SequencePoint vc="2" uspid="208" ordinal="2" sl="208" sc="1" el="208" ec="2" bec="0" bev="0" fileid="5" />
                 <SequencePoint vc="2" uspid="209" ordinal="3" sl="209" sc="1" el="209" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="7" uspid="212" ordinal="4" sl="212" sc="1" el="212" ec="2" bec="2" bev="2" fileid="5" />
+                <SequencePoint vc="9" uspid="212" ordinal="4" sl="212" sc="1" el="212" ec="2" bec="2" bev="2" fileid="5" />
                 <SequencePoint vc="1" uspid="213" ordinal="5" sl="213" sc="1" el="213" ec="2" bec="0" bev="0" fileid="5" />
                 <SequencePoint vc="1" uspid="214" ordinal="6" sl="214" sc="1" el="214" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="6" uspid="217" ordinal="7" sl="217" sc="1" el="217" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="6" uspid="218" ordinal="8" sl="218" sc="1" el="218" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="6" uspid="220" ordinal="9" sl="220" sc="1" el="220" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="6" uspid="222" ordinal="10" sl="222" sc="1" el="222" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="6" uspid="224" ordinal="11" sl="224" sc="1" el="224" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="6" uspid="225" ordinal="12" sl="225" sc="1" el="225" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="6" uspid="226" ordinal="13" sl="226" sc="1" el="226" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="8" uspid="217" ordinal="7" sl="217" sc="1" el="217" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="8" uspid="218" ordinal="8" sl="218" sc="1" el="218" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="8" uspid="220" ordinal="9" sl="220" sc="1" el="220" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="8" uspid="222" ordinal="10" sl="222" sc="1" el="222" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="8" uspid="224" ordinal="11" sl="224" sc="1" el="224" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="8" uspid="225" ordinal="12" sl="225" sc="1" el="225" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="8" uspid="226" ordinal="13" sl="226" sc="1" el="226" ec="2" bec="0" bev="0" fileid="5" />
               </SequencePoints>
               <BranchPoints>
                 <BranchPoint vc="2" uspid="207" ordinal="0" path="0" offset="9" offsetend="11" sl="207" fileid="5" />
-                <BranchPoint vc="7" uspid="207" ordinal="1" path="1" offset="9" offsetend="23" sl="207" fileid="5" />
+                <BranchPoint vc="9" uspid="207" ordinal="1" path="1" offset="9" offsetend="23" sl="207" fileid="5" />
                 <BranchPoint vc="1" uspid="212" ordinal="2" path="0" offset="31" offsetend="33" sl="212" fileid="5" />
-                <BranchPoint vc="6" uspid="212" ordinal="3" path="1" offset="31" offsetend="45" sl="212" fileid="5" />
+                <BranchPoint vc="8" uspid="212" ordinal="3" path="1" offset="31" offsetend="45" sl="212" fileid="5" />
               </BranchPoints>
               <MethodPoint vc="14" uspid="0" p8:type="SequencePoint" ordinal="8" offset="8" sc="0" sl="206" ec="1" el="226" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
             </Method>
@@ -806,11 +835,11 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.CokeBlend::.ctor()</Name>
               <FileRef uid="5" />
               <SequencePoints>
-                <SequencePoint vc="32" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="32" uspid="22" ordinal="1" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="32" uspid="23" ordinal="2" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="32" uspid="24" ordinal="3" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="32" uspid="25" ordinal="4" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="36" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="36" uspid="22" ordinal="1" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="36" uspid="23" ordinal="2" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="36" uspid="24" ordinal="3" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="36" uspid="25" ordinal="4" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="5" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="5" uspid="0" p8:type="SequencePoint" ordinal="11" offset="11" sc="0" sl="21" ec="1" el="25" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
@@ -827,7 +856,7 @@
               <Name>BlastFurnace.MassBalance.Lib.Weight BlastFurnace.MassBalance.Lib.HotMetal::get_Weight()</Name>
               <FileRef uid="6" />
               <SequencePoints>
-                <SequencePoint vc="83" uspid="16" ordinal="0" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="93" uspid="16" ordinal="0" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="6" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="16" ec="1" el="16" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
@@ -838,7 +867,7 @@
               <Name>BlastFurnace.MassBalance.Lib.Percentual BlastFurnace.MassBalance.Lib.HotMetal::get_FePercent()</Name>
               <FileRef uid="6" />
               <SequencePoints>
-                <SequencePoint vc="67" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="73" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="6" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="21" ec="1" el="21" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
@@ -849,7 +878,7 @@
               <Name>BlastFurnace.MassBalance.Lib.Percentual BlastFurnace.MassBalance.Lib.HotMetal::get_CPercent()</Name>
               <FileRef uid="6" />
               <SequencePoints>
-                <SequencePoint vc="51" uspid="26" ordinal="0" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="57" uspid="26" ordinal="0" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="6" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="26" ec="1" el="26" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
@@ -876,19 +905,19 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.HotMetal::.ctor(BlastFurnace.MassBalance.Lib.Weight,BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Percentual)</Name>
               <FileRef uid="6" />
               <SequencePoints>
-                <SequencePoint vc="40" uspid="34" ordinal="0" sl="34" sc="1" el="34" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="40" uspid="35" ordinal="1" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="40" uspid="36" ordinal="2" sl="36" sc="1" el="36" ec="2" bec="2" bev="2" fileid="6" />
+                <SequencePoint vc="44" uspid="34" ordinal="0" sl="34" sc="1" el="34" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="44" uspid="35" ordinal="1" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="44" uspid="36" ordinal="2" sl="36" sc="1" el="36" ec="2" bec="2" bev="2" fileid="6" />
                 <SequencePoint vc="1" uspid="37" ordinal="3" sl="37" sc="1" el="37" ec="2" bec="0" bev="0" fileid="6" />
                 <SequencePoint vc="1" uspid="38" ordinal="4" sl="38" sc="1" el="38" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="39" uspid="40" ordinal="5" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="39" uspid="41" ordinal="6" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="39" uspid="42" ordinal="7" sl="42" sc="1" el="42" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="39" uspid="43" ordinal="8" sl="43" sc="1" el="43" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="43" uspid="40" ordinal="5" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="43" uspid="41" ordinal="6" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="43" uspid="42" ordinal="7" sl="42" sc="1" el="42" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="43" uspid="43" ordinal="8" sl="43" sc="1" el="43" ec="2" bec="0" bev="0" fileid="6" />
               </SequencePoints>
               <BranchPoints>
                 <BranchPoint vc="1" uspid="36" ordinal="0" path="0" offset="34" offsetend="36" sl="36" fileid="6" />
-                <BranchPoint vc="39" uspid="36" ordinal="1" path="1" offset="34" offsetend="107" sl="36" fileid="6" />
+                <BranchPoint vc="43" uspid="36" ordinal="1" path="1" offset="34" offsetend="107" sl="36" fileid="6" />
               </BranchPoints>
               <MethodPoint vc="9" uspid="0" p8:type="SequencePoint" ordinal="4" offset="4" sc="0" sl="34" ec="1" el="43" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
             </Method>
@@ -904,7 +933,7 @@
               <Name>BlastFurnace.MassBalance.Lib.Percentual BlastFurnace.MassBalance.Lib.IronOre::get_FeContent()</Name>
               <FileRef uid="7" />
               <SequencePoints>
-                <SequencePoint vc="262" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="289" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="7" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="14" ec="1" el="14" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
@@ -915,7 +944,7 @@
               <Name>BlastFurnace.MassBalance.Lib.Percentual BlastFurnace.MassBalance.Lib.IronOre::get_Proportion()</Name>
               <FileRef uid="7" />
               <SequencePoints>
-                <SequencePoint vc="420" uspid="19" ordinal="0" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="465" uspid="19" ordinal="0" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="7" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="19" ec="1" el="19" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
@@ -926,7 +955,7 @@
               <Name>BlastFurnace.MassBalance.Lib.Weight BlastFurnace.MassBalance.Lib.IronOre::get_Weight()</Name>
               <FileRef uid="7" />
               <SequencePoints>
-                <SequencePoint vc="269" uspid="49" ordinal="0" sl="49" sc="1" el="49" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="299" uspid="49" ordinal="0" sl="49" sc="1" el="49" ec="2" bec="0" bev="0" fileid="7" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="49" ec="1" el="49" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
@@ -967,12 +996,12 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.IronOre::.ctor(BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Percentual)</Name>
               <FileRef uid="7" />
               <SequencePoints>
-                <SequencePoint vc="70" uspid="26" ordinal="0" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="7" />
-                <SequencePoint vc="70" uspid="27" ordinal="1" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="7" />
-                <SequencePoint vc="70" uspid="28" ordinal="2" sl="28" sc="1" el="28" ec="2" bec="0" bev="0" fileid="7" />
-                <SequencePoint vc="70" uspid="29" ordinal="3" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="7" />
-                <SequencePoint vc="70" uspid="30" ordinal="4" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="7" />
-                <SequencePoint vc="70" uspid="31" ordinal="5" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="79" uspid="26" ordinal="0" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="79" uspid="27" ordinal="1" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="79" uspid="28" ordinal="2" sl="28" sc="1" el="28" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="79" uspid="29" ordinal="3" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="79" uspid="30" ordinal="4" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="79" uspid="31" ordinal="5" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="7" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="6" uspid="0" p8:type="SequencePoint" ordinal="5" offset="5" sc="0" sl="26" ec="1" el="31" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
@@ -983,12 +1012,12 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.IronOre::.ctor(BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Weight)</Name>
               <FileRef uid="7" />
               <SequencePoints>
-                <SequencePoint vc="68" uspid="39" ordinal="0" sl="39" sc="1" el="39" ec="2" bec="0" bev="0" fileid="7" />
-                <SequencePoint vc="68" uspid="40" ordinal="1" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="7" />
-                <SequencePoint vc="68" uspid="41" ordinal="2" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="7" />
-                <SequencePoint vc="68" uspid="42" ordinal="3" sl="42" sc="1" el="42" ec="2" bec="0" bev="0" fileid="7" />
-                <SequencePoint vc="68" uspid="43" ordinal="4" sl="43" sc="1" el="43" ec="2" bec="0" bev="0" fileid="7" />
-                <SequencePoint vc="68" uspid="44" ordinal="5" sl="44" sc="1" el="44" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="77" uspid="39" ordinal="0" sl="39" sc="1" el="39" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="77" uspid="40" ordinal="1" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="77" uspid="41" ordinal="2" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="77" uspid="42" ordinal="3" sl="42" sc="1" el="42" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="77" uspid="43" ordinal="4" sl="43" sc="1" el="43" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="77" uspid="44" ordinal="5" sl="44" sc="1" el="44" ec="2" bec="0" bev="0" fileid="7" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="6" uspid="0" p8:type="SequencePoint" ordinal="6" offset="6" sc="0" sl="39" ec="1" el="44" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
@@ -1071,7 +1100,7 @@
               <Name>BlastFurnace.MassBalance.Lib.Percentual BlastFurnace.MassBalance.Lib.IronOreBlend::get_TotalProportion()</Name>
               <FileRef uid="8" />
               <SequencePoints>
-                <SequencePoint vc="252" uspid="87" ordinal="0" sl="87" sc="1" el="87" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="282" uspid="87" ordinal="0" sl="87" sc="1" el="87" ec="2" bec="0" bev="0" fileid="8" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="87" ec="1" el="87" bec="0" bev="0" fileid="8" xmlns:p8="xsi" />
@@ -1119,26 +1148,26 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.IronOreBlend::Add(BlastFurnace.MassBalance.Lib.IronOre)</Name>
               <FileRef uid="8" />
               <SequencePoints>
-                <SequencePoint vc="67" uspid="128" ordinal="0" sl="128" sc="1" el="128" ec="2" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="67" uspid="129" ordinal="1" sl="129" sc="1" el="129" ec="2" bec="2" bev="2" fileid="8" />
+                <SequencePoint vc="76" uspid="128" ordinal="0" sl="128" sc="1" el="128" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="76" uspid="129" ordinal="1" sl="129" sc="1" el="129" ec="2" bec="2" bev="2" fileid="8" />
                 <SequencePoint vc="1" uspid="130" ordinal="2" sl="130" sc="1" el="130" ec="2" bec="0" bev="0" fileid="8" />
                 <SequencePoint vc="1" uspid="131" ordinal="3" sl="131" sc="1" el="131" ec="2" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="66" uspid="134" ordinal="4" sl="134" sc="1" el="134" ec="2" bec="2" bev="2" fileid="8" />
-                <SequencePoint vc="24" uspid="135" ordinal="5" sl="135" sc="1" el="135" ec="2" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="24" uspid="136" ordinal="6" sl="136" sc="1" el="136" ec="2" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="24" uspid="137" ordinal="7" sl="137" sc="1" el="137" ec="2" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="66" uspid="139" ordinal="8" sl="139" sc="1" el="139" ec="2" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="66" uspid="140" ordinal="9" sl="140" sc="1" el="140" ec="2" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="66" uspid="141" ordinal="10" sl="141" sc="1" el="141" ec="2" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="66" uspid="143" ordinal="11" sl="143" sc="1" el="143" ec="2" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="66" uspid="144" ordinal="12" sl="144" sc="1" el="144" ec="2" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="66" uspid="145" ordinal="13" sl="145" sc="1" el="145" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="75" uspid="134" ordinal="4" sl="134" sc="1" el="134" ec="2" bec="2" bev="2" fileid="8" />
+                <SequencePoint vc="27" uspid="135" ordinal="5" sl="135" sc="1" el="135" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="27" uspid="136" ordinal="6" sl="136" sc="1" el="136" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="27" uspid="137" ordinal="7" sl="137" sc="1" el="137" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="75" uspid="139" ordinal="8" sl="139" sc="1" el="139" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="75" uspid="140" ordinal="9" sl="140" sc="1" el="140" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="75" uspid="141" ordinal="10" sl="141" sc="1" el="141" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="75" uspid="143" ordinal="11" sl="143" sc="1" el="143" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="75" uspid="144" ordinal="12" sl="144" sc="1" el="144" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="75" uspid="145" ordinal="13" sl="145" sc="1" el="145" ec="2" bec="0" bev="0" fileid="8" />
               </SequencePoints>
               <BranchPoints>
                 <BranchPoint vc="1" uspid="129" ordinal="0" path="0" offset="37" offsetend="39" sl="129" fileid="8" />
-                <BranchPoint vc="66" uspid="129" ordinal="1" path="1" offset="37" offsetend="51" sl="129" fileid="8" />
-                <BranchPoint vc="24" uspid="134" ordinal="2" path="0" offset="69" offsetend="71" sl="134" fileid="8" />
-                <BranchPoint vc="66" uspid="134" ordinal="3" path="1" offset="69" offsetend="90" sl="134" fileid="8" />
+                <BranchPoint vc="75" uspid="129" ordinal="1" path="1" offset="37" offsetend="51" sl="129" fileid="8" />
+                <BranchPoint vc="27" uspid="134" ordinal="2" path="0" offset="69" offsetend="71" sl="134" fileid="8" />
+                <BranchPoint vc="75" uspid="134" ordinal="3" path="1" offset="69" offsetend="90" sl="134" fileid="8" />
               </BranchPoints>
               <MethodPoint vc="14" uspid="0" p8:type="SequencePoint" ordinal="5" offset="5" sc="0" sl="128" ec="1" el="145" bec="0" bev="0" fileid="8" xmlns:p8="xsi" />
             </Method>
@@ -1186,11 +1215,11 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.IronOreBlend::.ctor()</Name>
               <FileRef uid="8" />
               <SequencePoints>
-                <SequencePoint vc="25" uspid="63" ordinal="0" sl="63" sc="1" el="63" ec="2" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="25" uspid="64" ordinal="1" sl="64" sc="1" el="64" ec="2" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="25" uspid="65" ordinal="2" sl="65" sc="1" el="65" ec="2" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="25" uspid="66" ordinal="3" sl="66" sc="1" el="66" ec="2" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="25" uspid="67" ordinal="4" sl="67" sc="1" el="67" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="28" uspid="63" ordinal="0" sl="63" sc="1" el="63" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="28" uspid="64" ordinal="1" sl="64" sc="1" el="64" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="28" uspid="65" ordinal="2" sl="65" sc="1" el="65" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="28" uspid="66" ordinal="3" sl="66" sc="1" el="66" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="28" uspid="67" ordinal="4" sl="67" sc="1" el="67" ec="2" bec="0" bev="0" fileid="8" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="5" uspid="0" p8:type="SequencePoint" ordinal="8" offset="8" sc="0" sl="63" ec="1" el="67" bec="0" bev="0" fileid="8" xmlns:p8="xsi" />
@@ -1207,7 +1236,7 @@
               <Name>System.Double BlastFurnace.MassBalance.Lib.Percentual::get_Value()</Name>
               <FileRef uid="9" />
               <SequencePoints>
-                <SequencePoint vc="1829" uspid="15" ordinal="0" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="2030" uspid="15" ordinal="0" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="9" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="15" ec="1" el="15" bec="0" bev="0" fileid="9" xmlns:p8="xsi" />
@@ -1218,18 +1247,18 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.Percentual::SetValue(System.Double)</Name>
               <FileRef uid="9" />
               <SequencePoints>
-                <SequencePoint vc="717" uspid="31" ordinal="0" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="9" />
-                <SequencePoint vc="717" uspid="32" ordinal="1" sl="32" sc="1" el="32" ec="2" bec="4" bev="4" fileid="9" />
+                <SequencePoint vc="804" uspid="31" ordinal="0" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="804" uspid="32" ordinal="1" sl="32" sc="1" el="32" ec="2" bec="4" bev="4" fileid="9" />
                 <SequencePoint vc="2" uspid="33" ordinal="2" sl="33" sc="1" el="33" ec="2" bec="0" bev="0" fileid="9" />
                 <SequencePoint vc="2" uspid="34" ordinal="3" sl="34" sc="1" el="34" ec="2" bec="0" bev="0" fileid="9" />
-                <SequencePoint vc="715" uspid="36" ordinal="4" sl="36" sc="1" el="36" ec="2" bec="0" bev="0" fileid="9" />
-                <SequencePoint vc="715" uspid="37" ordinal="5" sl="37" sc="1" el="37" ec="2" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="802" uspid="36" ordinal="4" sl="36" sc="1" el="36" ec="2" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="802" uspid="37" ordinal="5" sl="37" sc="1" el="37" ec="2" bec="0" bev="0" fileid="9" />
               </SequencePoints>
               <BranchPoints>
-                <BranchPoint vc="716" uspid="32" ordinal="0" path="0" offset="11" offsetend="13" sl="32" fileid="9" />
+                <BranchPoint vc="803" uspid="32" ordinal="0" path="0" offset="11" offsetend="13" sl="32" fileid="9" />
                 <BranchPoint vc="1" uspid="32" ordinal="1" path="1" offset="11" offsetend="27" sl="32" fileid="9" />
                 <BranchPoint vc="2" uspid="32" ordinal="2" path="0" offset="30" offsetend="32" sl="32" fileid="9" />
-                <BranchPoint vc="715" uspid="32" ordinal="3" path="1" offset="30" offsetend="96" sl="32" fileid="9" />
+                <BranchPoint vc="802" uspid="32" ordinal="3" path="1" offset="30" offsetend="96" sl="32" fileid="9" />
               </BranchPoints>
               <MethodPoint vc="6" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="31" ec="1" el="37" bec="0" bev="0" fileid="9" xmlns:p8="xsi" />
             </Method>
@@ -1253,10 +1282,10 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.Percentual::.ctor(System.Double)</Name>
               <FileRef uid="9" />
               <SequencePoints>
-                <SequencePoint vc="560" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="9" />
-                <SequencePoint vc="560" uspid="22" ordinal="1" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="9" />
-                <SequencePoint vc="560" uspid="23" ordinal="2" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="9" />
-                <SequencePoint vc="558" uspid="24" ordinal="3" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="626" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="626" uspid="22" ordinal="1" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="626" uspid="23" ordinal="2" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="624" uspid="24" ordinal="3" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="9" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="4" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="21" ec="1" el="24" bec="0" bev="0" fileid="9" xmlns:p8="xsi" />
@@ -1273,7 +1302,7 @@
               <Name>BlastFurnace.MassBalance.Lib.Percentual BlastFurnace.MassBalance.Lib.PulverizedCoalInjection::get_CContent()</Name>
               <FileRef uid="10" />
               <SequencePoints>
-                <SequencePoint vc="48" uspid="16" ordinal="0" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="54" uspid="16" ordinal="0" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="10" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="16" ec="1" el="16" bec="0" bev="0" fileid="10" xmlns:p8="xsi" />
@@ -1284,7 +1313,7 @@
               <Name>BlastFurnace.MassBalance.Lib.Weight BlastFurnace.MassBalance.Lib.PulverizedCoalInjection::get_Weight()</Name>
               <FileRef uid="10" />
               <SequencePoints>
-                <SequencePoint vc="50" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="58" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="10" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="21" ec="1" el="21" bec="0" bev="0" fileid="10" xmlns:p8="xsi" />
@@ -1295,16 +1324,16 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.PulverizedCoalInjection::SetWeight(BlastFurnace.MassBalance.Lib.Weight)</Name>
               <FileRef uid="10" />
               <SequencePoints>
-                <SequencePoint vc="36" uspid="53" ordinal="0" sl="53" sc="1" el="53" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="36" uspid="54" ordinal="1" sl="54" sc="1" el="54" ec="2" bec="2" bev="2" fileid="10" />
+                <SequencePoint vc="40" uspid="53" ordinal="0" sl="53" sc="1" el="53" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="40" uspid="54" ordinal="1" sl="54" sc="1" el="54" ec="2" bec="2" bev="2" fileid="10" />
                 <SequencePoint vc="2" uspid="55" ordinal="2" sl="55" sc="1" el="55" ec="2" bec="0" bev="0" fileid="10" />
                 <SequencePoint vc="2" uspid="56" ordinal="3" sl="56" sc="1" el="56" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="34" uspid="58" ordinal="4" sl="58" sc="1" el="58" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="34" uspid="59" ordinal="5" sl="59" sc="1" el="59" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="38" uspid="58" ordinal="4" sl="58" sc="1" el="58" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="38" uspid="59" ordinal="5" sl="59" sc="1" el="59" ec="2" bec="0" bev="0" fileid="10" />
               </SequencePoints>
               <BranchPoints>
                 <BranchPoint vc="2" uspid="54" ordinal="0" path="0" offset="24" offsetend="26" sl="54" fileid="10" />
-                <BranchPoint vc="34" uspid="54" ordinal="1" path="1" offset="24" offsetend="101" sl="54" fileid="10" />
+                <BranchPoint vc="38" uspid="54" ordinal="1" path="1" offset="24" offsetend="101" sl="54" fileid="10" />
               </BranchPoints>
               <MethodPoint vc="6" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="53" ec="1" el="59" bec="0" bev="0" fileid="10" xmlns:p8="xsi" />
             </Method>
@@ -1314,18 +1343,18 @@
               <Name>System.Double BlastFurnace.MassBalance.Lib.PulverizedCoalInjection::PCIRate(BlastFurnace.MassBalance.Lib.HotMetal)</Name>
               <FileRef uid="10" />
               <SequencePoints>
-                <SequencePoint vc="2" uspid="69" ordinal="0" sl="69" sc="1" el="69" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="2" uspid="70" ordinal="1" sl="70" sc="1" el="70" ec="2" bec="2" bev="2" fileid="10" />
+                <SequencePoint vc="4" uspid="69" ordinal="0" sl="69" sc="1" el="69" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="4" uspid="70" ordinal="1" sl="70" sc="1" el="70" ec="2" bec="2" bev="2" fileid="10" />
                 <SequencePoint vc="1" uspid="71" ordinal="2" sl="71" sc="1" el="71" ec="2" bec="0" bev="0" fileid="10" />
                 <SequencePoint vc="1" uspid="72" ordinal="3" sl="72" sc="1" el="72" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="1" uspid="75" ordinal="4" sl="75" sc="1" el="75" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="1" uspid="76" ordinal="5" sl="76" sc="1" el="76" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="1" uspid="78" ordinal="6" sl="78" sc="1" el="78" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="1" uspid="79" ordinal="7" sl="79" sc="1" el="79" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="3" uspid="75" ordinal="4" sl="75" sc="1" el="75" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="3" uspid="76" ordinal="5" sl="76" sc="1" el="76" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="3" uspid="78" ordinal="6" sl="78" sc="1" el="78" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="3" uspid="79" ordinal="7" sl="79" sc="1" el="79" ec="2" bec="0" bev="0" fileid="10" />
               </SequencePoints>
               <BranchPoints>
                 <BranchPoint vc="1" uspid="70" ordinal="0" path="0" offset="7" offsetend="9" sl="70" fileid="10" />
-                <BranchPoint vc="1" uspid="70" ordinal="1" path="1" offset="7" offsetend="21" sl="70" fileid="10" />
+                <BranchPoint vc="3" uspid="70" ordinal="1" path="1" offset="7" offsetend="21" sl="70" fileid="10" />
               </BranchPoints>
               <MethodPoint vc="8" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="69" ec="1" el="79" bec="0" bev="0" fileid="10" xmlns:p8="xsi" />
             </Method>
@@ -1377,12 +1406,12 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.PulverizedCoalInjection::.ctor(BlastFurnace.MassBalance.Lib.Percentual,BlastFurnace.MassBalance.Lib.Weight)</Name>
               <FileRef uid="10" />
               <SequencePoints>
-                <SequencePoint vc="30" uspid="29" ordinal="0" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="30" uspid="30" ordinal="1" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="30" uspid="31" ordinal="2" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="30" uspid="32" ordinal="3" sl="32" sc="1" el="32" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="30" uspid="33" ordinal="4" sl="33" sc="1" el="33" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="33" uspid="61" ordinal="5" sl="61" sc="1" el="61" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="34" uspid="29" ordinal="0" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="34" uspid="30" ordinal="1" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="34" uspid="31" ordinal="2" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="34" uspid="32" ordinal="3" sl="32" sc="1" el="32" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="34" uspid="33" ordinal="4" sl="33" sc="1" el="33" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="37" uspid="61" ordinal="5" sl="61" sc="1" el="61" ec="2" bec="0" bev="0" fileid="10" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="6" uspid="0" p8:type="SequencePoint" ordinal="6" offset="6" sc="0" sl="29" ec="1" el="61" bec="0" bev="0" fileid="10" xmlns:p8="xsi" />
@@ -1415,41 +1444,41 @@
               <Name>BlastFurnace.MassBalance.Lib.Weight BlastFurnace.MassBalance.Lib.UnitConversion::WeightConversion(BlastFurnace.MassBalance.Lib.Weight,BlastFurnace.MassBalance.Lib.WeightUnits)</Name>
               <FileRef uid="11" />
               <SequencePoints>
-                <SequencePoint vc="280" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="11" />
-                <SequencePoint vc="280" uspid="25" ordinal="1" sl="25" sc="1" el="25" ec="2" bec="4" bev="4" fileid="11" />
-                <SequencePoint vc="15" uspid="28" ordinal="2" sl="28" sc="1" el="28" ec="2" bec="4" bev="4" fileid="11" />
-                <SequencePoint vc="4" uspid="31" ordinal="3" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="11" />
-                <SequencePoint vc="4" uspid="32" ordinal="4" sl="32" sc="1" el="32" ec="2" bec="0" bev="0" fileid="11" />
-                <SequencePoint vc="10" uspid="34" ordinal="5" sl="34" sc="1" el="34" ec="2" bec="0" bev="0" fileid="11" />
-                <SequencePoint vc="10" uspid="35" ordinal="6" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="11" />
+                <SequencePoint vc="321" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="11" />
+                <SequencePoint vc="321" uspid="25" ordinal="1" sl="25" sc="1" el="25" ec="2" bec="4" bev="4" fileid="11" />
+                <SequencePoint vc="27" uspid="28" ordinal="2" sl="28" sc="1" el="28" ec="2" bec="4" bev="4" fileid="11" />
+                <SequencePoint vc="6" uspid="31" ordinal="3" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="11" />
+                <SequencePoint vc="6" uspid="32" ordinal="4" sl="32" sc="1" el="32" ec="2" bec="0" bev="0" fileid="11" />
+                <SequencePoint vc="20" uspid="34" ordinal="5" sl="34" sc="1" el="34" ec="2" bec="0" bev="0" fileid="11" />
+                <SequencePoint vc="20" uspid="35" ordinal="6" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="11" />
                 <SequencePoint vc="1" uspid="37" ordinal="7" sl="37" sc="1" el="37" ec="2" bec="0" bev="0" fileid="11" />
                 <SequencePoint vc="1" uspid="38" ordinal="8" sl="38" sc="1" el="38" ec="2" bec="0" bev="0" fileid="11" />
-                <SequencePoint vc="14" uspid="40" ordinal="9" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="11" />
-                <SequencePoint vc="264" uspid="42" ordinal="10" sl="42" sc="1" el="42" ec="2" bec="4" bev="4" fileid="11" />
-                <SequencePoint vc="14" uspid="45" ordinal="11" sl="45" sc="1" el="45" ec="2" bec="0" bev="0" fileid="11" />
-                <SequencePoint vc="14" uspid="46" ordinal="12" sl="46" sc="1" el="46" ec="2" bec="0" bev="0" fileid="11" />
-                <SequencePoint vc="248" uspid="48" ordinal="13" sl="48" sc="1" el="48" ec="2" bec="0" bev="0" fileid="11" />
-                <SequencePoint vc="248" uspid="49" ordinal="14" sl="49" sc="1" el="49" ec="2" bec="0" bev="0" fileid="11" />
+                <SequencePoint vc="26" uspid="40" ordinal="9" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="11" />
+                <SequencePoint vc="293" uspid="42" ordinal="10" sl="42" sc="1" el="42" ec="2" bec="4" bev="4" fileid="11" />
+                <SequencePoint vc="16" uspid="45" ordinal="11" sl="45" sc="1" el="45" ec="2" bec="0" bev="0" fileid="11" />
+                <SequencePoint vc="16" uspid="46" ordinal="12" sl="46" sc="1" el="46" ec="2" bec="0" bev="0" fileid="11" />
+                <SequencePoint vc="275" uspid="48" ordinal="13" sl="48" sc="1" el="48" ec="2" bec="0" bev="0" fileid="11" />
+                <SequencePoint vc="275" uspid="49" ordinal="14" sl="49" sc="1" el="49" ec="2" bec="0" bev="0" fileid="11" />
                 <SequencePoint vc="2" uspid="51" ordinal="15" sl="51" sc="1" el="51" ec="2" bec="0" bev="0" fileid="11" />
                 <SequencePoint vc="2" uspid="52" ordinal="16" sl="52" sc="1" el="52" ec="2" bec="0" bev="0" fileid="11" />
-                <SequencePoint vc="262" uspid="54" ordinal="17" sl="54" sc="1" el="54" ec="2" bec="0" bev="0" fileid="11" />
+                <SequencePoint vc="291" uspid="54" ordinal="17" sl="54" sc="1" el="54" ec="2" bec="0" bev="0" fileid="11" />
                 <SequencePoint vc="1" uspid="56" ordinal="18" sl="56" sc="1" el="56" ec="2" bec="0" bev="0" fileid="11" />
                 <SequencePoint vc="1" uspid="57" ordinal="19" sl="57" sc="1" el="57" ec="2" bec="0" bev="0" fileid="11" />
-                <SequencePoint vc="276" uspid="60" ordinal="20" sl="60" sc="1" el="60" ec="2" bec="0" bev="0" fileid="11" />
-                <SequencePoint vc="276" uspid="62" ordinal="21" sl="62" sc="1" el="62" ec="2" bec="0" bev="0" fileid="11" />
-                <SequencePoint vc="276" uspid="63" ordinal="22" sl="63" sc="1" el="63" ec="2" bec="0" bev="0" fileid="11" />
+                <SequencePoint vc="317" uspid="60" ordinal="20" sl="60" sc="1" el="60" ec="2" bec="0" bev="0" fileid="11" />
+                <SequencePoint vc="317" uspid="62" ordinal="21" sl="62" sc="1" el="62" ec="2" bec="0" bev="0" fileid="11" />
+                <SequencePoint vc="317" uspid="63" ordinal="22" sl="63" sc="1" el="63" ec="2" bec="0" bev="0" fileid="11" />
               </SequencePoints>
               <BranchPoints>
-                <BranchPoint vc="265" uspid="25" ordinal="0" path="0" offset="13" offsetend="17" sl="25" fileid="11" />
-                <BranchPoint vc="15" uspid="25" ordinal="1" path="1" offset="13" offsetend="26" sl="25" fileid="11" />
-                <BranchPoint vc="11" uspid="28" ordinal="4" path="0" offset="35" offsetend="39" sl="28" fileid="11" />
-                <BranchPoint vc="4" uspid="28" ordinal="5" path="1" offset="35" offsetend="46" sl="28" fileid="11" />
-                <BranchPoint vc="10" uspid="28" ordinal="7" path="1" offset="42" offsetend="55" sl="28" fileid="11" />
+                <BranchPoint vc="294" uspid="25" ordinal="0" path="0" offset="13" offsetend="17" sl="25" fileid="11" />
+                <BranchPoint vc="27" uspid="25" ordinal="1" path="1" offset="13" offsetend="26" sl="25" fileid="11" />
+                <BranchPoint vc="21" uspid="28" ordinal="4" path="0" offset="35" offsetend="39" sl="28" fileid="11" />
+                <BranchPoint vc="6" uspid="28" ordinal="5" path="1" offset="35" offsetend="46" sl="28" fileid="11" />
+                <BranchPoint vc="20" uspid="28" ordinal="7" path="1" offset="42" offsetend="55" sl="28" fileid="11" />
                 <BranchPoint vc="1" uspid="28" ordinal="6" path="0" offset="42" offsetend="70" sl="28" fileid="11" />
-                <BranchPoint vc="264" uspid="25" ordinal="3" path="1" offset="19" offsetend="107" sl="25" fileid="11" />
-                <BranchPoint vc="250" uspid="42" ordinal="8" path="0" offset="116" offsetend="120" sl="42" fileid="11" />
-                <BranchPoint vc="14" uspid="42" ordinal="9" path="1" offset="116" offsetend="127" sl="42" fileid="11" />
-                <BranchPoint vc="248" uspid="42" ordinal="11" path="1" offset="123" offsetend="142" sl="42" fileid="11" />
+                <BranchPoint vc="293" uspid="25" ordinal="3" path="1" offset="19" offsetend="107" sl="25" fileid="11" />
+                <BranchPoint vc="277" uspid="42" ordinal="8" path="0" offset="116" offsetend="120" sl="42" fileid="11" />
+                <BranchPoint vc="16" uspid="42" ordinal="9" path="1" offset="116" offsetend="127" sl="42" fileid="11" />
+                <BranchPoint vc="275" uspid="42" ordinal="11" path="1" offset="123" offsetend="142" sl="42" fileid="11" />
                 <BranchPoint vc="2" uspid="42" ordinal="10" path="0" offset="123" offsetend="151" sl="42" fileid="11" />
                 <BranchPoint vc="1" uspid="25" ordinal="2" path="0" offset="19" offsetend="188" sl="25" fileid="11" />
               </BranchPoints>
@@ -1604,7 +1633,7 @@
               <Name>System.Double BlastFurnace.MassBalance.Lib.Weight::get_Value()</Name>
               <FileRef uid="13" />
               <SequencePoints>
-                <SequencePoint vc="1449" uspid="16" ordinal="0" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="13" />
+                <SequencePoint vc="1636" uspid="16" ordinal="0" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="13" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="16" ec="1" el="16" bec="0" bev="0" fileid="13" xmlns:p8="xsi" />
@@ -1615,7 +1644,7 @@
               <Name>BlastFurnace.MassBalance.Lib.WeightUnits BlastFurnace.MassBalance.Lib.Weight::get_Unit()</Name>
               <FileRef uid="13" />
               <SequencePoints>
-                <SequencePoint vc="1208" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="13" />
+                <SequencePoint vc="1361" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="13" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="21" ec="1" el="21" bec="0" bev="0" fileid="13" xmlns:p8="xsi" />
@@ -1626,9 +1655,9 @@
               <Name>System.Double BlastFurnace.MassBalance.Lib.Weight::GetWeightValue(BlastFurnace.MassBalance.Lib.WeightUnits)</Name>
               <FileRef uid="13" />
               <SequencePoints>
-                <SequencePoint vc="273" uspid="29" ordinal="0" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="13" />
-                <SequencePoint vc="273" uspid="30" ordinal="1" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="13" />
-                <SequencePoint vc="272" uspid="31" ordinal="2" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="13" />
+                <SequencePoint vc="314" uspid="29" ordinal="0" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="13" />
+                <SequencePoint vc="314" uspid="30" ordinal="1" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="13" />
+                <SequencePoint vc="313" uspid="31" ordinal="2" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="13" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="3" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="29" ec="1" el="31" bec="0" bev="0" fileid="13" xmlns:p8="xsi" />
@@ -1655,18 +1684,18 @@
               <Name>System.Void BlastFurnace.MassBalance.Lib.Weight::.ctor(System.Double,BlastFurnace.MassBalance.Lib.WeightUnits)</Name>
               <FileRef uid="13" />
               <SequencePoints>
-                <SequencePoint vc="788" uspid="39" ordinal="0" sl="39" sc="1" el="39" ec="2" bec="0" bev="0" fileid="13" />
-                <SequencePoint vc="788" uspid="40" ordinal="1" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="13" />
-                <SequencePoint vc="788" uspid="41" ordinal="2" sl="41" sc="1" el="41" ec="2" bec="2" bev="2" fileid="13" />
+                <SequencePoint vc="889" uspid="39" ordinal="0" sl="39" sc="1" el="39" ec="2" bec="0" bev="0" fileid="13" />
+                <SequencePoint vc="889" uspid="40" ordinal="1" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="13" />
+                <SequencePoint vc="889" uspid="41" ordinal="2" sl="41" sc="1" el="41" ec="2" bec="2" bev="2" fileid="13" />
                 <SequencePoint vc="1" uspid="42" ordinal="3" sl="42" sc="1" el="42" ec="2" bec="0" bev="0" fileid="13" />
                 <SequencePoint vc="1" uspid="43" ordinal="4" sl="43" sc="1" el="43" ec="2" bec="0" bev="0" fileid="13" />
-                <SequencePoint vc="787" uspid="46" ordinal="5" sl="46" sc="1" el="46" ec="2" bec="0" bev="0" fileid="13" />
-                <SequencePoint vc="787" uspid="47" ordinal="6" sl="47" sc="1" el="47" ec="2" bec="0" bev="0" fileid="13" />
-                <SequencePoint vc="787" uspid="48" ordinal="7" sl="48" sc="1" el="48" ec="2" bec="0" bev="0" fileid="13" />
+                <SequencePoint vc="888" uspid="46" ordinal="5" sl="46" sc="1" el="46" ec="2" bec="0" bev="0" fileid="13" />
+                <SequencePoint vc="888" uspid="47" ordinal="6" sl="47" sc="1" el="47" ec="2" bec="0" bev="0" fileid="13" />
+                <SequencePoint vc="888" uspid="48" ordinal="7" sl="48" sc="1" el="48" ec="2" bec="0" bev="0" fileid="13" />
               </SequencePoints>
               <BranchPoints>
                 <BranchPoint vc="1" uspid="41" ordinal="0" path="0" offset="22" offsetend="24" sl="41" fileid="13" />
-                <BranchPoint vc="787" uspid="41" ordinal="1" path="1" offset="22" offsetend="41" sl="41" fileid="13" />
+                <BranchPoint vc="888" uspid="41" ordinal="1" path="1" offset="22" offsetend="41" sl="41" fileid="13" />
               </BranchPoints>
               <MethodPoint vc="8" uspid="0" p8:type="SequencePoint" ordinal="4" offset="4" sc="0" sl="39" ec="1" el="48" bec="0" bev="0" fileid="13" xmlns:p8="xsi" />
             </Method>
