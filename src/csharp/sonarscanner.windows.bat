@@ -20,6 +20,4 @@ dotnet sonarscanner begin  /k:%project% /d:sonar.host.url=%host% /d:sonar.login=
 
 dotnet build
 
-dotnet sonarscanner end /d:sonar.login=%login%**
-
-sonar-scanner.bat -Dsonar.scanAllFiles=true -Dproject.settings=.\.sonarqube\out\sonar-project.properties --embedded --debug -Dsonar.login=%login%
+dotnet sonarscanner end /d:sonar.login=%login%
