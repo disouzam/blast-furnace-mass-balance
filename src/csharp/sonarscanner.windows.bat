@@ -8,9 +8,9 @@ set login="sqp_c7df1b0fd8bb4bd70456674f5520dd31f8b5661e"
 
 set host=http://localhost:9000
  
-dotnet new tool-manifest --force
+@REM dotnet new tool-manifest --force
 
-dotnet tool update --local dotnet-sonarscanner --version 5.9.2
+@REM dotnet tool update --local dotnet-sonarscanner --version 5.9.2
 
 dotnet test
 
