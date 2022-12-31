@@ -12,7 +12,14 @@ set host=http://localhost:9000
 
 @REM dotnet tool update --local dotnet-sonarscanner --version 5.9.2
 
-dotnet test
+set CollectCoverage=true
+echo %CollectCoverage%
+
+set CoverletOutputFormat=opencover
+echo %CoverletOutputFormat%
+
+set "CoverletOutput=..\BlastFurnace.MassBalance.Lib.Tests\coverage.opencover.xml"
+echo %CoverletOutput%
 
 dotnet build-server shutdown
 
