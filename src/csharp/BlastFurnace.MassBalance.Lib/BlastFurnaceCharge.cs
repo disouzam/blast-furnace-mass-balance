@@ -101,6 +101,30 @@ public class BlastFurnaceCharge
     }
 
     /// <summary>
+    /// Get fuel rate (coke rate and PCI rate combined)
+    /// </summary>
+    /// <returns></returns>
+    public double GetFuelRate()
+    {
+        if (CokeBlend == null)
+        {
+            throw new InvalidOperationException($"{nameof(CokeBlend)} is currently not configured properly. It is not possible to calculate fuel rate.");
+        }
+
+        if (PCI == null)
+        {
+            throw new InvalidOperationException($"{nameof(PCI)} is currently not configured properly. It is not possible to calculate fuel rate.");
+        }
+
+        if (HotMetal == null)
+        {
+            throw new InvalidOperationException($"{nameof(HotMetal)} is currently not configured properly. It is not possible to calculate fuel rate.");
+        }
+
+        return CokeBlend.CokeRate(HotMetal, PCI) + PCI.PCIRate(HotMetal);
+    }
+
+    /// <summary>
     /// Parameterless constructor
     /// </summary>
     public BlastFurnaceCharge()

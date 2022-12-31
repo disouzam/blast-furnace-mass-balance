@@ -551,6 +551,7 @@ begin
     PCIrat:=PCIesc/xt;
 
     {Cálculo do Fuel rate (em kilogramas/ton de gusa)}
+    // Migrated;
     FR:= PCIrat + CRate;
 
     {Conversão da massa de PCI adicionada de kilogramas para toneladas}

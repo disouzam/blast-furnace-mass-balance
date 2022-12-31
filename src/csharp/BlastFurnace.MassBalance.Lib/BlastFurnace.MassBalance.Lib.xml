@@ -100,6 +100,12 @@
             Set iron ore weights based on hot metal setup
             </summary>
         </member>
+        <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.GetFuelRate">
+            <summary>
+            Get fuel rate (coke rate and PCI rate combined)
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:BlastFurnace.MassBalance.Lib.BlastFurnaceCharge.#ctor">
             <summary>
             Parameterless constructor
