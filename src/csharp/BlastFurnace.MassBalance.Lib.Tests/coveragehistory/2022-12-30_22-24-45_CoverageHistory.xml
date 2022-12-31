@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2022-12-30_22-24-45" tag="3393588">
+  <assembly name="BlastFurnace.MassBalance.Lib">
+    <class name="BlastFurnace.MassBalance.Lib.About" coveredlines="41" coverablelines="41" totallines="80" coveredbranches="0" totalbranches="0" coveredcodeelements="4" totalcodeelements="4" />
+    <class name="BlastFurnace.MassBalance.Lib.AirBlow" coveredlines="27" coverablelines="27" totallines="75" coveredbranches="4" totalbranches="4" coveredcodeelements="5" totalcodeelements="5" />
+    <class name="BlastFurnace.MassBalance.Lib.BlastFurnaceCharge" coveredlines="77" coverablelines="77" totallines="181" coveredbranches="20" totalbranches="20" coveredcodeelements="14" totalcodeelements="14" />
+    <class name="BlastFurnace.MassBalance.Lib.Coke" coveredlines="25" coverablelines="25" totallines="75" coveredbranches="0" totalbranches="0" coveredcodeelements="7" totalcodeelements="7" />
+    <class name="BlastFurnace.MassBalance.Lib.CokeBlend" coveredlines="132" coverablelines="132" totallines="275" coveredbranches="32" totalbranches="32" coveredcodeelements="12" totalcodeelements="12" />
+    <class name="BlastFurnace.MassBalance.Lib.HotMetal" coveredlines="18" coverablelines="18" totallines="58" coveredbranches="2" totalbranches="2" coveredcodeelements="5" totalcodeelements="5" />
+    <class name="BlastFurnace.MassBalance.Lib.IronOre" coveredlines="25" coverablelines="25" totallines="76" coveredbranches="0" totalbranches="0" coveredcodeelements="7" totalcodeelements="7" />
+    <class name="BlastFurnace.MassBalance.Lib.IronOreBlend" coveredlines="84" coverablelines="84" totallines="177" coveredbranches="18" totalbranches="18" coveredcodeelements="9" totalcodeelements="9" />
+    <class name="BlastFurnace.MassBalance.Lib.Percentual" coveredlines="15" coverablelines="15" totallines="47" coveredbranches="4" totalbranches="4" coveredcodeelements="4" totalcodeelements="4" />
+    <class name="BlastFurnace.MassBalance.Lib.PulverizedCoalInjection" coveredlines="47" coverablelines="47" totallines="124" coveredbranches="6" totalbranches="6" coveredcodeelements="8" totalcodeelements="8" />
+    <class name="BlastFurnace.MassBalance.Lib.UnitConversion" coveredlines="49" coverablelines="49" totallines="118" coveredbranches="24" totalbranches="24" coveredcodeelements="3" totalcodeelements="3" />
+    <class name="BlastFurnace.MassBalance.Lib.Volume" coveredlines="19" coverablelines="19" totallines="64" coveredbranches="2" totalbranches="2" coveredcodeelements="5" totalcodeelements="5" />
+    <class name="BlastFurnace.MassBalance.Lib.Weight" coveredlines="19" coverablelines="19" totallines="64" coveredbranches="2" totalbranches="2" coveredcodeelements="5" totalcodeelements="5" />
+  </assembly>
+</coverage>

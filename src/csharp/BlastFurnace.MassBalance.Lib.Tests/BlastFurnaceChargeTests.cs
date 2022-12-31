@@ -55,6 +55,12 @@ public class BlastFurnaceChargeTests
         return pci;
     }
 
+    private static PulverizedCoalInjection GetPCI2()
+    {
+        var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(0.5, WeightUnits.kilogram));
+        return pci;
+    }
+
     private static AirBlow GetAirBlow()
     {
         var airBlow = new AirBlow(new Percentual(21));
@@ -67,6 +73,19 @@ public class BlastFurnaceChargeTests
         var ironOreBlend = GetIronOreBlend();
         var cokeBlend = GetCokeBlend();
         var pci = GetPCI();
+        var airBlow = GetAirBlow();
+
+        var blastFurnaceCharge = new BlastFurnaceCharge(hotMetal, ironOreBlend, cokeBlend, pci, airBlow);
+
+        return blastFurnaceCharge;
+    }
+
+    private static BlastFurnaceCharge GetRealisticallyBlastFurnaceChargeInstance()
+    {
+        var hotMetal = GetHotMetal();
+        var ironOreBlend = GetIronOreBlend();
+        var cokeBlend = GetCokeBlend();
+        var pci = GetPCI2();
         var airBlow = GetAirBlow();
 
         var blastFurnaceCharge = new BlastFurnaceCharge(hotMetal, ironOreBlend, cokeBlend, pci, airBlow);
@@ -132,6 +151,38 @@ public class BlastFurnaceChargeTests
             blastFurnaceCharge1?.CokeBlend.Should().BeNull();
             blastFurnaceCharge1?.PCI.Should().BeNull();
             blastFurnaceCharge1?.AirBlow.Should().BeNull();
+        }
+    }
+
+    [Fact]
+    public void CheckFuelRate()
+    {
+        var blastFurnaceCharge = GetRealisticallyBlastFurnaceChargeInstance();
+        blastFurnaceCharge.GetFuelRate().Should().BeApproximately(536.925, 0.001);
+    }
+
+    [Fact]
+    public void CheckFuelRateWithNullEntries()
+    {
+        var blastFurnaceCharge = new BlastFurnaceCharge();
+
+        using (new AssertionScope())
+        {
+            var act = () => blastFurnaceCharge.GetFuelRate();
+            act.Should().Throw<InvalidOperationException>().WithMessage("CokeBlend is currently not configured properly. It is not possible to calculate fuel rate.");
+
+            var hotMetal = GetHotMetal();
+            var cokeBlend = GetCokeBlend();
+            var pci = GetPCI2();
+
+            blastFurnaceCharge.AddCokeBlend(cokeBlend);
+            act.Should().Throw<InvalidOperationException>().WithMessage("PCI is currently not configured properly. It is not possible to calculate fuel rate.");
+
+            blastFurnaceCharge.AddPCI(pci);
+            act.Should().Throw<InvalidOperationException>().WithMessage("HotMetal is currently not configured properly. It is not possible to calculate fuel rate.");
+
+            blastFurnaceCharge.AddHotMetal(hotMetal);
+            act.Should().NotThrow();
         }
     }
 
