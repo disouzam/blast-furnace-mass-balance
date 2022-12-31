@@ -38,6 +38,7 @@
             "args": [],
             "problemMatcher": "$msCompile"
         },
+        // TASK GROUP ------ SONARQUBE ANALYSIS
         // TASK GROUP ------ COMPLETE REPOSITORY / ALL PROJECTS
         // Task ------ [REPOSITORY-LEVEL] Clean and Remove bin and obj folders
         {

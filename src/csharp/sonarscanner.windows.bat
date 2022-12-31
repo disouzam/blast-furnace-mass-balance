@@ -1,0 +1,25 @@
+@REM In order to execute sonar coverage, you'll need to have sonarqube community downloaded and running local on your machine
+@REM and sonarscanner installed as well and placed its /bin folder as a PATH ENVIRONMENT VARIABLE.
+@REM Additionaly, you need to provide a Project TOKEN and set its value on LOGIN parameter (line 7).
+
+set project="blast-furnace-mass-balance"
+
+set login="sqp_c7df1b0fd8bb4bd70456674f5520dd31f8b5661e"
+
+set host=http://localhost:9000
+ 
+dotnet new tool-manifest --force
+
+dotnet tool update --local dotnet-sonarscanner --version 5.9.2
+
+dotnet test
+
+dotnet build-server shutdown
+
+dotnet sonarscanner begin  /k:%project% /d:sonar.host.url=%host% /d:sonar.login=%login% /d:sonar.vbnet.opencover.reportsPaths="**\coverage.opencover.xml" /d:sonar.coverage.exclusions="**Tests*.cs,*.json,*.Setup/*.*,*.Repository.*/*.*,**Migrations/*"
+
+dotnet build
+
+dotnet sonarscanner end /d:sonar.login=%login%**
+
+sonar-scanner.bat -Dsonar.scanAllFiles=true -Dproject.settings=.\.sonarqube\out\sonar-project.properties --embedded --debug -Dsonar.login=%login%
