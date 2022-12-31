@@ -2,7 +2,7 @@
 @REM and sonarscanner installed as well and placed its /bin folder as a PATH ENVIRONMENT VARIABLE.
 @REM Additionaly, you need to provide a Project TOKEN and set its value on LOGIN parameter (line 7).
 
-set project="blast-furnace-mass-balance"
+set project-key="blast-furnace-mass-balance"
 
 set login="sqp_c7df1b0fd8bb4bd70456674f5520dd31f8b5661e"
 
@@ -18,14 +18,14 @@ echo %CollectCoverage%
 set CoverletOutputFormat=opencover
 echo %CoverletOutputFormat%
 
-set "CoverletOutput=..\tests\BlastFurnace.MassBalance.Lib.Tests\coverage.opencover.xml"
+set "CoverletOutput=coverage.opencover.xml"
 echo %CoverletOutput%
 
 dotnet test -v:Minimal -c:Debug 
 
 dotnet build-server shutdown
 
-dotnet sonarscanner begin  /k:%project% /d:sonar.host.url=%host% /d:sonar.login=%login% /d:sonar.cs.opencover.reportsPaths="**\coverage.opencover.xml"
+dotnet sonarscanner begin  /k:%project-key% /d:sonar.host.url=%host% /d:sonar.login=%login% /d:sonar.cs.opencover.reportsPaths="**\coverage.opencover.xml"
 
 dotnet build
 

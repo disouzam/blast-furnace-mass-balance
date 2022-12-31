@@ -5,7 +5,7 @@
     <RootNamespace>BlastFurnace.MassBalance.Lib.Tests</RootNamespace>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -26,6 +26,13 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
+
+  <PropertyGroup>
+    <SonarQubeTestProject>true</SonarQubeTestProject>
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+  </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\\..\src\BlastFurnace.MassBalance.Lib\BlastFurnace.MassBalance.Lib.csproj" />
