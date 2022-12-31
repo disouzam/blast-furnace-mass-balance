@@ -174,6 +174,46 @@ public class CokeBlendTests
     }
 
     [Fact]
+    public void CheckCokeRateWithNullParameters()
+    {
+        var cokeBlend = new CokeBlend();
+        var coke = new Coke(new Percentual(95), new Percentual(25));
+        cokeBlend.Add(coke);
+
+        var coke2 = new Coke(new Percentual(85), new Percentual(35));
+        cokeBlend.Add(coke2);
+
+        var coke3 = new Coke(new Percentual(80), new Percentual(40));
+        cokeBlend.Add(coke3);
+
+        HotMetal? hotmetal = null;
+        var hotMetal2 = new HotMetal(new Weight(155, WeightUnits.metricTon), new Percentual(95), new Percentual(4));
+        var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(10, WeightUnits.metricTon));
+        PulverizedCoalInjection? pci2 = null;
+
+#pragma warning disable CS8604 // Possible null reference argument.
+        var act = () => cokeBlend.CokeRate(hotmetal, pci);
+        var act2 = () => cokeBlend.CokeRate(hotmetal, pci2);
+        var act3 = () => cokeBlend.CokeRate(hotMetal2, pci2);
+#pragma warning restore CS8604 // Possible null reference argument.
+
+        using (new AssertionScope())
+        {
+            act.Should().Throw<ArgumentNullException>()
+               .WithMessage("Value cannot be null. (Parameter 'hotMetal')")
+               .Which?.TargetSite?.Name.Should().Be(nameof(CokeBlend.CokeRate));
+
+            act2.Should().Throw<ArgumentNullException>()
+                .WithMessage("Value cannot be null. (Parameter 'hotMetal')")
+                .Which?.TargetSite?.Name.Should().Be(nameof(CokeBlend.CokeRate));
+
+            act3.Should().Throw<ArgumentNullException>()
+                .WithMessage("Value cannot be null. (Parameter 'pci')")
+                .Which?.TargetSite?.Name.Should().Be(nameof(CokeBlend.CokeRate));
+        }
+    }
+
+    [Fact]
     public void CheckBlendRequiredWeight()
     {
         var cokeBlend = new CokeBlend();
@@ -199,6 +239,38 @@ public class CokeBlendTests
             var blendRequiredWeight2 = cokeBlend.GetBlendRequiredWeight(hotMetal, pci2);
             blendRequiredWeight2.Value.Should().BeApproximately(85.489, 0.001);
             blendRequiredWeight2.Unit.Should().Be(WeightUnits.metricTon);
+        }
+    }
+
+    [Fact]
+    public void CheckBlendRequiredWeightWithNullParameters()
+    {
+        var cokeBlend = new CokeBlend();
+        var coke = new Coke(new Percentual(95), new Percentual(25));
+        cokeBlend.Add(coke);
+
+        var coke2 = new Coke(new Percentual(85), new Percentual(35));
+        cokeBlend.Add(coke2);
+
+        var coke3 = new Coke(new Percentual(80), new Percentual(40));
+        cokeBlend.Add(coke3);
+
+        HotMetal? hotmetal = null;
+        var hotMetal2 = new HotMetal(new Weight(155, WeightUnits.metricTon), new Percentual(95), new Percentual(4));
+        var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(10, WeightUnits.metricTon));
+        PulverizedCoalInjection? pci2 = null;
+
+#pragma warning disable CS8604 // Possible null reference argument.
+        var act = () => cokeBlend.GetBlendRequiredWeight(hotmetal, pci);
+        var act2 = () => cokeBlend.GetBlendRequiredWeight(hotmetal, pci2);
+        var act3 = () => cokeBlend.GetBlendRequiredWeight(hotMetal2, pci2);
+#pragma warning restore CS8604 // Possible null reference argument.
+
+        using (new AssertionScope())
+        {
+            act.Should().Throw<ArgumentNullException>().WithMessage("Value cannot be null. (Parameter 'hotMetal')");
+            act2.Should().Throw<ArgumentNullException>().WithMessage("Value cannot be null. (Parameter 'hotMetal')");
+            act3.Should().Throw<ArgumentNullException>().WithMessage("Value cannot be null. (Parameter 'pci')");
         }
     }
 
@@ -278,6 +350,47 @@ public class CokeBlendTests
             cokes2[2].Weight.Value.Should().BeApproximately(33.513, 0.001);
         }
     }
+
+    [Fact]
+    public void CheckSetCokeWeightsBasedOnRequiredWeightWithNullParameters()
+    {
+        var cokeBlend = new CokeBlend();
+        var coke = new Coke(new Percentual(95), new Percentual(25));
+        cokeBlend.Add(coke);
+
+        var coke2 = new Coke(new Percentual(85), new Percentual(35));
+        cokeBlend.Add(coke2);
+
+        var coke3 = new Coke(new Percentual(80), new Percentual(40));
+        cokeBlend.Add(coke3);
+
+        HotMetal? hotmetal = null;
+        var hotMetal2 = new HotMetal(new Weight(155, WeightUnits.metricTon), new Percentual(95), new Percentual(4));
+        var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(10, WeightUnits.metricTon));
+        PulverizedCoalInjection? pci2 = null;
+
+#pragma warning disable CS8604 // Possible null reference argument.
+        var act = () => cokeBlend.SetCokeWeightsBasedOnRequiredWeight(hotmetal, pci);
+        var act2 = () => cokeBlend.SetCokeWeightsBasedOnRequiredWeight(hotmetal, pci2);
+        var act3 = () => cokeBlend.SetCokeWeightsBasedOnRequiredWeight(hotMetal2, pci2);
+#pragma warning restore CS8604 // Possible null reference argument.
+
+        using (new AssertionScope())
+        {
+            act.Should().Throw<ArgumentNullException>()
+               .WithMessage("Value cannot be null. (Parameter 'hotMetal')")
+               .Which?.TargetSite?.Name.Should().Be(nameof(CokeBlend.SetCokeWeightsBasedOnRequiredWeight));
+
+            act2.Should().Throw<ArgumentNullException>()
+                .WithMessage("Value cannot be null. (Parameter 'hotMetal')")
+                .Which?.TargetSite?.Name.Should().Be(nameof(CokeBlend.SetCokeWeightsBasedOnRequiredWeight));
+
+            act3.Should().Throw<ArgumentNullException>()
+                .WithMessage("Value cannot be null. (Parameter 'pci')")
+                .Which?.TargetSite?.Name.Should().Be(nameof(CokeBlend.SetCokeWeightsBasedOnRequiredWeight));
+        }
+    }
+
 
     [Fact]
     public void CheckMinimumCokeRate()

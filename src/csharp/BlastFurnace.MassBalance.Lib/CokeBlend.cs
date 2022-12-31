@@ -131,6 +131,11 @@ public class CokeBlend
             throw new ArgumentNullException(nameof(hotMetal));
         }
 
+        if (pci == null)
+        {
+            throw new ArgumentNullException(nameof(pci));
+        }
+
         var blendRequiredWeight = GetBlendRequiredWeight(hotMetal, pci);
         var blendWeightInKilogram = blendRequiredWeight.GetWeightValue(WeightUnits.kilogram);
         var hotMetalInMetricTon = hotMetal.Weight.GetWeightValue(WeightUnits.metricTon);

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.ConstrainedExecution;
 
 using Newtonsoft.Json;
 
@@ -23,9 +22,6 @@ public class AirBlow
     {
         O2Content = o2Content;
     }
-
-    //{ Cálculo da vazão de sopro(em Nm3 / min)}
-    //Vazao:= Vsopro / 1440;
 
     /// <summary>
     /// Get required air volume

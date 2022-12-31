@@ -92,6 +92,18 @@ public class PulverizedCoalInjectionTests
     }
 
     [Fact]
+    public void CheckPCIRateWithNullHotMetal()
+    {
+        HotMetal? hotmetal = null;
+        var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(10, WeightUnits.metricTon));
+
+#pragma warning disable CS8604 // Possible null reference argument.
+        var act = () => pci.PCIRate(hotmetal);
+#pragma warning restore CS8604 // Possible null reference argument.
+        act.Should().Throw<ArgumentNullException>();
+    }
+
+    [Fact]
     public void CheckStringRepresentation()
     {
         var pci = new PulverizedCoalInjection(new Percentual(90), new Weight(100, WeightUnits.metricTon));
