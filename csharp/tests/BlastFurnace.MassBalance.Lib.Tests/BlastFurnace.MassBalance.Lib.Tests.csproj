@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\BlastFurnace.MassBalance.Lib\BlastFurnace.MassBalance.Lib.csproj" />
+    <ProjectReference Include="..\\..\src\BlastFurnace.MassBalance.Lib\BlastFurnace.MassBalance.Lib.csproj" />
   </ItemGroup>
 
 </Project>

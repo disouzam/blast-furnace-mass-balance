@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlastFurnace.MassBalance.Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlastFurnace.MassBalance.Lib", "src\BlastFurnace.MassBalance.Lib\BlastFurnace.MassBalance.Lib.csproj", "{7677CCB8-2FBF-4D12-8E3F-FE367109B5D2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlastFurnace.MassBalance.Lib.Tests", "BlastFurnace.MassBalance.Lib.Tests\BlastFurnace.MassBalance.Lib.Tests.csproj", "{47C9A96F-01D4-42BB-A45D-22763DC7CC35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlastFurnace.MassBalance.Lib.Tests", "tests\BlastFurnace.MassBalance.Lib.Tests\BlastFurnace.MassBalance.Lib.Tests.csproj", "{47C9A96F-01D4-42BB-A45D-22763DC7CC35}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.SolutionConfiguration", "0.SolutionConfiguration", "{627A890A-E776-4565-A512-EF1A55FE43DE}"
 	ProjectSection(SolutionItems) = preProject

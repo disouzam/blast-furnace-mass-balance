@@ -18,7 +18,7 @@ echo %CollectCoverage%
 set CoverletOutputFormat=opencover
 echo %CoverletOutputFormat%
 
-set "CoverletOutput=..\BlastFurnace.MassBalance.Lib.Tests\coverage.opencover.xml"
+set "CoverletOutput=..\tests\BlastFurnace.MassBalance.Lib.Tests\coverage.opencover.xml"
 echo %CoverletOutput%
 
 dotnet test -v:Minimal -c:Debug 
