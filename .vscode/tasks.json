@@ -38,6 +38,41 @@
             "args": [],
             "problemMatcher": "$msCompile"
         },
+        // TASK GROUP ------ SONARQUBE ANALYSIS
+        // Task ------ [SONARQUBE] Start Sonarqube server
+        {
+            "label": "[SONARQUBE] Start Sonarqube server",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "C:\\sonarqube\\bin\\windows-x86-64\\StartSonar.bat",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
+        // Task ------ [SONARQUBE] Run SonarQube analysis
+        {
+            "label": "[SONARQUBE] Run SonarQube analysis",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "hide": false,
+            "command": "cd ${workspaceFolder}\\src\\csharp && ${workspaceFolder}\\src\\csharp\\sonarscanner.windows.bat",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": "$msCompile"
+        },
         // TASK GROUP ------ COMPLETE REPOSITORY / ALL PROJECTS
         // Task ------ [REPOSITORY-LEVEL] Clean and Remove bin and obj folders
         {
