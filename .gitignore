@@ -32,7 +32,7 @@ src/Pascal/backup
 **/.vs
 
 # Pascal files
-src/Pascal/lib/x86_64-win64
+pascal/lib/x86_64-win64
 *.lps
 *.exe
 **/coveragereport
