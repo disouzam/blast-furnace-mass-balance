@@ -223,7 +223,7 @@
             "type": "process",
             "args": [
                 "clean",
-                "${workspaceFolder}\\csharp\\BlastFurnace.MassBalance.App\\BlastFurnace.MassBalance.App.csproj"
+                "${workspaceFolder}\\csharp\\src\\BlastFurnace.MassBalance.App\\BlastFurnace.MassBalance.App.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -361,7 +361,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/csharp/BlastFurnace.MassBalance.App/BlastFurnace.MassBalance.App.csproj",
+                "${workspaceFolder}/csharp/src/BlastFurnace.MassBalance.App/BlastFurnace.MassBalance.App.csproj",
                 "-c:${config:configuration}",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
@@ -431,7 +431,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}\\csharp\\BlastFurnace.MassBalance.App\\BlastFurnace.MassBalance.App.csproj",
+                "${workspaceFolder}\\csharp\\src\\BlastFurnace.MassBalance.App\\BlastFurnace.MassBalance.App.csproj",
                 "-c:${config:configuration}",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
@@ -501,7 +501,7 @@
             "args": [
                 "run",
                 "--project",
-                "${workspaceFolder}\\csharp\\BlastFurnace.MassBalance.App\\BlastFurnace.MassBalance.App.csproj",
+                "${workspaceFolder}\\csharp\\src\\BlastFurnace.MassBalance.App\\BlastFurnace.MassBalance.App.csproj",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
             ],
