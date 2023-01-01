@@ -9,7 +9,7 @@
 cd ..\
 md log
 cd ..\
-cd src\csharp\BlastFurnace.MassBalance.Lib
+cd csharp\src\BlastFurnace.MassBalance.Lib
 dir /b /s > ..\..\..\.vscode\log\BlastFurnace.MassBalance.Lib-Files-0-before.txt
 @echo on
 rd /S /Q bin

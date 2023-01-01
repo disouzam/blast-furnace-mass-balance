@@ -28,7 +28,7 @@
             "html",
             "cleartext"
         ],
-        "solution": "..\\BlastFurnace.MassBalance.sln",
+        "solution": "..\\..\\BlastFurnace.MassBalance.sln",
         "target-framework": "net7.0",
         "test-case-filter": "",
         "test-projects": [

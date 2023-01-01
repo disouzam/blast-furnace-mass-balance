@@ -10,6 +10,13 @@
     <DocumentationFile>BlastFurnace.MassBalance.Lib.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <SonarQubeTestProject>false</SonarQubeTestProject>
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>

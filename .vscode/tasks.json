@@ -32,7 +32,7 @@
                 "clear": false
             },
             "hide": false,
-            "command": "cd ${workspaceFolder}\\src\\csharp && dotnet list package --outdated --interactive",
+            "command": "cd ${workspaceFolder}\\csharp && dotnet list package --outdated --interactive",
             "type": "shell",
             "detail": "",
             "args": [],
@@ -68,7 +68,7 @@
                 "clear": false
             },
             "hide": false,
-            "command": "cd ${workspaceFolder}\\src\\csharp && ${workspaceFolder}\\src\\csharp\\sonarscanner.windows.bat",
+            "command": "cd ${workspaceFolder}\\csharp && ${workspaceFolder}\\csharp\\sonarscanner.windows.bat",
             "type": "shell",
             "args": [],
             "problemMatcher": "$msCompile"
@@ -223,7 +223,7 @@
             "type": "process",
             "args": [
                 "clean",
-                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.App\\BlastFurnace.MassBalance.App.csproj"
+                "${workspaceFolder}\\csharp\\src\\BlastFurnace.MassBalance.App\\BlastFurnace.MassBalance.App.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -243,7 +243,7 @@
             "type": "process",
             "args": [
                 "clean",
-                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib\\BlastFurnace.MassBalance.Lib.csproj"
+                "${workspaceFolder}\\csharp\\src\\BlastFurnace.MassBalance.Lib\\BlastFurnace.MassBalance.Lib.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -263,7 +263,7 @@
             "type": "process",
             "args": [
                 "clean",
-                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\BlastFurnace.MassBalance.Lib.Tests.csproj"
+                "${workspaceFolder}\\csharp\\tests\\BlastFurnace.MassBalance.Lib.Tests\\BlastFurnace.MassBalance.Lib.Tests.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -361,7 +361,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/src/csharp/BlastFurnace.MassBalance.App/BlastFurnace.MassBalance.App.csproj",
+                "${workspaceFolder}/csharp/src/BlastFurnace.MassBalance.App/BlastFurnace.MassBalance.App.csproj",
                 "-c:${config:configuration}",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
@@ -384,7 +384,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/src/csharp/BlastFurnace.MassBalance.Lib/BlastFurnace.MassBalance.Lib.csproj",
+                "${workspaceFolder}/csharp/src/BlastFurnace.MassBalance.Lib/BlastFurnace.MassBalance.Lib.csproj",
                 "-c:${config:configuration}",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
@@ -407,7 +407,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\BlastFurnace.MassBalance.Lib.Tests.csproj",
+                "${workspaceFolder}\\csharp\\tests\\BlastFurnace.MassBalance.Lib.Tests\\BlastFurnace.MassBalance.Lib.Tests.csproj",
                 "-c:${config:configuration}",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
@@ -431,7 +431,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.App\\BlastFurnace.MassBalance.App.csproj",
+                "${workspaceFolder}\\csharp\\src\\BlastFurnace.MassBalance.App\\BlastFurnace.MassBalance.App.csproj",
                 "-c:${config:configuration}",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
@@ -454,7 +454,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib\\BlastFurnace.MassBalance.Lib.csproj",
+                "${workspaceFolder}\\csharp\\src\\BlastFurnace.MassBalance.Lib\\BlastFurnace.MassBalance.Lib.csproj",
                 "-c:${config:configuration}",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
@@ -479,7 +479,7 @@
             "args": [
                 "watch",
                 "test",
-                "--project:${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\BlastFurnace.MassBalance.Lib.Tests.csproj"
+                "--project:${workspaceFolder}\\csharp\\tests\\BlastFurnace.MassBalance.Lib.Tests\\BlastFurnace.MassBalance.Lib.Tests.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -501,7 +501,7 @@
             "args": [
                 "run",
                 "--project",
-                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.App\\BlastFurnace.MassBalance.App.csproj",
+                "${workspaceFolder}\\csharp\\src\\BlastFurnace.MassBalance.App\\BlastFurnace.MassBalance.App.csproj",
                 "-property:GenerateFullPaths=true",
                 "-consoleloggerparameters:NoSummary"
             ],
@@ -528,7 +528,7 @@
                 "--list-tests"
             ],
             "options": {
-                "cwd": "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests"
+                "cwd": "${workspaceFolder}\\csharp\\tests\\BlastFurnace.MassBalance.Lib.Tests"
             },
             "problemMatcher": "$msCompile"
         },
@@ -552,11 +552,11 @@
                 "-c:${config:configuration}"
             ],
             "options": {
-                "cwd": "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests",
+                "cwd": "${workspaceFolder}\\csharp\\tests\\BlastFurnace.MassBalance.Lib.Tests",
                 "env": {
                     "CollectCoverage": "true",
                     "CoverletOutputFormat": "opencover",
-                    "CoverletOutput": "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\coverage.opencover.xml",
+                    "CoverletOutput": "${workspaceFolder}\\csharp\\tests\\BlastFurnace.MassBalance.Lib.Tests\\coverage.opencover.xml",
                     "ThresholdType": "Branch",
                     "Threshold": "${config:BlastFurnace.MassBalance.Lib.branchCoverage.threshold}"
                 }
@@ -582,7 +582,7 @@
                 "--open-report"
             ],
             "options": {
-                "cwd": "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests"
+                "cwd": "${workspaceFolder}\\csharp\\tests\\BlastFurnace.MassBalance.Lib.Tests"
             },
             "problemMatcher": "$msCompile"
         },
@@ -603,15 +603,15 @@
             "type": "process",
             "args": [
                 "reportgenerator",
-                "-reports:\"${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\coverage.opencover.xml\"",
-                "-targetdir:\"${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\coveragereport\"",
+                "-reports:\"${workspaceFolder}\\csharp\\tests\\BlastFurnace.MassBalance.Lib.Tests\\coverage.opencover.xml\"",
+                "-targetdir:\"${workspaceFolder}\\csharp\\tests\\BlastFurnace.MassBalance.Lib.Tests\\coveragereport\"",
                 "-reporttypes:Html",
-                "-historydir:\"${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\coveragehistory\"",
+                "-historydir:\"${workspaceFolder}\\csharp\\tests\\BlastFurnace.MassBalance.Lib.Tests\\coveragehistory\"",
                 "-Title:\"BlastFurnace.MassBalance.Lib - Test report\"",
                 "-Tag:${input:last.commit.hash}"
             ],
             "options": {
-                "cwd": "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests",
+                "cwd": "${workspaceFolder}\\csharp\\tests\\BlastFurnace.MassBalance.Lib.Tests",
             },
             "problemMatcher": "$msCompile"
         },
@@ -635,7 +635,7 @@
             },
             "args": [
                 "chrome",
-                "${workspaceFolder}\\src\\csharp\\BlastFurnace.MassBalance.Lib.Tests\\coveragereport\\index.html"
+                "${workspaceFolder}\\csharp\\tests\\BlastFurnace.MassBalance.Lib.Tests\\coveragereport\\index.html"
             ],
             "problemMatcher": []
         }

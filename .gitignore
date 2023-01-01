@@ -32,10 +32,10 @@ src/Pascal/backup
 **/.vs
 
 # Pascal files
-src/Pascal/lib/x86_64-win64
+pascal/lib/x86_64-win64
 *.lps
 *.exe
 **/coveragereport
 .vscode/log
-src/csharp/.sonarqube/conf
-src/csharp/.sonarqube/out
+csharp/.sonarqube/conf
+csharp/.sonarqube/out

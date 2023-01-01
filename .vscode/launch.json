@@ -13,9 +13,9 @@
             "request": "launch",
             "preLaunchTask": "[REPOSITORY-LEVEL] Build All Projects",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/src/csharp/BlastFurnace.MassBalance.App/bin/Debug/net7.0/BlastFurnace.MassBalance.App.dll",
+            "program": "${workspaceFolder}/csharp/src/BlastFurnace.MassBalance.App/bin/Debug/net7.0/BlastFurnace.MassBalance.App.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/src/csharp/BlastFurnace.MassBalance.App",
+            "cwd": "${workspaceFolder}/csharp/src/BlastFurnace.MassBalance.App",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "integratedTerminal",
             "stopAtEntry": false
