@@ -28,14 +28,14 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <SonarQubeTestProject>true</SonarQubeTestProject>
+    <SonarQubeTestProject>false</SonarQubeTestProject>
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
     <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\\..\src\BlastFurnace.MassBalance.Lib\BlastFurnace.MassBalance.Lib.csproj" />
+    <ProjectReference Include="..\..\src\BlastFurnace.MassBalance.Lib\BlastFurnace.MassBalance.Lib.csproj" />
   </ItemGroup>
 
 </Project>

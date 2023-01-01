@@ -12,7 +12,7 @@ set host=http://localhost:9000
  
 @REM dotnet new tool-manifest --force
 
-@REM dotnet tool update --local dotnet-sonarscanner --version 5.9.2
+dotnet tool update --local dotnet-sonarscanner --version 5.9.2
 
 set CollectCoverage=true
 echo %CollectCoverage%
@@ -23,12 +23,11 @@ echo %CoverletOutputFormat%
 set "CoverletOutput=coverage.opencover.xml"
 echo %CoverletOutput%
 
-dotnet test -v:Minimal -c:Debug 
-
 dotnet build-server shutdown
 
-dotnet sonarscanner begin  /k:%project-key% /n:%project-name% /v:"v0" /d:sonar.host.url=%host% /d:sonar.login=%token% /d:sonar.cs.opencover.reportsPaths="**\coverage.opencover.xml"
+dotnet sonarscanner begin  /k:%project-key% /n:%project-name% /v:"v0" /d:sonar.host.url=%host% /d:sonar.login=%token% /d:sonar.cs.opencover.reportsPaths="**\coverage.opencover.xml" /d:sonar.coverage.exclusions="**/tests/**/*" /d:sonar.verbose=true
 
 dotnet build
+dotnet test -v:Minimal -c:Debug 
 
-dotnet sonarscanner end /d:sonar.login=%token%
+dotnet sonarscanner end /d:sonar.login=%token%  
