@@ -25,7 +25,7 @@ echo %CoverletOutput%
 
 dotnet build-server shutdown
 
-dotnet sonarscanner begin  /k:%project-key% /n:%project-name% /v:"v0" /d:sonar.host.url=%host% /d:sonar.login=%token% /d:sonar.cs.opencover.reportsPaths="**\coverage.opencover.xml" /d:sonar.coverage.exclusions="**/tests/**/*" /d:sonar.verbose=true
+dotnet sonarscanner begin  /k:%project-key% /n:%project-name% /v:"v0" /d:sonar.host.url=%host% /d:sonar.login=%token% /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" /d:sonar.coverage.exclusions="**/tests/**/*" /d:sonar.exclusions="**/*.xml,**/*.html" /d:sonar.verbose=true 
 
 dotnet build
 dotnet test -v:Minimal -c:Debug 
