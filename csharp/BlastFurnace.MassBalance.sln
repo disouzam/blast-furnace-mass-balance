@@ -20,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Library", "2.Library", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Tests", "3.Tests", "{43AF5DD4-CEB9-4C37-A8A4-9816E549BF27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlastFurnace.MassBalance.MAUI.App", "BlastFurnace.MassBalance.MAUI.App\BlastFurnace.MassBalance.MAUI.App.csproj", "{727C1BF2-4703-41D7-8E2C-8477826014B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlastFurnace.MassBalance.MAUI.App", "src\BlastFurnace.MassBalance.MAUI.App\BlastFurnace.MassBalance.MAUI.App.csproj", "{727C1BF2-4703-41D7-8E2C-8477826014B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
