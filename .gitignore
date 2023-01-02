@@ -39,3 +39,4 @@ pascal/lib/x86_64-win64
 .vscode/log
 csharp/.sonarqube/conf
 csharp/.sonarqube/out
+csharp/src/BlastFurnace.MassBalance.MAUI.App/BlastFurnace.MassBalance.MAUI.App.csproj.user
